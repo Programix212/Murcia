@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEARTEE - Panel Docente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="panel-docente.css">
+  <link rel="stylesheet" href="transiciones.css">
+  <script src="transiciones.js"></script>
+</head>
+<body>
+
+  <!-- Overlay de fade -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+  <!-- Fondo animado -->
+  <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- 🛡️ LOGIN PROTEGIDO -->
+  <div class="login-overlay" id="loginOverlay">
+    <div class="login-box">
+      <div class="login-icon">🔒</div>
+      <h2 data-i18n="accesoDocente">Acceso Docente</h2>
+      <p data-i18n="accesoDesc">Ingresa la contraseña para ver el progreso de los alumnos</p>
+      <input type="password" id="passwordInput" data-i18n-placeholder="passwordPlaceholder" placeholder="Contraseña" onkeypress="if(event.key==='Enter')verificarAcceso()">
+      <button onclick="verificarAcceso()" data-i18n="entrar">Entrar</button>
+      <p class="login-error" id="loginError" data-i18n="passError">Contraseña incorrecta</p>
+      <button class="btn-volver-login" onclick="cearteeNavigate('index.html')" data-i18n="volverInicio">← Volver al inicio</button>
+    </div>
+  </div>
+
+  <!-- 🎓 PANEL DOCENTE -->
+  <div class="panel-container" id="panelContainer" style="display:none;">
+
+    <!-- Header -->
+    <header class="panel-header">
+      <button class="btn-back" onclick="cearteeNavigate('index.html')">
+        <img src="./img_logos/volver-flecha.png" class="btn-img-icon">
+      </button>
+
+      <h1 data-i18n="panelTitulo">👩‍🏫 Panel de Control Docente</h1>
+      <div class="panel-stats">
+        <span id="totalAlumnos" data-i18n="alumnos">0 alumnos</span>
+      </div>
+    </header>
+
+    <!-- Filtros -->
+    <div class="panel-filtros">
+      <input type="text" id="buscadorAlumnos" data-i18n-placeholder="buscarAlumno" placeholder="Buscar alumno por nombre..." oninput="filtrarAlumnos()">
+      <select id="ordenarPor" onchange="renderizarPanel()">
+        <option value="nombre" data-i18n="ordenNombre">Ordenar por nombre</option>
+        <option value="juegos" data-i18n="ordenJuegos">Más juegos completados</option>
+        <option value="puntuacion" data-i18n="ordenPuntuacion">Mejor puntuación</option>
+        <option value="reciente" data-i18n="ordenReciente">Más reciente</option>
+      </select>
+    </div>
+
+    <!-- Tabla de alumnos -->
+    <div class="panel-tabla-container">
+      <table class="panel-tabla" id="tablaAlumnos">
+        <thead>
+          <tr>
+            <th data-i18n="thAlumno">Alumno</th>
+            <th data-i18n="thJuegos">Juegos</th>
+            <th data-i18n="thPuntuacion">Mejor Punt.</th>
+            <th data-i18n="thRacha">Racha</th>
+            <th data-i18n="thLogros">Logros</th>
+            <th data-i18n="thUltima">Última vez</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyAlumnos">
+          <!-- Se llena con JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Vista vacía -->
+    <div class="panel-vacio" id="panelVacio" style="display:none;">
+      <div class="vacio-icon">📭</div>
+      <p data-i18n="noAlumnos">No hay alumnos registrados todavía.</p>
+      <button onclick="cearteeNavigate('index.html')" data-i18n="crearPerfil">Crear primer perfil</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="panel-footer">
+      <p data-i18n="footerDocente">CEARTEE - Panel Docente • Los datos se guardan localmente en esta computadora</p>
+    </footer>
+
+  </div>
+
+  <script src="perfiles.js"></script>
+  <script src="panel-docente.js"></script>
+  <script src="aplicar-config.js"></script>
+</body>
+</html>

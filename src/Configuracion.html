@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEARTEE - Configuración</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="transiciones.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <script src="transiciones.js"></script>
+</head>
+<body>
+
+  <!-- Overlay de fade -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+  <!-- Fondo animado -->
+  <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Contenedor principal -->
+  <div class="main-container">
+
+    <!-- Header -->
+    <header class="header">
+      <button class="btn-back" onclick="cearteeNavigate('Categorias.html')">
+        <span data-i18n="volver"></span>
+      </button>
+
+      <div class="header-title">
+        <span class="header-emoji"></span>
+        <h1 data-i18n="configuracion">CONFIGURACIÓN</h1>
+      </div>
+
+      <button class="btn-reset" onclick="resetSettings()">
+        <span></span>
+        <span class="btn-text" data-i18n="confRestablecer">Restablecer</span>
+      </button>
+    </header>
+
+    <!-- Configuración -->
+    <div class="settings-container">
+
+      <!-- Sección: General -->
+      <section class="settings-section">
+        <h2 class="section-title">
+          <span class="section-icon"></span>
+          <span data-i18n="confGeneral">General</span>
+        </h2>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confIdioma">Idioma</label>
+            <p class="setting-description" data-i18n="confIdiomaDesc">Selecciona el idioma de la interfaz</p>
+          </div>
+          <select class="setting-select" id="language">
+            <option value="es" data-i18n="langEspanol">Español</option>
+            <option value="ca" data-i18n="langCatala">Català</option>
+            <option value="en" data-i18n="langEnglish">English</option>
+          </select>
+        </div>
+
+        <!--div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confTema">Tema</label>
+            <p class="setting-description" data-i18n="confTemaDesc">Elige el tema visual de la aplicación</p>
+          </div>
+          <select class="setting-select" id="theme">
+            <option value="dark" data-i18n="confTemaOscuro">Oscuro (Predeterminado)</option>
+            <option value="light" data-i18n="confTemaClaro">Claro</option>
+            <option value="auto" data-i18n="confTemaAuto">Automático</option>
+          </select>
+        </div-->
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confAnimaciones">Animaciones</label>
+            <p class="setting-description" data-i18n="confAnimacionesDesc">Activar/desactivar efectos visuales</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="animations" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Sección: Sonido -->
+      <section class="settings-section">
+        <h2 class="section-title">
+          <span class="section-icon"></span>
+          <span data-i18n="confSonido">Sonido</span>
+        </h2>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" for="game-volume" data-i18n="confVolumenJuego">Volumen del juego</label>
+            <p class="setting-description" data-i18n="confVolumenJuegoDesc">Controla el volumen de los sonidos dentro de los juegos</p>
+          </div>
+          <div class="setting-control">
+            <input type="range" id="game-volume" class="volume-slider" min="0" max="100" value="70">
+            <span class="volume-value" id="game-volume-value">70%</span>
+          </div>
+        </div>
+
+        <!--div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confVolumen">Volumen principal</label>
+            <p class="setting-description" data-i18n="confVolumenDesc">Controla el volumen de los efectos de sonido</p>
+          </div>
+          <div class="volume-control">
+            <input type="range" class="volume-slider" id="volume" min="0" max="100" value="70">
+            <span class="volume-value" id="volume-value">70%</span>
+          </div>
+        </div-->
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confSonidoNoti">Efectos de sonido</label>
+            <p class="setting-description" data-i18n="confSonidoNotiDesc">Reproducir cuando los botones tienen efectos de sonido</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="notification-sound" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confSonidoJuego">Sonido al completar juego</label>
+            <p class="setting-description" data-i18n="confSonidoJuegoDesc">Reproducir efecto de victoria</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="completion-sound" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Sección: Juego -->
+      <section class="settings-section">
+        <h2 class="section-title">
+          <span class="section-icon"></span>
+          <span data-i18n="confJuego">Juego</span>
+        </h2>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confTimer">Temporizador automático</label>
+            <p class="setting-description" data-i18n="confTimerDesc">Iniciar temporizador al abrir un juego</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="auto-timer" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confPuntuacion">Mostrar puntuación en tiempo real</label>
+            <p class="setting-description" data-i18n="confPuntuacionDesc">Actualizar estadísticas mientras juegas</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="realtime-stats" checked>
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confDificultad">Dificultad por defecto</label>
+            <p class="setting-description" data-i18n="confDificultadDesc">Nivel de dificultad al iniciar juegos</p>
+          </div>
+          <select class="setting-select" id="default-difficulty">
+            <option value="todas" data-i18n="confTodas">Todas</option>
+            <option value="easy" data-i18n="confFacil">Fácil</option>
+            <option value="medium" selected data-i18n="confMedio">Medio</option>
+            <option value="hard" data-i18n="confDificil">Difícil</option>
+          </select>
+        </div>
+<!---
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="irPanelDocente">Panel Docente</label>
+            <p class="setting-description" data-i18n="progresoAlumnos">Ver progreso de todos los alumnos</p>
+          </div>
+          <button class="btn-clean" onclick="cearteeNavigate('panel-docente.html')" data-i18n="entrar">Entrar</button>
+        </div>
+      -->
+      </section>
+
+      <!-- Sección: Avanzado -->
+      <section class="settings-section">
+        <h2 class="section-title">
+          <span class="section-icon"></span>
+          <span data-i18n="confAvanzado">Avanzado</span>
+        </h2>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confDevMode">Modo desarrollador</label>
+            <p class="setting-description" data-i18n="confDevModeDesc">Mostrar información de depuración</p>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="developer-mode">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confLimpiar">Limpiar caché</label>
+            <p class="setting-description" data-i18n="confLimpiarDesc">Eliminar datos temporales</p>
+          </div>
+          <button class="btn-clean" onclick="clearCache()" data-i18n="confLimpiarBtn">Limpiar</button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Botones de acción -->
+    <footer class="settings-footer">
+      <button class="btn-cancel" onclick="cearteeNavigate('index.html')">
+        <span>✕</span> <span data-i18n="confCancelar">CANCELAR</span>
+      </button>
+      <button class="btn-save" onclick="saveSettings()">
+        <span>✓</span> <span data-i18n="confGuardar">GUARDAR CAMBIOS</span>
+      </button>
+    </footer>
+
+  </div>
+
+  <script src="perfiles.js"></script>
+  <script src="notificaciones.js"></script>
+  <script src="aplicar-config.js"></script>
+  <script src="settings.js"></script>
+  <script src="firebase-auth-rest.js"></script>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="firebase-sync.js"></script>
+</body>
+</html>

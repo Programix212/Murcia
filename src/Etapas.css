@@ -1,0 +1,254 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* =========================================
+   OCULTAR SCROLLBAR PERO MANTENER SCROLL
+   ========================================= */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Por si hay otros contenedores con scroll */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #4f46e5; /* Azul índigo del fondo */
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* =========================================
+   OVERLAY DE TRANSICIÓN
+   ========================================= */
+.ceartee-fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: #4f46e5;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* =========================================
+   FONDO ANIMADO (BURBUJAS)
+   ========================================= */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-animation span {
+  position: absolute;
+  display: block;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+}
+
+/* 8 burbujas distribuidas */
+.bg-animation span:nth-child(1) { width: 80px;  height: 80px;  top: 10%; left: 8%;  opacity: 0.25; }
+.bg-animation span:nth-child(2) { width: 40px;  height: 40px;  top: 18%; left: 82%; opacity: 0.20; }
+.bg-animation span:nth-child(3) { width: 120px; height: 120px; top: 65%; left: 75%; opacity: 0.10; }
+.bg-animation span:nth-child(4) { width: 30px;  height: 30px;  top: 42%; left: 18%; opacity: 0.30; }
+.bg-animation span:nth-child(5) { width: 60px;  height: 60px;  top: 78%; left: 12%; opacity: 0.15; }
+.bg-animation span:nth-child(6) { width: 50px;  height: 50px;  top: 12%; left: 48%; opacity: 0.20; }
+.bg-animation span:nth-child(7) { width: 90px;  height: 90px;  top: 72%; left: 88%; opacity: 0.12; }
+.bg-animation span:nth-child(8) { width: 25px;  height: 25px;  top: 55%; left: 52%; opacity: 0.28; }
+
+/* =========================================
+   HEADER
+   ========================================= */
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 16px 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+  height: 180px;
+}
+
+/* --- Botón Volver --- */
+.btn-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+/* Oculto el texto y el icono original del HTML */
+.btn-back .btn-text,
+.btn-back .btn-icon {
+  display: none;
+  
+}
+
+/* Flecha negra gruesa (icono exacto vía CSS) */
+.btn-back::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 200%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  padding: 20px;
+  height: 28px;
+  background-image: url("./img_logos/volver-flecha.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+/* La imagen del ícono dentro del círculo */
+.btn-img-icon {
+  width: 98px;
+  height: auto;
+  object-fit: contain;
+  
+}
+/* --- Título centrado --- */
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-title h1 {
+  font-size: 50px;
+  font-weight: 900;
+  
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+}
+
+/* --- Botón Settings --- */
+.btn-settings {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+/* Oculto el emoji original del HTML */
+.btn-settings span {
+  display: none;
+}
+
+/* Engrane azul con centro naranja (icono exacto vía CSS) */
+.btn-settings::before {
+  content: '';
+  position: absolute;
+  padding:30px;
+  top: 50%;
+  left: -40%;
+  
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233b82f6' d='M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.488.488 0 0 0-.59.22l-1.92 3.32c-.12.21-.07.47.12.61l2.03 1.58c-.05.3-.07.63-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.04.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.03-1.58z'/%3E%3Ccircle cx='12' cy='12' r='3.5' fill='%23f59e0b'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* =========================================
+   BOTONES CENTRALES
+   ========================================= */
+.container-buttons {
+  position: relative;
+  z-index: 10;
+  margin-top: -80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: calc(100vh - 64px);
+  padding: 20px ;
+}
+
+/* Esto afectará a todos los botones dentro de tu contenedor */
+.container-buttons button, 
+.container-buttons a {
+  padding: 30px 120px;  /* 20px de espacio arriba/abajo, y 48px a los lados */
+  font-size: 20px;     /* Hace la letra más grande */
+  
+  /* Si tus botones no están centrando bien el texto, agrega esto: */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Btn-button,
+.Btn-button2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 22px 64px;
+  min-width: 220px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.Btn-button {
+  background-color: #7c3aed; /* Morado */
+}
+
+.Btn-button2 {
+  background-color: #0d9488; /* Teal */
+}
+
+.Btn-button:hover,
+.Btn-button2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -5px rgba(0, 0, 0, 0.3);
+}
+
+.Btn-button:active,
+.Btn-button2:active {
+  transform: translateY(0);
+}

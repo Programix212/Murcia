@@ -1,0 +1,41 @@
+﻿LICENCIA DE USO DE SOFTWARE EDUCATIVO CEARTEE
+
+Copyright (c) 2024 CEARTEE. Todos los derechos reservados.
+
+1. CONCESIÓN DE LICENCIA
+Se concede permiso para instalar y utilizar esta aplicación de forma gratuita 
+en equipos de instituciones educativas, docentes, alumnos y familias 
+destinadas al apoyo de la educación especial e inclusión.
+
+2. USO PERMITIDO
+- Uso personal y educativo.
+- Instalación en laboratorios de computo, aulas, y equipos personales.
+- Distribución del instalador original sin modificaciones.
+
+3. USO PROHIBIDO
+- Descompilar, realizar ingeniería inversa o modificar el software.
+- Eliminar o alterar avisos de copyright y marcas registradas.
+- Vender, alquilar o comercializar el software sin autorización escrita.
+- Utilizar el software para fines distintos a los educativos sin consentimiento.
+
+4. PROPIEDAD INTELECTUAL
+Este software y todos los materiales educativos incluidos son propiedad de 
+CEARTEE. El uso de la licencia no implica transferencia de derechos.
+
+5. LIMITACIÓN DE RESPONSABILIDAD
+Este software se proporciona "tal cual", sin garantías de ningún tipo. 
+CEARTEE no se hace responsable de daños directos o indirectos derivados 
+del uso del software.
+
+6. PRIVACIDAD Y DATOS
+Los datos de perfiles y progreso se almacenan localmente en el equipo. 
+Si se activa la sincronización en la nube, los datos se gestionan bajo 
+las políticas de privacidad de los servicios de terceros utilizados.
+
+7. TERMINACIÓN
+El incumplimiento de cualquier término de esta licencia resultará en la 
+terminación automática de los derechos de uso.
+
+Para más información:
+https://cearteesinaloa.blogspot.mx
+ceartee.sin@nuevaescuela.mx

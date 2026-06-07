@@ -1,0 +1,1274 @@
+================================================================================
+                    ESTRUCTURA COMPLETA DEL PROYECTO CEARTEE
+================================================================================
+
+INFORMACIÓN GENERAL DEL PROYECTO
+================================================================================
+Nombre: Ceartee (Centro Experimental de Adecuación y Recursos Telemáticos 
+        de Educación Especial)
+Descripción: Aplicación de escritorio construida con Tauri + Vanilla JS
+             para ofrecer juegos educativos interactivos usando JClic
+Versión: 0.1.0
+Tecnologías: Tauri v2.11, Vite v8.0.14, JavaScript Vanilla, HTML5, CSS3
+
+================================================================================
+ESTRUCTURA DE CARPETAS Y ARCHIVOS
+================================================================================
+
+📁 ceartee-main/
+├── 📁 .git/                              [Control de versiones]
+├── 📁 .vscode/                           [Configuración de VSCode]
+├── 📁 node_modules/                      [Dependencias npm]
+├── 📁 dist/                              [Archivos compilados]
+│
+├── 📄 .gitignore                         [Archivos ignorados por git]
+├── 📄 package.json                       [Configuración npm y scripts]
+├── 📄 package-lock.json                  [Lockfile de dependencias]
+├── 📄 README.md                          [Documentación básica]
+├── 📄 latest.json                        [Info de actualizaciones]
+├── 📄 fix-especificos.js                 [Script de reparación]
+│
+└── 📁 src/                               [CÓDIGO FUENTE PRINCIPAL]
+
+================================================================================
+ARCHIVOS PRINCIPALES EN /src
+================================================================================
+
+PÁGINAS HTML (Interfaz de Usuario)
+────────────────────────────────────────────────────────────────────────────
+├── index.html                           ★ Página de inicio/bienvenida
+├── Etapas.html                          Selector de etapas (Preescolar/Primaria)
+├── Categorias.html                      Categorías de juegos (Preescolar)
+├── Configuracion.html                   Panel de configuración de la app
+├── panel-docente.html                   Panel para profesores (con contraseña)
+├── vista.html                           Visor de juegos JClic
+├── Lenguajes.html                       Categoría: Lenguajes (Preescolar)
+├── Etica.html                           Categoría: Ética, naturaleza y sociedades
+├── Delohumanoacomunitario.html          Categoría: De lo humano a comunitario
+├── Saberesypensamientocientifico.html   Categoría: Saberes y pensamiento científico
+
+HOJAS DE ESTILO CSS
+────────────────────────────────────────────────────────────────────────────
+├── Ventana.css                          Estilos página de inicio
+├── Etapas.css                           Estilos selector de etapas
+├── Categorias.css                       Estilos categorías
+├── settings.css                         Estilos configuración
+├── panel-docente.css                    Estilos panel docente
+├── vista.css                            Estilos visor de juegos
+├── Lenguajes.css                        Estilos sección lenguajes
+├── Etica.css                            Estilos sección ética
+├── Delohumanoacomunitario.css           Estilos sección humano
+├── Saberesypensamientocientifico.css    Estilos sección saberes
+├── transiciones.css                     Animaciones y transiciones globales
+├── styles.css                           Estilos globales
+├── prueba.css                           (Estilos de prueba)
+
+SCRIPTS JAVASCRIPT (Lógica de Negocio)
+────────────────────────────────────────────────────────────────────────────
+├── aplicar-config.js                    ★ Sistema de configuración global
+│                                           - Temas (oscuro/claro/auto)
+│                                           - Idiomas (ES/CA/EN)
+│                                           - Volumen y audio
+│                                           - Animaciones
+│
+├── perfiles.js                          ★ Sistema de perfiles de usuario
+│                                           - Crear/editar/eliminar perfiles
+│                                           - Avatares y nombres
+│                                           - Gestión de sesiones
+│
+├── Estadistica.js                       ★ Sistema de seguimiento estadístico
+│                                           - Aciertos, errores, tiempo
+│                                           - Puntuaciones y logros
+│                                           - Guardado en localStorage
+│
+├── notificaciones.js                    Sistema de notificaciones visuales
+├── transiciones.js                      Navegación con efectos de transición
+├── instrucciones.js                     Mostrar instrucciones de juegos
+├── Inicio.js                            Lógica página de inicio
+├── Etapas.js                            Lógica selector de etapas
+├── Categorias.js                        Lógica categorías
+├── settings.js                          Lógica configuración
+├── panel-docente.js                     Lógica panel docente
+├── vista.js                             Lógica visor de juegos
+├── Lenguajes.js                         Lógica sección lenguajes
+├── Etica.js                             Lógica sección ética
+├── Delohumanoacomunitario.js            Lógica sección humano
+├── Saberesypensamientocientifico.js     Lógica sección saberes
+├── main.js                              Script principal
+├── updater.js                           Sistema de actualizaciones
+├── updater.bundle.js                    Bundle del updater
+├── firebase-auth-rest.js                Autenticación Firebase (REST)
+├── firebase-sync.js                     Sincronización con Firebase
+
+BIBLIOTECAS EXTERNAS (Minificadas)
+────────────────────────────────────────────────────────────────────────────
+├── jquery.min.js                        jQuery (para JClic)
+├── jszip.min.js                         Descomprimir archivos .jclic.zip
+├── jszip-utils.min.js                   Utilidades para JSZip
+├── jclic.min.js                         Motor de reproducción JClic
+├── jclic-wrapper.js                     Wrapper personalizado para JClic
+
+ARCHIVOS DE RESPALDO/UTILIDAD
+────────────────────────────────────────────────────────────────────────────
+├── Scriptporsisepierde4.txt             Script de respaldo #4
+├── Scriptporsisepierde5.txt             Script de respaldo #5
+├── cuatro                               (archivo sin extensión)
+
+================================================================================
+CARPETA: /src/Primaria
+================================================================================
+Contiene las páginas y estilos para el nivel de PRIMARIA (duplicados con "_2")
+
+├── Categorias2.html                     Categorías para Primaria
+├── Categorias2.css
+├── Categorias2.js
+├── Etica2.html                          Ética para Primaria
+├── Etica2.css
+├── Etica2.js
+├── Lenguajes2.html                      Lenguajes para Primaria
+├── Lenguajes2.css
+├── Lenguajes2.js
+├── Humano.html                          Humano a comunitario (Primaria)
+├── Humano.css
+├── Humano.js
+├── Saberes.html                         Saberes científicos (Primaria)
+├── Saberes.css
+└── Saberes.js
+
+================================================================================
+CARPETA: /src/Juegos
+================================================================================
+Lista y gestión de todos los juegos disponibles
+
+├── Lista.html                           Listado de juegos
+├── Lista.css                            Estilos del listado
+├── Lista.js                             Lógica del listado
+└── Abridor_de_juegos.code-workspace     Workspace de VSCode
+
+================================================================================
+CARPETA: /src/img_logos
+================================================================================
+Iconos y logos de la interfaz
+
+├── icon.png                             Icono principal de la app
+├── blogspot-esbozado-logo.png           Logo de Blogspot
+├── equipo.png                           Icono de equipo/usuarios
+├── facebook.png                         Logo de Facebook
+├── gmail.png                            Logo de Gmail
+├── gorjeo.png                           Logo de Twitter
+├── llamar.png                           Icono de teléfono
+├── lupa.png                             Icono de búsqueda
+├── panel.png                            Icono del panel docente
+├── volver-flecha.png                    Flecha de volver
+├── jugador-de-futbol.png                Icono de jugador
+├── Etica.png                            Icono categoría Ética
+├── Humano.png                           Icono categoría Humano
+├── Lenguajes.png                        Icono categoría Lenguajes
+└── Saberes.png                          Icono categoría Saberes
+
+================================================================================
+CARPETA: /src/assets
+================================================================================
+
+📁 assets/
+├── 📁 Imagenes/
+│   └── Logo_de_Ceartee.jfif             Logo oficial de CEARTEE
+│
+├── 📁 Mensaje_final_imagenes/
+│   └── Excelente.gif                    GIF de felicitaciones
+│
+├── javascript.svg                       Logo de JavaScript
+├── tauri.svg                            Logo de Tauri
+│
+├── 📁 img_lenguajes/                    (14 imágenes PNG/JFIF)
+│   ├── 4_cuentos.png
+│   ├── Aprende_a_leer.png
+│   ├── Aprendojugando.png
+│   ├── Caperucitaroja.png
+│   ├── Cincoanos.png
+│   ├── Diferentesobjetos.png
+│   ├── El_Soldadito_de_plomo.png
+│   ├── ElPollitochiqui.png
+│   ├── gaviota.png
+│   ├── Iniciacion_a_la_lectura.png
+│   ├── Jack.png
+│   ├── lobo.png
+│   ├── Nombreanimales.png
+│   └── numeroyletras.png
+│
+├── 📁 img_etica/                        (10 imágenes PNG)
+│   ├── Aprendiendo_a_reciclar_estilo_preescolar.png
+│   ├── Elefante_y_otros_grandes.png
+│   ├── la_ratita_presumida.png
+│   ├── los_medios_de_transporte.png
+│   ├── los_musicos_de_bremen.png
+│   ├── observa_y_relacion.png
+│   ├── Once_upon_a_time.png
+│   ├── Otros_ninos_del_mundo.png
+│   ├── puzzles_de_animales.png
+│   └── Reconomiento_de_sonidos.png
+│
+├── 📁 img_humano/                       (2 imágenes PNG)
+│   ├── Cuento_para_la_tolerancia.png
+│   └── los_rincones_de_la_clase.png
+│
+├── 📁 img_Saberes/                      (36 imágenes JFIF/PNG)
+│   ├── Actividad_de_infantil_4_anos.jfif
+│   ├── Actividad_de_numeracion.jfif
+│   ├── Actividadde3Anosinfantil.jfif
+│   ├── Actividades_de_logica_1.jfif
+│   ├── Actividadesdelogica2.jfif
+│   ├── Actividadesdelogica3.jfif
+│   ├── Actividadesdeorientacionespacial.jfif
+│   ├── Animales_salvajes.jfif
+│   ├── Bloques_logicos.jfif
+│   ├── Calculo_y_numeros_1_al_9.jfif
+│   ├── Clic_de_las_medidas.jfif
+│   ├── clic_de_las_posiciones.jfif
+│   ├── Colores_y_formas.jfif
+│   ├── Conceptos_Basicos.jfif
+│   ├── Contar_del_1_al_9.jfif
+│   ├── contemos_del_1_al_10.jfif
+│   ├── Descomposicion_de_numeros_de_0-10.jfif
+│   ├── Direccionalidad_colores_y_formas.jfif
+│   ├── El_cuento_de_los_numeros_0-9.jfif
+│   ├── El_verano.jfif
+│   ├── Formas_geometricas.jfif
+│   ├── Formasymasformas.png
+│   ├── iguales.jfif
+│   ├── Jugando_con_numeros.jfif
+│   ├── Jugando_con_numeros_2.jfif
+│   ├── La_manzana.png
+│   ├── las_regletas.png
+│   ├── Logica_numeracion_y_lateralidad.png
+│   ├── los_3_osos.png
+│   ├── nina_la_gallina.png
+│   ├── ordenar_tamanos.png
+│   ├── producto_cartesiano.png
+│   ├── secuencias.png
+│   ├── series.png
+│   ├── Sombras.png
+│   ├── Tiempo,espacio_y_cantidad.png
+│   └── Uno_dos_tres_o_ninguno.png
+
+================================================================================
+JUEGOS JCLIC (Archivos .jclic.zip)
+================================================================================
+
+📁 assets/juegos/                        JUEGOS GENERALES
+────────────────────────────────────────────────────────────────────────────
+├── Actividad5anosinfantil.jclic.zip
+├── Aprendealeer.jclic.zip
+├── Aprendojugando.jclic.zip
+├── Caperucitaroja.jclic.zip
+├── CuatroCuentos.jclic.zip
+├── Diferentesobjetos.jclic.zip
+├── ElpollitoChiqui.jclic.zip
+├── Elsoldaditodeplomo.jclic.zip
+├── gaviota.jclic.zip
+├── iniciacionalalectura.jclic.zip
+├── Lasvocales.jclic.zip
+├── lobo.jclic.zip
+├── Magica.jclic.zip
+├── Nombredelosanimales.jclic.zip
+├── num.jclic.zip
+└── [múltiples archivos .tmp]            Archivos temporales de JClic
+
+📁 assets/Etica_naturaleza_y_sociedades/ JUEGOS DE ÉTICA
+────────────────────────────────────────────────────────────────────────────
+├── Aprendiendoareciclar.jclic.zip
+├── Elelefanteyotrosgrandes.jclic.zip
+├── Laratitapresumida.jclic.zip
+├── Losmediosdetransporte2.jclic.zip
+├── LosmusicosdeBremen.jclic.zip
+├── Observayrelaciona.jclic.zip
+├── Onceuponatime.jclic.zip
+├── Otrosninosdelmundo.jclic.zip
+├── Puzzlesdeanimales.jclic.zip
+└── Reconocimientodesonidos.jclic.zip
+
+📁 assets/De_lo_humano_a_comunitario_juegos/ JUEGOS HUMANO-COMUNITARIO
+────────────────────────────────────────────────────────────────────────────
+├── Cuentoparalatolerancia.jclic.zip
+└── Losrinconesdelaclase.jclic.zip
+
+📁 assets/Saberes/                       JUEGOS DE SABERES CIENTÍFICOS
+────────────────────────────────────────────────────────────────────────────
+├── Actinfantil3anos.jclic.zip
+├── Actinfantil4anos.jclic.zip
+├── actividaddenumeración.jclic.zip
+├── Actividadesdelogica1.jclic.zip
+├── Actividadesdelogica2.jclic.zip
+├── Actividadesdelogica3.jclic.zip
+├── Actividadesdeorientacionespecial.jclic.zip
+├── Animalessalvajes.jclic.zip
+├── Bloqueslogicos.jclic.zip
+├── CalculoyNumerosdel1al9.jclic.zip
+├── Clicdelasmedidas.jclic.zip
+├── Clicdelasposiciones.jclic.zip
+├── Conceptosbasicos.jclic.zip
+├── Contardel1al9.jclic.zip
+├── Contemosdel1al10.jclic.zip
+├── Descomposiciondenumeros0-10.jclic.zip
+├── Direccionalidad,coloresyformas.jclic.zip
+├── Elcuentodelosnumeros0-9.jclic.zip
+├── Elverano.jclic.zip
+├── Formasgeometricas.jclic.zip
+├── Formasymasformas.jclic.zip
+├── Iguales.jclic.zip
+├── Jugandoconnumeros.jclic.zip
+├── Jugandoconnumeros2.jclic.zip
+├── Lasregletas.jclic.zip
+├── Logica,numeracionylateralidad.jclic.zip
+├── Los3osos.jclic.zip
+├── Ninalagallina.jclic.zip
+├── Ordenartamanos.jclic.zip
+├── Productocartesiano.jclic.zip
+├── Secuencias.jclic.zip
+├── Series.jclic.zip
+├── Sombras.jclic.zip
+├── Tiempo,espacioyCantidad-conceptosbasicos.jclic.zip
+└── Uno,dos,tresoninguno.jclic.zip
+
+TOTAL DE JUEGOS: ~47 juegos educativos en formato JClic
+
+================================================================================
+ARQUITECTURA Y FLUJO DE LA APLICACIÓN
+================================================================================
+
+FLUJO DE NAVEGACIÓN
+────────────────────────────────────────────────────────────────────────────
+1. index.html (Inicio)
+   ↓
+2. Selector de perfiles (si no hay sesión activa)
+   ↓
+3. Etapas.html (Elegir Preescolar o Primaria)
+   ↓
+4. Categorias.html / Categorias2.html (Elegir categoría)
+   ↓
+5. Lenguajes.html / Etica.html / etc. (Listado de juegos)
+   ↓
+6. vista.html (Reproducir juego JClic)
+
+RUTAS ALTERNATIVAS:
+- index.html → Configuracion.html (Ajustes)
+- index.html → panel-docente.html (Panel con contraseña)
+- Cualquier página → Configuracion.html (Botón settings)
+
+================================================================================
+SISTEMAS PRINCIPALES
+================================================================================
+
+1. SISTEMA DE PERFILES (perfiles.js)
+────────────────────────────────────────────────────────────────────────────
+   - Crear perfiles con nombre y avatar
+   - Guardar progreso individual por perfil
+   - Cambiar entre perfiles
+   - Estadísticas independientes por usuario
+   - Almacenamiento: localStorage
+
+2. SISTEMA DE ESTADÍSTICAS (Estadistica.js)
+────────────────────────────────────────────────────────────────────────────
+   - Registro de aciertos y errores
+   - Contador de tiempo de juego
+   - Puntuación máxima
+   - Racha de victorias
+   - Juegos completados
+   - Logros y medallas
+   - Almacenamiento: localStorage por perfil
+
+3. SISTEMA DE CONFIGURACIÓN (aplicar-config.js)
+────────────────────────────────────────────────────────────────────────────
+   ✓ TEMAS:
+     - Oscuro (por defecto)
+     - Claro
+     - Automático (según sistema operativo)
+   
+   ✓ IDIOMAS:
+     - Español (ES)
+     - Català (CA)
+     - English (EN)
+     Traduce dinámicamente toda la interfaz
+   
+   ✓ AUDIO:
+     - Volumen principal (0-100%)
+     - Volumen de juegos (0-100%)
+     - Sonido de notificaciones
+     - Sonido al completar juego
+     Control global con interceptor de Audio y AudioContext
+   
+   ✓ VISUALES:
+     - Activar/desactivar animaciones
+     - Modo desarrollador
+   
+   ✓ JUEGO:
+     - Temporizador automático
+     - Estadísticas en tiempo real
+     - Dificultad por defecto
+   
+   Almacenamiento: localStorage ('appConfig')
+
+4. PANEL DOCENTE (panel-docente.js)
+────────────────────────────────────────────────────────────────────────────
+   - Protegido con contraseña
+   - Vista de todos los perfiles/alumnos
+   - Estadísticas globales:
+     * Juegos completados
+     * Mejor puntuación
+     * Racha actual
+     * Logros obtenidos
+     * Última actividad
+   - Filtros y búsqueda
+   - Ordenamiento (nombre, juegos, puntuación, reciente)
+   - Exportación de datos (localStorage)
+
+5. REPRODUCTOR JCLIC (vista.html + jclic-wrapper.js)
+────────────────────────────────────────────────────────────────────────────
+   - Carga juegos .jclic.zip
+   - Descompresión con JSZip
+   - Renderizado con jclic.min.js
+   - Controles:
+     * Navegación entre actividades (anterior/siguiente)
+     * Reiniciar actividad
+     * Pantalla completa
+     * Salir al menú
+   - Interceptor de audio para control de volumen
+   - Estadísticas en tiempo real:
+     * Aciertos
+     * Intentos
+     * Tiempo transcurrido
+   - Barra de instrucciones dinámica
+   - Guardado automático de progreso
+
+6. SISTEMA DE TRANSICIONES (transiciones.js + transiciones.css)
+────────────────────────────────────────────────────────────────────────────
+   - Función global: cearteeNavigate(url)
+   - Efecto de fade-out → cambio de página → fade-in
+   - Overlay oscuro suave
+   - Animaciones configurables (se pueden desactivar)
+
+7. NOTIFICACIONES (notificaciones.js)
+────────────────────────────────────────────────────────────────────────────
+   - Notificaciones tipo toast
+   - Tipos: success, error, info, warning
+   - Posicionamiento automático
+   - Auto-cierre configurable
+   - Sonido opcional
+
+8. FIREBASE (OPCIONAL)
+────────────────────────────────────────────────────────────────────────────
+   - firebase-auth-rest.js: Autenticación REST
+   - firebase-sync.js: Sincronización de datos
+   - Permite respaldo en la nube
+   - NO es obligatorio, la app funciona 100% offline
+
+9. ACTUALIZADOR (updater.js + updater.bundle.js)
+────────────────────────────────────────────────────────────────────────────
+   - Verifica actualizaciones automáticamente
+   - Descarga e instala updates
+   - Usa Tauri plugin-updater
+   - Archivo latest.json contiene info de última versión
+
+================================================================================
+CATEGORÍAS DE JUEGOS
+================================================================================
+
+NIVEL PREESCOLAR:
+────────────────────────────────────────────────────────────────────────────
+1. 📚 LENGUAJES (Lenguajes.html)
+   - Lectura inicial
+   - Vocabulario
+   - Cuentos interactivos
+   - Reconocimiento de letras
+   ~14 juegos
+
+2. 🌍 ÉTICA, NATURALEZA Y SOCIEDADES (Etica.html)
+   - Valores y convivencia
+   - Medio ambiente
+   - Animales
+   - Transporte
+   - Multiculturalidad
+   ~10 juegos
+
+3. 👥 DE LO HUMANO A COMUNITARIO (Delohumanoacomunitario.html)
+   - Tolerancia
+   - Espacios escolares
+   - Convivencia
+   ~2 juegos
+
+4. 🔢 SABERES Y PENSAMIENTO CIENTÍFICO (Saberesypensamientocientifico.html)
+   - Números y conteo (1-10)
+   - Formas geométricas
+   - Colores
+   - Lógica matemática
+   - Orientación espacial
+   - Medidas y cantidades
+   ~35+ juegos
+
+NIVEL PRIMARIA: (Carpeta /Primaria)
+────────────────────────────────────────────────────────────────────────────
+Misma estructura de categorías adaptadas para nivel primaria:
+- Categorias2.html
+- Lenguajes2.html
+- Etica2.html
+- Humano.html
+- Saberes.html
+
+================================================================================
+DATOS PERSISTENTES (localStorage)
+================================================================================
+
+CLAVES UTILIZADAS:
+────────────────────────────────────────────────────────────────────────────
+✓ appConfig                   → Configuración global de la app
+✓ ceartee_perfiles           → Array de todos los perfiles creados
+✓ ceartee_perfil_activo      → ID del perfil con sesión activa
+✓ ceartee_sesion_activa      → Bandera de sesión iniciada
+✓ ceartee_autosave           → Guardado automático de progreso
+✓ perfil_[id]_estadisticas   → Estadísticas individuales por perfil
+✓ perfil_[id]_logros         → Logros desbloqueados por perfil
+✓ perfil_[id]_juegos         → Historial de juegos por perfil
+
+ESTRUCTURA appConfig:
+────────────────────────────────────────────────────────────────────────────
+{
+  "idioma": "es",
+  "tema": "dark",
+  "animaciones": true,
+  "volumen": 70,
+  "volumenJuego": 70,
+  "sonidoNotificacion": true,
+  "sonidoCompletar": true,
+  "temporizadorAuto": true,
+  "estadisticasReal": true,
+  "dificultadDefault": "medium",
+  "modoDesarrollador": false
+}
+
+ESTRUCTURA perfil:
+────────────────────────────────────────────────────────────────────────────
+{
+  "id": "perfil_1234567890",
+  "nombre": "María",
+  "avatar": "👧",
+  "fechaCreacion": "2026-06-03T10:30:00.000Z",
+  "juegosCompletados": 15,
+  "mejorPuntuacion": 95,
+  "rachaActual": 3,
+  "logros": ["primera_vez", "diez_juegos", "perfeccionista"],
+  "ultimaActividad": "2026-06-03T12:00:00.000Z"
+}
+
+================================================================================
+CARACTERÍSTICAS TÉCNICAS
+================================================================================
+
+FRONTEND:
+────────────────────────────────────────────────────────────────────────────
+✓ HTML5 semántico
+✓ CSS3 moderno con:
+  - Grid y Flexbox
+  - Variables CSS (--var)
+  - Animaciones y transiciones
+  - Media queries (responsive)
+  - Backdrop-filter
+✓ JavaScript Vanilla (ES6+):
+  - Módulos
+  - Arrow functions
+  - Template literals
+  - LocalStorage API
+  - Fetch API
+  - Async/await
+✓ Sin frameworks pesados (React/Vue/Angular)
+
+BACKEND/DESKTOP:
+────────────────────────────────────────────────────────────────────────────
+✓ Tauri 2.11
+  - Rust backend
+  - WebView nativo
+  - Bajo uso de recursos
+  - Updates automáticos
+  - Multiplataforma (Windows, macOS, Linux)
+✓ Vite 8.0.14 (build tool)
+
+BIBLIOTECAS:
+────────────────────────────────────────────────────────────────────────────
+✓ jQuery 3.x (requerido por JClic)
+✓ JSZip 3.x (descomprimir .jclic.zip)
+✓ JClic.js (motor de reproducción de actividades JClic)
+✓ Firebase SDK 10.12.0 (opcional, para sync en la nube)
+
+COMPATIBILIDAD:
+────────────────────────────────────────────────────────────────────────────
+✓ Navegadores modernos (Chrome 90+, Firefox 88+, Edge 90+)
+✓ Windows 10/11
+✓ macOS 10.15+
+✓ Linux (Ubuntu 20.04+, Debian 10+, Fedora 33+)
+
+ACCESIBILIDAD:
+────────────────────────────────────────────────────────────────────────────
+✓ Alto contraste
+✓ Textos grandes legibles (Poppins, Oswald)
+✓ Iconos visuales claros
+✓ Navegación con teclado
+✓ Colores educativos amigables
+✓ Tooltips informativos
+
+OPTIMIZACIÓN:
+────────────────────────────────────────────────────────────────────────────
+✓ Imágenes optimizadas (PNG, JFIF, GIF)
+✓ CSS minificado en producción
+✓ JS modular y lazy loading
+✓ Caché de assets
+✓ LocalStorage para datos offline
+✓ Descompresión on-demand de juegos
+
+SEGURIDAD:
+────────────────────────────────────────────────────────────────────────────
+✓ Panel docente protegido con contraseña
+✓ Datos locales (no se envían a servidores por defecto)
+✓ Firebase opcional y configurable
+✓ Sin tracking ni analytics intrusivos
+
+================================================================================
+SCRIPTS DISPONIBLES (package.json)
+================================================================================
+
+npm run dev        → Iniciar en modo desarrollo (hot reload)
+npm run build      → Compilar para producción
+npm run tauri      → Comandos de Tauri CLI
+
+tauri dev          → Desarrollo con ventana nativa
+tauri build        → Compilar ejecutable final (.exe, .dmg, .AppImage)
+
+================================================================================
+DEPENDENCIAS NPM
+================================================================================
+
+PRODUCCIÓN:
+────────────────────────────────────────────────────────────────────────────
+@tauri-apps/api                ^2.11.0    API JavaScript de Tauri
+@tauri-apps/plugin-process     ^2.3.1     Control de procesos
+@tauri-apps/plugin-updater     ^2.10.1    Sistema de actualizaciones
+
+DESARROLLO:
+────────────────────────────────────────────────────────────────────────────
+@tauri-apps/cli                ^2.11.2    CLI de Tauri
+vite                           ^8.0.14    Build tool y dev server
+
+================================================================================
+INFORMACIÓN DE CONTACTO (del proyecto)
+================================================================================
+
+CEARTEE SINALOA
+Centro Experimental de Adecuación y Recursos Telemáticos de Educación Especial
+
+Dirección:
+  Hidalgo S/N entre cerrada
+  Ángel Flores y Carranza
+  Col. Las Quintas
+  CP 80060
+
+Teléfono: 667 127 8679
+
+Redes Sociales:
+  Facebook: Ceartee Sinaloa
+  Email: ceartee@sin.nuevaescuela.mx
+  Blog: cearteesinaloa.blogspot.mx
+
+================================================================================
+FUNCIONALIDADES DESTACADAS
+================================================================================
+
+✅ MULTIUSUARIO
+   - Varios perfiles independientes
+   - Estadísticas separadas por usuario
+   - Avatares personalizables
+   - Selector visual de perfiles
+
+✅ MULTIIDIOMA
+   - Español
+   - Català  
+   - English
+   - Traducción dinámica completa de interfaz
+
+✅ MULTITEMA
+   - Tema oscuro (default)
+   - Tema claro
+   - Tema automático (según SO)
+
+✅ CONTROL DE AUDIO AVANZADO
+   - Volumen independiente para UI y juegos
+   - Interceptor global de Web Audio API
+   - Control de elementos <audio> y <video>
+   - Aplicación en iframes (JClic)
+   - Actualización en tiempo real (200ms)
+
+✅ ESTADÍSTICAS Y LOGROS
+   - Aciertos y errores
+   - Tiempo de juego
+   - Puntuación máxima
+   - Racha de victorias
+   - Juegos completados
+   - Sistema de logros/medallas
+
+✅ PANEL DOCENTE
+   - Vista de todos los alumnos
+   - Estadísticas consolidadas
+   - Filtros y búsqueda
+   - Ordenamiento múltiple
+   - Protección con contraseña
+
+✅ REPRODUCTOR JCLIC COMPLETO
+   - Carga ZIP nativa
+   - Navegación entre actividades
+   - Pantalla completa
+   - Estadísticas en vivo
+   - Control de volumen integrado
+   - Guardado automático de progreso
+
+✅ TRANSICIONES SUAVES
+   - Navegación con efecto fade
+   - Sin saltos visuales
+   - Configurable (activar/desactivar)
+
+✅ NOTIFICACIONES VISUALES
+   - Toast messages
+   - Múltiples tipos (success, error, info, warning)
+   - Sonido opcional
+   - Auto-cierre
+
+✅ RESPONSIVE DESIGN
+   - Adaptable a diferentes resoluciones
+   - Grid flexible
+   - Burbujas animadas de fondo
+   - Sidebar informativos
+
+✅ ACTUALIZACIONES AUTOMÁTICAS
+   - Detección de nuevas versiones
+   - Descarga e instalación automática
+   - Sin intervención del usuario
+   - Basado en latest.json
+
+✅ OFFLINE-FIRST
+   - Funciona 100% sin internet
+   - Datos en localStorage
+   - Juegos embebidos en la app
+   - Firebase opcional para respaldo
+
+================================================================================
+ÁREAS DE MEJORA DETECTADAS
+================================================================================
+
+⚠️ ARCHIVOS TEMPORALES
+   - Múltiples archivos .tmp en /assets/juegos/
+   - Considerar limpieza de estos archivos
+
+⚠️ DUPLICACIÓN DE CÓDIGO
+   - Archivos similares para Preescolar y Primaria
+   - Posible refactorización para reutilización
+
+⚠️ ORGANIZACIÓN DE ASSETS
+   - Algunos juegos en /juegos/, otros en subcarpetas específicas
+   - Estandarizar ubicación de recursos
+
+⚠️ DOCUMENTACIÓN
+   - README.md básico (template de Tauri)
+   - Falta documentación de setup y desarrollo
+   - Sin guía de contribución
+
+⚠️ TESTING
+   - No hay tests automatizados
+   - Sin framework de testing configurado
+
+================================================================================
+RESUMEN DE FUNCIONES PRINCIPALES
+================================================================================
+
+FUNCIONES GLOBALES IMPORTANTES:
+────────────────────────────────────────────────────────────────────────────
+
+▸ cearteeNavigate(url)
+  Navega entre páginas con transición fade
+  [transiciones.js]
+
+▸ aplicarConfiguracionGlobal()
+  Aplica todos los ajustes guardados (tema, idioma, volumen, etc.)
+  [aplicar-config.js]
+
+▸ PerfilesManager.obtenerPerfilActivo()
+  Retorna el perfil con sesión activa
+  [perfiles.js]
+
+▸ PerfilesManager.guardarEstadistica(dato)
+  Guarda estadística del juego actual
+  [perfiles.js]
+
+▸ registrarEstadistica(juego, aciertos, errores, tiempo)
+  Registra estadísticas de juego completado
+  [Estadistica.js]
+
+▸ mostrarNotificacion(mensaje, tipo)
+  Muestra notificación toast
+  [notificaciones.js]
+
+▸ cargarJuegoJClic(rutaZip)
+  Carga y reproduce un juego JClic
+  [jclic-wrapper.js]
+
+================================================================================
+EVENTOS Y LISTENERS IMPORTANTES
+================================================================================
+
+EVENTOS DE JCLIC:
+────────────────────────────────────────────────────────────────────────────
+• 'start'          → Actividad iniciada
+• 'end'            → Actividad terminada
+• 'action'         → Acción del usuario (click, arrastrar, etc.)
+• 'solved'         → Actividad resuelta correctamente
+• 'error'          → Error en la actividad
+
+EVENTOS PERSONALIZADOS:
+────────────────────────────────────────────────────────────────────────────
+• DOMContentLoaded → Inicialización de cada página
+• beforeunload     → Guardado automático antes de cerrar
+• resize           → Ajuste de interfaz responsive
+
+================================================================================
+ESTILOS CSS COMPARTIDOS
+================================================================================
+
+VARIABLES CSS PRINCIPALES:
+────────────────────────────────────────────────────────────────────────────
+--color-primary: Color principal del tema
+--color-secondary: Color secundario
+--color-bg: Color de fondo
+--color-text: Color del texto
+--color-accent: Color de acento/highlight
+--border-radius: Radio de bordes
+--shadow: Sombras
+--transition: Duración de transiciones
+
+CLASES GLOBALES:
+────────────────────────────────────────────────────────────────────────────
+.bg-animation          Fondo con burbujas animadas
+.ceartee-fade-overlay  Overlay de transición
+.btn-back              Botón de volver estándar
+.btn-enter             Botón principal de acción
+.stat-item             Item de estadística
+.game-card             Tarjeta de juego
+.category-card         Tarjeta de categoría
+.perfil-avatar         Avatar de perfil
+.tooltip               Tooltip informativo
+
+================================================================================
+POSIBLES EXTENSIONES FUTURAS
+================================================================================
+
+IDEAS PARA DESARROLLO:
+────────────────────────────────────────────────────────────────────────────
+□ Más juegos en cada categoría
+□ Sistema de recompensas visuales (badges animados)
+□ Modo multijugador local
+□ Exportar reportes PDF para docentes
+□ Gráficas de progreso temporal
+□ Integración con LMS (Moodle, Google Classroom)
+□ Soporte para más formatos de juegos educativos
+□ Editor de perfiles más avanzado (fotos personalizadas)
+□ Modo de práctica guiada
+□ Sistema de ayudas contextuales
+□ Accesibilidad mejorada (lector de pantalla)
+□ Modo oscuro/claro por horario
+□ Importar/exportar perfiles
+□ Sincronización entre dispositivos
+□ Versión web (PWA)
+□ App móvil (Android/iOS)
+
+================================================================================
+COMANDOS ÚTILES PARA DESARROLLO
+================================================================================
+
+INSTALAR DEPENDENCIAS:
+────────────────────────────────────────────────────────────────────────────
+npm install
+
+DESARROLLO:
+────────────────────────────────────────────────────────────────────────────
+npm run dev
+# o
+npm run tauri dev
+
+COMPILAR:
+────────────────────────────────────────────────────────────────────────────
+npm run build
+# o  
+npm run tauri build
+
+LIMPIAR CACHÉ:
+────────────────────────────────────────────────────────────────────────────
+rm -rf node_modules/
+npm install
+
+VER LOGS DE TAURI:
+────────────────────────────────────────────────────────────────────────────
+Windows: %APPDATA%/com.ceartee.app/logs/
+macOS: ~/Library/Application Support/com.ceartee.app/logs/
+Linux: ~/.config/com.ceartee.app/logs/
+
+BORRAR DATOS DE LA APP:
+────────────────────────────────────────────────────────────────────────────
+En DevTools del navegador → Application → Local Storage → Clear All
+# o directamente en código:
+localStorage.clear()
+
+================================================================================
+CONVENCIONES DE CÓDIGO
+================================================================================
+
+NOMENCLATURA:
+────────────────────────────────────────────────────────────────────────────
+✓ Variables y funciones: camelCase
+  Ejemplo: obtenerPerfilActivo(), juegosCompletados
+
+✓ Clases CSS: kebab-case
+  Ejemplo: .game-card, .btn-back
+
+✓ Archivos HTML/CSS/JS: PascalCase o kebab-case
+  Ejemplo: Categorias.html, panel-docente.css
+
+✓ Constantes: UPPER_SNAKE_CASE
+  Ejemplo: const MAX_INTENTOS = 3
+
+ESTRUCTURA DE ARCHIVOS JS:
+────────────────────────────────────────────────────────────────────────────
+1. Comentarios de cabecera
+2. Variables globales
+3. Funciones auxiliares
+4. Funciones principales
+5. Event listeners
+6. Inicialización (DOMContentLoaded)
+
+COMENTARIOS:
+────────────────────────────────────────────────────────────────────────────
+// Comentario de línea
+/* Comentario de bloque */
+
+// ==========================================
+// SECCIÓN PRINCIPAL
+// ==========================================
+
+================================================================================
+FLUJO DE DATOS
+================================================================================
+
+1. CARGA DE CONFIGURACIÓN (Al iniciar cualquier página):
+────────────────────────────────────────────────────────────────────────────
+   aplicar-config.js (autoejecutado)
+   ↓
+   Lee localStorage['appConfig']
+   ↓
+   Aplica tema, idioma, volumen, animaciones
+   ↓
+   Inyecta CSS de temas
+   ↓
+   Instala interceptor de audio
+
+2. INICIO DE SESIÓN:
+────────────────────────────────────────────────────────────────────────────
+   index.html carga perfiles.js
+   ↓
+   Lee localStorage['ceartee_perfiles']
+   ↓
+   Si hay perfil activo → Muestra botón "Continuar"
+   Si no hay perfil activo → Muestra selector de perfiles
+   Si no hay perfiles → Muestra "Crear perfil"
+   ↓
+   Usuario elige/crea perfil
+   ↓
+   Se guarda en localStorage['ceartee_perfil_activo']
+   ↓
+   Navega a Etapas.html
+
+3. JUEGO:
+────────────────────────────────────────────────────────────────────────────
+   Usuario elige juego en Lenguajes.html/Etica.html/etc.
+   ↓
+   Se guarda en sessionStorage ruta del .zip y nombre del juego
+   ↓
+   Navega a vista.html
+   ↓
+   vista.html lee sessionStorage
+   ↓
+   jclic-wrapper.js carga el .zip con JSZip
+   ↓
+   jclic.min.js renderiza las actividades
+   ↓
+   Interceptor de audio controla volumen en tiempo real
+   ↓
+   Estadistica.js registra aciertos/errores/tiempo
+   ↓
+   Al salir, se guarda en localStorage del perfil activo
+
+4. PANEL DOCENTE:
+────────────────────────────────────────────────────────────────────────────
+   Usuario navega a panel-docente.html
+   ↓
+   Muestra overlay de login
+   ↓
+   Verifica contraseña
+   ↓
+   Si correcta → Oculta overlay, muestra panel
+   ↓
+   Lee localStorage['ceartee_perfiles']
+   ↓
+   Para cada perfil, lee sus estadísticas
+   ↓
+   Renderiza tabla con todos los datos
+   ↓
+   Permite filtrar, buscar, ordenar
+
+5. CONFIGURACIÓN:
+────────────────────────────────────────────────────────────────────────────
+   Usuario navega a Configuracion.html
+   ↓
+   settings.js lee localStorage['appConfig']
+   ↓
+   Llena los controles (selects, sliders, checkboxes)
+   ↓
+   Usuario modifica valores
+   ↓
+   Click en "Guardar"
+   ↓
+   Guarda en localStorage['appConfig']
+   ↓
+   Llama a aplicarConfiguracionGlobal()
+   ↓
+   Cambios aplicados en tiempo real
+   ↓
+   Muestra notificación de éxito
+
+================================================================================
+COMPONENTES VISUALES DESTACADOS
+================================================================================
+
+BURBUJAS ANIMADAS DE FONDO:
+────────────────────────────────────────────────────────────────────────────
+<div class="bg-animation">
+  <span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span>
+</div>
+
+Animación CSS con keyframes que hace flotar burbujas de colores.
+
+OVERLAY DE TRANSICIÓN:
+────────────────────────────────────────────────────────────────────────────
+<div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+Capa oscura que aparece durante navegación, controlada por transiciones.js
+
+TARJETA DE JUEGO:
+────────────────────────────────────────────────────────────────────────────
+<div class="game-card">
+  <img src="..." class="game-image">
+  <div class="game-info">
+    <h3 class="game-title">Nombre del juego</h3>
+    <p class="game-description">Descripción...</p>
+    <div class="game-meta">
+      <span class="meta-item">⏱️ 5-10 min</span>
+      <span class="meta-item">🎯 Fácil</span>
+    </div>
+    <button class="play-btn" onclick="jugar(...)">
+      <span class="play-text">Jugar</span> ▶
+    </button>
+  </div>
+</div>
+
+TARJETA DE CATEGORÍA:
+────────────────────────────────────────────────────────────────────────────
+<div class="category-card" onclick="navegar(...)">
+  <div class="card-icon">
+    <img src="..." alt="">
+  </div>
+  <h2 class="card-title">Nombre Categoría</h2>
+  <p class="card-description">Descripción...</p>
+  <button class="card-btn">
+    <span>Explorar</span> →
+  </button>
+</div>
+
+SELECTOR DE PERFILES:
+────────────────────────────────────────────────────────────────────────────
+<div class="perfil-card" onclick="seleccionarPerfil(id)">
+  <div class="perfil-avatar">👧</div>
+  <div class="perfil-nombre">María</div>
+  <div class="perfil-stats">
+    <span>15 juegos</span>
+  </div>
+</div>
+
+<button class="btn-nuevo-perfil">
+  + Crear nuevo perfil
+</button>
+
+ESTADÍSTICAS EN JUEGO:
+────────────────────────────────────────────────────────────────────────────
+<div class="stats-panel">
+  <div class="stat-item">
+    <span class="stat-icon">✅</span>
+    <span class="stat-label">Aciertos:</span>
+    <span class="stat-value">12</span>
+  </div>
+  <!-- más items... -->
+</div>
+
+================================================================================
+TAURI CONFIGURATION (tauri.conf.json - si existe)
+================================================================================
+
+La configuración de Tauri define:
+- Identificador de la app: com.ceartee.app
+- Nombre de la ventana
+- Tamaño inicial de ventana
+- Permisos (filesystem, shell, etc.)
+- Configuración de bundling
+- URL del servidor de updates
+- Información de firma de código
+
+================================================================================
+GIT IGNORE (.gitignore)
+================================================================================
+
+Archivos típicamente ignorados:
+────────────────────────────────────────────────────────────────────────────
+/node_modules/
+/dist/
+/target/
+*.log
+.DS_Store
+Thumbs.db
+*.tmp
+
+================================================================================
+FORMATO DE ARCHIVOS JCLIC
+================================================================================
+
+ESTRUCTURA DE UN .jclic.zip:
+────────────────────────────────────────────────────────────────────────────
+juego.jclic.zip
+├── project.jclic          (Archivo XML con la definición del proyecto)
+├── activities/            (Carpeta con actividades)
+│   ├── actividad1.xml
+│   ├── actividad2.xml
+│   └── ...
+└── media/                 (Recursos multimedia)
+    ├── imagen1.png
+    ├── sonido1.mp3
+    └── ...
+
+CARGA Y REPRODUCCIÓN:
+────────────────────────────────────────────────────────────────────────────
+1. JSZip descomprime el .zip en memoria
+2. jclic.min.js parsea el project.jclic (XML)
+3. Renderiza las actividades en el container #jclic-container
+4. Maneja eventos de interacción del usuario
+5. Emite eventos (start, end, solved, error, etc.)
+6. Wrapper (jclic-wrapper.js) captura eventos y registra estadísticas
+
+================================================================================
+INTERCEPTOR DE AUDIO (Detalle técnico)
+================================================================================
+
+PROBLEMA:
+────────────────────────────────────────────────────────────────────────────
+Los juegos JClic usan Web Audio API y elementos <audio>/<video>, y generan
+su propio AudioContext. El control de volumen debe aplicarse globalmente.
+
+SOLUCIÓN:
+────────────────────────────────────────────────────────────────────────────
+aplicar-config.js instala un interceptor ANTES de que cualquier script cargue:
+
+1. INTERCEPTAR AudioContext.destination:
+   - Sobrescribe el getter de 'destination'
+   - Inserta un GainNode maestro entre app y salida real
+   - Guarda referencia en array global window.__allMasterGains
+
+2. INTERCEPTAR constructor Audio():
+   - Sobrescribe window.Audio
+   - Aplica volumen inmediatamente al crear instancia
+   - Hook en evento 'play' para re-aplicar volumen
+
+3. INTERCEPTAR document.createElement():
+   - Detecta creación de elementos <audio> y <video>
+   - Aplica volumen al momento de creación
+
+4. POLLING AGRESIVO:
+   - Cada 200ms actualiza:
+     * Todos los GainNode maestros
+     * Todos los <audio>/<video> del DOM
+     * Elementos dentro de iframes
+     * Container de JClic
+
+5. MUTATIONOBSERVER:
+   - Observa nuevos nodos agregados al DOM
+   - Aplica volumen automáticamente a nuevos elementos multimedia
+
+VENTAJAS:
+────────────────────────────────────────────────────────────────────────────
+✓ Control total sobre audio de terceros (JClic)
+✓ Actualización en tiempo real (slider de configuración)
+✓ No requiere modificar código de JClic
+✓ Funciona con Web Audio API y HTML5 Audio
+
+================================================================================
+SISTEMA DE LOGROS (Mecánica sugerida)
+================================================================================
+
+LOGROS IMPLEMENTABLES:
+────────────────────────────────────────────────────────────────────────────
+🏆 "Primera vez"           - Completa tu primer juego
+🏆 "Diez juegos"           - Completa 10 juegos diferentes
+🏆 "Veinticinco juegos"    - Completa 25 juegos diferentes
+🏆 "Todos los juegos"      - Completa todos los juegos disponibles
+🏆 "Perfeccionista"        - Completa un juego sin errores
+🏆 "Racha de 5"            - Completa 5 juegos seguidos
+🏆 "Explorador"            - Prueba juegos de todas las categorías
+🏆 "Velocista"             - Completa un juego en menos de 3 minutos
+🏆 "Persistente"           - Juega 7 días seguidos
+🏆 "Maestro"               - Alcanza puntuación perfecta en 10 juegos
+🏆 "Políglota"             - Cambia el idioma de la app
+🏆 "Personalizado"         - Modifica la configuración
+
+ALMACENAMIENTO:
+────────────────────────────────────────────────────────────────────────────
+localStorage['perfil_[id]_logros'] = [
+  {
+    id: 'primera_vez',
+    nombre: 'Primera vez',
+    icono: '🏆',
+    fecha: '2026-06-03T10:00:00.000Z',
+    desbloqueado: true
+  },
+  // ...
+]
+
+VERIFICACIÓN:
+────────────────────────────────────────────────────────────────────────────
+Al terminar cada juego, Estadistica.js verifica condiciones y desbloquea
+logros, mostrando notificación animada.
+
+================================================================================
+FIN DEL DOCUMENTO
+================================================================================
+
+Fecha de generación: 3 de junio de 2026
+Versión del proyecto: 0.1.0
+Proyecto: CEARTEE - Centro Experimental de Adecuación y Recursos 
+          Telemáticos de Educación Especial
+
+Este documento describe la estructura completa del proyecto Ceartee,
+incluyendo arquitectura, flujo de datos, componentes, y funcionalidades.
+
+Para más información, consulta el código fuente en:
+c:\Users\Young\Downloads\ceartee-main\ceartee-main\
+
+================================================================================

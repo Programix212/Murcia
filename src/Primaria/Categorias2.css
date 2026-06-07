@@ -1,0 +1,499 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   OCULTAR SCROLLBAR
+   ========================================= */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* =========================================
+   OVERLAY DE TRANSICIÓN
+   ========================================= */
+.ceartee-fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: #4f46e5;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* =========================================
+   FONDO ANIMADO (BURBUJAS MUY SUTILES)
+   ========================================= */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-animation span {
+  position: absolute;
+  display: block;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.bg-animation span:nth-child(1) { width: 80px;  height: 80px;  top: 10%; left: 8%;  }
+.bg-animation span:nth-child(2) { width: 40px;  height: 40px;  top: 20%; left: 85%; }
+.bg-animation span:nth-child(3) { width: 120px; height: 120px; top: 70%; left: 75%; }
+.bg-animation span:nth-child(4) { width: 30px;  height: 30px;  top: 45%; left: 15%; }
+.bg-animation span:nth-child(5) { width: 60px;  height: 60px;  top: 80%; left: 10%; }
+.bg-animation span:nth-child(6) { width: 50px;  height: 50px;  top: 15%; left: 50%; }
+.bg-animation span:nth-child(7) { width: 90px;  height: 90px;  top: 75%; left: 90%; }
+.bg-animation span:nth-child(8) { width: 25px;  height: 25px;  top: 55%; left: 55%; }
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+.main-container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 140px; /* espacio para el footer flotante */
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 86px 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  height: 64px;
+}
+
+/* --- Botón Volver --- */
+.btn-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.btn-back .btn-text,
+.btn-back .btn-icon {
+  display: none;
+}
+
+.btn-back::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 120%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  background-image: url("../img_logos/volver-flecha.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* --- Título centrado --- */
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-title h1 {
+  font-size: 50px;
+  font-weight: 900;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+/* --- Botón Settings --- */
+.btn-settings {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.btn-settings span {
+  display: none;
+}
+
+.btn-settings::before {
+  content: '';
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%233b82f6' d='M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.488.488 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96a.488.488 0 0 0-.59.22l-1.92 3.32c-.12.21-.07.47.12.61l2.03 1.58c-.05.3-.07.63-.07.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.04.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39 1.01c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.03-1.58z'/%3E%3Ccircle cx='12' cy='12' r='3.5' fill='%23f59e0b'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* =========================================
+   SUBTÍTULO
+   ========================================= */
+.page-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  transform: translateY(50px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 24px 20px 28px;
+}
+
+/* =========================================
+   GRID DE CATEGORÍAS
+   ========================================= */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
+  margin-top: 70px;
+  width: 100%;
+}
+
+/* =========================================
+   TARJETA DE CATEGORÍA
+   ========================================= */
+.category-card {
+  position: relative;
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  border-radius: 24px;
+  padding: 28px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Brillo interior sutil */
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.card-icon {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+.card-icon img {
+  max-width: 70px;
+  max-height: 55px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.card-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.game-count {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.difficulty {
+  display: flex;
+  gap: 2px;
+  font-size: 0.85rem;
+}
+
+.star {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.star.active {
+  color: #fbbf24;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.card-btn {
+  margin-top: auto;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  border-radius: 50px;
+  padding: 10px 28px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.card-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================================
+   FOOTER DE ESTADÍSTICAS
+   ========================================= */
+.footer-stats {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+  min-width: 90px;
+}
+
+.stat-icon {
+  font-size: 1.3rem;
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: #f3f4f6;
+}
+
+/* =========================================
+   DECORACIÓN (oculta en esta vista)
+   ========================================= */
+.decoration {
+  display: none;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 640px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+
+  .header-title h1 {
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
+
+  .footer-stats {
+    padding: 14px 20px;
+    border-radius: 16px;
+    bottom: 16px;
+  }
+
+  .stat-item {
+    padding: 0 16px;
+    min-width: 70px;
+  }
+}
+
+/* =========================================
+   ✅ ESTRELLAS DE CATEGORÍAS
+   ========================================== */
+.categoria-estrellas {
+  margin: 8px 0 12px 0;
+  text-align: center;
+  min-height: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0;
+  gap: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+.estrellas-container {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  height: 24px;
+}
+
+/* ⭐ Estrella ACTIVA (dorada) */
+.estrella-activa {
+  color: #FFC107 !important;
+  font-size: 22px;
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(255, 193, 7, 0.5);
+  display: inline-block;
+  font-weight: 900;
+  animation: estrellaBrillo 2.5s ease-in-out infinite;
+}
+
+/* ☆ Estrella VACÍA (gris oscuro) */
+.estrella-vacia {
+  color: #757575 !important;
+  font-size: 22px;
+  line-height: 1;
+  opacity: 0.6;
+  display: inline-block;
+  font-weight: 400;
+}
+
+/* Animación de brillo */
+@keyframes estrellaBrillo {
+  0%, 100% { 
+    transform: scale(1);
+    text-shadow: 0 1px 2px rgba(255, 193, 7, 0.5);
+  }
+  50% { 
+    transform: scale(1.1);
+    text-shadow: 0 0 8px rgba(255, 193, 7, 0.9);
+  }
+}
+
+/* Contador de juegos */
+.estrellas-contador {
+  display: block;
+  margin-top: 6px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================
+   ✅ IMÁGENES DE LOGOS
+   ========================================== */
+.img_logos {
+  max-width: 90px !important;
+  max-height: 75px !important;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.card-icon {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .estrella-activa, .estrella-vacia {
+    font-size: 18px;
+  }
+  
+  .img_logos {
+    max-width: 70px !important;
+    max-height: 60px !important;
+  }
+}

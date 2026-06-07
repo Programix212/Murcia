@@ -1,0 +1,3211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JClicProject name="Actividad_de_numeracion" version="0.1.3">
+ <settings>
+  <title>Actividad de numeración</title>
+  <revision description="created" date="2/10/25" />
+  <description>
+   <p>Preescolar</p>
+  </description>
+  <descriptors level="Preescolar" level-codes="INF" />
+  <skin file="@orange.xml" />
+  <meta_langs>es</meta_langs>
+  <descriptions>
+   <description language="es">
+    <p>Preescolar</p>
+   </description>
+  </descriptions>
+  <license type="by-nc-sa" url="https://creativecommons.org/licenses/by-nc-sa/4.0" />
+ </settings>
+ <sequence>
+  <item id="numeros.pac" name="portada.ass">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="numeros.ass">
+   <jump action="STOP" id="forward" />
+  </item>
+  <item id="p3num0.pac" name="inip3.ass">
+   <jump action="STOP" id="forward" />
+   <jump action="STOP" id="back" />
+  </item>
+  <item id="p3num.pac" name="p3/boles1.ass" delay="6">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="p3/dits.ass" delay="6" />
+  <item name="p3/fruita.ass" delay="6" />
+  <item name="p3/xifres.ass" delay="6" />
+  <item name="p3/dits2.ass" delay="6" />
+  <item name="p3/gent.ass" delay="6" />
+  <item name="p3/ordre123.puz" delay="6" />
+  <item name="p3/gent1.ass" delay="6" />
+  <item name="p3/diferent.ass" delay="6">
+   <jump tag="adeu.pac" id="forward" />
+  </item>
+  <item id="adeu.pac" name="adeu.ass" delay="30">
+   <jump tag="numeros.pac" id="forward" />
+   <jump action="STOP" id="back" />
+  </item>
+  <item id="p4num0.pac" name="inip4.ass">
+   <jump action="STOP" id="forward" />
+   <jump action="STOP" id="back" />
+  </item>
+  <item id="p4num.pac" name="p4/video1a5.ass" delay="3">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="p4/boles1.ass" delay="3" />
+  <item name="p4/nihan2.ass" delay="3" />
+  <item name="p4/num1.ass" delay="3" />
+  <item name="p4/boles2.ass" delay="3" />
+  <item name="p4/dits.ass" delay="3" />
+  <item name="p4/num2.ass" delay="3" />
+  <item name="p4/boles3.ass" delay="3" />
+  <item name="p4/quantes1.ass" delay="3" />
+  <item name="p4/nihan3.ass" delay="3" />
+  <item name="p4/num3.ass" delay="3" />
+  <item name="p4/ente2.ass" delay="3" />
+  <item name="p4/dits2.ass" delay="3" />
+  <item name="p4/quantes2.ass" delay="3" />
+  <item name="p4/nihan4.ass" delay="3" />
+  <item name="p4/num4.ass" delay="3" />
+  <item name="p4/dits3.ass" delay="3" />
+  <item name="p4/nihan5.ass" delay="3" />
+  <item name="p4/num5.ass" delay="3" />
+  <item name="p4/ente1.ass" delay="3" />
+  <item name="p4/quantes3.ass" delay="3" />
+  <item name="p4/num0.ass" delay="3">
+   <jump tag="adeu.pac" id="forward" />
+  </item>
+  <item id="p5num0.pac" name="inip5.ass">
+   <jump action="STOP" id="forward" />
+   <jump action="STOP" id="back" />
+  </item>
+  <item id="p5num.pac" name="p5/video1a5.ass" delay="3">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="p5/dits.ass" delay="3" />
+  <item name="p5/serie.ass" delay="3" />
+  <item name="p5/suma1.ass" delay="3" />
+  <item name="p5/resta.ass" delay="3" />
+  <item name="p5/dits2.ass" delay="3" />
+  <item name="p5/serie1.ass" delay="3" />
+  <item name="p5/suma2.ass" delay="3" />
+  <item name="p5/resta6.ass" delay="3" />
+  <item name="p5/dits3.ass" delay="3" />
+  <item name="p5/serie2.ass" delay="3" />
+  <item name="p5/suma3.ass" delay="3" />
+  <item name="p5/suma5.ass" delay="3" />
+  <item name="p5/ordena.puz" delay="3" />
+  <item name="p5/suma4.ass" delay="3" />
+  <item name="p5/assum.ass" delay="3">
+   <jump tag="adeu.pac" id="forward" />
+  </item>
+ </sequence>
+ <activities>
+  <activity class="@panels.InformationScreen" name="adeu.ass">
+   <messages>
+    <cell image="ajadeu.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="false" actions="false" score="false" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="1" cellWidth="243.0" cellHeight="215.0" border="true">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="1" />
+    <cell image="adeu0.gif">
+     <media type="PLAY_VIDEO" level="1" file="adeu.avi" stretch="false" free="false" />
+    </cell>
+   </cells>
+  </activity>
+  <activity class="@panels.InformationScreen" name="inip3.ass">
+   <messages>
+    <cell type="initial">
+     <style>
+      <font family="Arial" size="30" />
+     </style>
+     <p>Pulsa sobre el dibujo</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Arial" size="30" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="false" actions="false" score="false" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="1" cellWidth="400.0" cellHeight="300.0" border="true">
+    <style>
+     <font family="Arial" size="30" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="1" />
+    <cell image="p3/inici.gif">
+     <media type="RUN_CLIC_PACKAGE" level="1" file="p3num.pac" />
+    </cell>
+   </cells>
+  </activity>
+  <activity class="@panels.InformationScreen" name="inip4.ass">
+   <messages>
+    <cell type="initial">
+     <style>
+      <font family="Arial" size="30" />
+     </style>
+     <p>Pulsa sobre el dibujo.</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Arial" size="30" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="false" actions="false" score="false" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="1" cellWidth="400.0" cellHeight="300.0" border="true">
+    <style>
+     <font family="Arial" size="30" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="1" />
+    <cell image="p4/inici.gif">
+     <media type="RUN_CLIC_PACKAGE" level="1" file="p4num.pac" />
+    </cell>
+   </cells>
+  </activity>
+  <activity class="@panels.InformationScreen" name="inip5.ass">
+   <messages>
+    <cell type="initial">
+     <style>
+      <font family="Arial" size="30" />
+     </style>
+     <p>Pulsa sobre el dibujo.</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Arial" size="30" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="false" actions="false" score="false" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="1" cellWidth="500.0" cellHeight="300.0" border="true">
+    <style>
+     <font family="Arial" size="30" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="1" />
+    <cell image="p5/inici.gif">
+     <media type="RUN_CLIC_PACKAGE" level="1" file="p5num.pac" />
+    </cell>
+   </cells>
+  </activity>
+  <activity class="@panels.InformationScreen" name="numeros.ass">
+   <messages>
+    <cell type="initial">
+     <style>
+      <font family="Arial" size="30" bold="true" />
+     </style>
+     <p>¿ Qué quieres hacer ?</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Arial" size="30" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="false" actions="false" score="false" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="185.0" cellHeight="200.0" border="true">
+    <style>
+     <font family="Arial" size="30" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3.gif">
+     <media type="RUN_CLIC_PACKAGE" level="1" file="p3num0.pac" />
+    </cell>
+    <cell image="p4.gif">
+     <media type="RUN_CLIC_PACKAGE" level="1" file="p4num0.pac" />
+    </cell>
+    <cell image="p5.gif">
+     <media type="RUN_CLIC_PACKAGE" level="1" file="p5num0.pac" />
+    </cell>
+   </cells>
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p3/boles1.ass">
+   <messages>
+    <cell image="p3/ajboles1.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1bolavm.gif" />
+    <cell image="p3/2bolavm.gif" />
+    <cell image="p3/3bolavm.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1bolavd.gif" />
+    <cell image="p3/2bolavd.gif" />
+    <cell image="p3/3bolavd.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1comic.gif" />
+    <cell image="p3/2comic.gif" />
+    <cell image="p3/3comic.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p3/diferent.ass">
+   <messages>
+    <cell image="p3/ajboles1.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p3/1dif1.gif" />
+    <cell image="p3/2dif1.gif" />
+    <cell image="p3/3dif1.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p3/1dif2.gif" />
+    <cell image="p3/2dif2.gif" />
+    <cell image="p3/3dif2.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p3/1comic.gif" />
+    <cell image="p3/2comic.gif" />
+    <cell image="p3/3comic.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p3/dits.ass">
+   <messages>
+    <cell image="p3/ajdits.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1comic.gif" />
+    <cell image="p3/2comic.gif" />
+    <cell image="p3/3comic.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/ma1.gif" />
+    <cell image="p3/ma2.gif" />
+    <cell image="p3/ma3.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1ma1.gif" />
+    <cell image="p3/2ma2.gif" />
+    <cell image="p3/3ma3.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p3/dits2.ass">
+   <messages>
+    <cell image="p3/ajdits2.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/ma1.gif" />
+    <cell image="p3/ma2.gif" />
+    <cell image="p3/ma3.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/ma1.gif" />
+    <cell image="p3/ma2.gif" />
+    <cell image="p3/ma3.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1ma1.gif" />
+    <cell image="p3/2ma2.gif" />
+    <cell image="p3/3ma3.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p3/fruita.ass">
+   <messages>
+    <cell image="p3/ajboles1.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/llimona.gif" />
+    <cell image="p3/cireres.gif" />
+    <cell image="p3/platans.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/pinya.gif" />
+    <cell image="p3/maduix.gif" />
+    <cell image="p3/taronges.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1comic.gif" />
+    <cell image="p3/2comic.gif" />
+    <cell image="p3/3comic.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p3/gent.ass">
+   <messages>
+    <cell image="p3/ajnumbol.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1comic.gif" />
+    <cell image="p3/2comic.gif" />
+    <cell image="p3/3comic.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="200.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1gent.gif" />
+    <cell image="p3/2gent.gif" />
+    <cell image="p3/3gent.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p3/gent1.ass">
+   <messages>
+    <cell image="p3/ajboles1.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="200.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1gent1.gif" />
+    <cell image="p3/2gent1.gif" />
+    <cell image="p3/3gent1.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="200.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1gent.gif" />
+    <cell image="p3/2gent.gif" />
+    <cell image="p3/3gent.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="200.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1maian.gif" />
+    <cell image="p3/2maian.gif" />
+    <cell image="p3/3maian.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@puzzles.ExchangePuzzle" name="p3/ordre123.puz">
+   <messages>
+    <cell image="p3/ajuda123.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" dragCells="true" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="100.0" cellHeight="100.0" border="true">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1comic.gif" />
+    <cell image="p3/2comic.gif" />
+    <cell image="p3/3comic.gif" />
+   </cells>
+   <scramble times="31" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p3/xifres.ass">
+   <messages>
+    <cell image="p3/ajxifres.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p3/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1forte.gif" />
+    <cell image="p3/2forte.gif" />
+    <cell image="p3/3forte.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1flex.gif" />
+    <cell image="p3/2flex.gif" />
+    <cell image="p3/3flex.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p3/1bola.gif" />
+    <cell image="p3/2bola.gif" />
+    <cell image="p3/3bola.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/boles1.ass">
+   <messages>
+    <cell image="p4/ajboles1.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="5" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1bolavm.gif" />
+    <cell image="p4/2bolavm.gif" />
+    <cell image="p4/3bolavm.gif" />
+    <cell image="p4/4bolavm.gif" />
+    <cell image="p4/5bolavm.gif" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1bolavd.gif" />
+    <cell image="p4/2bolavd.gif" />
+    <cell image="p4/3bolavd.gif" />
+    <cell image="p4/4bolavd.gif" />
+    <cell image="p4/5bolavd.gif" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1comic.gif" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/boles2.ass">
+   <messages>
+    <cell image="p4/ajboles1.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="5" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1bolavd.gif" />
+    <cell image="p4/2bolavd.gif" />
+    <cell image="p4/3bolavd.gif" />
+    <cell image="p4/4bolavd.gif" />
+    <cell image="p4/5bolavd.gif" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1bola.gif" />
+    <cell image="p4/2bola.gif" />
+    <cell image="p4/3bola.gif" />
+    <cell image="p4/4bola.gif" />
+    <cell image="p4/5bola.gif" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1comic.gif" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/boles3.ass">
+   <messages>
+    <cell image="p4/ajnumbol.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="5" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1comic.gif" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1bola.gif" />
+    <cell image="p4/2bola.gif" />
+    <cell image="p4/3bola.gif" />
+    <cell image="p4/4bola.gif" />
+    <cell image="p4/5bola.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/dits.ass">
+   <messages>
+    <cell image="p4/ajdits.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="2" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell image="p4/0comic.gif" />
+    <cell image="p4/1comic.gif" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <cells rows="3" cols="2" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell image="p4/ma0.gif" />
+    <cell image="p4/ma1.gif" />
+    <cell image="p4/ma2.gif" />
+    <cell image="p4/ma3.gif" />
+    <cell image="p4/ma4.gif" />
+    <cell image="p4/ma5.gif" />
+   </cells>
+   <cells rows="3" cols="2" cellWidth="100.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell image="p4/0ma0.gif" />
+    <cell image="p4/1ma1.gif" />
+    <cell image="p4/2ma2.gif" />
+    <cell image="p4/3ma3.gif" />
+    <cell image="p4/4ma4.gif" />
+    <cell image="p4/5ma5.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/dits2.ass">
+   <messages>
+    <cell image="p4/ajdits2.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/ma0.gif" />
+    <cell image="p4/ma1.gif" />
+    <cell image="p4/ma2.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/ma0.gif" />
+    <cell image="p4/ma1.gif" />
+    <cell image="p4/ma2.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/0ma0.gif" />
+    <cell image="p4/1ma1.gif" />
+    <cell image="p4/2ma2.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/dits3.ass">
+   <messages>
+    <cell image="p4/ajdits2.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/ma3.gif" />
+    <cell image="p4/ma4.gif" />
+    <cell image="p4/ma5.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/ma3.gif" />
+    <cell image="p4/ma4.gif" />
+    <cell image="p4/ma5.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/3ma3.gif" />
+    <cell image="p4/4ma4.gif" />
+    <cell image="p4/5ma5.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/ente1.ass">
+   <messages>
+    <cell image="p4/ajente.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="3" cellWidth="124.0" cellHeight="124.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p4/te3.gif" />
+    <cell image="p4/te4.gif" />
+    <cell image="p4/te5.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="100.0" cellHeight="101.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <cells rows="1" cols="3" cellWidth="124.0" cellHeight="124.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="3" rows="1" />
+    <cell image="p4/3sobres.gif" />
+    <cell image="p4/4pots.gif" />
+    <cell image="p4/5llapis.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/ente2.ass">
+   <messages>
+    <cell image="p4/ajente.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="4" cellWidth="124.0" cellHeight="124.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="1" />
+    <cell image="p4/quants2.gif" />
+    <cell image="p4/quants3.gif" />
+    <cell image="p4/quants4.gif" />
+    <cell image="p4/quants5.gif" />
+   </cells>
+   <cells rows="1" cols="4" cellWidth="100.0" cellHeight="101.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="1" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <cells rows="1" cols="4" cellWidth="124.0" cellHeight="124.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="4" rows="1" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/nihan2.ass">
+   <messages>
+    <cell image="p4/ajniha2.gif" type="initial">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="2" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial Black" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell id="0" image="p4/llimona.gif" />
+    <cell id="1" image="p4/cireres.gif" />
+    <cell id="0" image="p4/platans.gif" />
+    <cell id="0" image="p4/pinya.gif" />
+    <cell id="1" image="p4/maduix.gif" />
+    <cell id="0" image="p4/taronges.gif" />
+   </cells>
+   <cells rows="3" cols="2" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/nihan3.ass">
+   <messages>
+    <cell image="p4/ajniha3.gif" type="initial">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="2" cols="3" cellWidth="160.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial Black" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="2" />
+    <cell id="0" image="p4/1gent1.gif" />
+    <cell id="0" image="p4/2gent1.gif" />
+    <cell id="1" image="p4/3gent1.gif" />
+    <cell id="0" image="p4/1gent.gif" />
+    <cell id="0" image="p4/2gent.gif" />
+    <cell id="1" image="p4/3gent.gif" />
+   </cells>
+   <cells rows="2" cols="3" cellWidth="160.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="3" rows="2" />
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/nihan4.ass">
+   <messages>
+    <cell image="p4/ajniha4.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="2" cols="4" cellWidth="160.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="2" />
+    <cell id="0" image="p4/2bolavm.gif" />
+    <cell id="1" image="p4/4bolavd.gif" />
+    <cell id="0" image="p4/3bolavm.gif" />
+    <cell id="0" image="p4/5bola.gif" />
+    <cell id="1" image="p4/4bola.gif" />
+    <cell id="0" image="p4/3bolavd.gif" />
+    <cell id="0" image="p4/2bola.gif" />
+    <cell id="1" image="p4/4bolavm.gif" />
+   </cells>
+   <cells rows="2" cols="4" cellWidth="160.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="4" rows="2" />
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>4</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>5</p>
+    </cell>
+    <cell>
+     <p>4</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>4</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/nihan5.ass">
+   <messages>
+    <cell image="p4/ajniha5.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="2" cols="2" cellWidth="256.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="2" />
+    <cell id="0" image="p4/3gent.gif" />
+    <cell id="0" image="p4/4gent2.gif" />
+    <cell id="0" image="p4/4gent.gif" />
+    <cell id="1" image="p4/5gent.gif" />
+   </cells>
+   <cells rows="2" cols="2" cellWidth="256.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="2" rows="2" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/num0.ass">
+   <messages>
+    <cell image="p4/ajnum0.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="4" cols="4" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="4" />
+    <cell id="1">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="1">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="1">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/num1.ass">
+   <messages>
+    <cell image="p4/ajnum1.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="4" cols="4" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="4" />
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="1">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="1">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="1">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/num2.ass">
+   <messages>
+    <cell image="p4/ajnum2.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="4" cols="4" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="4" />
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="1">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="1">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="1">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/num3.ass">
+   <messages>
+    <cell image="p4/ajnum3.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="4" cols="4" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="4" />
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="1">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="1">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="1">
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/num4.ass">
+   <messages>
+    <cell image="p4/ajnum4.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="4" cols="4" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="4" />
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="1">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="1">
+     <p>4</p>
+    </cell>
+    <cell id="0">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@panels.Identify" name="p4/num5.ass">
+   <messages>
+    <cell image="p4/ajnum5.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="4" cols="4" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="4" />
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="1">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+    <cell id="0">
+     <p>4</p>
+    </cell>
+    <cell id="1">
+     <p>5</p>
+    </cell>
+    <cell id="0">
+     <p>0</p>
+    </cell>
+    <cell id="0">
+     <p>1</p>
+    </cell>
+    <cell id="0">
+     <p>2</p>
+    </cell>
+    <cell id="0">
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p4/quantes1.ass">
+   <messages>
+    <cell image="p4/ajnumbol.gif" type="initial">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="2" cellWidth="120.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial Black" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell id="0" image="p4/llimona.gif" />
+    <cell id="1" image="p4/cireres.gif" />
+    <cell id="2" image="p4/platans.gif" />
+    <cell id="0" image="p4/pinya.gif" />
+    <cell id="1" image="p4/maduix.gif" />
+    <cell id="2" image="p4/taronges.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial Black" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/1comic.gif" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+   </cells>
+   <cells rows="3" cols="2" cellWidth="120.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p4/quantes2.ass">
+   <messages>
+    <cell image="p4/ajnumbol.gif" type="initial">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="2" cellWidth="204.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial Black" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell id="0" image="p4/1gent1.gif" />
+    <cell id="1" image="p4/2gent1.gif" />
+    <cell id="2" image="p4/3gent1.gif" />
+    <cell id="0" image="p4/1gent.gif" />
+    <cell id="1" image="p4/2gent.gif" />
+    <cell id="2" image="p4/3gent.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial Black" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/1comic.gif" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+   </cells>
+   <cells rows="3" cols="2" cellWidth="204.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p4/quantes3.ass">
+   <messages>
+    <cell image="p4/ajnumbol.gif" type="initial">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial Black" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="302.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial Black" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell id="0" image="p4/3gent.gif" />
+    <cell id="1" image="p4/4gent.gif" />
+    <cell id="2" image="p4/5gent.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="120.0" cellHeight="120.0" border="true" id="secondary">
+    <style>
+     <font family="Arial Black" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="302.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>4</p>
+    </cell>
+    <cell>
+     <p>5</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p4/video1a5.ass">
+   <messages>
+    <cell image="p4/ajvideo.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p4/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="5" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/preg.gif">
+     <media type="PLAY_VIDEO" level="1" file="ma1.avi" stretch="false" free="false" />
+    </cell>
+    <cell image="p4/preg.gif">
+     <media type="PLAY_VIDEO" level="1" file="ma2.avi" stretch="false" free="false" />
+    </cell>
+    <cell image="p4/preg.gif">
+     <media type="PLAY_VIDEO" level="1" file="ma3.avi" stretch="false" free="false" />
+    </cell>
+    <cell image="p4/preg.gif">
+     <media type="PLAY_VIDEO" level="1" file="ma4.avi" stretch="false" free="false" />
+    </cell>
+    <cell image="p4/preg.gif">
+     <media type="PLAY_VIDEO" level="1" file="ma.avi" stretch="false" free="false" />
+    </cell>
+   </cells>
+   <cells rows="1" cols="5" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p4/1comic.gif" />
+    <cell image="p4/2comic.gif" />
+    <cell image="p4/3comic.gif" />
+    <cell image="p4/4comic.gif" />
+    <cell image="p4/5comic.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/assum.ass">
+   <messages>
+    <cell image="p5/ajassum.gif" type="initial">
+     <style>
+      <font family="Arial" size="33" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="33" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="5" cols="1" cellWidth="200.0" cellHeight="70.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="33" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <p>2 + 2</p>
+    </cell>
+    <cell>
+     <p>3 + 2</p>
+    </cell>
+    <cell>
+     <p>2 + 4</p>
+    </cell>
+    <cell>
+     <p>2 + 1</p>
+    </cell>
+    <cell>
+     <p>1 + 1</p>
+    </cell>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="200.0" cellHeight="70.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="33" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <p>3 + 1</p>
+    </cell>
+    <cell>
+     <p>1 + 4</p>
+    </cell>
+    <cell>
+     <p>5 + 1</p>
+    </cell>
+    <cell>
+     <p>1 + 2</p>
+    </cell>
+    <cell>
+     <p>2 + 0</p>
+    </cell>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="200.0" cellHeight="70.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <p>4</p>
+    </cell>
+    <cell>
+     <p>5</p>
+    </cell>
+    <cell>
+     <p>6</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/dits.ass">
+   <messages>
+    <cell image="p5/ajdits.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="2" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell image="p5/0comic.gif" />
+    <cell image="p5/1comic.gif" />
+    <cell image="p5/2comic.gif" />
+    <cell image="p5/3comic.gif" />
+    <cell image="p5/4comic.gif" />
+    <cell image="p5/5comic.gif" />
+   </cells>
+   <cells rows="3" cols="2" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell image="p5/ma0.gif" />
+    <cell image="p5/ma1.gif" />
+    <cell image="p5/ma2.gif" />
+    <cell image="p5/ma3.gif" />
+    <cell image="p5/ma4.gif" />
+    <cell image="p5/ma5.gif" />
+   </cells>
+   <cells rows="3" cols="2" cellWidth="100.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="2" rows="3" />
+    <cell image="p5/0ma0.gif" />
+    <cell image="p5/1ma1.gif" />
+    <cell image="p5/2ma2.gif" />
+    <cell image="p5/3ma3.gif" />
+    <cell image="p5/4ma4.gif" />
+    <cell image="p5/5ma5.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/dits2.ass">
+   <messages>
+    <cell image="p5/ajdits.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="230.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/ma6.gif" />
+    <cell image="p5/ma7.gif" />
+    <cell image="p5/ma8.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="110.0" cellHeight="110.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/6comic.gif" />
+    <cell image="p5/7comic.gif" />
+    <cell image="p5/8comic.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="230.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/6ma6.gif" />
+    <cell image="p5/7ma7.gif" />
+    <cell image="p5/8ma8.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/dits3.ass">
+   <messages>
+    <cell image="p5/ajdits.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="230.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/ma8.gif" />
+    <cell image="p5/ma9.gif" />
+    <cell image="p5/ma10.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="130.0" cellHeight="110.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/8comic.gif" />
+    <cell image="p5/9comic.gif" />
+    <cell image="p5/10comic.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="230.0" cellHeight="120.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/8ma8.gif" />
+    <cell image="p5/9ma9.gif" />
+    <cell image="p5/10ma10.gif" />
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@puzzles.ExchangePuzzle" name="p5/ordena.puz">
+   <messages>
+    <cell image="p5/ajordena.gif" type="initial">
+     <style>
+      <font family="Arial" size="45" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="45" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" dragCells="true" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="10" cellWidth="100.0" cellHeight="70.0" border="true">
+    <style>
+     <font family="Arial" size="45" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="10" rows="1" />
+    <cell>
+     <p>0</p>
+    </cell>
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>4</p>
+    </cell>
+    <cell>
+     <p>5</p>
+    </cell>
+    <cell>
+     <p>6</p>
+    </cell>
+    <cell>
+     <p>7</p>
+    </cell>
+    <cell>
+     <p>8</p>
+    </cell>
+    <cell>
+     <p>9</p>
+    </cell>
+   </cells>
+   <scramble times="31" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/resta.ass">
+   <messages>
+    <cell image="p5/ajresta.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="2" cols="2" cellWidth="155.0" cellHeight="143.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="2" />
+    <cell image="p5/resta5.gif" />
+    <cell image="p5/1resta5.gif" />
+    <cell image="p5/2resta5.gif" />
+    <cell image="p5/3resta5.gif" />
+   </cells>
+   <cells rows="2" cols="2" cellWidth="80.0" cellHeight="80.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="2" />
+    <cell image="p5/1bola.gif" />
+    <cell image="p5/2bola.gif" />
+    <cell image="p5/3bola.gif" />
+    <cell image="p5/4bola.gif" />
+   </cells>
+   <cells rows="2" cols="2" cellWidth="155.0" cellHeight="143.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="2" rows="2" />
+    <cell image="p5/sresta5.gif" />
+    <cell image="p5/sresta5.gif" />
+    <cell image="p5/sresta5.gif" />
+    <cell image="p5/sresta5.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/resta6.ass">
+   <messages>
+    <cell image="p5/ajresta.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="2" cols="2" cellWidth="155.0" cellHeight="143.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="2" />
+    <cell image="p5/resta6.gif" />
+    <cell image="p5/1resta6.gif" />
+    <cell image="p5/2resta6.gif" />
+    <cell image="p5/3resta6.gif" />
+   </cells>
+   <cells rows="2" cols="2" cellWidth="80.0" cellHeight="80.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="2" rows="2" />
+    <cell image="p5/2estels.gif" />
+    <cell image="p5/3estels.gif" />
+    <cell image="p5/4estels.gif" />
+    <cell image="p5/5estels.gif" />
+   </cells>
+   <cells rows="2" cols="2" cellWidth="155.0" cellHeight="143.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="2" rows="2" />
+    <cell image="p5/sresta6.gif" />
+    <cell image="p5/sresta6.gif" />
+    <cell image="p5/sresta6.gif" />
+    <cell image="p5/sresta6.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p5/serie.ass">
+   <messages>
+    <cell image="p5/ajserie.gif" type="initial">
+     <style>
+      <font family="Arial" size="41" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="41" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="72.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="41" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell id="2">
+     <p>0 - 1 -  - 3</p>
+    </cell>
+    <cell id="6">
+     <p>3 - 4 - 5 - </p>
+    </cell>
+    <cell id="7">
+     <p>6 -  - 8 - 9</p>
+    </cell>
+   </cells>
+   <cells rows="1" cols="10" cellWidth="60.0" cellHeight="60.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="41" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="10" rows="1" />
+    <cell>
+     <p>0</p>
+    </cell>
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>4</p>
+    </cell>
+    <cell>
+     <p>5</p>
+    </cell>
+    <cell>
+     <p>6</p>
+    </cell>
+    <cell>
+     <p>7</p>
+    </cell>
+    <cell>
+     <p>8</p>
+    </cell>
+    <cell>
+     <p>9</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="72.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>0 - 1 - 2 - 3</p>
+    </cell>
+    <cell>
+     <p>3 - 4 - 5 - 6</p>
+    </cell>
+    <cell>
+     <p>6 - 7 - 8 - 9</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p5/serie1.ass">
+   <messages>
+    <cell image="p5/ajserie.gif" type="initial">
+     <style>
+      <font family="Arial" size="41" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="41" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="72.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="41" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell id="5">
+     <p> - 6 - 7 - 8</p>
+    </cell>
+    <cell id="7">
+     <p>4 - 5 - 6 - </p>
+    </cell>
+    <cell id="1">
+     <p>0 -  - 2 - 3</p>
+    </cell>
+   </cells>
+   <cells rows="1" cols="10" cellWidth="60.0" cellHeight="60.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="41" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="10" rows="1" />
+    <cell>
+     <p>0</p>
+    </cell>
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>4</p>
+    </cell>
+    <cell>
+     <p>5</p>
+    </cell>
+    <cell>
+     <p>6</p>
+    </cell>
+    <cell>
+     <p>7</p>
+    </cell>
+    <cell>
+     <p>8</p>
+    </cell>
+    <cell>
+     <p>9</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="72.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>5 - 6 - 7 - 8</p>
+    </cell>
+    <cell>
+     <p>4 - 5 - 6 - 7</p>
+    </cell>
+    <cell>
+     <p>0 - 1 - 2 - 3</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p5/serie2.ass">
+   <messages>
+    <cell image="p5/ajserie.gif" type="initial">
+     <style>
+      <font family="Arial" size="41" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="41" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="72.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="41" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell id="3">
+     <p>0 - 1 - 2 - </p>
+    </cell>
+    <cell id="3">
+     <p> - 4 - 5 - 6</p>
+    </cell>
+    <cell id="8">
+     <p>6 - 7 -  - 9</p>
+    </cell>
+   </cells>
+   <cells rows="1" cols="10" cellWidth="60.0" cellHeight="60.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="41" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="10" rows="1" />
+    <cell>
+     <p>0</p>
+    </cell>
+    <cell>
+     <p>1</p>
+    </cell>
+    <cell>
+     <p>2</p>
+    </cell>
+    <cell>
+     <p>3</p>
+    </cell>
+    <cell>
+     <p>4</p>
+    </cell>
+    <cell>
+     <p>5</p>
+    </cell>
+    <cell>
+     <p>6</p>
+    </cell>
+    <cell>
+     <p>7</p>
+    </cell>
+    <cell>
+     <p>8</p>
+    </cell>
+    <cell>
+     <p>9</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="72.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>0 - 1 - 2 - 3</p>
+    </cell>
+    <cell>
+     <p>3 - 4 - 5 - 6</p>
+    </cell>
+    <cell>
+     <p>6 - 7 - 8 - 9</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/suma1.ass">
+   <messages>
+    <cell image="p5/ajsuma.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/1i1.gif" />
+    <cell image="p5/1i2.gif" />
+    <cell image="p5/1i3.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/2comic.gif" />
+    <cell image="p5/3comic.gif" />
+    <cell image="p5/4comic.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>1+1=2</p>
+    </cell>
+    <cell>
+     <p>1+2=3</p>
+    </cell>
+    <cell>
+     <p>1+3=4</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/suma2.ass">
+   <messages>
+    <cell image="p5/ajsuma.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/2i2.gif" />
+    <cell image="p5/2i3.gif" />
+    <cell image="p5/2i4.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/4comic.gif" />
+    <cell image="p5/5comic.gif" />
+    <cell image="p5/6comic.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>2+2=4</p>
+    </cell>
+    <cell>
+     <p>2+3=5</p>
+    </cell>
+    <cell>
+     <p>2+4=6</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p5/suma3.ass">
+   <messages>
+    <cell image="p5/ajsuma.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell id="0" image="p5/2i5.gif" />
+    <cell id="1" image="p5/3i3.gif" />
+    <cell id="0" image="p5/3i4.gif" />
+   </cells>
+   <cells rows="2" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="2" />
+    <cell image="p5/7comic.gif" />
+    <cell image="p5/6comic.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>2+5=7</p>
+    </cell>
+    <cell>
+     <p>3+3=6</p>
+    </cell>
+    <cell>
+     <p>3+4=7</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/suma4.ass">
+   <messages>
+    <cell image="p5/ajsuma.gif" type="initial">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="53" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/4i4.gif" />
+    <cell image="p5/5i5.gif" />
+    <cell image="p5/5i4.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="110.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="53" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/8comic.gif" />
+    <cell image="p5/10comic.gif" />
+    <cell image="p5/9comic.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="300.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>4+4=8</p>
+    </cell>
+    <cell>
+     <p>5+5=10</p>
+    </cell>
+    <cell>
+     <p>5+4=9</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p5/suma5.ass">
+   <messages>
+    <cell image="p5/ajgent.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="310.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell id="0" image="p5/sumgent1.gif" />
+    <cell id="0" image="p5/sumgent2.gif" />
+    <cell id="1" image="p5/sumgent3.gif" />
+   </cells>
+   <cells rows="2" cols="1" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="2" />
+    <cell image="p5/4comic.gif" />
+    <cell image="p5/5comic.gif" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="310.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="p5/4gent.gif" />
+    <cell image="p5/4gent2.gif" />
+    <cell image="p5/5gent.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p5/video1a5.ass" code="">
+   <description />
+   <messages>
+    <cell image="p5/ajvideo.gif" type="initial">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+    <cell image="p5/final.gif" type="final">
+     <style>
+      <font family="Arial" size="13" bold="true" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0xC0C0C0">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0xC0C0C0" border="true" />
+   </settings>
+   <cells rows="1" cols="5" cellWidth="100.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p5/ma1.gif" />
+    <cell image="p5/ma2.gif" />
+    <cell image="p5/ma3.gif" />
+    <cell image="p5/ma4.gif" />
+    <cell image="p5/ma5.gif" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="100.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Arial" size="13" bold="true" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="p5/1comic.gif" />
+    <cell image="p5/2comic.gif" />
+    <cell image="p5/3comic.gif" />
+    <cell image="p5/4comic.gif" />
+    <cell image="p5/5comic.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@panels.InformationScreen" name="portada.ass">
+   <messages>
+    <cell type="initial">
+     <style>
+      <font family="Comic Sans MS" size="46" bold="true" />
+      <color background="0xFF8000" />
+     </style>
+     <p>¡ Bienvenid@! Pulsa la flecha para comenzar.</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Comic Sans MS" size="46" bold="true" />
+      <color background="0xFF8000" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0xC0C0C0">
+     <image name="p4/te5.gif" tiled="true" />
+     <counters time="false" actions="false" score="false" />
+    </container>
+    <window bgColor="0xFFFFFF" transparent="true" border="true" />
+   </settings>
+   <cells rows="3" cols="4" border="false" image="portada.gif">
+    <style>
+     <color background="0xFF8000" />
+    </style>
+    <shaper class="@Rectangular" cols="4" rows="3" />
+   </cells>
+  </activity>
+ </activities>
+ <mediaBag>
+  <media name="adeu.avi" file="adeu.avi" />
+  <media name="ma.avi" file="ma.avi" />
+  <media name="ma1.avi" file="ma1.avi" />
+  <media name="ma2.avi" file="ma2.avi" />
+  <media name="ma3.avi" file="ma3.avi" />
+  <media name="ma4.avi" file="ma4.avi" />
+  <media name="adeu0.gif" file="adeu0.gif" animated="false" />
+  <media name="ajadeu.gif" file="ajadeu.gif" animated="false" />
+  <media name="p3.gif" file="p3.gif" animated="false" />
+  <media name="p3/1bola.gif" file="p3/1bola.gif" animated="false" />
+  <media name="p3/1bolavd.gif" file="p3/1bolavd.gif" animated="false" />
+  <media name="p3/1bolavm.gif" file="p3/1bolavm.gif" animated="false" />
+  <media name="p3/1comic.gif" file="p3/1comic.gif" animated="false" />
+  <media name="p3/1dif1.gif" file="p3/1dif1.gif" animated="false" />
+  <media name="p3/1dif2.gif" file="p3/1dif2.gif" animated="false" />
+  <media name="p3/1flex.gif" file="p3/1flex.gif" animated="false" />
+  <media name="p3/1forte.gif" file="p3/1forte.gif" animated="false" />
+  <media name="p3/1gent.gif" file="p3/1gent.gif" animated="false" />
+  <media name="p3/1gent1.gif" file="p3/1gent1.gif" animated="false" />
+  <media name="p3/1ma1.gif" file="p3/1ma1.gif" animated="false" />
+  <media name="p3/1maian.gif" file="p3/1maian.gif" animated="false" />
+  <media name="p3/2bola.gif" file="p3/2bola.gif" animated="false" />
+  <media name="p3/2bolavd.gif" file="p3/2bolavd.gif" animated="false" />
+  <media name="p3/2bolavm.gif" file="p3/2bolavm.gif" animated="false" />
+  <media name="p3/2comic.gif" file="p3/2comic.gif" animated="false" />
+  <media name="p3/2dif1.gif" file="p3/2dif1.gif" animated="false" />
+  <media name="p3/2dif2.gif" file="p3/2dif2.gif" animated="false" />
+  <media name="p3/2flex.gif" file="p3/2flex.gif" animated="false" />
+  <media name="p3/2forte.gif" file="p3/2forte.gif" animated="false" />
+  <media name="p3/2gent.gif" file="p3/2gent.gif" animated="false" />
+  <media name="p3/2gent1.gif" file="p3/2gent1.gif" animated="false" />
+  <media name="p3/2ma2.gif" file="p3/2ma2.gif" animated="false" />
+  <media name="p3/2maian.gif" file="p3/2maian.gif" animated="false" />
+  <media name="p3/3bola.gif" file="p3/3bola.gif" animated="false" />
+  <media name="p3/3bolavd.gif" file="p3/3bolavd.gif" animated="false" />
+  <media name="p3/3bolavm.gif" file="p3/3bolavm.gif" animated="false" />
+  <media name="p3/3comic.gif" file="p3/3comic.gif" animated="false" />
+  <media name="p3/3dif1.gif" file="p3/3dif1.gif" animated="false" />
+  <media name="p3/3dif2.gif" file="p3/3dif2.gif" animated="false" />
+  <media name="p3/3flex.gif" file="p3/3flex.gif" animated="false" />
+  <media name="p3/3forte.gif" file="p3/3forte.gif" animated="false" />
+  <media name="p3/3gent.gif" file="p3/3gent.gif" animated="false" />
+  <media name="p3/3gent1.gif" file="p3/3gent1.gif" animated="false" />
+  <media name="p3/3ma3.gif" file="p3/3ma3.gif" animated="false" />
+  <media name="p3/3maian.gif" file="p3/3maian.gif" animated="false" />
+  <media name="p3/ajboles1.gif" file="p3/ajboles1.gif" animated="false" />
+  <media name="p3/ajdits.gif" file="p3/ajdits.gif" animated="false" />
+  <media name="p3/ajdits2.gif" file="p3/ajdits2.gif" animated="false" />
+  <media name="p3/ajnumbol.gif" file="p3/ajnumbol.gif" animated="false" />
+  <media name="p3/ajuda123.gif" file="p3/ajuda123.gif" animated="false" />
+  <media name="p3/ajxifres.gif" file="p3/ajxifres.gif" animated="false" />
+  <media name="p3/cireres.gif" file="p3/cireres.gif" animated="false" />
+  <media name="p3/final.gif" file="p3/final.gif" animated="false" />
+  <media name="p3/inici.gif" file="p3/inici.gif" animated="false" />
+  <media name="p3/llimona.gif" file="p3/llimona.gif" animated="false" />
+  <media name="p3/ma1.gif" file="p3/ma1.gif" animated="false" />
+  <media name="p3/ma2.gif" file="p3/ma2.gif" animated="false" />
+  <media name="p3/ma3.gif" file="p3/ma3.gif" animated="false" />
+  <media name="p3/maduix.gif" file="p3/maduix.gif" animated="false" />
+  <media name="p3/pinya.gif" file="p3/pinya.gif" animated="false" />
+  <media name="p3/platans.gif" file="p3/platans.gif" animated="false" />
+  <media name="p3/taronges.gif" file="p3/taronges.gif" animated="false" />
+  <media name="p4.gif" file="p4.gif" animated="false" />
+  <media name="p4/0comic.gif" file="p4/0comic.gif" animated="false" />
+  <media name="p4/0ma0.gif" file="p4/0ma0.gif" animated="false" />
+  <media name="p4/1bola.gif" file="p4/1bola.gif" animated="false" />
+  <media name="p4/1bolavd.gif" file="p4/1bolavd.gif" animated="false" />
+  <media name="p4/1bolavm.gif" file="p4/1bolavm.gif" animated="false" />
+  <media name="p4/1comic.gif" file="p4/1comic.gif" animated="false" />
+  <media name="p4/1gent.gif" file="p4/1gent.gif" animated="false" />
+  <media name="p4/1gent1.gif" file="p4/1gent1.gif" animated="false" />
+  <media name="p4/1ma1.gif" file="p4/1ma1.gif" animated="false" />
+  <media name="p4/2bola.gif" file="p4/2bola.gif" animated="false" />
+  <media name="p4/2bolavd.gif" file="p4/2bolavd.gif" animated="false" />
+  <media name="p4/2bolavm.gif" file="p4/2bolavm.gif" animated="false" />
+  <media name="p4/2comic.gif" file="p4/2comic.gif" animated="false" />
+  <media name="p4/2gent.gif" file="p4/2gent.gif" animated="false" />
+  <media name="p4/2gent1.gif" file="p4/2gent1.gif" animated="false" />
+  <media name="p4/2ma2.gif" file="p4/2ma2.gif" animated="false" />
+  <media name="p4/3bola.gif" file="p4/3bola.gif" animated="false" />
+  <media name="p4/3bolavd.gif" file="p4/3bolavd.gif" animated="false" />
+  <media name="p4/3bolavm.gif" file="p4/3bolavm.gif" animated="false" />
+  <media name="p4/3comic.gif" file="p4/3comic.gif" animated="false" />
+  <media name="p4/3gent.gif" file="p4/3gent.gif" animated="false" />
+  <media name="p4/3gent1.gif" file="p4/3gent1.gif" animated="false" />
+  <media name="p4/3ma3.gif" file="p4/3ma3.gif" animated="false" />
+  <media name="p4/3sobres.gif" file="p4/3sobres.gif" animated="false" />
+  <media name="p4/4bola.gif" file="p4/4bola.gif" animated="false" />
+  <media name="p4/4bolavd.gif" file="p4/4bolavd.gif" animated="false" />
+  <media name="p4/4bolavm.gif" file="p4/4bolavm.gif" animated="false" />
+  <media name="p4/4comic.gif" file="p4/4comic.gif" animated="false" />
+  <media name="p4/4gent.gif" file="p4/4gent.gif" animated="false" />
+  <media name="p4/4gent2.gif" file="p4/4gent2.gif" animated="false" />
+  <media name="p4/4ma4.gif" file="p4/4ma4.gif" animated="false" />
+  <media name="p4/4pots.gif" file="p4/4pots.gif" animated="false" />
+  <media name="p4/5bola.gif" file="p4/5bola.gif" animated="false" />
+  <media name="p4/5bolavd.gif" file="p4/5bolavd.gif" animated="false" />
+  <media name="p4/5bolavm.gif" file="p4/5bolavm.gif" animated="false" />
+  <media name="p4/5comic.gif" file="p4/5comic.gif" animated="false" />
+  <media name="p4/5gent.gif" file="p4/5gent.gif" animated="false" />
+  <media name="p4/5llapis.gif" file="p4/5llapis.gif" animated="false" />
+  <media name="p4/5ma5.gif" file="p4/5ma5.gif" animated="false" />
+  <media name="p4/ajboles1.gif" file="p4/ajboles1.gif" animated="false" />
+  <media name="p4/ajdits.gif" file="p4/ajdits.gif" animated="false" />
+  <media name="p4/ajdits2.gif" file="p4/ajdits2.gif" animated="false" />
+  <media name="p4/ajente.gif" file="p4/ajente.gif" animated="false" />
+  <media name="p4/ajniha2.gif" file="p4/ajniha2.gif" animated="false" />
+  <media name="p4/ajniha3.gif" file="p4/ajniha3.gif" animated="false" />
+  <media name="p4/ajniha4.gif" file="p4/ajniha4.gif" animated="false" />
+  <media name="p4/ajniha5.gif" file="p4/ajniha5.gif" animated="false" />
+  <media name="p4/ajnum0.gif" file="p4/ajnum0.gif" animated="false" />
+  <media name="p4/ajnum1.gif" file="p4/ajnum1.gif" animated="false" />
+  <media name="p4/ajnum2.gif" file="p4/ajnum2.gif" animated="false" />
+  <media name="p4/ajnum3.gif" file="p4/ajnum3.gif" animated="false" />
+  <media name="p4/ajnum4.gif" file="p4/ajnum4.gif" animated="false" />
+  <media name="p4/ajnum5.gif" file="p4/ajnum5.gif" animated="false" />
+  <media name="p4/ajnumbol.gif" file="p4/ajnumbol.gif" animated="false" />
+  <media name="p4/ajvideo.gif" file="p4/ajvideo.gif" animated="false" />
+  <media name="p4/cireres.gif" file="p4/cireres.gif" animated="false" />
+  <media name="p4/final.gif" file="p4/final.gif" animated="false" />
+  <media name="p4/inici.gif" file="p4/inici.gif" animated="false" />
+  <media name="p4/llimona.gif" file="p4/llimona.gif" animated="false" />
+  <media name="p4/ma0.gif" file="p4/ma0.gif" animated="false" />
+  <media name="p4/ma1.gif" file="p4/ma1.gif" animated="false" />
+  <media name="p4/ma2.gif" file="p4/ma2.gif" animated="false" />
+  <media name="p4/ma3.gif" file="p4/ma3.gif" animated="false" />
+  <media name="p4/ma4.gif" file="p4/ma4.gif" animated="false" />
+  <media name="p4/ma5.gif" file="p4/ma5.gif" animated="false" />
+  <media name="p4/maduix.gif" file="p4/maduix.gif" animated="false" />
+  <media name="p4/pinya.gif" file="p4/pinya.gif" animated="false" />
+  <media name="p4/platans.gif" file="p4/platans.gif" animated="false" />
+  <media name="p4/preg.gif" file="p4/preg.gif" animated="false" />
+  <media name="p4/quants2.gif" file="p4/quants2.gif" animated="false" />
+  <media name="p4/quants3.gif" file="p4/quants3.gif" animated="false" />
+  <media name="p4/quants4.gif" file="p4/quants4.gif" animated="false" />
+  <media name="p4/quants5.gif" file="p4/quants5.gif" animated="false" />
+  <media name="p4/taronges.gif" file="p4/taronges.gif" animated="false" />
+  <media name="p4/te3.gif" file="p4/te3.gif" animated="false" />
+  <media name="p4/te4.gif" file="p4/te4.gif" animated="false" />
+  <media name="p4/te5.gif" file="p4/te5.gif" animated="false" />
+  <media name="p5.gif" file="p5.gif" animated="false" />
+  <media name="p5/0comic.gif" file="p5/0comic.gif" animated="false" />
+  <media name="p5/0ma0.gif" file="p5/0ma0.gif" animated="false" />
+  <media name="p5/10comic.gif" file="p5/10comic.gif" animated="false" />
+  <media name="p5/10ma10.gif" file="p5/10ma10.gif" animated="false" />
+  <media name="p5/1bola.gif" file="p5/1bola.gif" animated="false" />
+  <media name="p5/1comic.gif" file="p5/1comic.gif" animated="false" />
+  <media name="p5/1i1.gif" file="p5/1i1.gif" animated="false" />
+  <media name="p5/1i2.gif" file="p5/1i2.gif" animated="false" />
+  <media name="p5/1i3.gif" file="p5/1i3.gif" animated="false" />
+  <media name="p5/1ma1.gif" file="p5/1ma1.gif" animated="false" />
+  <media name="p5/1resta5.gif" file="p5/1resta5.gif" animated="false" />
+  <media name="p5/1resta6.gif" file="p5/1resta6.gif" animated="false" />
+  <media name="p5/2bola.gif" file="p5/2bola.gif" animated="false" />
+  <media name="p5/2comic.gif" file="p5/2comic.gif" animated="false" />
+  <media name="p5/2estels.gif" file="p5/2estels.gif" animated="false" />
+  <media name="p5/2i2.gif" file="p5/2i2.gif" animated="false" />
+  <media name="p5/2i3.gif" file="p5/2i3.gif" animated="false" />
+  <media name="p5/2i4.gif" file="p5/2i4.gif" animated="false" />
+  <media name="p5/2i5.gif" file="p5/2i5.gif" animated="false" />
+  <media name="p5/2ma2.gif" file="p5/2ma2.gif" animated="false" />
+  <media name="p5/2resta5.gif" file="p5/2resta5.gif" animated="false" />
+  <media name="p5/2resta6.gif" file="p5/2resta6.gif" animated="false" />
+  <media name="p5/3bola.gif" file="p5/3bola.gif" animated="false" />
+  <media name="p5/3comic.gif" file="p5/3comic.gif" animated="false" />
+  <media name="p5/3estels.gif" file="p5/3estels.gif" animated="false" />
+  <media name="p5/3i3.gif" file="p5/3i3.gif" animated="false" />
+  <media name="p5/3i4.gif" file="p5/3i4.gif" animated="false" />
+  <media name="p5/3ma3.gif" file="p5/3ma3.gif" animated="false" />
+  <media name="p5/3resta5.gif" file="p5/3resta5.gif" animated="false" />
+  <media name="p5/3resta6.gif" file="p5/3resta6.gif" animated="false" />
+  <media name="p5/4bola.gif" file="p5/4bola.gif" animated="false" />
+  <media name="p5/4comic.gif" file="p5/4comic.gif" animated="false" />
+  <media name="p5/4estels.gif" file="p5/4estels.gif" animated="false" />
+  <media name="p5/4gent.gif" file="p5/4gent.gif" animated="false" />
+  <media name="p5/4gent2.gif" file="p5/4gent2.gif" animated="false" />
+  <media name="p5/4i4.gif" file="p5/4i4.gif" animated="false" />
+  <media name="p5/4ma4.gif" file="p5/4ma4.gif" animated="false" />
+  <media name="p5/5comic.gif" file="p5/5comic.gif" animated="false" />
+  <media name="p5/5estels.gif" file="p5/5estels.gif" animated="false" />
+  <media name="p5/5gent.gif" file="p5/5gent.gif" animated="false" />
+  <media name="p5/5i4.gif" file="p5/5i4.gif" animated="false" />
+  <media name="p5/5i5.gif" file="p5/5i5.gif" animated="false" />
+  <media name="p5/5ma5.gif" file="p5/5ma5.gif" animated="false" />
+  <media name="p5/6comic.gif" file="p5/6comic.gif" animated="false" />
+  <media name="p5/6ma6.gif" file="p5/6ma6.gif" animated="false" />
+  <media name="p5/7comic.gif" file="p5/7comic.gif" animated="false" />
+  <media name="p5/7ma7.gif" file="p5/7ma7.gif" animated="false" />
+  <media name="p5/8comic.gif" file="p5/8comic.gif" animated="false" />
+  <media name="p5/8ma8.gif" file="p5/8ma8.gif" animated="false" />
+  <media name="p5/9comic.gif" file="p5/9comic.gif" animated="false" />
+  <media name="p5/9ma9.gif" file="p5/9ma9.gif" animated="false" />
+  <media name="p5/ajassum.gif" file="p5/ajassum.gif" animated="false" />
+  <media name="p5/ajdits.gif" file="p5/ajdits.gif" animated="false" />
+  <media name="p5/ajgent.gif" file="p5/ajgent.gif" animated="false" />
+  <media name="p5/ajordena.gif" file="p5/ajordena.gif" animated="false" />
+  <media name="p5/ajresta.gif" file="p5/ajresta.gif" animated="false" />
+  <media name="p5/ajserie.gif" file="p5/ajserie.gif" animated="false" />
+  <media name="p5/ajsuma.gif" file="p5/ajsuma.gif" animated="false" />
+  <media name="p5/ajvideo.gif" file="p5/ajvideo.gif" animated="false" />
+  <media name="p5/final.gif" file="p5/final.gif" animated="false" />
+  <media name="p5/inici.gif" file="p5/inici.gif" animated="false" />
+  <media name="p5/ma0.gif" file="p5/ma0.gif" animated="false" />
+  <media name="p5/ma1.gif" file="p5/ma1.gif" animated="false" />
+  <media name="p5/ma10.gif" file="p5/ma10.gif" animated="false" />
+  <media name="p5/ma2.gif" file="p5/ma2.gif" animated="false" />
+  <media name="p5/ma3.gif" file="p5/ma3.gif" animated="false" />
+  <media name="p5/ma4.gif" file="p5/ma4.gif" animated="false" />
+  <media name="p5/ma5.gif" file="p5/ma5.gif" animated="false" />
+  <media name="p5/ma6.gif" file="p5/ma6.gif" animated="false" />
+  <media name="p5/ma7.gif" file="p5/ma7.gif" animated="false" />
+  <media name="p5/ma8.gif" file="p5/ma8.gif" animated="false" />
+  <media name="p5/ma9.gif" file="p5/ma9.gif" animated="false" />
+  <media name="p5/preg.gif" file="p5/preg.gif" animated="false" />
+  <media name="p5/resta5.gif" file="p5/resta5.gif" animated="false" />
+  <media name="p5/resta6.gif" file="p5/resta6.gif" animated="false" />
+  <media name="p5/sresta5.gif" file="p5/sresta5.gif" animated="false" />
+  <media name="p5/sresta6.gif" file="p5/sresta6.gif" animated="false" />
+  <media name="p5/sumgent1.gif" file="p5/sumgent1.gif" animated="false" />
+  <media name="p5/sumgent2.gif" file="p5/sumgent2.gif" animated="false" />
+  <media name="p5/sumgent3.gif" file="p5/sumgent3.gif" animated="false" />
+  <media name="portada.gif" file="portada.gif" animated="false" />
+ </mediaBag>
+</JClicProject>
+

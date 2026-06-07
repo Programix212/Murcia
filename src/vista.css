@@ -1,0 +1,369 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* =========================================
+   OCULTAR SCROLLBAR PERO MANTENER SCROLL
+   ========================================= */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Por si hay otros contenedores con scroll */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+html, body {
+  min-height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #1f2937;
+  overflow-x: hidden;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* =========================================
+   FONDO ANIMADO (BURBUJAS)
+   ========================================= */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-animation span {
+  position: absolute;
+  display: block;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.bg-animation span:nth-child(1) { width: 80px;  height: 80px;  top: 10%; left: 8%;  }
+.bg-animation span:nth-child(2) { width: 40px;  height: 40px;  top: 20%; left: 85%; }
+.bg-animation span:nth-child(3) { width: 120px; height: 120px; top: 70%; left: 75%; }
+.bg-animation span:nth-child(4) { width: 30px;  height: 30px;  top: 45%; left: 15%; }
+.bg-animation span:nth-child(5) { width: 60px;  height: 60px;  top: 80%; left: 10%; }
+.bg-animation span:nth-child(6) { width: 50px;  height: 50px;  top: 15%; left: 50%; }
+.bg-animation span:nth-child(7) { width: 90px;  height: 90px;  top: 75%; left: 90%; }
+.bg-animation span:nth-child(8) { width: 25px;  height: 25px;  top: 55%; left: 55%; }
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+.game-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: none; /* ELIMINADO: antes 1400px */
+  margin: 0 auto;
+  padding: 0 0 40px; /* ELIMINADO padding lateral */
+  display: flex;
+  flex-direction: column;
+  gap: 16px
+}
+
+/* =========================================
+   HEADER BLANCO — MÁS ANCHO A LOS LADOS
+   ========================================= */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 16px 60px; /* MUCHO espacio a los lados */
+  border-radius: 0 0 16px 16px; /* Redondeo solo abajo, o cámbialo a 16px si lo quieres en todas las esquinas */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 0; /* Pegado arriba sin espacio */
+  gap: 12px;
+  width: 100%;
+}
+
+/* Botón Volver */
+.btn-backer {
+  background-color: #ffffff;
+  background-image: url("./img_logos/volver-flecha.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  border: 1.5px solid #e5e7eb;
+  color: transparent;        /* Oculta el texto */
+  font-size: 0;              /* Oculta el texto por completo */
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.btn-backer:hover {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* Título del juego */
+.header h1 {
+  flex: 1;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 10px;
+}
+
+/* Botón pantalla completa */
+#btn-fullscreen {
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #374151;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+#btn-fullscreen:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+/* =========================================
+   STATS PANEL (ACIERTOS, INTENTOS, TIEMPO) — BLANCO
+   ========================================= */
+.stats-panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 24px;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.stat-item:not(:last-child) {
+  border-right: 1px solid #f3f4f6;
+}
+
+.stat-icon {
+  font-size: 1.1rem;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ef4444;
+}
+
+/* =========================================
+   MARCO ROJO DEL JUEGO
+   ========================================= */
+#jclic-container {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 70vh;
+  background: #ffffff;
+  border: 5px solid #ef4444;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+#jclic-container .loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #374151;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* ====================== OCULTAR TODO LO QUE SOBRA DE JCLIC ====================== */
+.JClicNav, 
+.JClicNavButton, 
+.JClicButton,
+button[aria-label*="Siguiente"],
+button[aria-label*="Anterior"],
+button[aria-label*="fullscreen"],
+.JClicCtrlCnt,
+.JClicMsgBox,
+.JClicCounter,
+.waitPanel,
+.animImgBox,
+#waitImgBig,
+#waitImgSmall,
+.JClicMsg,
+.JClicMessage {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ocultar barra inferior de JClic */
+.JClicPlayerCnt > div:last-child,
+.JClicPlayerCnt > div[style*="bottom"] {
+  display: none !important;
+}
+
+/* Ocultar mensajes de bienvenida sin clase */
+.jclic-hide {
+  display: none !important;
+}
+
+/* =========================================
+   BARRA DE INSTRUCCIONES — BLANCA
+   ========================================= */
+.barra-instrucciones {
+  background: #ffffff;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  padding: 14px 24px;
+  color: #374151;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   BOTONES DE NAVEGACIÓN — BLANCOS
+   ========================================= */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-nav1,
+.btn-nav2,
+.btn-nav3 {
+  background: #ffffff;
+  color: #ef4444;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-nav1:hover,
+.btn-nav2:hover,
+.btn-nav3:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 24px;
+  }
+
+  .header h1 {
+    font-size: 0.95rem;
+  }
+
+  .stats-panel {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .stat-item {
+    padding: 0;
+    min-width: auto;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stat-item:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 10px;
+  }
+
+  #jclic-container {
+    aspect-ratio: 4 / 3;
+    max-height: 60vh;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+  }
+
+  .btn-nav1,
+  .btn-nav2,
+  .btn-nav3 {
+    width: 100%;
+    justify-content: center;
+  }
+}
