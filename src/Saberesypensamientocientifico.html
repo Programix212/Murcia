@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Saberesypensamientocientifico.css">
+<link rel="stylesheet" href="transiciones.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<script src="transiciones.js"></script>
+
+
+
+</head>
+<body>
+<!-- 1. Overlay PRIMERO -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+<div class="bg-animation">
+<span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span>
+</div>
+
+<div class="main-container">
+
+<header class="header">
+    <button class="btn-back" onclick="goBack()">
+        <span class="btn-icon">←</span>
+        <span class="btn-text">Volver</span>
+    </button>
+    <div class="header-title">
+         <span class="header-emoji"></span>
+         <h1>Saberes y pensamiento cientifico</h1>
+    </div> 
+    <div class="header-count">
+     <span class="count-number">33</span>
+     <span class="count-text">juegos</span>
+    </div>
+</header>
+
+<div class="search-bar" id="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" placeholder="Buscar juego" 
+    id="searchInput" onkeyup="filterGames()">
+</div>
+
+<div class="games-list" id="gamesList">
+
+<!--Juego 1-->
+<div class="game-card"  data-name="Actinfantil3anos"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Actinfantil3anos.jclic.zip&nombre=Actinfantil 3 años&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Actividadde3Anosinfantil.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Actinfantil 3 años</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>5 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 2-->
+<div class="game-card" data-name="Actinfantil4años"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Actinfantil4anos.jclic.zip&nombre=Actinfantil 4 años&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Actividad_de_infantil_4_anos.jfif" style="width: 70px;"> </div>
+  <div class="game-info">
+    <h3 class="game-title">Act infantil 4 años</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>4 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>5 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+
+
+<!--Juego 4-->
+<div class="game-card" data-name="Actividades de orientacion especial"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Actividadesdeorientacionespecial.jclic.zip&nombre=Actividades de orientacion especial&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Actividadesdeorientacionespacial.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Actividades de orientacion especial</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 5-->
+<div class="game-card" data-name="Actividadesdelógica 1"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Actividadesdelogica1.jclic.zip&nombre=Actividades de lógica 1&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Actividades_de_logica_1.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Actividades de lógica 1</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 6-->
+<div class="game-card" data-name="Actividadesdelógica2"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Actividadesdelogica2.jclic.zip&nombre=Actividades de lógica 2&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Actividadesdelogica2.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Actividades de lógica 2</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 7-->
+<div class="game-card" data-name="Actividadesdelógica3"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Actividadesdelogica3.jclic.zip&nombre=Actividades de lógica 3&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Actividadesdelogica3.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Actividades de lógica 3</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 8-->
+<div class="game-card" data-name="Animalessalvajes"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Animalessalvajes.jclic.zip&nombre=Animales salvajes&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Animales_salvajes.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Animales salvajes</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 9-->
+<div class="game-card" data-name="Bloqueslógicos"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Bloqueslogicos.jclic.zip&nombre=Bloques lógicos&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Bloques_logicos.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Bloques lógicos</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 10-->
+<div class="game-card" data-name="CálculoyNúmerosdel1al9"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/CalculoyNumerosdel1al9.jclic.zip&nombre=Cálculo y Números del 1 al 9&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Calculo_y_numeros_1_al_9.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Cálculo y Números del 1 al 9</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 11-->
+<div class="game-card" data-name="Clicdelasmedidas"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Clicdelasmedidas.jclic.zip&nombre=Clic de las medidas&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Clic_de_las_medidas.jfif " style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Clic de las medidas</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 12-->
+<div class="game-card" data-name="Clicdelasposiciones"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Clicdelasposiciones.jclic.zip&nombre=Clic de las posiciones&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/clic_de_las_posiciones.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Clic de las posiciones</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+
+<!--Juego 14-->
+<div class="game-card" data-name="Conceptos básicos"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Conceptosbasicos.jclic.zip&nombre=Conceptos básicos&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Conceptos_Basicos.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Conceptos básicos</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 15-->
+<div class="game-card" data-name="Contardel1al9"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Contardel1al9.jclic.zip&nombre=Contar del 1 al 9&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Contar_del_1_al_9.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Contar del 1 al 9</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+
+<!--Juego 17-->
+<div class="game-card" data-name="Descomposicióndenúmeros0-10"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Descomposiciondenumeros0-10.jclic.zip&nombre=Descomposición de números 0-10&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Descomposicion_de_numeros_de_0-10.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Descomposición de números 0-10</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 18-->
+<div class="game-card" data-name="Direccionalidad,coloresyformas"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Direccionalidad,coloresyformas.jclic.zip&nombre=Direccionalidad colores y formas&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Direccionalidad_colores_y_formas.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Direccionalidad, colores y formas</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 19-->
+<div class="game-card" data-name="Elcuentodelosnúmeros0-9"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Elcuentodelosnumeros0-9.jclic.zip&nombre=El cuento de los números 0-9&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/El_cuento_de_los_numeros_0-9.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">El cuento de los números 0-9</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 20-->
+<div class="game-card" data-name="Elverano"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Elverano.jclic.zip&nombre=El verano&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/El_verano.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">El verano</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+
+<!--Juego 22-->
+<div class="game-card" data-name="Formasymasformas"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Formasymasformas.jclic.zip&nombre=Formas y más formas&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Formasymasformas.png" style="width:70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Formas y más formas</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 23-->
+<div class="game-card" data-name="Iguales"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Iguales.jclic.zip&nombre=Iguales&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/iguales.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Iguales</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 24-->
+<div class="game-card" data-name="Jugando con numeros"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Jugandoconnumeros.jclic.zip&nombre=Jugando con números&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Jugando_con_numeros.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Jugando con números</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 25-->
+<div class="game-card" data-name="Jugandoconnumeros 2"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Jugandoconnumeros2.jclic.zip&nombre=Jugando con números 2&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes//Jugando_con_numeros_2.jfif" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Jugando con números 2</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+<!--Juego 27-->
+<div class="game-card" data-name="Lasregletas"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Lasregletas.jclic.zip&nombre=Las regletas&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/las_regletas.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Las regletas</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 28-->
+<div class="game-card" data-name="Lógica,numeraciónylateralidad"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Logica,numeracionylateralidad.jclic.zip&nombre=Lógica numeración y lateralidad&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Logica_numeracion_y_lateralidad.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Lógica, numeración y lateralidad</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 29-->
+<div class="game-card" data-name="Los3osos"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Los3osos.jclic.zip&nombre=Los 3 osos&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/los_3_osos.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Los 3 osos</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 30-->
+<div class="game-card" data-name="Ninalagallina"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Ninalagallina.jclic.zip&nombre=Nina la gallina&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/nina_la_gallina.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Nina la gallina</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 31-->
+<div class="game-card" data-name="Ordenartamaños"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Ordenartamanos.jclic.zip&nombre=Ordenar tamaños&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/ordenar_tamanos.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Ordenar tamaños</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 32-->
+<div class="game-card" data-name="Productocartesiano"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Productocartesiano.jclic.zip&nombre=Producto cartesiano&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/producto_cartesiano.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Producto cartesiano</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 33-->
+<div class="game-card" data-name="Secuencias"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Secuencias.jclic.zip&nombre=Secuencias&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/secuencias.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Secuencias</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 34-->
+<div class="game-card" data-name="Series"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Series.jclic.zip&nombre=Series&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/series.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Series</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 35-->
+<div class="game-card" data-name="Sombras"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Sombras.jclic.zip&nombre=Sombras&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Sombras.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Sombras</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 36-->
+<div class="game-card" data-name="Tiempo,espacioyCantidad-conceptos básicos"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Tiempo,espacioyCantidad-conceptosbasicos.jclic.zip&nombre=Tiempo espacio y Cantidad&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Tiempo,espacio_y_cantidad.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Tiempo, espacio y Cantidad</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+<!--Juego 37-->
+<div class="game-card" data-name="Uno,dos,tresoninguno"
+     onclick="window.location.href='vista.html?actividad=assets/Saberes/Uno,dos,tresoninguno.jclic.zip&nombre=Uno dos tres o ninguno&origen=Saberesypensamientocientifico.html'">
+  <div class="game-icon"><img src="assets/img_Saberes/Uno_dos_tres_o_ninguno.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Uno, dos, tres o ninguno</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+      <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+      <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn"><span>▶</span></div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+</div>
+</div>
+
+<script>
+  // ✅ Guardar datos en sessionStorage y navegar
+  function abrirJuego(rutaZip, nombreJuego) {
+    sessionStorage.setItem('juego_actividad', rutaZip);
+    sessionStorage.setItem('juego_nombre', nombreJuego);
+    sessionStorage.setItem('juego_origen', 'Saberesypensamientoscientifico.html');
+    window.location.href = 'vista.html';
+  }
+
+  function goBack() {
+    window.location.href = 'Etapas.html';
+  }
+
+  function filterGames() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.game-card');
+    let count = 0;
+
+    cards.forEach(card => {
+      const name = card.getAttribute('data-name')?.toLowerCase() || '';
+      const title = card.querySelector('.game-title')?.textContent.toLowerCase() || '';
+      const match = name.includes(query) || title.includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) count++;
+    });
+
+    document.getElementById('noResults').style.display = count === 0 ? '' : 'none';
+    document.getElementById('gameCount').textContent = count;
+  }
+</script>
+
+<script src="Saberesypensamientocientifico.js"></script>
+<script src="aplicar-config.js"></script>
+</body>
+</html>

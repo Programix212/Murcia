@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEARTEE - Lenguajes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Lenguajes.css">
+
+  <link rel="stylesheet" href="transiciones.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+<script src="transiciones.js"></script>
+
+  
+
+</head>
+<body>
+
+  <!-- 1. Overlay PRIMERO -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+  <!-- ========== FONDO ANIMADO ========== -->
+  <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ========== CONTENEDOR PRINCIPAL ========== -->
+  <div class="main-container">
+    
+    <!-- Header -->
+    <header class="header">
+      <button class="btn-back" onclick="goBack()">
+        <span class="btn-icon">←</span>
+        <span class="btn-text">Volver</span>
+      </button>
+      <div class="header-title">
+        <span class="header-emoji"></span>
+        <h1>Lenguajes</h1>
+      </div>
+      <div class="header-count">
+        <span class="count-number" id="gameCount">15</span>
+        <span class="count-text">juegos</span>
+      </div>
+    </header>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-bar" id="search-bar">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" placeholder="Buscar juego..." id="searchInput" onkeyup="filterGames()">
+    </div>
+
+    <!-- Lista de juegos -->
+    <div class="games-list" id="gamesList">
+
+     
+
+      
+      <!-- Juego 1 -->
+      <div class="game-card" data-name="4 Cuentos" onclick="abrirJuego('assets/juegos/CuatroCuentos.jclic.zip', '4 Cuentos')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/4_cuentos.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">4 Cuentos</h3>
+          <p class="game-description">Arma el rompecabezas de animales salvajes</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Dificil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>4-6 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>5 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 2 -->
+      <div class="game-card" data-name="Actividad 5 años infantil" onclick="abrirJuego('assets/juegos/Actividad5anosinfantil.jclic.zip', 'Actividad 5 años infantil')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/Cincoanos.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Actividad 5 años infantil</h3>
+          <p class="game-description">Actividades educativas para niños de 5 años</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Medio</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      
+
+
+      <!-- Juego 3 -->
+      <div class="game-card" data-name="Aprende a leer con l,m,s,p,t,n" onclick="abrirJuego('assets/juegos/Aprendealeer.jclic.zip', 'Aprende a leer con l,m,s,p,t,n')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/Aprende_a_leer.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Aprende a leer con l,m,s,p,t,n</h3>
+          <p class="game-description">Aprende las letras l, m, s, p, t, n jugando</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 4 -->
+      <div class="game-card" data-name="Aprendo jugando" onclick="abrirJuego('assets/juegos/Aprendojugando.jclic.zip', 'Aprendo jugando')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/Aprendojugando.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Aprendo jugando</h3>
+          <p class="game-description">Diviértete aprendiendo con actividades interactivas</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 5 -->
+      <div class="game-card" data-name="Caperucita Roja" onclick="abrirJuego('assets/juegos/CaperucitaRoja.jclic.zip', 'Caperucita Roja')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/Caperucitaroja.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Caperucita Roja</h3>
+          <p class="game-description">Revive el cuento clásico de Caperucita Roja</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 6 -->
+      <div class="game-card" data-name="Diferentes objetos" onclick="abrirJuego('assets/juegos/Diferentesobjetos.jclic.zip', 'Diferentes objetos')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/Diferentesobjetos.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Diferentes objetos</h3>
+          <p class="game-description">Identifica y clasifica diferentes objetos</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 7 -->
+      <div class="game-card" data-name="El pollito Chiqui" onclick="abrirJuego('assets/juegos/ElpollitoChiqui.jclic.zip', 'El pollito Chiqui')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/ElPollitochiqui.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">El Pollito Chiqui</h3>
+          <p class="game-description">Acompaña al pollito Chiqui en su aventura</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 8 -->
+      <div class="game-card" data-name="El Soldadito de plomo" onclick="abrirJuego('assets/juegos/Elsoldaditodeplomo.jclic.zip', 'El Soldadito de plomo')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/El_Soldadito_de_plomo.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">El Soldadito de plomo</h3>
+          <p class="game-description">Descubre la historia del soldadito de plomo</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 9 -->
+      <div class="game-card" data-name="Iniciacion a la lectura" onclick="abrirJuego('assets/juegos/iniciacionalalectura.jclic.zip', 'Iniciacion a la lectura')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/Iniciacion_a_la_lectura.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Iniciación a la lectura</h3>
+          <p class="game-description">Da tus primeros pasos en el mundo de la lectura</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 10 -->
+      <div class="game-card" data-name="Jack y las habichuelas mágicas" onclick="abrirJuego('assets/juegos/Magica.jclic.zip', 'Jack y las habichuelas mágicas')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/Jack.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Jack y las habichuelas mágicas</h3>
+          <p class="game-description">Vive la aventura mágica de Jack</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 11 -->
+      <div class="game-card" data-name="La gaviota de la Coviña" onclick="abrirJuego('assets/juegos/gaviota.jclic.zip', 'La gaviota de la Coviña')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/gaviota.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">La gaviota de la Coviña</h3>
+          <p class="game-description">Conoce la historia de la gaviota</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 12 -->
+      <div class="game-card" data-name="Los cuentos del lobo" onclick="abrirJuego('assets/juegos/lobo.jclic.zip', 'Los cuentos del lobo')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/lobo.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Los cuentos del lobo</h3>
+          <p class="game-description">Descubre los cuentos que cuenta el lobo</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 13 -->
+      <div class="game-card" data-name="Nombre de los animales" onclick="abrirJuego('assets/juegos/Nombredelosanimales.jclic.zip', 'Nombre de los animales')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/Nombreanimales.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Nombre de los animales</h3>
+          <p class="game-description">Aprende los nombres de diferentes animales</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 14 -->
+      <div class="game-card" data-name="Números y letras" onclick="abrirJuego('assets/juegos/num.jclic.zip', 'Números y letras')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/numeroyletras.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Números y letras</h3>
+          <p class="game-description">Practica con números y letras</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 15 -->
+      <div class="game-card" data-name="Las Vocales" onclick="abrirJuego('assets/juegos/Lasvocales.jclic.zip', 'Las Vocales')">
+        <div class="game-icon"><img src="./assets/img_lenguajes/numeroyletras.png" style="width: 70px;" onerror="this.src='./assets/img_logos/default.png'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Las Vocales</h3>
+          <p class="game-description">Aprende las vocales de forma divertida</p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon">⭐</span><span>Fácil</span></span>
+            <span class="meta-item"><span class="meta-icon">👶</span><span>3-5 años</span></span>
+            <span class="meta-item"><span class="meta-icon">⏱️</span><span>4 min</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Mensaje sin resultados -->
+      <div class="no-results" id="noResults" style="display:none;">
+        <span class="no-results-icon">🔍</span>
+        <p>No se encontraron juegos</p>
+      </div>
+
+  </div>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+  // ✅ Guardar datos en sessionStorage y navegar
+  function abrirJuego(rutaZip, nombreJuego) {
+    sessionStorage.setItem('juego_actividad', rutaZip);
+    sessionStorage.setItem('juego_nombre', nombreJuego);
+    sessionStorage.setItem('juego_origen', 'Lenguajes.html');
+    window.location.href = 'vista.html';
+  }
+
+  function goBack() {
+    window.location.href = 'Etapas.html';
+  }
+
+  function filterGames() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.game-card');
+    let count = 0;
+
+    cards.forEach(card => {
+      const name = card.getAttribute('data-name')?.toLowerCase() || '';
+      const title = card.querySelector('.game-title')?.textContent.toLowerCase() || '';
+      const match = name.includes(query) || title.includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) count++;
+    });
+
+    document.getElementById('noResults').style.display = count === 0 ? '' : 'none';
+    document.getElementById('gameCount').textContent = count;
+  }
+</script>
+
+
+ <script src="perfiles.js"></script>
+  <script src="Lenguajes.js"></script>
+  <script src="aplicar-config.js"></script>
+  
+</body>
+</html>

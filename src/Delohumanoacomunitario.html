@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="Delohumanoacomunitario.css">
+   <link rel="stylesheet" href="transiciones.css">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<script src="transiciones.js"></script>
+
+</head>
+<body>
+  <!-- 1. Overlay PRIMERO -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+   <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+
+
+   </div>
+
+<!--Contenedor Principal-->
+   <div class="main-container">
+
+
+    <!---Header-->
+   <header class="header">
+   <button class="btn-back" onclick="goback()">
+  <span class="btn-icon">←</span>
+  <span class="btn-text">volver</span>
+
+    </button>
+
+
+    <div class="header-title">
+      <span class="header-emoji"></span>
+      <h1>De lo humano a comunitario</h1>
+      
+    </div>
+    <div class="header-count"> 
+     <span class="count-number">2</span>
+     <span class="count-text">juegos</span>
+</div>
+
+   </header>
+
+   <!--Barra de busqueda-->
+   <div class="search-bar" id="search-bar">
+    <span class="search-icon" >🔍</span>
+    <input class="search-input" id="searchInput" placeholder="Buscar juego" type="text" onkeyup="filterGames()">
+    
+
+   </div>
+
+
+   <div class="game-list" id="gameList">
+
+<!-- Juego 1 -->
+<!-- Juego 1 -->
+<div class="game-card" 
+     data-name="Cuento para la tolerancia" 
+     data-file="assets/juegos/Cuentoparalatolerancia.jclic.zip"
+     onclick="window.location.href='vista.html?actividad=assets/De_lo_humano_a_comunitario_juegos/Cuentoparalatolerancia.jclic.zip&nombre=De lo humano a comunitario&origen=Delohumanoacomunitario.html'">
+     <div class="game-icon"><img src="assets/img_humano/Cuento_para_la_tolerancia.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Cuento para la tolerancia</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon">⭐</span>
+        <span>Fácil</span>
+      </span>
+      <span class="meta-item">
+        <span class="meta-icon">👶</span>
+        <span>4-6 años</span>
+      </span>
+      <span class="meta-item">
+        <span class="meta-icon">⏱️</span>
+        <span>5 min</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+
+<!--Juego 2 -->
+
+<div class="game-card" 
+     data-name="Los rincones de la clase" 
+     data-file="assets/juegos/Losrinconesdelaclase.jclic.zip"
+      onclick="window.location.href='vista.html?actividad=assets/De_lo_humano_a_comunitario_juegos/Losrinconesdelaclase.jclic.zip&nombre=Los rincones de las clase&origen=Delohumanoacomunitario.html'">
+     <div class="game-icon"><img src="assets/img_humano/los_rincones_de_la_clase.png" style="width: 70px;"></div>
+  <div class="game-info">
+    <h3 class="game-title">Los rincones de la clase</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon">⭐</span>
+        <span>Fácil</span>
+      </span>
+      <span class="meta-item">
+        <span class="meta-icon">👶</span>
+        <span>4-6 años</span>
+      </span>
+      <span class="meta-item">
+        <span class="meta-icon">⏱️</span>
+        <span>5 min</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+   </div>
+
+
+
+   </div>
+
+<script>
+  // ✅ Guardar datos en sessionStorage y navegar
+  function abrirJuego(rutaZip, nombreJuego) {
+    sessionStorage.setItem('juego_actividad', rutaZip);
+    sessionStorage.setItem('juego_nombre', nombreJuego);
+    sessionStorage.setItem('juego_origen', 'Delohumanocomunitario.html');
+    window.location.href = 'vista.html';
+  }
+
+  function goBack() {
+    window.location.href = 'Etapas.html';
+  }
+
+  function filterGames() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.game-card');
+    let count = 0;
+
+    cards.forEach(card => {
+      const name = card.getAttribute('data-name')?.toLowerCase() || '';
+      const title = card.querySelector('.game-title')?.textContent.toLowerCase() || '';
+      const match = name.includes(query) || title.includes(query);
+      card.style.display = match ? '' : 'none';
+      if (match) count++;
+    });
+
+    document.getElementById('noResults').style.display = count === 0 ? '' : 'none';
+    document.getElementById('gameCount').textContent = count;
+  }
+</script>
+
+<script src="Delohumanoacomunitario.js"></script>
+<script src="aplicar-config.js"></script>
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

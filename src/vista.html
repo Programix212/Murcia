@@ -1,0 +1,224 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEARTEE - Player</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vista.css">
+  <link rel="stylesheet" href="transiciones.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <script src="transiciones.js"></script>
+
+  <!-- 🔊 INTERCEPTAR AUDIO -->
+  <script>
+    (function() {
+      var vol = 70;
+      try {
+        var c = JSON.parse(localStorage.getItem('appConfig') || '{}');
+        vol = (c.volumenJuego != null) ? c.volumenJuego : 70;
+      } catch(e) {}
+      window.__gameVolume = vol / 100;
+      window.__allMasterGains = [];
+
+      var origConnect = AudioNode.prototype.connect;
+      var proto = window.BaseAudioContext ? BaseAudioContext.prototype : AudioContext.prototype;
+      var origDestDesc = Object.getOwnPropertyDescriptor(proto, 'destination');
+      var origCreateElement = document.createElement.bind(document);
+
+      Object.defineProperty(proto, 'destination', {
+        get: function() {
+          if (!this.__masterGainVol) {
+            this.__masterGainVol = this.createGain();
+            this.__masterGainVol.gain.value = window.__gameVolume;
+            var realDest = origDestDesc.get.call(this);
+            origConnect.call(this.__masterGainVol, realDest);
+            window.__allMasterGains.push(this.__masterGainVol);
+          }
+          return this.__masterGainVol;
+        },
+        configurable: true
+      });
+
+      var AudioOriginal = window.Audio;
+      window.Audio = function(src) {
+        var audio = new AudioOriginal(src);
+        audio.volume = window.__gameVolume;
+        audio.addEventListener('play', function() {
+          audio.volume = window.__gameVolume;
+        });
+        return audio;
+      };
+
+      setInterval(function() {
+        try {
+          var c2 = JSON.parse(localStorage.getItem('appConfig') || '{}');
+          window.__gameVolume = ((c2.volumenJuego != null) ? c2.volumenJuego : 70) / 100;
+        } catch(e) {}
+
+        window.__allMasterGains.forEach(function(g) {
+          try { g.gain.value = window.__gameVolume; } catch(e) {}
+        });
+
+        document.querySelectorAll('audio, video').forEach(function(el) {
+          try {
+            el.volume = window.__gameVolume;
+            el.muted = (window.__gameVolume === 0);
+          } catch(e) {}
+        });
+
+        try {
+          document.querySelectorAll('iframe').forEach(function(iframe) {
+            try {
+              iframe.contentDocument?.querySelectorAll('audio, video')?.forEach(function(el) {
+                el.volume = window.__gameVolume;
+                el.muted = (window.__gameVolume === 0);
+              });
+            } catch(e) {}
+          });
+        } catch(e) {}
+
+        var container = document.getElementById('jclic-container');
+        if (container) {
+          container.querySelectorAll('audio, video').forEach(function(el) {
+            try {
+              el.volume = window.__gameVolume;
+              el.muted = (window.__gameVolume === 0);
+            } catch(e) {}
+          });
+        }
+      }, 200);
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(m) {
+            m.addedNodes.forEach(function(node) {
+              if (node.tagName === 'AUDIO' || node.tagName === 'VIDEO') {
+                node.volume = window.__gameVolume;
+              }
+              if (node.querySelectorAll) {
+                node.querySelectorAll('audio, video').forEach(function(el) {
+                  el.volume = window.__gameVolume;
+                });
+              }
+            });
+          });
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+
+      document.createElement = function(tag) {
+        var el = origCreateElement(tag);
+        if (tag && tag.toLowerCase() === 'audio' || tag.toLowerCase() === 'video') {
+          el.volume = window.__gameVolume;
+          var origPlay = el.play;
+          el.play = function() {
+            el.volume = window.__gameVolume;
+            return origPlay.apply(el, arguments);
+          };
+          el.addEventListener('play', function() {
+            el.volume = window.__gameVolume;
+          });
+        }
+        return el;
+      };
+
+    })();
+  </script>
+
+  <script>
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    try {
+      window._ctx = new AudioContext();
+      window._audioCtx = window._ctx;
+      window._ctx.resume();
+    } catch(e) {}
+  </script>
+
+  <script>
+    window.JClicDataOptions = {
+      fade: 0,
+      counters: false,
+      maxWaitTime: 0,
+      info: false,
+      reportsBtn: false
+    };
+  </script>
+
+  <script>
+    localStorage.removeItem('ceartee_autosave');
+    localStorage.removeItem('ceartee_sesion_activa');
+    sessionStorage.setItem('juego_actividad', rutaZip);
+    sessionStorage.setItem('juego_nombre', nombreJuego);
+    window.location.href = 'vista.html';
+  </script>
+
+  <script src="./jquery.min.js"></script>
+  <script src="./jszip.min.js"></script>
+  <script src="./jszip-utils.min.js"></script>
+  <script src="./jclic.min.js"></script>
+  <script src="./jclic-wrapper.js"></script>
+</head>
+
+<body>
+  <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="game-wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <button class="btn-backer" onclick="exitGame()" data-tooltip-pos="bottom" data-i18n-tooltip="volverMenu">
+      </button>
+      <h1 id="gameTitle" data-i18n="cargando">Cargando...</h1>
+      <button id="btn-fullscreen" onclick="toggleFullscreen()" data-tooltip-pos="bottom" data-i18n-tooltip="pantallaCompleta">⛶</button>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats-panel">
+      <div class="stat-item">
+        <span class="stat-icon">✅</span>
+        <span class="stat-label" data-i18n="aciertos">Aciertos:</span>
+        <span class="stat-value" id="aciertos">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">🎯</span>
+        <span class="stat-label" data-i18n="intentos">Intentos:</span>
+        <span class="stat-value" id="intentos">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">⏱️</span>
+        <span class="stat-label" data-i18n="tiempo">Tiempo:</span>
+        <span class="stat-value" id="tiempo">00:00</span>
+      </div>
+    </div>
+
+    <!-- Juego -->
+    <div id="jclic-container">
+      <div class="loading"><h2 data-i18n="cargandoJuego">Cargando juego...</h2></div>
+    </div>
+
+    <!-- Instrucciones -->
+    <div class="barra-instrucciones" id="barra-instrucciones" data-i18n="instrucciones">
+      Instrucciones aparecerán aquí...
+    </div>
+
+    <!-- Navegación -->
+    <div class="nav-buttons">
+      <button class="btn-nav1" onclick="irActividadAnterior()" data-i18n-tooltip="ejercicioAnterior" data-i18n="anterior">Anterior</button>
+      <button class="btn-nav2" onclick="irActividadSiguiente()" data-i18n-tooltip="siguienteEjercicio" data-i18n="siguiente">Siguiente</button>
+      <button class="btn-nav3" onclick="reiniciarActividad()" data-i18n-tooltip="reiniciarEjercicio" data-i18n="reiniciar">Reiniciar</button>
+    </div>
+  </div>
+
+  <script src="vista.js"></script>
+  <script src="Estadistica.js"></script>
+  <script src="instrucciones.js"></script>
+  <script src="aplicar-config.js"></script>
+  <script src="perfiles.js"></script>
+  <script src="notificaciones.js"></script>
+
+</body>
+</html>

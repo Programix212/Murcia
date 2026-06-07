@@ -1,0 +1,11 @@
+{
+    "version":  "1.0.2",
+    "notes":  "Nueva version con mejoras",
+    "pub_date":  "2026-05-31T00:00:00Z",
+    "platforms":  {
+                      "windows-x86_64":  {
+                                             "signature":  "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUUmxDK09WRExSYm52bklTMi9OYWkvNEJxMmlvVmZPck4rZjBXSXVUbm5PNlpmb3JFc2ZKS21NZWczSGQ4bFBtNmg4MFJlSkRUdHpEamMzRklUQkpoelQ5c0gvaXlZRUFNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMjIzNDIxCWZpbGU6TXVyY2lhXzEuMC4yX3g2NC1zZXR1cC5leGUKWGJiT1Bjb3NIelpteGlSSXNUc2d2TGZpdW56RUVOV2VKTUpyejlxZnUxUnhpd0NIVHhlRTVGUks2V1Jydkt4c0NGMkxHLzdva0Urci9EbFYvdWNXRGc9PQo=",
+                                             "url":  "https://github.com/Yolito935/ceartee/releases/download/v1.0.2/Murcia_1.0.2_x64-setup.exe"
+                                         }
+                  }
+}

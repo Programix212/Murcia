@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Saberes.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="bg-animation">
+<span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span>
+</div>
+
+<div class="main-container">
+
+<header class="header">
+    <button class="btn-back" onclick="goBack()">
+        <span class="btn-icon">←</span>
+        <span class="btn-text">Volver</span>
+    </button>
+    <div class="header-title">
+         <span class="header-emoji"></span>
+         <h1>Saberes y pensamiento cientifico</h1>
+    </div> 
+    <div class="header-count">
+     <span class="count-number">37</span>
+     <span class="count-text">juegos</span>
+    </div>
+</header>
+
+<div class="search-bar" id="search-bar">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" placeholder="Buscar juego" 
+    id="searchInput" onkeyup="filterGames()">
+</div>
+
+<div class="games-list" id="gamesList">
+
+
+    <script src="Saberes.js"></script>
+<script src="../aplicar-config.js"></script>
+</body>
+</html>

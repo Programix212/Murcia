@@ -1,0 +1,418 @@
+/* =========================================
+   BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  background-color: #f0ecf5;
+  color: #1a1a2e;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   LAYOUT 3 COLUMNAS
+   ========================================= */
+.page-layout {
+  display: grid;
+  grid-template-columns: 450px 1fr 450px;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* =========================================
+   SIDEBAR IZQUIERDA (igual que antes)
+   ========================================= */
+.sidebar-left {
+  background-color: #ffffff;
+  border-left: 5px solid #5cdbd3;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  
+  
+}
+
+/* Si tienes títulos dentro del sidebar */
+.sidebar-left h2, .sidebar-left h3 {
+  font-size: 24px; /* Aumenta el tamaño de los títulos */
+}
+
+/* Si tienes textos, párrafos o enlaces */
+.sidebar-left p, .sidebar-left a, .sidebar-left span {
+  font-size: 18px; /* Aumenta el tamaño del texto común (por defecto suele ser 16px) */
+}
+
+/* Si tienes imágenes o íconos (como el del teléfono) */
+.sidebar-left img {
+  width: 24px;  /* Ajusta el ancho de los íconos para que vayan acorde al texto */
+  height: auto;
+}
+
+.visit-label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 2px;
+}
+
+.address-block p {
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+.sidebar-left hr {
+  border: none;
+  border-top: 1px solid #f3f4f6;
+  margin: 6px 0;
+  
+}
+
+.phone-row {
+ display: flex;
+  align-items: center;
+  gap: 12px;                   /* Separación entre el círculo y el número */
+  margin-bottom: 15px;         /* Espacio inferior */
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #1a1a2e;
+}
+
+
+
+.phone-icon-wrap svg {
+  width: 14px;
+  height: 14px;
+  fill: #ef4444;
+}
+
+.phone-number {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.social-section-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.social-badge {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.badge-fb { background-color: #dbeafe; color: #2563eb; }
+.badge-gm { background-color: #fee2e2; color: #dc2626; }
+.badge-tw { background-color: #f3f4f6; color: #374151; }
+.badge-bl { background-color: #ffedd5; color: #ea580c; }
+
+/* =========================================
+   ÁREA CENTRAL (LETRAS MÁS GRANDES)
+   ========================================= */
+.main-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+#main-container {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 16px;
+  
+}
+
+.logo img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* Título: se mantiene igual */
+.title {
+  font-size: 3.6rem;        /* AUMENTADO */
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+/* Subtítulo: MÁS GRANDE y NEGRO */
+.subtitle {
+  font-size: 1.15rem;       /* AUMENTADO */
+  font-weight: 500;
+  color: #111827;           /* NEGRO */
+  margin-bottom: 32px;
+}
+
+/* Botón principal */
+.btn-enter {
+  background-color: #1a1a2e;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(26,26,46,0.18);
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+
+.btn-enter:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(26,26,46,0.25);
+}
+
+/* La imagen del ícono dentro del círculo */
+.btn-img-icon {
+  width: 18px;                 /* Ajusta el tamaño del ícono interior */
+  height: auto;
+  object-fit: contain;
+  
+}
+
+
+
+/* Tarjeta de perfil activo (generada por JS) */
+.perfil-activo-info {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 36px 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.perfil-avatar-grande {
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.perfil-nombre-grande {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 20px;
+}
+
+.btn-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn-cambiar-perfil,
+.btn-cambiar {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s;
+}
+
+.btn-cambiar-perfil:hover,
+.btn-cambiar:hover {
+  background-color: #f9fafb;
+}
+
+/* Decoración (3 puntos) */
+.decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.decoration span {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #d1d5db;
+  border-radius: 50%;
+}
+
+/* =========================================
+   SIDEBAR DERECHA — AHORA BLANCA COMO LA IZQUIERDA
+   ========================================= */
+.sidebar-right {
+  background-color: #ffffff;        /* FONDO BLANCO */
+  border-right: 5px solid #5cdbd3;  /* BORDE TURQUESA SIMÉTRICO */
+  padding: 40px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Si tienes títulos dentro del sidebar */
+.sidebar-right h2, .sidebar-right h3 {
+  font-size: 24px; /* Aumenta el tamaño de los títulos */
+}
+
+/* Si tienes textos, párrafos o enlaces */
+.sidebar-right p, .sidebar-right a, .sidebar-right span {
+  font-size: 18px; /* Aumenta el tamaño del texto común (por defecto suele ser 16px) */
+}
+
+/* Si tienes imágenes o íconos (como el del teléfono) */
+.sidebar-left img {
+  width: 24px;  /* Ajusta el ancho de los íconos para que vayan acorde al texto */
+  height: auto;
+}
+
+
+.logo-badge {
+  width: 100px;
+  height: 100px;
+}
+
+.logo-badge img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.info-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+.info-tag {
+  color: #a78bfa;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.info-body {
+  color: #4b5563;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Sobreescribir el div inline de tu HTML sin tocar el HTML */
+.sidebar-right > div[style] {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.info-desc {
+  color: #9ca3af;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* =========================================
+   EXTRAS
+   ========================================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+/* Responsive: en pantallas pequeñas se apila */
+@media (max-width: 900px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-left,
+  .sidebar-right {
+    border-left: none;
+    border-right: none;
+    border-top: 4px solid #5cdbd3;
+    
+  }
+}

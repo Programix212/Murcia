@@ -1,0 +1,493 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   OCULTAR SCROLLBAR PERO MANTENER SCROLL
+   ========================================= */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE y Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Por si hay otros contenedores con scroll */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  min-height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* =========================================
+   OVERLAY & FONDO ANIMADO
+   ========================================= */
+.ceartee-fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: #4f46e5;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-animation span {
+  position: absolute;
+  display: block;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+/* La imagen del ícono dentro del círculo */
+.btn-img-icon {
+  width: 98px;
+  height: auto;
+  object-fit: contain;
+  
+}
+
+.bg-animation span:nth-child(1) { width: 80px;  height: 80px;  top: 10%; left: 8%;  }
+.bg-animation span:nth-child(2) { width: 40px;  height: 40px;  top: 20%; left: 85%; }
+.bg-animation span:nth-child(3) { width: 120px; height: 120px; top: 70%; left: 75%; }
+.bg-animation span:nth-child(4) { width: 30px;  height: 30px;  top: 45%; left: 15%; }
+.bg-animation span:nth-child(5) { width: 60px;  height: 60px;  top: 80%; left: 10%; }
+.bg-animation span:nth-child(6) { width: 50px;  height: 50px;  top: 15%; left: 50%; }
+.bg-animation span:nth-child(7) { width: 90px;  height: 90px;  top: 75%; left: 90%; }
+.bg-animation span:nth-child(8) { width: 25px;  height: 25px;  top: 55%; left: 55%; }
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+   ========================================= */
+.main-container {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 40px;
+}
+
+/* =========================================
+   HEADER BLANCO
+   ========================================= */
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 86px 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  height: 64px;
+}
+
+/* --- Botón Volver --- */
+.btn-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.btn-back .btn-text,
+.btn-back .btn-icon {
+  display: none;
+}
+
+.btn-back::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  padding:20px;
+  background-image: url("./img_logos/volver-flecha.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* --- Título centrado --- */
+.header-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
+.header-emoji {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.header-title h1 {
+  font-size: 50px;
+  font-weight: 800;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* --- Botón Restablecer --- */
+.btn-reset {
+  background: #f3f4f6;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  transition: background 0.2s;
+}
+
+.btn-reset:hover {
+  background: #e5e7eb;
+}
+
+/* =========================================
+   CONTENEDOR DE CONFIGURACIÓN
+   ========================================= */
+.settings-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+/* =========================================
+   SECCIONES ROJAS (tarjetas de configuración)
+   ========================================= */
+.settings-section {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.section-icon {
+  font-size: 1.3rem;
+}
+
+/* =========================================
+   ITEMS DE CONFIGURACIÓN
+   ========================================= */
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.setting-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.setting-description {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.4;
+}
+
+/* =========================================
+   SELECTS (dropdowns)
+   ========================================= */
+.setting-select {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  min-width: 160px;
+}
+
+.setting-select option {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* =========================================
+   TOGGLES (interruptores) — BLANCOS
+   ========================================= */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 34px;
+}
+
+.toggle-slider::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #ffffff;
+  transition: 0.3s;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+input:checked + .toggle-slider {
+  background-color: #ffffff;
+}
+
+input:checked + .toggle-slider::before {
+  background-color: #ef4444;
+  transform: translateX(24px);
+}
+
+/* =========================================
+   SLIDERS DE VOLUMEN
+   ========================================= */
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 140px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.volume-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* =========================================
+   BOTONES BLANCOS
+   ========================================= */
+.btn-clean {
+  background: #ffffff;
+  color: #ef4444;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.15s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-clean:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   FOOTER DE ACCIONES
+   ========================================= */
+.settings-footer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-cancel,
+.btn-save {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border-radius: 50px;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+}
+
+.btn-cancel {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  backdrop-filter: blur(4px);
+}
+
+.btn-save {
+  background: #ffffff;
+  color: #ef4444;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.btn-cancel:hover,
+.btn-save:hover {
+  transform: translateY(-2px);
+}
+
+.btn-save:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 640px) {
+  .header {
+    padding: 80px 20px;
+  }
+
+  .header-title h1 {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+  }
+
+  .settings-section {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .setting-select {
+    width: 100%;
+  }
+
+  .settings-footer {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-save {
+    width: 100%;
+    justify-content: center;
+  }
+}

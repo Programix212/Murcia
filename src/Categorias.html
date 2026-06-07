@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ceartee - Bienvenido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Categorias.css">
+  <link rel="stylesheet" href="transiciones.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <script src="transiciones.js"></script>
+</head>
+
+<body>
+  <!-- 1. Overlay PRIMERO -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+  <!-- ========== FONDO ANIMADO ========== -->
+  <div class="bg-animation">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- ========== CONTENEDOR PRINCIPAL ========== -->
+  <div class="main-container">
+    
+    <!-- Header -->
+    <header class="header">
+      <button class="btn-back" onclick="goback()">
+        <span class="btn-icon">←</span>
+        <span class="btn-text">Volver</span>
+      </button>
+
+      <script src="Categorias.js"></script>
+      
+      <div class="header-title">
+        <h1>CATEGORÍAS PREESCOLAR</h1>
+      </div>
+      
+      <button class="btn-settings" onclick="window.location.href='Configuracion.html'">
+        <span>⚙️</span>
+      </button>
+    </header>
+
+    <!-- Subtítulo -->
+    <p class="page-subtitle">¡Elige una categoría y comienza a aprender jugando!</p>
+
+    <!-- Grid de Categorías -->
+    <div class="categories-grid">
+      
+      <!-- Lenguajes -->
+      <div class="category-card" data-categoria="lenguajes" onclick="cearteeNavigate('Lenguajes.html')" style="cursor: pointer;">
+        <div class="card-icon"><img src="./img_logos/Lenguajes.png" class="img_logos"></div>
+        <h3 class="card-title" data-i18n="lenguaje">Lenguajes</h3>
+        
+        <!-- ✅ ESTRELLAS DINÁMICAS -->
+        <div class="categoria-estrellas" data-categoria="lenguajes">
+          <!-- Las estrellas se generan dinámicamente -->
+        </div>
+        
+        <p class="card-counter game-count">15 juegos</p>
+      </div>
+
+      <!-- Saberes -->
+      <div class="category-card" data-categoria="saberes" onclick="cearteeNavigate('Saberesypensamientocientifico.html')" style="cursor: pointer;">
+        <div class="card-icon"><img src="./img_logos/Saberes.png" class="img_logos"></div>
+        <h3 class="card-title" data-i18n="saberes">Saberes y pensamiento cientifico</h3>
+        
+        <!-- ✅ ESTRELLAS DINÁMICAS -->
+        <div class="categoria-estrellas" data-categoria="saberes">
+          <!-- Las estrellas se generan dinámicamente -->
+        </div>
+        
+        <p class="card-counter game-count">32 juegos</p>
+      </div>
+
+      <!-- Ética -->
+      <div class="category-card" data-categoria="etica" onclick="cearteeNavigate('Etica.html')" style="cursor: pointer;">
+        <div class="card-icon"><img src="./img_logos/Etica.png" class="img_logos"></div>
+        <h3 class="card-title" data-i18n="etica">Ética, naturaleza y sociedades</h3>
+        
+        <!-- ✅ ESTRELLAS DINÁMICAS -->
+        <div class="categoria-estrellas" data-categoria="etica">
+          <!-- Las estrellas se generan dinámicamente -->
+        </div>
+        
+        <p class="card-counter game-count">10 juegos</p>
+      </div>
+
+      <!-- Humano -->
+      <div class="category-card" data-categoria="humano" onclick="cearteeNavigate('Delohumanoacomunitario.html')" style="cursor: pointer;">
+        <div class="card-icon"><img src="./img_logos/Humano.png" class="img_logos"></div>
+        <h3 class="card-title" data-i18n="humano">De lo humano a comunitario</h3>
+        
+        <!-- ✅ ESTRELLAS DINÁMICAS -->
+        <div class="categoria-estrellas" data-categoria="humano">
+          <!-- Las estrellas se generan dinámicamente -->
+        </div>
+        
+        <p class="card-counter game-count">2 juegos</p>
+      </div>
+
+    </div>
+
+    <!-- Footer con estadísticas -->
+    <footer class="footer-stats">
+      <div class="stat-item">
+        <span class="stat-icon"></span>
+        <span class="stat-value">59</span>
+        <span class="stat-label" data-i18n="juegosStat">Juegos</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-icon"></span>
+        <span class="stat-value">4</span>
+        <span class="stat-label" data-i18n="categoriasStat">Categorías</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-icon"></span>
+        <span class="stat-value" id="contador-completados">0</span>
+        <span class="stat-label" data-i18n="completadosStat">Completados</span>
+      </div>
+    </footer>
+
+    <!-- Decoración -->
+    <div class="decoration">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+  <script src="perfiles.js"></script>
+  <script src="aplicar-config.js"></script>
+  <script src="Categorias.js"></script>
+  <script src="Estrellas.js"></script>
+</body>
+</html>

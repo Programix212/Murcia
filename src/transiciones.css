@@ -1,0 +1,28 @@
+/* ==========================================
+   CEARTEE - FADE SUAVE ENTRE PÁGINAS
+   ========================================== */
+
+.ceartee-fade-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(10, 10, 26, 0.985), rgba(16, 16, 36, 0.985));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 99999;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.3s ease;
+}
+
+.ceartee-fade-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Al salir, fuerza visible */
+body.ceartee-exiting .ceartee-fade-overlay {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}

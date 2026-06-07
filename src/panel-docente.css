@@ -1,0 +1,450 @@
+/* =========================================
+   RESET & BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  color: #1f2937;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+/* La imagen del ícono dentro del círculo */
+.btn-img-icon {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* =========================================
+   OVERLAY & FONDO ANIMADO
+   ========================================= */
+.ceartee-fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: #4f46e5;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-animation span {
+  position: absolute;
+  display: block;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.bg-animation span:nth-child(1) { width: 80px;  height: 80px;  top: 10%; left: 8%;  }
+.bg-animation span:nth-child(2) { width: 40px;  height: 40px;  top: 20%; left: 85%; }
+.bg-animation span:nth-child(3) { width: 120px; height: 120px; top: 70%; left: 75%; }
+.bg-animation span:nth-child(4) { width: 30px;  height: 30px;  top: 45%; left: 15%; }
+.bg-animation span:nth-child(5) { width: 60px;  height: 60px;  top: 80%; left: 10%; }
+.bg-animation span:nth-child(6) { width: 50px;  height: 50px;  top: 15%; left: 50%; }
+.bg-animation span:nth-child(7) { width: 90px;  height: 90px;  top: 75%; left: 90%; }
+.bg-animation span:nth-child(8) { width: 25px;  height: 25px;  top: 55%; left: 55%; }
+
+/* =========================================
+   LOGIN OVERLAY
+   ========================================= */
+.login-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-box {
+  position: relative;
+  z-index: 2;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+
+.login-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+}
+
+.login-box h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.login-box p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 28px;
+}
+
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 1.5px solid #e5e7eb;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-box input[type="password"]:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 16px;
+  border-radius: 14px;
+  border: none;
+  background: #ef4444;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.login-box button:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.login-error {
+  color: #ef4444;
+  font-size: 0.9rem;
+  margin-top: 14px;
+  display: none;
+  font-weight: 500;
+}
+
+.btn-volver-login {
+  margin-top: 18px;
+  background: transparent !important;
+  color: #6b7280 !important;
+  font-size: 0.95rem !important;
+  border: 1.5px solid #e5e7eb !important;
+}
+
+.btn-volver-login:hover {
+  background: #f9fafb !important;
+  color: #374151 !important;
+}
+
+/* =========================================
+   PANEL CONTAINER
+   ========================================= */
+.panel-container {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 40px;
+}
+
+/* =========================================
+   HEADER BLANCO
+   ========================================= */
+.panel-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 80px 80px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  height: 80px;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #374151;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.btn-back:hover {
+  background: #f3f4f6;
+}
+
+.panel-header h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  white-space: nowrap;
+}
+
+/* =========================================
+   ESTADÍSTICA DE ARRIBA (CUADRO BLANCO)
+   ========================================= */
+.panel-stats {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #ffffff !important;
+  border: 1px solid #f3f4f6 !important;
+  border-radius: 18px !important;
+  padding: 16px 32px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+  gap: 10px !important;
+  min-height: 56px !important;
+}
+
+.panel-stats span,
+.panel-stats #totalAlumnos {
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: #ef4444 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* =========================================
+   FILTROS — FIJO Y MENOS TRANSPARENTES
+   ========================================= */
+.panel-filtros {
+  display: flex;
+  gap: 14px;
+  max-width: 980px;
+  margin: 28px auto;
+  padding: 0 24px;
+  align-items: center;
+}
+
+/* 🔍 LUPA DENTRO DE LA BURBUJA/INPUT */
+.panel-filtros input {
+  flex: 1;
+  padding: 14px 20px 14px 52px; /* Espacio a la izquierda para la lupa */
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.45); /* Menos transparente */
+  background-image: url('./img_logos/lupa.png');
+  background-repeat: no-repeat;
+  background-position: 18px center; /* A la izquierda dentro del input */
+  background-size: 20px;
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.panel-filtros input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.panel-filtros input:focus {
+  background-color: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+.panel-filtros select {
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.45); /* Menos transparente */
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.panel-filtros select option {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+/* ❌ SIN HOVER QUE MUEVA EL PANEL */
+
+/* =========================================
+   TABLA ROJA
+   ========================================= */
+.panel-tabla-container {
+  max-width: 1380px;
+  height: 100%;
+  margin: 0 auto 48px;
+  padding: 0px 20px;
+}
+
+.panel-tabla {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.14);
+}
+
+.panel-tabla thead tr {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.panel-tabla th {
+  padding: 20px 24px !important;
+  text-align: left;
+  font-size: 0.85rem !important;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.panel-tabla td {
+  padding: 20px 24px !important;
+  font-size: 1rem !important;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.panel-tabla tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.panel-tabla tbody tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.panel-tabla td strong,
+.panel-tabla td .stat-number {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* =========================================
+   VACÍO
+   ========================================= */
+.panel-vacio {
+  text-align: center;
+  padding: 70px 20px;
+  color: #ffffff;
+}
+
+.vacio-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+}
+
+.panel-vacio p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.panel-vacio button {
+  padding: 14px 32px;
+  border-radius: 14px;
+  border: none;
+  background: #ef4444;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.panel-vacio button:hover {
+  background: #dc2626;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.panel-footer {
+  text-align: center;
+  padding: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  .panel-header h1 {
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+  }
+
+  .panel-filtros {
+    flex-direction: column;
+  }
+
+  .panel-filtros input {
+    background-position: 16px center;
+  }
+
+  .panel-filtros input,
+  .panel-filtros select {
+    width: 100%;
+  }
+
+  .panel-tabla th,
+  .panel-tabla td {
+    padding: 16px 18px !important;
+    font-size: 0.9rem !important;
+  }
+
+  .panel-tabla {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .panel-stats span {
+    font-size: 1rem !important;
+  }
+}
