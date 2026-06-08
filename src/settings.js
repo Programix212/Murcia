@@ -7,7 +7,16 @@ function goBack() {
   if (hayaCambiosSinGuardar) {
     mostrarModal();
   } else {
-    window.history.back();
+    irAtras();
+  }
+}
+
+// Navegación de salida (destino del botón Volver)
+function irAtras() {
+  if (window.cearteeNavigate) {
+    cearteeNavigate('Categorias.html');
+  } else {
+    window.location.href = 'Categorias.html';
   }
 }
 
@@ -79,7 +88,7 @@ function mostrarModal() {
     modal.remove();
     hayaCambiosSinGuardar = false;
     restaurarConfigGuardada();
-    window.history.back();
+    irAtras();
     console.log('✅ Usuario salió sin guardar');
   });
 }
@@ -99,6 +108,8 @@ function restaurarConfigGuardada() {
 
     set('language',           c.idioma,         'value');
     set('theme',              c.tema,           'value');
+    set('high-contrast', c.altoContraste, 'checked');
+    set('font-scale',    c.escalaFuente,  'value');
     set('animations',         c.animaciones,    'checked');
     set('volume',             c.volumen,        'value');
     set('game-volume',        c.volumenJuego,   'value');
@@ -148,11 +159,17 @@ function saveSettings() {
   if (cloudSync === null || cloudSync === undefined) cloudSync = false;
   var developerMode  = document.getElementById('developer-mode')?.checked;
   if (developerMode === null || developerMode === undefined) developerMode = false;
+  var altoContraste = document.getElementById('high-contrast')?.checked;
+  if (altoContraste === null || altoContraste === undefined) altoContraste = false;
+  var escalaFuente = parseInt(document.getElementById('font-scale')?.value);
+  if (isNaN(escalaFuente)) escalaFuente = 100;
 
   var configGuardar = {
     idioma: idioma,
     tema: tema,
     animaciones: animaciones,
+    altoContraste: altoContraste,
+    escalaFuente: escalaFuente,
     volumen: volumen,
     volumenJuego: volumenJuego,
     sonidoNoti: sonidoNoti,
@@ -319,7 +336,7 @@ function clearCache() {
 // ==========================================
 document.addEventListener('DOMContentLoaded', function() {
   var ids = [
-    'language','theme','animations','volume','game-volume',
+    'language','theme','high-contrast','font-scale','animations','volume','game-volume',
     'notification-sound','completion-sound',
     'auto-timer','realtime-stats','default-difficulty',
     'cloud-sync','developer-mode'
@@ -333,6 +350,10 @@ document.addEventListener('DOMContentLoaded', function() {
       el.addEventListener('change', function() {
         hayaCambiosSinGuardar = true;
         console.log('🔄 Cambio en:', id);
+
+         if (id === 'high-contrast' && window.aplicarAltoContrasteGlobal) {
+          window.aplicarAltoContrasteGlobal(el.checked);
+        }
 
         if (id === 'language' && window.aplicarIdiomaGlobal) {
           window.aplicarIdiomaGlobal(el.value);
@@ -365,6 +386,12 @@ document.addEventListener('DOMContentLoaded', function() {
       if (el.type === 'range') {
         el.addEventListener('input', function() {
           hayaCambiosSinGuardar = true;
+
+          if (id === 'font-scale') {
+            var valSpanF = document.getElementById('font-scale-value');
+            if (valSpanF) valSpanF.textContent = el.value + '%';
+            if (window.aplicarEscalaFuenteGlobal) window.aplicarEscalaFuenteGlobal(el.value);
+          }
           
           // ✅ Actualizar display del volumen principal
           if (id === 'volume') {
@@ -792,6 +819,72 @@ async function iniciarUpdater() {
     console.log("No hay actualizaciones o falló la verificación");
   }
 }
+
+// ==========================================
+// EXPORTAR / IMPORTAR RESPALDO
+// ==========================================
+function exportarRespaldo() {
+  try {
+    var data = window.PerfilesManager.exportarTodo();
+    var json = JSON.stringify(data, null, 2);
+    var blob = new Blob([json], { type: 'application/json' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    var fecha = new Date().toISOString().slice(0, 10);
+    a.href = url;
+    a.download = 'ceartee_respaldo_' + fecha + '.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+
+    mostrarNotifConfig('✅ Respaldo exportado correctamente');
+  } catch (e) {
+    mostrarNotifConfig('❌ Error al exportar: ' + e.message, true);
+  }
+}
+
+function importarRespaldo(event) {
+  var file = event.target.files && event.target.files[0];
+  if (!file) return;
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var backup = JSON.parse(e.target.result);
+
+      // Preguntar modo: combinar o reemplazar
+      var reemplazar = confirm(
+        'IMPORTAR RESPALDO\n\n' +
+        'Aceptar = REEMPLAZAR todo (borra los perfiles actuales)\n' +
+        'Cancelar = COMBINAR (conserva los actuales y añade los del archivo)'
+      );
+      var modo = reemplazar ? 'reemplazar' : 'combinar';
+
+      var total = window.PerfilesManager.importarTodo(backup, modo);
+      mostrarNotifConfig('✅ Importado correctamente (' + total + ' perfiles)');
+      setTimeout(function() { window.location.reload(); }, 1500);
+    } catch (err) {
+      mostrarNotifConfig('❌ Archivo inválido: ' + err.message, true);
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = ''; // permite reimportar el mismo archivo
+}
+
+// Notificación reutilizable
+function mostrarNotifConfig(texto, esError) {
+  var notif = document.createElement('div');
+  notif.textContent = texto;
+  notif.style.cssText =
+    'position:fixed; bottom:100px; left:50%; transform:translateX(-50%);' +
+    'background:' + (esError ? '#e74c3c' : '#6bcb77') + '; color:white;' +
+    'padding:14px 28px; border-radius:25px; font-size:15px; font-weight:700;' +
+    'z-index:99999; font-family:"Poppins",sans-serif; max-width:80%; text-align:center;';
+  document.body.appendChild(notif);
+  setTimeout(function() { notif.remove(); }, 2500);
+}
+
 
 window.checkForUpdates = iniciarUpdater;
 setTimeout(iniciarUpdater, 5000);

@@ -1,0 +1,14 @@
+Rol de vite 
+
+Versionado - No lo hare hasta que este todo bien Todo hecho 
+
+
+Distribucion - NO hare una firma 
+
+Actualizaciones - borrar lo que no sirve y no se esta utilizando de updater duplicado y muerto
+
+
+C:\Users\Young\.tauri\murcia.key
+
+contraseña generada:1234
+

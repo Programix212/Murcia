@@ -9,6 +9,76 @@
   // ==========================================
   const STORAGE_KEY = 'ceartee_perfiles';
   const ACTIVE_KEY = 'ceartee_perfil_activo';
+
+    // ==========================================
+  // VERSIÓN DE ESQUEMA Y MIGRACIÓN
+  // ==========================================
+  const CEARTEE_SCHEMA_VERSION = 2;
+  const SCHEMA_KEY = 'ceartee_schema_version';
+
+  // Forma estándar de stats (esquema actual)
+  function statsPorDefecto() {
+    return {
+      juegosCompletados: 0,
+      totalAciertos: 0,
+      totalErrores: 0,
+      mejorPuntuacion: 0,
+      mejorRacha: 0,
+      tiempoTotal: 0,
+      ultimaActividad: null,
+      juegos: {}
+    };
+  }
+
+  // Asegura que un objeto stats tenga TODOS los campos del esquema actual
+  function normalizarStats(stats) {
+    var base = statsPorDefecto();
+    if (!stats || typeof stats !== 'object') return base;
+    for (var k in base) {
+      if (stats[k] === undefined || stats[k] === null) stats[k] = base[k];
+    }
+    if (!stats.juegos || typeof stats.juegos !== 'object') stats.juegos = {};
+    return stats;
+  }
+
+  // Ejecuta migraciones según la versión guardada
+  function migrarEsquema() {
+    var versionActual = parseInt(localStorage.getItem(SCHEMA_KEY)) || 1;
+    if (versionActual >= CEARTEE_SCHEMA_VERSION) return;
+
+    console.log('🔧 Migrando esquema de v' + versionActual + ' a v' + CEARTEE_SCHEMA_VERSION);
+
+    var perfiles = [];
+    try { perfiles = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) {}
+
+    // --- Migración v1 -> v2: normalizar stats y campos de perfil ---
+    if (versionActual < 2) {
+      perfiles.forEach(function(p) {
+        // Campos que faltaban en perfiles viejos
+        if (!p.fechaCreacion) p.fechaCreacion = new Date().toISOString();
+        if (!p.ultimaActividad) p.ultimaActividad = p.fechaCreacion;
+
+        // Normalizar stats del perfil
+        var key = 'ceartee_perfil_' + p.id + '_stats';
+        var stats = null;
+        try { stats = JSON.parse(localStorage.getItem(key)); } catch(e) {}
+        localStorage.setItem(key, JSON.stringify(normalizarStats(stats)));
+      });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(perfiles));
+    }
+
+    // (Futuras migraciones: if (versionActual < 3) { ... } )
+
+    localStorage.setItem(SCHEMA_KEY, String(CEARTEE_SCHEMA_VERSION));
+    console.log('✅ Esquema migrado a v' + CEARTEE_SCHEMA_VERSION);
+  }
+
+  // Ejecutar migración al cargar (antes de usar los datos)
+  migrarEsquema();
+
+  // Exponer la migración para poder probarla con Vitest (inofensivo en producción)
+  window.cearteeMigrarEsquema = migrarEsquema;
+
   
   // Avatares disponibles
   const AVATARES = ['👶', '👧', '👦', '👨', '👩', '🧒', '👴', '👵', '🐶', '🐱', '🐭', '🐰', '🦊', '🐻', '🐼', '🐨', '🐯', '🦁', '🐮', '🐷', '🦄', '🐸', '🐵', '🐔', '🦆', '🦉', '🐺', '🐗', '🦒', '🦘'];
@@ -154,6 +224,98 @@
         return false;
       }
     },
+
+    // ===== EXPORTAR TODO A UN OBJETO =====
+    exportarTodo: function() {
+      var perfiles = this.obtenerPerfiles();
+      var datosPerfiles = {};
+
+      perfiles.forEach(function(p) {
+        var datos = {};
+        var prefix = 'ceartee_perfil_' + p.id + '_';
+        Object.keys(localStorage).forEach(function(key) {
+          if (key.indexOf(prefix) === 0) {
+            var tipo = key.substring(prefix.length);
+            try { datos[tipo] = JSON.parse(localStorage.getItem(key)); }
+            catch(e) { datos[tipo] = localStorage.getItem(key); }
+          }
+        });
+        datosPerfiles[p.id] = datos;
+      });
+
+      var appConfig = {};
+      try { appConfig = JSON.parse(localStorage.getItem('appConfig') || '{}'); } catch(e) {}
+
+      return {
+        app: 'CEARTEE',
+        tipo: 'backup',
+        schemaVersion: CEARTEE_SCHEMA_VERSION,
+        fecha: new Date().toISOString(),
+        appConfig: appConfig,
+        perfiles: perfiles,
+        datosPerfiles: datosPerfiles
+      };
+    },
+
+    // ===== IMPORTAR DESDE UN OBJETO =====
+    // modo: 'reemplazar' (borra todo lo actual) o 'combinar' (añade/actualiza)
+    importarTodo: function(backup, modo) {
+      if (!backup || backup.app !== 'CEARTEE' || !Array.isArray(backup.perfiles)) {
+        throw new Error('El archivo no es un respaldo válido de CEARTEE');
+      }
+      modo = modo || 'combinar';
+
+      // Si es un respaldo viejo, normalizamos sus stats al esquema actual
+      var versionBackup = parseInt(backup.schemaVersion) || 1;
+
+      if (modo === 'reemplazar') {
+        // Borrar perfiles y datos actuales
+        this.obtenerPerfiles().forEach(function(p) {
+          var prefix = 'ceartee_perfil_' + p.id + '_';
+          Object.keys(localStorage).forEach(function(key) {
+            if (key.indexOf(prefix) === 0) localStorage.removeItem(key);
+          });
+        });
+        localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(ACTIVE_KEY);
+      }
+
+      var perfilesActuales = this.obtenerPerfiles();
+
+      backup.perfiles.forEach(function(p) {
+        // Evitar duplicados por id al combinar
+        var existe = perfilesActuales.find(function(x) { return x.id === p.id; });
+        if (!existe) {
+          perfilesActuales.push(p);
+        } else {
+          existe.nombre = p.nombre;
+          existe.avatar = p.avatar;
+        }
+
+        // Restaurar datos del perfil
+        var datos = (backup.datosPerfiles && backup.datosPerfiles[p.id]) || {};
+        Object.keys(datos).forEach(function(tipo) {
+          var valor = datos[tipo];
+          // Normalizar stats si el respaldo es de un esquema viejo
+          if (tipo === 'stats' && versionBackup < CEARTEE_SCHEMA_VERSION) {
+            valor = normalizarStats(valor);
+          }
+          localStorage.setItem('ceartee_perfil_' + p.id + '_' + tipo, JSON.stringify(valor));
+        });
+      });
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(perfilesActuales));
+
+      // Restaurar configuración (opcional)
+      if (backup.appConfig && Object.keys(backup.appConfig).length) {
+        localStorage.setItem('appConfig', JSON.stringify(backup.appConfig));
+      }
+
+      // Marcar esquema actualizado
+      localStorage.setItem(SCHEMA_KEY, String(CEARTEE_SCHEMA_VERSION));
+      return perfilesActuales.length;
+    },
+
 
     eliminarDatosPerfil: function(perfilId) {
       const keys = Object.keys(localStorage);

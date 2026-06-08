@@ -28,7 +28,7 @@
 
     <!-- Header -->
     <header class="header">
-      <button class="btn-back" onclick="cearteeNavigate('Categorias.html')">
+      <button class="btn-back" onclick="goBack()">
         <span data-i18n="volver"></span>
       </button>
 
@@ -210,6 +210,25 @@
             <span class="toggle-slider"></span>
           </label>
         </div>
+
+               <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confExportar">Exportar respaldo</label>
+            <p class="setting-description" data-i18n="confExportarDesc">Guarda perfiles y estadísticas en un archivo</p>
+          </div>
+          <button class="btn-clean" onclick="exportarRespaldo()">Exportar</button>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-info">
+            <label class="setting-label" data-i18n="confImportar">Importar respaldo</label>
+            <p class="setting-description" data-i18n="confImportarDesc">Restaura perfiles y estadísticas desde un archivo</p>
+          </div>
+          <button class="btn-clean" onclick="document.getElementById('input-importar').click()"> Importar</button>
+          <input type="file" id="input-importar" accept="application/json,.json" style="display:none" onchange="importarRespaldo(event)">
+        </div>
+
+
 
         <div class="setting-item">
           <div class="setting-info">

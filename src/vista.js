@@ -162,7 +162,15 @@ function clickBotonNativo(tipo) {
 // ==========================================
 // ✅ VALIDAR ESTRUCTURA DEL ZIP
 // ==========================================
+// Caché de juegos ya validados en esta sesión (evita re-descomprimir al reabrir)
+window.__cacheValidacionJuegos = window.__cacheValidacionJuegos || {};
+
 async function validarZipJClic(url) {
+  // Si este juego ya se validó correctamente antes, no volver a descomprimirlo
+  if (window.__cacheValidacionJuegos[url]) {
+    console.log('⚡ Validación servida desde caché:', url);
+    return { valido: true, error: null };
+  }
   try {
     if (!window.JSZip) return { valido: true, error: null };
     var respuesta = await fetch(url);
@@ -182,6 +190,8 @@ async function validarZipJClic(url) {
         if (!contenido || contenido.length < 50) return { valido: false, error: tVista('errorProyectoVacio') };
       } catch(readErr) { return { valido: false, error: tVista('errorZipCorrupto') }; }
     }
+    // Validación exitosa: guardar en caché para próximas aperturas
+    window.__cacheValidacionJuegos[url] = true;
     return { valido: true, error: null };
   } catch(e) { return { valido: true, error: null }; }
 }
@@ -228,19 +238,36 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
 
   container.innerHTML = `
     <div id="jclic-stage" style="width:100%; height:100%; position:relative; z-index:1;"></div>
-    <div class="ceartee-loader" id="ceartee-loader">
-      <div class="loader-logo-wrap">
-        <img src="./assets/Imagenes/Logo_de_Ceartee.jfif" alt="CEARTEE" onerror="this.style.display='none'">
-        <div class="loader-ring"></div>
+    <div class="ceartee-loader" id="ceartee-loader" style="
+      position:absolute; inset:0; z-index:10;
+      background:#ffffff;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      gap:12px;
+      font-family:'Poppins',sans-serif;
+    ">
+      <p style="
+        font-size:1rem; font-weight:600;
+        color:#374151; letter-spacing:0.05em;
+        margin:0;
+      " id="loader-subtitle">Cargando<span id="loader-dots"></span></p>
+      <div style="
+        width:220px; height:14px;
+        background:#f3f4f6;
+        border-radius:999px;
+        overflow:hidden;
+        border:1px solid #e5e7eb;
+      ">
+        <div id="loader-bar-fill" style="
+          height:100%; width:0%;
+          background:#facc15;
+          border-radius:999px;
+          transition:width 0.25s ease;
+        "></div>
       </div>
-      <h2 class="loader-title">CEARTEE</h2>
-      <p class="loader-subtitle" id="loader-subtitle">${tVista('loaderPreparando')}<span class="loader-dots"></span></p>
-      <div class="loader-bar">
-        <div id="loader-bar-fill"></div>
-      </div>
-      <p class="loader-game-name">${nombreJuego}</p>
     </div>
   `;
+
 
   const stage = document.getElementById('jclic-stage');
   const barraFill = document.getElementById('loader-bar-fill');
@@ -284,7 +311,7 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
       if (barraFill) barraFill.style.width = '100%';
       cargaMinimaCompleta = true;
       clearInterval(intervaloBarra);
-      if (subtitleEl) subtitleEl.innerHTML = tVista('loaderFinalizando') + '<span class="loader-dots"></span>';
+     if (subtitleEl) subtitleEl.textContent = '¡Listo!'; 
       verificarFinalizacion();
     } else {
       if (barraFill) barraFill.style.width = progresoActual + '%';
@@ -316,7 +343,8 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
     if (cargaMinimaCompleta && jclicListo) {
       finalizarCargaVisual();
     } else if (cargaMinimaCompleta && !jclicListo) {
-      if (subtitleEl) subtitleEl.innerHTML = tVista('loaderEsperando') + '<span class="loader-dots"></span>';
+      if (subtitleEl) subtitleEl.textContent = 'Cargando...';
+
     }
   }
 
@@ -334,14 +362,23 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
         limpiarInterfazJClic();
         asegurarBotonesActivos();
         iniciarObservadorJClic();
+        // ✅ Arrancar el cronómetro ahora que el juego está visible
+        if (typeof window.iniciarRelojJuego === 'function') {
+          window.iniciarRelojJuego();
+        }
         console.log('🎮 Juego verificado y listo');
       }, 500);
     } else {
       limpiarInterfazJClic();
       asegurarBotonesActivos();
       iniciarObservadorJClic();
+      // ✅ Arrancar el cronómetro también por si el loader no estaba
+      if (typeof window.iniciarRelojJuego === 'function') {
+        window.iniciarRelojJuego();
+      }
     }
   }
+
 
   let intentosVerif = 0;
   intervaloVerificacion = setInterval(function() {
@@ -378,7 +415,7 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
         try {
           jclicPlayer = window.JClic.loadProject(
             stage, url,
-            { fade: 0, counters: false, maxWaitTime: 0, info: false, reportsBtn: false },
+            { fade: 0, counters: false, maxWaitTime: 30000, info: false, reportsBtn: false },
             function(player) { onCargaExitosa(); }
           );
         } catch (err) {
@@ -632,4 +669,5 @@ if (window.EstrellasManager) {
   console.log('⭐ Estrellas actualizadas tras terminar juego');
 }
   console.log('🛡️ Modo Kiosco activado');
+
 })();
