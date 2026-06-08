@@ -1,5 +1,17 @@
 console.log('✅ settings.js OK');
 
+// Helper de traducción para mensajes de esta página
+window.tConfig = function(clave) {
+  try {
+    var cfg = JSON.parse(localStorage.getItem('appConfig') || '{}');
+    var idioma = cfg.idioma || 'es';
+    if (window.textosI18n && window.textosI18n[idioma] && window.textosI18n[idioma][clave]) {
+      return window.textosI18n[idioma][clave];
+    }
+  } catch (e) {}
+  return clave;
+};
+
 let hayaCambiosSinGuardar = false;
 
 function goBack() {
@@ -13,10 +25,17 @@ function goBack() {
 
 // Navegación de salida (destino del botón Volver)
 function irAtras() {
+  var destino = 'Categorias.html';
+  try {
+    // Volver a la página de origen (Preescolar o Primaria) si se conoce
+    if (document.referrer && document.referrer.indexOf('Configuracion') === -1 && document.referrer.indexOf('tauri') !== -1) {
+      destino = document.referrer;
+    }
+  } catch (e) {}
   if (window.cearteeNavigate) {
-    cearteeNavigate('Categorias.html');
+    cearteeNavigate(destino);
   } else {
-    window.location.href = 'Categorias.html';
+    window.location.href = destino;
   }
 }
 
@@ -201,7 +220,7 @@ function saveSettings() {
   }
 
   var notif = document.createElement('div');
-  notif.textContent = '✅ Configuración guardada correctamente';
+  notif.textContent = (window.tConfig ? window.tConfig('confGuardadoOk') : '✅ Configuración guardada correctamente');
   notif.style.cssText = `
     position:fixed; bottom:100px; left:50%;
     transform:translateX(-50%);
@@ -722,6 +741,9 @@ function syncActualizarUI() {
   var loginSection = document.getElementById('sync-login-section');
   var loggedSection = document.getElementById('sync-logged-section');
   var emailDisplay = document.getElementById('sync-email-display');
+
+  // Si no estamos en la página de Configuración, salir sin hacer nada
+  if (!loginSection || !loggedSection || !emailDisplay) return;
 
   if (info) {
     loginSection.style.display = 'none';

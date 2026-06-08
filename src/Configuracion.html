@@ -216,7 +216,7 @@
             <label class="setting-label" data-i18n="confExportar">Exportar respaldo</label>
             <p class="setting-description" data-i18n="confExportarDesc">Guarda perfiles y estadísticas en un archivo</p>
           </div>
-          <button class="btn-clean" onclick="exportarRespaldo()">Exportar</button>
+          <button class="btn-clean" onclick="exportarRespaldo()" data-i18n="confExportarBtn">Exportar</button>
         </div>
 
         <div class="setting-item">
@@ -224,7 +224,7 @@
             <label class="setting-label" data-i18n="confImportar">Importar respaldo</label>
             <p class="setting-description" data-i18n="confImportarDesc">Restaura perfiles y estadísticas desde un archivo</p>
           </div>
-          <button class="btn-clean" onclick="document.getElementById('input-importar').click()"> Importar</button>
+          <button class="btn-clean" onclick="document.getElementById('input-importar').click()" data-i18n="confImportarBtn">Importar</button>
           <input type="file" id="input-importar" accept="application/json,.json" style="display:none" onchange="importarRespaldo(event)">
         </div>
 
@@ -257,7 +257,6 @@
   <script src="notificaciones.js"></script>
   <script src="aplicar-config.js"></script>
   <script src="settings.js"></script>
-  <script src="firebase-auth-rest.js"></script>
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>

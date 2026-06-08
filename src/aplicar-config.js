@@ -142,6 +142,7 @@
       anos6_8          : '6-8 años',
       anos9_12         : '9-12 años',
       anos13_15        : '13-15 años',
+      anosUnidad       : 'años',
       minTxt           : 'min',
       cargando         : 'Cargando...',
       cargandoJuego    : 'Cargando juego...',
@@ -232,6 +233,13 @@
       confLimpiar      : 'Limpiar caché',
       confLimpiarDesc  : 'Eliminar datos temporales',
       confLimpiarBtn   : 'Limpiar',
+      confExportar     : 'Exportar respaldo',
+      confExportarDesc : 'Guarda perfiles y estadísticas en un archivo',
+      confImportar     : 'Importar respaldo',
+      confImportarDesc : 'Restaura perfiles y estadísticas desde un archivo',
+      confExportarBtn  : 'Exportar',
+      confImportarBtn  : 'Importar',
+      confGuardadoOk   : '✅ Configuración guardada correctamente',
       confCancelar     : 'CANCELAR',
       confGuardar      : 'GUARDAR CAMBIOS',
       confRestablecer  : 'Restablecer',
@@ -470,6 +478,7 @@
       anos6_8          : '6-8 anys',
       anos9_12         : '9-12 anys',
       anos13_15        : '13-15 anys',
+      anosUnidad       : 'anys',
       minTxt           : 'min',
       cargando         : 'Carregant...',
       cargandoJuego    : 'Carregant joc...',
@@ -557,6 +566,13 @@
       confLimpiar      : 'Netejar caché',
       confLimpiarDesc  : 'Eliminar dades temporals',
       confLimpiarBtn   : 'Netejar',
+      confExportar     : 'Exportar còpia',
+      confExportarDesc : 'Desa perfils i estadístiques en un arxiu',
+      confImportar     : 'Importar còpia',
+      confImportarDesc : 'Restaura perfils i estadístiques des d\'un arxiu',
+      confExportarBtn  : 'Exportar',
+      confImportarBtn  : 'Importar',
+      confGuardadoOk   : '✅ Configuració desada correctament',
       confCancelar     : 'CANCEL·LAR',
       confGuardar      : 'DESAR CANVIS',
       confRestablecer  : 'Restablir',
@@ -691,7 +707,23 @@
         'Cuento para la tolerancia'   : 'Conte per a la tolerància',
         'Los rincones de la clase'    : 'Els racons de la classe'
       },
-      descripcionesJuegos: {}
+      descripcionesJuegos: {
+        'Arma el rompecabezas de animales salvajes'         : 'Munta el trencaclosques d\'animals salvatges',
+        'Actividades educativas para niños de 5 años'        : 'Activitats educatives per a nens de 5 anys',
+        'Aprende las letras l, m, s, p, t, n jugando'        : 'Aprèn les lletres l, m, s, p, t, n jugant',
+        'Diviértete aprendiendo con actividades interactivas': 'Diverteix-te aprenent amb activitats interactives',
+        'Revive el cuento clásico de Caperucita Roja'        : 'Reviu el conte clàssic de la Caputxeta Vermella',
+        'Identifica y clasifica diferentes objetos'          : 'Identifica i classifica diferents objectes',
+        'Acompaña al pollito Chiqui en su aventura'          : 'Acompanya el pollet Chiqui en la seva aventura',
+        'Descubre la historia del soldadito de plomo'        : 'Descobreix la història del soldadet de plom',
+        'Da tus primeros pasos en el mundo de la lectura'    : 'Fes els teus primers passos en el món de la lectura',
+        'Vive la aventura mágica de Jack'                    : 'Viu l\'aventura màgica d\'en Jack',
+        'Conoce la historia de la gaviota'                   : 'Coneix la història de la gavina',
+        'Descubre los cuentos que cuenta el lobo'            : 'Descobreix els contes que explica el llop',
+        'Aprende los nombres de diferentes animales'         : 'Aprèn els noms de diferents animals',
+        'Practica con números y letras'                      : 'Practica amb números i lletres',
+        'Aprende las vocales de forma divertida'             : 'Aprèn les vocals de manera divertida'
+      }
     },
 
     en: {
@@ -763,6 +795,7 @@
       anos6_8          : '6-8 years',
       anos9_12         : '9-12 years',
       anos13_15        : '13-15 years',
+      anosUnidad       : 'years',
       minTxt           : 'min',
       cargando         : 'Loading...',
       cargandoJuego    : 'Loading game...',
@@ -850,6 +883,13 @@
       confLimpiar      : 'Clear cache',
       confLimpiarDesc  : 'Remove temporary data',
       confLimpiarBtn   : 'Clear',
+      confExportar     : 'Export backup',
+      confExportarDesc : 'Save profiles and statistics to a file',
+      confImportar     : 'Import backup',
+      confImportarDesc : 'Restore profiles and statistics from a file',
+      confExportarBtn  : 'Export',
+      confImportarBtn  : 'Import',
+      confGuardadoOk   : '✅ Settings saved successfully',
       confCancelar     : 'CANCEL',
       confGuardar      : 'SAVE CHANGES',
       confRestablecer  : 'Reset',
@@ -1011,7 +1051,23 @@
         'Cuento para la tolerancia'   : 'A tale for tolerance',
         'Los rincones de la clase'    : 'The corners of the classroom'
       },
-      descripcionesJuegos: {}
+      descripcionesJuegos: {
+        'Arma el rompecabezas de animales salvajes'         : 'Build the wild animals puzzle',
+        'Actividades educativas para niños de 5 años'        : 'Educational activities for 5-year-old children',
+        'Aprende las letras l, m, s, p, t, n jugando'        : 'Learn the letters l, m, s, p, t, n by playing',
+        'Diviértete aprendiendo con actividades interactivas': 'Have fun learning with interactive activities',
+        'Revive el cuento clásico de Caperucita Roja'        : 'Relive the classic Little Red Riding Hood tale',
+        'Identifica y clasifica diferentes objetos'          : 'Identify and classify different objects',
+        'Acompaña al pollito Chiqui en su aventura'          : 'Join little chick Chiqui on his adventure',
+        'Descubre la historia del soldadito de plomo'        : 'Discover the story of the tin soldier',
+        'Da tus primeros pasos en el mundo de la lectura'    : 'Take your first steps into the world of reading',
+        'Vive la aventura mágica de Jack'                    : 'Live Jack\'s magical adventure',
+        'Conoce la historia de la gaviota'                   : 'Discover the seagull\'s story',
+        'Descubre los cuentos que cuenta el lobo'            : 'Discover the tales the wolf tells',
+        'Aprende los nombres de diferentes animales'         : 'Learn the names of different animals',
+        'Practica con números y letras'                      : 'Practice with numbers and letters',
+        'Aprende las vocales de forma divertida'             : 'Learn the vowels in a fun way'
+      }
     }
   };
 
@@ -1170,7 +1226,7 @@
       var txt = h1.textContent.trim().toLowerCase();
       if (txt.includes('lenguaj') || txt.includes('llenguat') || txt.includes('language')) h1.textContent = t.lenguajesH1;
       if (txt.includes('saber') || txt.includes('knowledge')) h1.textContent = t.saberesH1;
-      if (txt.includes('étic') || txt.includes('ètic') || txt.includes('ethic')) h1.textContent = t.eticaH1;
+      if (txt.includes('étic') || txt.includes('ètic') || txt.includes('etic') || txt.includes('ethic')) h1.textContent = t.eticaH1;
       if (txt.includes('humano') || txt.includes('humà') || txt.includes('human')) h1.textContent = t.humanoH1;
     }
 
@@ -1190,6 +1246,29 @@
 
     document.querySelectorAll('.play-text').forEach(function(el) {
       el.textContent = t.jugarBtn;
+    });
+
+    // Contador de juegos (cuadro de la esquina superior derecha)
+    document.querySelectorAll('.header-count .count-text').forEach(function(el) {
+      el.textContent = t.juegosStat;
+    });
+
+    // Dificultad / edad / tiempo de cada tarjeta de juego
+    document.querySelectorAll('.game-meta .meta-item').forEach(function(item) {
+      var spans = item.querySelectorAll('span');
+      var span = spans[spans.length - 1];
+      if (!span) return;
+      var val = span.textContent.trim();
+      var low = val.toLowerCase();
+      if (['fácil', 'facil', 'fàcil', 'easy'].indexOf(low) !== -1) { span.textContent = t.facil; return; }
+      if (['medio', 'mitjà', 'mitja', 'medium'].indexOf(low) !== -1) { span.textContent = t.medio; return; }
+      if (['difícil', 'dificil', 'hard'].indexOf(low) !== -1) { span.textContent = t.dificil; return; }
+      if (low.indexOf('año') !== -1 || low.indexOf('any') !== -1 || low.indexOf('year') !== -1) {
+        span.textContent = val.split(' ')[0] + ' ' + t.anosUnidad; return;
+      }
+      if (low.indexOf('min') !== -1) {
+        span.textContent = val.split(' ')[0] + ' ' + t.minTxt; return;
+      }
     });
 
     var noResults = document.querySelector('.no-results p');

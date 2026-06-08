@@ -27,7 +27,7 @@
     
     "security": {
       
-      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.googleapis.com https://*.githubusercontent.com https://*.firebaseio.com https://firestore.googleapis.com https://identitytoolkit.googleapis.com; object-src 'none'; frame-src 'none';"
+      "csp": null
     }
   },
   
@@ -75,7 +75,7 @@
   
   "plugins": {
     "updater": {
-  "active": true,
+  "active": false, 
   "dialog": false,
   "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDkxOUE0MzY3ODZGNjI2NUYKUldSZkp2YUdaME9ha1krWWNibW9PMjZlMmhXRVNNR24xYlNVcWFEU3pZTGNsVDFFVk9NTlZTRG0K",
   "endpoints": [

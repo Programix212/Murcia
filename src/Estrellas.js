@@ -194,7 +194,12 @@
         // Agregar contador
         const contador = document.createElement('small');
         contador.className = 'estrellas-contador';
-        contador.textContent = data.completados + (data.completados === 1 ? ' juego' : ' juegos');
+        var idiomaEst = (JSON.parse(localStorage.getItem('appConfig') || '{}').idioma) || 'es';
+        var palabraJuego;
+        if (idiomaEst === 'en') palabraJuego = data.completados === 1 ? ' game' : ' games';
+        else if (idiomaEst === 'ca') palabraJuego = data.completados === 1 ? ' joc' : ' jocs';
+        else palabraJuego = data.completados === 1 ? ' juego' : ' juegos';
+        contador.textContent = data.completados + palabraJuego;
         el.appendChild(contador);
         
         console.log(`✅ ${cat}: ${data.estrellas}★ (${data.completados} juegos)`);
