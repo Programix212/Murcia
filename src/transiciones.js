@@ -2,6 +2,7 @@
 // CEARTEE - TRANSICIONES CON FADE (FIX)
 // ==========================================
 
+
 (function() {
   function initFade() {
     var overlay = document.getElementById('ceartee-fade');
