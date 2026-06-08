@@ -17,6 +17,8 @@
     return {
       idioma        : 'ca',
       tema          : 'dark',
+      altoContraste : false,
+      escalaFuente  : 100,
       animaciones   : true,
       volumen       : 70,
       volumenJuego  : 70,
@@ -244,6 +246,10 @@
       conf30min        : '30 minutos',
       conf1hora        : '1 hora',
       confTodas        : 'Todas',
+       confExportar     : 'Exportar respaldo',
+      confExportarDesc : 'Guarda perfiles y estadísticas en un archivo',
+      confImportar     : 'Importar respaldo',
+      confImportarDesc : 'Restaura perfiles y estadísticas desde un archivo',
 
       // ── Panel docente ──
       accesoDocente    : 'Acceso Docente',
@@ -1267,7 +1273,7 @@
       if (descEl) descEl.textContent = labels[id][1];
     });
 
-    var btnClean = document.querySelector('.btn-clean');
+    var btnClean = document.querySelector('.btn-clean[data-i18n="confLimpiarBtn"]');
     if (btnClean) btnClean.textContent = t.confLimpiarBtn;
 
     var elTema = document.getElementById('theme');
@@ -1334,6 +1340,47 @@
         background: linear-gradient(135deg, #e0e7ff, #c7d2fe) !important;
         color: #1a1a2e !important;
       }
+      /* ==========================================
+         ALTO CONTRASTE
+         ========================================== */
+      body.tema-alto-contraste {
+        background: #000000 !important;
+        color: #ffff00 !important;
+      }
+      body.tema-alto-contraste .card,
+      body.tema-alto-contraste .game-card,
+      body.tema-alto-contraste .category-card,
+      body.tema-alto-contraste .stage-card,
+      body.tema-alto-contraste .stats-panel,
+      body.tema-alto-contraste .nav-buttons,
+      body.tema-alto-contraste .header,
+      body.tema-alto-contraste .settings-section,
+      body.tema-alto-contraste .main-container,
+      body.tema-alto-contraste .setting-item {
+        background: #000000 !important;
+        color: #ffff00 !important;
+        border: 2px solid #ffff00 !important;
+      }
+      body.tema-alto-contraste h1, body.tema-alto-contraste h2,
+      body.tema-alto-contraste h3, body.tema-alto-contraste p,
+      body.tema-alto-contraste label, body.tema-alto-contraste span,
+      body.tema-alto-contraste .setting-description,
+      body.tema-alto-contraste .stat-label, body.tema-alto-contraste .stat-value {
+        color: #ffff00 !important;
+      }
+      body.tema-alto-contraste button,
+      body.tema-alto-contraste .btn-nav1,
+      body.tema-alto-contraste .btn-nav2,
+      body.tema-alto-contraste .btn-nav3,
+      body.tema-alto-contraste .btn-back,
+      body.tema-alto-contraste .btn-backer {
+        background: #000000 !important;
+        color: #ffff00 !important;
+        border: 2px solid #ffff00 !important;
+      }
+      body.tema-alto-contraste a { color: #00ffff !important; }
+
+
       body.tema-light .card,
       body.tema-light .game-card,
       body.tema-light .category-card,
@@ -1501,10 +1548,22 @@
     if (activo) document.body.classList.add('modo-dev');
     else document.body.classList.remove('modo-dev');
   }
+  function aplicarAltoContraste(activo) {
+    if (activo) document.body.classList.add('tema-alto-contraste');
+    else document.body.classList.remove('tema-alto-contraste');
+  }
+
+  function aplicarEscalaFuente(escala) {
+    var valor = parseInt(escala) || 100;
+    document.documentElement.style.fontSize = valor + '%';
+  }
 
   // Exponer funciones
   window.aplicarIdiomaGlobal = aplicarIdioma;
   window.aplicarTemaGlobal = aplicarTema;
+    window.aplicarAltoContrasteGlobal = aplicarAltoContraste;
+  window.aplicarEscalaFuenteGlobal = aplicarEscalaFuente;
+
   window.aplicarAnimacionesGlobal = aplicarAnimaciones;
 
   // ==========================================
@@ -1558,6 +1617,8 @@
     const config = obtenerConfig();
     inyectarCSSTemas();
     aplicarTema(config.tema);
+     aplicarAltoContraste(config.altoContraste);
+    aplicarEscalaFuente(config.escalaFuente);
     aplicarAnimaciones(config.animaciones);
     aplicarIdioma(config.idioma);
     aplicarVolumen(config.volumen);

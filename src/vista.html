@@ -139,7 +139,7 @@
     window.JClicDataOptions = {
       fade: 0,
       counters: false,
-      maxWaitTime: 0,
+      maxWaitTime: 30000,
       info: false,
       reportsBtn: false
     };
@@ -148,9 +148,6 @@
   <script>
     localStorage.removeItem('ceartee_autosave');
     localStorage.removeItem('ceartee_sesion_activa');
-    sessionStorage.setItem('juego_actividad', rutaZip);
-    sessionStorage.setItem('juego_nombre', nombreJuego);
-    window.location.href = 'vista.html';
   </script>
 
   <script src="./jquery.min.js"></script>
@@ -199,7 +196,7 @@
     <div id="jclic-container">
       <div class="loading"><h2 data-i18n="cargandoJuego">Cargando juego...</h2></div>
     </div>
-
+     
     <!-- Instrucciones -->
     <div class="barra-instrucciones" id="barra-instrucciones" data-i18n="instrucciones">
       Instrucciones aparecerán aquí...

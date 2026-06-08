@@ -28,3 +28,12 @@ dist-ssr
 *.pub
 tauri.key
 build_log.txt
+
+# Temporales de JClic
+src/assets/**/*.tmp
+
+# Respaldo temporal de imágenes (borrar tras verificar)
+_backup_imagenes/
+
+# Respaldo temporal de scripts (borrar tras verificar)
+_backup_js/

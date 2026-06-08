@@ -694,7 +694,49 @@ if (document.readyState === 'loading') {
   inyectarCSSReporte();
 }
 
-// ✅ LISTENER DE LOAD (SOLO LLAMA A arrancarEstadisticas)
 window.addEventListener('load', () => {
-  setTimeout(arrancarEstadisticas, 2000);
+  // No arrancar automáticamente. Vista.js avisará cuando el juego esté listo.
+  // Iniciar todo EXCEPTO el reloj
+  setTimeout(function() {
+    arrancarEstadisticasSinReloj();
+  }, 2000);
 });
+
+function arrancarEstadisticasSinReloj() {
+  if (window.relojInterval) clearInterval(window.relojInterval);
+  if (window.syncInterval) clearInterval(window.syncInterval);
+  if (window.acumuladorInterval) clearInterval(window.acumuladorInterval);
+
+  window.registroActividades      = [];
+  window.tiempoInicioActividad    = null;
+  window.ultimaActividadDetectada = '';
+  window.prevIdx                  = -1;
+  window.prevName                 = '';
+  window.reporteMostrado          = false;
+  window.juegoTerminado           = false;
+  window.yaIniciado               = false;
+  window.totalActividades         = 0;
+  window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, solved:false };
+  window.tiempoSegundos           = 0;
+  window.ultimoScore              = -1;
+  window.ultimoActions            = -1;
+
+  if (mostrarPuntuacionTiempoReal()) {
+    actualizarPanel('aciertos', 0);
+    actualizarPanel('intentos', 0);
+  } else {
+    actualizarPanel('aciertos', '-');
+    actualizarPanel('intentos', '-');
+  }
+  actualizarPanel('tiempo', '00:00');
+
+  // El reloj NO arranca aquí. Vista.js llama a window.iniciarRelojJuego() cuando el loader termina.
+  iniciarSync();
+  iniciarAcumulador();
+}
+
+// Función que vista.js llama cuando el loader termina
+window.iniciarRelojJuego = function() {
+  console.log('⏱️ Cronómetro arrancando tras carga completa');
+  iniciarReloj();
+};

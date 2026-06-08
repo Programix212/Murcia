@@ -16,27 +16,54 @@
     return clave;
   }
 
-  // ==========================================
-  // CONTRASEÑA DE ACCESO
-  // ==========================================
-  var PASSWORD = 'ceartee2024'; // ⚠️ Cambia esto por seguridad
+  // Contraseña por defecto SOLO para inicializar el hash la primera vez.
+var DEFAULT_PASSWORD = 'ceartee2024';
+var SALT = 'ceartee_2026_salt'; // sal fija para reforzar el hash
+var HASH_KEY = 'ceartee_docente_hash';
 
-  // ✅ Exponer función de verificación global
-  window.verificarAcceso = function() {
-    var input = document.getElementById('passwordInput');
-    var error = document.getElementById('loginError');
-    if (!input) return;
+// Helper: SHA-256 en hexadecimal
+async function sha256(texto) {
+  var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(texto));
+  return Array.from(new Uint8Array(buf)).map(function(b) {
+    return b.toString(16).padStart(2, '0');
+  }).join('');
+}
 
-    if (input.value === PASSWORD) {
+// Devuelve el hash guardado (lo inicializa con la contraseña por defecto si no existe)
+async function obtenerHashGuardado() {
+  var hash = localStorage.getItem(HASH_KEY);
+  if (!hash) {
+    hash = await sha256(SALT + DEFAULT_PASSWORD);
+    localStorage.setItem(HASH_KEY, hash);
+  }
+  return hash;
+}
+
+
+  window.verificarAcceso = async function() {
+  var input = document.getElementById('passwordInput');
+  var error = document.getElementById('loginError');
+  if (!input) return;
+
+  try {
+    var hashGuardado = await obtenerHashGuardado();
+    var hashIngresado = await sha256(SALT + input.value);
+
+    if (hashIngresado === hashGuardado) {
       document.getElementById('loginOverlay').style.display = 'none';
       document.getElementById('panelContainer').style.display = 'block';
       if (error) error.style.display = 'none';
-      cargarAlumnos();
     } else {
       if (error) error.style.display = 'block';
       input.value = '';
+      input.focus();
     }
-  };
+  } catch (e) {
+    console.error('Error verificando acceso:', e);
+    if (error) error.style.display = 'block';
+  }
+};
+
 
   // ==========================================
   // CARGAR Y RENDERIZAR ALUMNOS
@@ -184,5 +211,21 @@
       cargarAlumnos();
     }
   });
+
+
+  // Cambia la contraseña del panel docente. Devuelve true si tuvo éxito.
+window.cambiarPasswordDocente = async function(actual, nueva) {
+  if (!nueva || nueva.length < 4) {
+    return { ok: false, msg: 'La nueva contraseña debe tener al menos 4 caracteres' };
+  }
+  var hashGuardado = await obtenerHashGuardado();
+  var hashActual = await sha256(SALT + actual);
+  if (hashActual !== hashGuardado) {
+    return { ok: false, msg: 'La contraseña actual es incorrecta' };
+  }
+  localStorage.setItem(HASH_KEY, await sha256(SALT + nueva));
+  return { ok: true, msg: 'Contraseña actualizada correctamente' };
+};
+
 
 })();

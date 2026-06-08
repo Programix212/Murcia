@@ -1,16 +1,19 @@
 {
   "name": "abridordejuegos",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "tauri": "tauri",
     "dev": "tauri dev",
-    "build": "tauri build"
+    "build": "tauri build",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.11.2",
-    "vite": "^8.0.14"
+    "vitest": "^2.1.8",
+    "happy-dom": "^15.11.7"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.11.0",
