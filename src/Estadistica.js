@@ -507,7 +507,7 @@ function mostrarReporteFinal() {
   const reporteHTML = `
     <div style="font-family:Arial,sans-serif;color:#1a1a2e;padding:20px;background:#ffffff;">
       <div style="text-align:center;margin-bottom:25px;padding-bottom:15px;border-bottom:3px solid #c1272d;">
-        <h1 style="margin:0;font-size:24px;color:#c1272d;">📊 ${tEst('reporteActividades')}</h1>
+        <h1 style="margin:0;font-size:24px;color:#c1272d;"><img src="./img_logos/logo_estadisticas.png" style="height:28px;vertical-align:middle;margin-right:6px;"> ${tEst('reporteActividades')}</h1>
         <p style="margin:6px 0 0;color:#666;font-size:14px;font-weight:600;">${nombreJuego}</p>
         ${nombrePerfil ? `<p style="margin:2px 0 0;color:#666;font-size:13px;">${perfil.avatar} ${nombrePerfil}</p>` : ''}
         <p style="margin:2px 0 0;color:#999;font-size:12px;">${fechaHoy}</p>
@@ -543,16 +543,16 @@ function mostrarReporteFinal() {
     <div id="modal-reporte" class="reporte-overlay">
       <div class="reporte-contenedor">
         <div class="reporte-header">
-          <h2>📊 ${tEst('reporteActividades')}</h2>
+          <h2><img src="./img_logos/logo_estadisticas.png" style="height:24px;vertical-align:middle;margin-right:6px;"> ${tEst('reporteActividades')}</h2>
           <button id="btn-cerrar-reporte" class="reporte-cerrar">✕</button>
         </div>
         <div class="reporte-cuerpo">
           ${reporteHTML}
         </div>
         <div class="reporte-footer">
-          <button id="btn-imprimir-reporte" class="reporte-btn reporte-btn-blanco">📄 ${tEst('imprimirPDF')}</button>
-          <button id="btn-reiniciar-reporte" class="reporte-btn reporte-btn-blanco">🔄 ${tEst('jugarDeNuevo')}</button>
-          <button id="btn-cerrar-reporte-2" class="reporte-btn reporte-btn-blanco">✅ ${tEst('cerrar')}</button>
+          <button id="btn-imprimir-reporte" class="reporte-btn reporte-btn-blanco">${tEst('imprimirPDF')}</button>
+          <button id="btn-reiniciar-reporte" class="reporte-btn reporte-btn-blanco">${tEst('jugarDeNuevo')}</button>
+          <button id="btn-cerrar-reporte-2" class="reporte-btn reporte-btn-blanco">${tEst('cerrar')}</button>
         </div>
       </div>
     </div>`;
