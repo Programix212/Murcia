@@ -200,7 +200,7 @@
       confSonido       : 'Sonido',
       confJuego        : 'Juego',
       confBackup       : 'Backup y Sincronización',
-      confAvanzado     : 'Avanzado',
+      confAvanzado     : 'Respaldo y Datos',
       confIdioma       : 'Idioma',
       confIdiomaDesc   : 'Selecciona el idioma de la interfaz',
       langEspanol      : 'Español',
@@ -533,7 +533,7 @@
       confSonido       : 'So',
       confJuego        : 'Joc',
       confBackup       : 'Còpia de seguretat i Sincronització',
-      confAvanzado     : 'Avançat',
+      confAvanzado     : 'Còpia i Dades',
       confIdioma       : 'Idioma',
       confIdiomaDesc   : 'Selecciona l\'idioma de la interfície',
       langEspanol      : 'Español',
@@ -850,7 +850,7 @@
       confSonido       : 'Sound',
       confJuego        : 'Game',
       confBackup       : 'Backup & Sync',
-      confAvanzado     : 'Advanced',
+      confAvanzado     : 'Backup & Data',
       confIdioma       : 'Language',
       confIdiomaDesc   : 'Select the interface language',
       langEspanol      : 'Spanish',
@@ -1316,7 +1316,7 @@
     if (btnReset) btnReset.textContent = t.confRestablecer;
 
     var sections = document.querySelectorAll('.section-title');
-    var sectionNames = [t.confGeneral, t.confSonido, t.confJuego, t.confBackup, t.confAvanzado];
+    var sectionNames = [t.confGeneral, t.confSonido, t.confJuego, t.confAvanzado];
     sections.forEach(function(el, i) {
       if (sectionNames[i]) {
         var icon = el.querySelector('.section-icon');
