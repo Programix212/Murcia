@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CEARTEE - Panel Docente</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="panel-docente.css">
   <link rel="stylesheet" href="transiciones.css">
   <script src="transiciones.js"></script>
@@ -21,7 +24,7 @@
   </div>
 
   <!-- 🛡️ LOGIN PROTEGIDO -->
-  <div class="login-overlay" id="loginOverlay">
+  <div class="login-overlay" style="display:none">
     <div class="login-box">
       <div class="login-icon">🔒</div>
       <h2 data-i18n="accesoDocente">Acceso Docente</h2>
@@ -34,23 +37,25 @@
   </div>
 
   <!-- 🎓 PANEL DOCENTE -->
-  <div class="panel-container" id="panelContainer" style="display:none;">
+  <div class="panel-container" id="panelContainer" >
 
     <!-- Header -->
     <header class="panel-header">
       <button class="btn-back" onclick="cearteeNavigate('index.html')">
-        <img src="./img_logos/volver-flecha.png" class="btn-img-icon">
       </button>
 
-      <h1 data-i18n="panelTitulo">👩‍🏫 Panel de Control Docente</h1>
+      <h1 data-i18n="panelTitulo"> Panel de Control Docente</h1>
       <div class="panel-stats">
-        <span id="totalAlumnos" data-i18n="alumnos">0 alumnos</span>
+        <span id="totalAlumnos">0 alumnos</span>
       </div>
     </header>
 
     <!-- Filtros -->
     <div class="panel-filtros">
-      <input type="text" id="buscadorAlumnos" data-i18n-placeholder="buscarAlumno" placeholder="Buscar alumno por nombre..." oninput="filtrarAlumnos()">
+      <div class="buscador-wrapper">
+        <img src="./img_logos/logo_lupa.png" class="buscador-lupa">
+        <input type="text" id="buscadorAlumnos" data-i18n-placeholder="buscarAlumno" placeholder="Buscar alumno por nombre..." oninput="filtrarAlumnos()">
+      </div>
       <select id="ordenarPor" onchange="renderizarPanel()">
         <option value="nombre" data-i18n="ordenNombre">Ordenar por nombre</option>
         <option value="juegos" data-i18n="ordenJuegos">Más juegos completados</option>
@@ -95,5 +100,6 @@
   <script src="perfiles.js"></script>
   <script src="panel-docente.js"></script>
   <script src="aplicar-config.js"></script>
+  <script src="burbujas.js"></script>
 </body>
 </html>

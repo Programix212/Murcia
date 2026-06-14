@@ -354,7 +354,7 @@
     // Perfiles existentes
     perfiles.forEach(function(perfil) {
       html += '<div class="perfil-card" data-perfil-id="' + perfil.id + '">';
-      html += '<button class="btn-eliminar-perfil" data-perfil-id="' + perfil.id + '" title="' + t('eliminar') + '">🗑️</button>';
+      html += '<button class="btn-eliminar-perfil" data-perfil-id="' + perfil.id + '" title="' + t('eliminar') + '"><img src="./img_logos/logo_bote_basura.png" style="width:18px;height:18px;object-fit:contain;"></button>';
       html += '<div class="perfil-avatar-grande">' + perfil.avatar + '</div>';
       html += '<div class="perfil-nombre">' + escapeHtml(perfil.nombre) + '</div>';
       html += '</div>';
@@ -404,11 +404,74 @@
         const perfilId = this.getAttribute('data-perfil-id');
         const perfil = perfiles.find(p => p.id === perfilId);
         const nombre = perfil ? perfil.nombre : '';
-        
-        if (confirm(t('eliminar') + ' "' + nombre + '"?')) {
+
+        // Modal personalizado negro
+        const modalElim = document.createElement('div');
+        modalElim.id = 'modal-eliminar-perfil';
+        modalElim.style.cssText = `
+          position: fixed; top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: rgba(0,0,0,0.7);
+          z-index: 999999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        `;
+
+        const caja = document.createElement('div');
+        caja.style.cssText = `
+          background: #c0392b;
+          border-radius: 24px;
+          padding: 40px 36px;
+          max-width: 360px;
+          width: 90%;
+          text-align: center;
+          font-family: 'Poppins', sans-serif;
+          box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+        `;
+
+        caja.innerHTML = `
+          <div style="margin-bottom:12px;"><img src="./img_logos/logo_bote_basura.png" style="width:80px;height:80px;object-fit:contain;"></div>
+          <h3 style="color:#ffffff; font-size:1.2rem; font-weight:700; margin-bottom:8px;">Eliminar perfil</h3>
+          <p style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-bottom:28px;">¿Eliminar "<strong style="color:#ffffff">${nombre}</strong>"?</p>
+          <div style="display:flex; gap:14px; justify-content:center;">
+            <button id="btn-elim-cancelar" style="
+              padding: 12px 28px;
+              border-radius: 50px;
+              border: 2px solid rgba(255,255,255,0.5);
+              background: transparent;
+              color: #ffffff;
+              font-family: 'Poppins', sans-serif;
+              font-size: 0.9rem;
+              font-weight: 600;
+              cursor: pointer;
+            ">Cancelar</button>
+            <button id="btn-elim-aceptar" style="
+              padding: 12px 28px;
+              border-radius: 50px;
+              border: none;
+              background: #ffffff;
+              color: #ef4444;
+              font-family: 'Poppins', sans-serif;
+              font-size: 0.9rem;
+              font-weight: 700;
+              cursor: pointer;
+            ">Eliminar</button>
+          </div>
+        `;
+
+        modalElim.appendChild(caja);
+        document.body.appendChild(modalElim);
+
+        document.getElementById('btn-elim-cancelar').addEventListener('click', function() {
+          modalElim.remove();
+        });
+
+        document.getElementById('btn-elim-aceptar').addEventListener('click', function() {
+          modalElim.remove();
           PerfilesManager.eliminarPerfil(perfilId);
           window.renderPantallaPerfiles(containerId, onSelect);
-        }
+        });
       });
     });
   };
@@ -666,10 +729,10 @@
       .selector-titulo {
         font-size: 2em;
         margin-bottom: 10px;
-        color: #fff;
+        color: #111111;
       }
       .selector-subtitulo {
-        color: rgba(255,255,255,0.8);
+        color: #333333;
         margin-bottom: 30px;
       }
       .perfiles-lista {
@@ -706,7 +769,7 @@
       }
       .perfil-nombre {
         font-weight: 600;
-        color: #fff;
+        color: #111111;
       }
       .btn-eliminar-perfil {
         position: absolute;

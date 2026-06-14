@@ -15,13 +15,15 @@
     
     "windows": [
       {
-        "title": "CEARTEE - Murcia",
-        "width": 1024,
-        "height": 768,
-        "resizable": true,
-        "center": true,
-        
-        "devtools": true
+         "title": "CEARTEE - Murcia",
+    "width": 1024,
+    "height": 768,
+    "minWidth": 1000,
+    "minHeight": 600,
+    "resizable": true,
+    "center": true,
+    "maximized": true,
+    "devtools": true
       }
     ],
     

@@ -227,5 +227,15 @@ window.cambiarPasswordDocente = async function(actual, nueva) {
   return { ok: true, msg: 'Contraseña actualizada correctamente' };
 };
 
+  // Mostrar el panel directamente (sin contraseña) y cargar alumnos
+  document.addEventListener('DOMContentLoaded', function() {
+    var overlay = document.getElementById('loginOverlay');
+    if (overlay) overlay.style.display = 'none';
+    var panel = document.getElementById('panelContainer');
+    if (panel) panel.style.display = 'block';
+    if (typeof cargarAlumnos === 'function') cargarAlumnos();
+    if (typeof renderizarPanel === 'function') renderizarPanel();
+  });
+
 
 })();

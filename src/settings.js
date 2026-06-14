@@ -57,40 +57,42 @@ function mostrarModal() {
 
   const caja = document.createElement('div');
   caja.style.cssText = `
-    background:white;
-    border-radius:20px;
-    padding:32px;
-    max-width:380px;
-    width:90%;
-    text-align:center;
-    font-family:'Poppins',sans-serif;
-    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+    background: #c0392b;
+    border-radius: 24px;
+    padding: 40px 36px;
+    max-width: 380px;
+    width: 90%;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.6);
   `;
 
   caja.innerHTML = `
-    <div style="font-size:48px">⚠️</div>
-    <h3 style="color:#1a1a2e;margin:12px 0 8px">Tienes cambios sin guardar</h3>
-    <p style="color:#666;margin:0 0 24px">¿Deseas descartarlos y salir?</p>
-    <div style="display:flex;gap:12px;justify-content:center;">
+    <div style="margin-bottom:12px; font-size:48px">⚠️</div>
+    <h3 style="color:#ffffff; font-size:1.2rem; font-weight:700; margin:0 0 8px">Tienes cambios sin guardar</h3>
+    <p style="color:rgba(255,255,255,0.8); font-size:0.95rem; margin:0 0 28px">¿Deseas descartarlos y salir?</p>
+    <div style="display:flex; gap:14px; justify-content:center;">
       <button id="btn-quedarme" style="
-        padding:12px 24px;
-        border-radius:25px;
-        border:2px solid #667eea;
-        background:transparent;
-        color:#667eea;
-        font-size:14px;
-        font-weight:600;
-        cursor:pointer;
+        padding: 12px 20px;
+        border-radius: 50px;
+        border: 2px solid rgba(255,255,255,0.5);
+        background: transparent;
+        color: #ffffff;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
       ">✕ Quedarme</button>
       <button id="btn-salir" style="
-        padding:12px 24px;
-        border-radius:25px;
-        border:none;
-        background:linear-gradient(135deg,#ff6b6b,#ee5a24);
-        color:white;
-        font-size:14px;
-        font-weight:600;
-        cursor:pointer;
+        padding: 12px 20px;
+        border-radius: 50px;
+        border: none;
+        background: #ffffff;
+        color: #ef4444;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 700;
+        cursor: pointer;
       ">Salir sin guardar</button>
     </div>
   `;
@@ -209,7 +211,7 @@ function saveSettings() {
   var btn = document.querySelector('.btn-save');
   if (btn) {
     var original = btn.innerHTML;
-    btn.innerHTML = '✅ ¡Guardado!';
+    btn.innerHTML = '¡Guardado!';
     btn.style.background = 'linear-gradient(135deg,#6bcb77,#4d9e5a)';
     btn.disabled = true;
     setTimeout(function() {
@@ -220,7 +222,7 @@ function saveSettings() {
   }
 
   var notif = document.createElement('div');
-  notif.textContent = (window.tConfig ? window.tConfig('confGuardadoOk') : '✅ Configuración guardada correctamente');
+  notif.textContent = (window.tConfig ? window.tConfig('confGuardadoOk') : 'Configuración guardada correctamente');
   notif.style.cssText = `
     position:fixed; bottom:100px; left:50%;
     transform:translateX(-50%);
