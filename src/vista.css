@@ -27,6 +27,13 @@ body::-webkit-scrollbar {
   -ms-overflow-style: none;
 }
 
+/* Reemplaza .icono-reloj con la clase real de tu HTML */
+.icono-reloj {
+   width: 30px; /* Ajusta el ancho */
+    height: auto; /* Mantiene la proporción para que no se deforme */
+    
+}
+
 *::-webkit-scrollbar {
   display: none;
 }
@@ -192,6 +199,7 @@ body {
 
 .stat-icon {
   font-size: 1.1rem;
+  
 }
 
 .stat-label {

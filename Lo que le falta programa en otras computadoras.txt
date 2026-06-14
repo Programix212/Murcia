@@ -1,0 +1,15 @@
+Tiene una resolucion muy aplastada
+
+Mejorar un poco la resolucion 
+
+Optimizar bien para que vaya rapido las transciones estan lentas y el programa tambien estan poco lentas 
+no va rapido el programa
+
+
+
+Nuevos errores 
+Tiene bugs de idioma en vez de empezar el programa en español tienes que configurarlo para que se restaure 
+eso no quiero no tiene que empezar en catalan con errores de idioma y en la dificultad se pone medio en vez 
+de ponerse todas , tiene que tener la configuracion bien solo pasa en otras computadoras 
+
+Sigue algunas computadoras trabandose hay que investigar la informacion de todas las compus para que vaya fluido

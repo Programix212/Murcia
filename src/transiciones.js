@@ -45,6 +45,6 @@
     ov.classList.remove('hidden');
     setTimeout(function() {
       window.location.href = url;
-    }, 300);
+    }, 180);
   };
 })();

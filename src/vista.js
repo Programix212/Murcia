@@ -304,19 +304,21 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
 
   const fps = 30;
   const paso = 100 / ((DURACION_CARGA_MS / 1000) * fps);
-  intervaloBarra = setInterval(() => {
+    intervaloBarra = setInterval(() => {
     progresoActual += paso;
     if (progresoActual >= 100) {
       progresoActual = 100;
       if (barraFill) barraFill.style.width = '100%';
       cargaMinimaCompleta = true;
       clearInterval(intervaloBarra);
-     if (subtitleEl) subtitleEl.textContent = '¡Listo!'; 
-      verificarFinalizacion();
+      if (subtitleEl) subtitleEl.textContent = 'Cargando juego...';
+      // ✅ Ahora que la barra está llena, empezamos a cargar el archivo
+      intentarCargar();
     } else {
       if (barraFill) barraFill.style.width = progresoActual + '%';
     }
   }, 1000 / fps);
+
 
   timeoutError = setTimeout(function() {
     if (!jclicListo && !errorCarga) {
@@ -437,7 +439,7 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
       mostrarPantallaError(tVista('errorNoMotor'), false);
     }
   }
-  intentarCargar();
+  //intentarCargar();
 }
 
 // ==========================================

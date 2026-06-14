@@ -38,8 +38,7 @@
       </div>
 
       <button class="btn-reset" onclick="resetSettings()">
-        <span></span>
-        <span class="btn-text" data-i18n="confRestablecer">Restablecer</span>
+        <img src="./img_logos/texto_restablecer_inter_azul.png" class="btn-reset-img" alt="Restablecer">
       </button>
     </header>
 
@@ -176,9 +175,9 @@
             <p class="setting-description" data-i18n="confDificultadDesc">Nivel de dificultad al iniciar juegos</p>
           </div>
           <select class="setting-select" id="default-difficulty">
-            <option value="todas" data-i18n="confTodas">Todas</option>
+            <option value="todas" selected data-i18n="confTodas">Todas</option>
             <option value="easy" data-i18n="confFacil">Fácil</option>
-            <option value="medium" selected data-i18n="confMedio">Medio</option>
+            <option value="medium" data-i18n="confMedio">Medio</option>
             <option value="hard" data-i18n="confDificil">Difícil</option>
           </select>
         </div>
@@ -243,7 +242,7 @@
 
     <!-- Botones de acción -->
     <footer class="settings-footer">
-      <button class="btn-cancel" onclick="cearteeNavigate('index.html')">
+      <button class="btn-cancel" onclick="goBack()">
         <span>✕</span> <span data-i18n="confCancelar">CANCELAR</span>
       </button>
       <button class="btn-save" onclick="saveSettings()">
@@ -257,10 +256,6 @@
   <script src="notificaciones.js"></script>
   <script src="aplicar-config.js"></script>
   <script src="settings.js"></script>
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script src="firebase-sync.js"></script>
+  <script src="burbujas.js"></script>
 </body>
 </html>
