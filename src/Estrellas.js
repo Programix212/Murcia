@@ -165,8 +165,20 @@
       return;
     }
 
-    const perfil = window.PerfilesManager.obtenerPerfilActivo();
-    
+    let perfil = window.PerfilesManager.obtenerPerfilActivo();
+
+    // ✅ Respaldo: si no hay perfil activo (ej. tras importar), usar el primero
+    if (!perfil) {
+      const todos = window.PerfilesManager.obtenerPerfiles();
+      if (todos && todos.length > 0) {
+        perfil = todos[0];
+        if (window.PerfilesManager.seleccionarPerfil) {
+          window.PerfilesManager.seleccionarPerfil(perfil.id);
+        }
+        console.log('⚠️ Sin perfil activo, usando el primero:', perfil.nombre);
+      }
+    }
+
     if (!perfil) {
       console.warn('⚠️ No hay perfil activo');
       return;

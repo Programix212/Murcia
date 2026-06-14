@@ -306,6 +306,16 @@
 
       localStorage.setItem(STORAGE_KEY, JSON.stringify(perfilesActuales));
 
+      // ✅ Asegurar que haya un perfil activo válido tras importar
+      // (en modo 'reemplazar' se borra ACTIVE_KEY, y el perfil activo previo
+      //  puede ya no existir; sin perfil activo no se muestran las estrellas)
+      var activoActual = localStorage.getItem(ACTIVE_KEY);
+      var existeActivo = activoActual && perfilesActuales.some(function(p) { return p.id === activoActual; });
+      if (!existeActivo && perfilesActuales.length > 0) {
+        localStorage.setItem(ACTIVE_KEY, perfilesActuales[0].id);
+        console.log('✅ Perfil activo restaurado tras importar:', perfilesActuales[0].nombre);
+      }
+
       // Restaurar configuración (opcional)
       if (backup.appConfig && Object.keys(backup.appConfig).length) {
         localStorage.setItem('appConfig', JSON.stringify(backup.appConfig));

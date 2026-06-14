@@ -847,16 +847,42 @@ async function iniciarUpdater() {
 // ==========================================
 // EXPORTAR / IMPORTAR RESPALDO
 // ==========================================
-function exportarRespaldo() {
+async function exportarRespaldo() {
   try {
     var data = window.PerfilesManager.exportarTodo();
     var json = JSON.stringify(data, null, 2);
+    var fecha = new Date().toISOString().slice(0, 10);
+    var nombreArchivo = 'ceartee_respaldo_' + fecha + '.json';
+
+    // ✅ Si el navegador soporta el selector de archivos, abrir explorador
+    if (window.showSaveFilePicker) {
+      try {
+        var handle = await window.showSaveFilePicker({
+          suggestedName: nombreArchivo,
+          types: [{
+            description: 'Archivo JSON',
+            accept: { 'application/json': ['.json'] }
+          }]
+        });
+        var writable = await handle.createWritable();
+        await writable.write(json);
+        await writable.close();
+        mostrarNotifConfig('✅ Respaldo guardado correctamente');
+        return;
+      } catch (err) {
+        // Si el usuario cancela el diálogo, no hacer nada
+        if (err && err.name === 'AbortError') return;
+        // Si falla por otra razón, caer al método clásico
+        console.warn('showSaveFilePicker falló, usando descarga directa:', err);
+      }
+    }
+
+    // Respaldo: descarga directa a la carpeta de descargas
     var blob = new Blob([json], { type: 'application/json' });
     var url = URL.createObjectURL(blob);
     var a = document.createElement('a');
-    var fecha = new Date().toISOString().slice(0, 10);
     a.href = url;
-    a.download = 'ceartee_respaldo_' + fecha + '.json';
+    a.download = nombreArchivo;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
