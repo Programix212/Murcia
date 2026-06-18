@@ -63,9 +63,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  
-  
-  
+  overflow: hidden;
+  min-width: 0;
 }
 
 /* Si tienes títulos dentro del sidebar */
@@ -149,6 +148,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  min-width: 0;
 }
 
 .social-link {
@@ -159,6 +159,19 @@ body {
   color: #4b5563;
   font-size: 0.78rem;
   font-weight: 500;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.social-link span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.social-link img {
+  flex-shrink: 0;
 }
 
 .social-badge {

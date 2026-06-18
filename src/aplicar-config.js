@@ -1651,6 +1651,10 @@
   let observadorI18n = null;
   
   function iniciarObservadorI18n(idioma) {
+    // En la vista de juego NO observar: JClic modifica el DOM sin parar y ahí
+    // no hay textos data-i18n dinámicos, así que observar solo gastaría CPU.
+    if (window.location.pathname.indexOf('vista.html') !== -1) return;
+
     // Si ya existe, desconectar
     if (observadorI18n) observadorI18n.disconnect();
     
@@ -1734,25 +1738,17 @@
     aplicarConfiguracionGlobal();
   }
 
-  // ✅ ESCUCHAR CAMBIOS DE IDIOMA EN TIEMPO REAL
+  // ✅ VISTA PREVIA DE IDIOMA EN TIEMPO REAL (NO guarda; solo se guarda con "Guardar")
   document.addEventListener('change', function(e) {
     if (e.target && e.target.id === 'language') {
-      const nuevoIdioma = e.target.value;
-      const config = JSON.parse(localStorage.getItem('appConfig') || '{}');
-      config.idioma = nuevoIdioma;
-      localStorage.setItem('appConfig', JSON.stringify(config));
-      aplicarIdioma(nuevoIdioma);
+      aplicarIdioma(e.target.value);
     }
   });
 
-  // ✅ ESCUCHAR CAMBIOS DE ANIMACIONES (SOLO BACKEND)
+  // ✅ VISTA PREVIA DE ANIMACIONES (NO guarda; solo se guarda con "Guardar")
   document.addEventListener('change', function(e) {
     if (e.target && e.target.id === 'animations') {
-      const activas = e.target.checked;
-      const config = JSON.parse(localStorage.getItem('appConfig') || '{}');
-      config.animaciones = activas;
-      localStorage.setItem('appConfig', JSON.stringify(config));
-      aplicarAnimaciones(activas);
+      aplicarAnimaciones(e.target.checked);
     }
   });
 
@@ -1878,8 +1874,14 @@
   // ==========================================
   window.actualizarFooterStats = function() {
     try {
+      // ¿Estamos en una página de Primaria? (la carpeta está en /Primaria/)
+      var esPrimaria = window.location.pathname.indexOf('Primaria') !== -1;
+
       var completados = 0;
-      if (window.PerfilesManager) {
+      if (esPrimaria) {
+        // Primaria aún no tiene juegos propios: no contar los de Preescolar
+        completados = 0;
+      } else if (window.PerfilesManager) {
         var perfil = window.PerfilesManager.obtenerPerfilActivo();
         if (perfil) {
           var stats = window.PerfilesManager.obtenerDatos(perfil.id, 'stats', {});
@@ -1986,6 +1988,13 @@
     }, 500);
   };
 
-  window.initDebugPanel();
+  // Solo activar el panel de depuración (y su bucle de FPS) si el modo
+  // desarrollador está encendido. Evita un requestAnimationFrame corriendo
+  // ~60 veces/seg en todas las páginas, que consume CPU sin necesidad.
+  try {
+    if ((JSON.parse(localStorage.getItem('appConfig') || '{}')).developerMode) {
+      window.initDebugPanel();
+    }
+  } catch(e) {}
 
 })();

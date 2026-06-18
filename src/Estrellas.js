@@ -110,6 +110,40 @@
   };
 
   // ==========================================
+  // MAPEO DE JUEGOS POR CATEGORÍA — PRIMARIA
+  // (Aún no tiene juegos. Mantener vacío hasta
+  //  agregar los juegos reales de primaria para
+  //  que NO cuente los de preescolar.)
+  // ==========================================
+  const juegosPorCategoriaPrimaria = {
+    'lenguajes': [],
+    'saberes': [],
+    'etica': [],
+    'humano': []
+  };
+
+  // ==========================================
+  // DETECTAR SI ESTAMOS EN PRIMARIA
+  // ==========================================
+  function esPrimaria() {
+    try {
+      var ruta = (window.location.pathname || '').toLowerCase();
+      var href = (window.location.href || '').toLowerCase();
+      return ruta.indexOf('/primaria/') !== -1 ||
+             href.indexOf('/primaria/') !== -1 ||
+             ruta.indexOf('categorias2') !== -1 ||
+             href.indexOf('categorias2') !== -1;
+    } catch(e) {
+      return false;
+    }
+  }
+
+  // Devuelve el mapeo correcto según el nivel actual
+  function obtenerMapeoCategorias() {
+    return esPrimaria() ? juegosPorCategoriaPrimaria : juegosPorCategoria;
+  }
+
+  // ==========================================
   // CONTAR JUEGOS POR CATEGORÍA
   // ==========================================
   function contarJuegosPorCategoria(perfilId, categoria) {
@@ -123,7 +157,8 @@
         juegos: {}
       });
 
-      const juegosCategoria = juegosPorCategoria[categoria] || [];
+      const mapeo = obtenerMapeoCategorias();
+      const juegosCategoria = mapeo[categoria] || [];
       let completados = 0;
 
       if (stats.juegos) {
