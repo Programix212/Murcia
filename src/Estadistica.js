@@ -283,7 +283,7 @@ function iniciarAcumulador() {
       if (actionsAhora > window.datosActividadActual.maxActions) window.datosActividadActual.maxActions = actionsAhora;
       if (p?.actPanel?.solved || p?.actPanel?.act?.solved) window.datosActividadActual.solved = true;
     } catch(e) {}
-  }, 100);
+  }, 300);
 }
 
 // ==========================================

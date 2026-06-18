@@ -79,7 +79,7 @@
     "updater": {
   "active": false, 
   "dialog": false,
-  "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDkxOUE0MzY3ODZGNjI2NUYKUldSZkp2YUdaME9ha1krWWNibW9PMjZlMmhXRVNNR24xYlNVcWFEU3pZTGNsVDFFVk9NTlZTRG0K",
+  "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDM2N0VFMUI1MEUyNTc5NEEKUldSS2VTVU90ZUYrTnZzNC94d0VNUk1tL3NvMlRUL0JTVmhpQWhUa0RxOHhoWGNxN2Q1eFdZVWkK",
   "endpoints": [
     "https://raw.githubusercontent.com/Yolito935/ceartee/main/latest.json"
   ],

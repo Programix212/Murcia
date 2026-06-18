@@ -16,6 +16,20 @@
   const CEARTEE_SCHEMA_VERSION = 2;
   const SCHEMA_KEY = 'ceartee_schema_version';
 
+    // ==========================================
+  // FIRMA DE RESPALDOS (detectar manipulación)
+  // ==========================================
+  const FIRMA_SALT = 'ceartee_backup_2026_secreto';
+
+  async function sha256Texto(texto) {
+    var buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(texto));
+    return Array.from(new Uint8Array(buf))
+      .map(function(b) { return b.toString(16).padStart(2, '0'); })
+      .join('');
+  }
+
+
+   
   // Forma estándar de stats (esquema actual)
   function statsPorDefecto() {
     return {
@@ -226,7 +240,7 @@
     },
 
     // ===== EXPORTAR TODO A UN OBJETO =====
-    exportarTodo: function() {
+    exportarTodo: async function() {
       var perfiles = this.obtenerPerfiles();
       var datosPerfiles = {};
 
@@ -246,7 +260,7 @@
       var appConfig = {};
       try { appConfig = JSON.parse(localStorage.getItem('appConfig') || '{}'); } catch(e) {}
 
-      return {
+              var backup = {
         app: 'CEARTEE',
         tipo: 'backup',
         schemaVersion: CEARTEE_SCHEMA_VERSION,
@@ -255,15 +269,26 @@
         perfiles: perfiles,
         datosPerfiles: datosPerfiles
       };
+      backup._firma = await sha256Texto(FIRMA_SALT + JSON.stringify(backup));
+      return backup;
     },
+
 
     // ===== IMPORTAR DESDE UN OBJETO =====
     // modo: 'reemplazar' (borra todo lo actual) o 'combinar' (añade/actualiza)
-    importarTodo: function(backup, modo) {
+    importarTodo: async function(backup, modo) {
       if (!backup || backup.app !== 'CEARTEE' || !Array.isArray(backup.perfiles)) {
         throw new Error('El archivo no es un respaldo válido de CEARTEE');
       }
+      var firmaRecibida = backup._firma;
+      var copia = Object.assign({}, backup);
+      delete copia._firma;
+      var firmaCalculada = await sha256Texto(FIRMA_SALT + JSON.stringify(copia));
+      if (!firmaRecibida || firmaRecibida !== firmaCalculada) {
+        throw new Error('Este respaldo fue modificado o está dañado y no se puede importar');
+      }
       modo = modo || 'combinar';
+
 
       // Si es un respaldo viejo, normalizamos sus stats al esquema actual
       var versionBackup = parseInt(backup.schemaVersion) || 1;
@@ -279,7 +304,7 @@
         localStorage.removeItem(STORAGE_KEY);
         localStorage.removeItem(ACTIVE_KEY);
       }
-
+    
       var perfilesActuales = this.obtenerPerfiles();
 
       backup.perfiles.forEach(function(p) {
@@ -291,7 +316,7 @@
           existe.nombre = p.nombre;
           existe.avatar = p.avatar;
         }
-
+      
         // Restaurar datos del perfil
         var datos = (backup.datosPerfiles && backup.datosPerfiles[p.id]) || {};
         Object.keys(datos).forEach(function(tipo) {
@@ -303,7 +328,7 @@
           localStorage.setItem('ceartee_perfil_' + p.id + '_' + tipo, JSON.stringify(valor));
         });
       });
-
+    
       localStorage.setItem(STORAGE_KEY, JSON.stringify(perfilesActuales));
 
       // ✅ Asegurar que haya un perfil activo válido tras importar

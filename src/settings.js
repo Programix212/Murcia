@@ -849,7 +849,8 @@ async function iniciarUpdater() {
 // ==========================================
 async function exportarRespaldo() {
   try {
-    var data = window.PerfilesManager.exportarTodo();
+    var data = await window.PerfilesManager.exportarTodo();
+
     var json = JSON.stringify(data, null, 2);
     var fecha = new Date().toISOString().slice(0, 10);
     var nombreArchivo = 'ceartee_respaldo_' + fecha + '.json';
@@ -867,7 +868,7 @@ async function exportarRespaldo() {
         var writable = await handle.createWritable();
         await writable.write(json);
         await writable.close();
-        mostrarNotifConfig('✅ Respaldo guardado correctamente');
+        mostrarNotifConfig(' Respaldo guardado correctamente');
         return;
       } catch (err) {
         // Si el usuario cancela el diálogo, no hacer nada
@@ -888,9 +889,9 @@ async function exportarRespaldo() {
     document.body.removeChild(a);
     setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
 
-    mostrarNotifConfig('✅ Respaldo exportado correctamente');
+    mostrarNotifConfig(' Respaldo exportado correctamente');
   } catch (e) {
-    mostrarNotifConfig('❌ Error al exportar: ' + e.message, true);
+    mostrarNotifConfig(' Error al exportar: ' + e.message, true);
   }
 }
 
@@ -899,11 +900,9 @@ function importarRespaldo(event) {
   if (!file) return;
 
   var reader = new FileReader();
-  reader.onload = function(e) {
+  reader.onload = async function(e) {
     try {
       var backup = JSON.parse(e.target.result);
-
-      // Preguntar modo: combinar o reemplazar
       var reemplazar = confirm(
         'IMPORTAR RESPALDO\n\n' +
         'Aceptar = REEMPLAZAR todo (borra los perfiles actuales)\n' +
@@ -911,13 +910,14 @@ function importarRespaldo(event) {
       );
       var modo = reemplazar ? 'reemplazar' : 'combinar';
 
-      var total = window.PerfilesManager.importarTodo(backup, modo);
-      mostrarNotifConfig('✅ Importado correctamente (' + total + ' perfiles)');
+      var total = await window.PerfilesManager.importarTodo(backup, modo);
+      mostrarNotifConfig(' Importado correctamente (' + total + ' perfiles)');
       setTimeout(function() { window.location.reload(); }, 1500);
     } catch (err) {
-      mostrarNotifConfig('❌ Archivo inválido: ' + err.message, true);
+      mostrarNotifConfig(' Archivo inválido: ' + err.message, true);
     }
   };
+
   reader.readAsText(file);
   event.target.value = ''; // permite reimportar el mismo archivo
 }
