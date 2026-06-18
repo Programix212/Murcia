@@ -5,7 +5,9 @@
   "platforms": {
     "windows-x86_64": {
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVSS2VTVU90ZUYrTnBpaWQyUXN6dFROSjBUZFRDaDhxQ2xUUkIrUE5NM0FMSk1TdE1YUmNEY1hmd2c2YlpXa204QkZDV29jbW9aeWhGcWwxeDIrd2JNVFc1REdJbUthRHdzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgxODAwNzQ3CWZpbGU6TXVyY2lhXzEuMC4yX3g2NC1zZXR1cC5leGUKRWZOYzJLRE9WYnI2bDNqV2htUVZlQVFFYjZPWUp5eWdCMkdDKzh5QmlZVVRoaitCc1BhV0Uzek1aRmRNdEhXZFg1WXl6VEJyRG0xY0s5N01FeVpLRFE9PQo=",
-      "url": "https://github.com/Programix212/Murcia/releases/download/v1.0.1/Murcia_1.0.1_x64-setup.exe"
+     "url": "https://github.com/Programix212/Murcia/releases/download/v1.0.2/Murcia_1.0.2_x64-setup.exe"
+
+
     }
   }
 }
