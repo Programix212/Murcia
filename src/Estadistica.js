@@ -211,6 +211,21 @@ function esActividadFinal(nombreActividad) {
 // ej. "1.txa"). Aquí van por título exacto del juego.
 // ==========================================
 window.FINALES_POR_JUEGO = {
+  // Juegos que terminan en una pantalla informativa (o con menú de niveles):
+  // el reporte sale al resolver su última actividad jugable.
+  'Animales salvajes': ['memory1.puz', 'pota.ass'],
+  'El gallo y el carámbano': ['g3.sop'],
+  'El viento y el sol': ['solvient.puz'],
+  'Ga-go-gu': ['rompe4.puz'],
+  'Gentilicios': ['sopa1.sop'],
+  'La tortuga taruga': ['animalit.puz'],
+  'Lengua 5° tema 1-5': ['5prin5.puz'],
+  'Lengua castellana 1-1': ['ci.ass'],
+  'Papá perritos Motas': ['cppm81.sop'],
+  'Textos argentinos': ['anteojo1.txa'],
+  'Vamos a leer I': ['16texto.txa'],
+  'Profesiones, casas y maquinas': ['tiempo1.ass'],
+  'Los dinosaurios': ['latera2.ass'],
   '4 Cuentos': ['bp6.puz'],
   'Actividad 5 años infantil': ['kas1.ass'],
   'Aprende a leer con l,m,s,p,t,n': ['n_3.puz'],
@@ -801,6 +816,10 @@ function iniciarAcumulador() {
       if (scoreAhora > window.datosActividadActual.maxScore) window.datosActividadActual.maxScore = scoreAhora;
       if (actionsAhora > window.datosActividadActual.maxActions) window.datosActividadActual.maxActions = actionsAhora;
       if (p?.actPanel?.solved || p?.actPanel?.act?.solved) window.datosActividadActual.solved = true;
+      try {
+        var minA = parseInt(p?.actPanel?.act?.getMinNumActions?.() ?? 0) || 0;
+        if (minA > (window.datosActividadActual.minActions || 0)) window.datosActividadActual.minActions = minA;
+      } catch (e2) {}
     } catch(e) {}
   }, 300);
 }
@@ -818,28 +837,71 @@ function registrarActividad(nombre, datos, tiempoActividad) {
   // Se registran TODAS las demás actividades para que la estadística
   // cuente el juego completo. El filtro solo aplica al disparo del
   // reporte final, no al registro.
-  if (window.registroActividades.find(r => r.actividad === nombre)) return;
+  // Pantallas NO evaluables (portadas, instrucciones, menús, "explorar"):
+  // JClic les da 0 acciones mínimas. Si además el alumno no hizo ninguna
+  // acción, no se cuentan: antes salían como "No / 0%" y bajaban la
+  // puntuación media y las correctas del reporte.
+  if (!(datos?.minActions > 0) && !(datos?.maxActions > 0) && !(datos?.maxScore > 0) && !datos?.solved) {
+    console.log('⏭️ Pantalla no evaluable, no se cuenta:', nombre);
+    return;
+  }
 
-  const score  = datos?.maxScore || 0;
-  const solved = datos?.solved   || false;
-  let puntuacion = solved ? 100 : [0, 50, 60, 70, 80, 90][score] || 100;
-  if (!solved && score <= 5) puntuacion = [0, 50, 60, 70, 80, 90][score];
+  const aciertos = Math.max(0, datos?.maxScore   || 0);
+  const acciones = Math.max(aciertos, datos?.maxActions || 0);
+  const errores  = Math.max(0, acciones - aciertos);
+  const solved   = !!(datos?.solved);
+  const minAcc   = datos?.minActions || 0;
+
+  // Puntuación con la MISMA fórmula que usa JClic en sus reportes
+  // (ActivityReg.getPrecision): resuelta = aciertos mínimos / acciones;
+  // sin resolver = penaliza lo que faltó. Sin datos de mínimo, usa
+  // aciertos / acciones (precisión simple).
+  let puntuacion = 0;
+  if (acciones > 0) {
+    if (minAcc > 0) {
+      puntuacion = solved
+        ? (acciones < minAcc ? 100 : Math.round(100 * minAcc / acciones))
+        : Math.round(aciertos * aciertos * 100 / (minAcc * acciones));
+    } else {
+      puntuacion = Math.round(100 * aciertos / acciones);
+    }
+  } else if (solved) {
+    puntuacion = 100;
+  }
+  puntuacion = Math.max(0, Math.min(100, puntuacion));
 
   const t    = tiempoActividad || 0;
   const minR = String(Math.floor(t / 60)).padStart(2, '0');
   const secR = String(t % 60).padStart(2, '0');
 
   const JClic = getJClic();
-  window.registroActividades.push({
+  const registro = {
     secuencia  : obtenerSecuencia(JClic),
     actividad  : nombre,
-    correcta   : (solved || score > 0) ? 'Sí' : 'No',
-    acciones   : score,
+    correcta   : solved ? 'Sí' : 'No',
+    aciertos   : aciertos,
+    errores    : errores,
+    acciones   : acciones,
     puntuacion : puntuacion,
     tiempo     : t,
     tiempoFmt  : `${minR}:${secR}`
-  });
-  
+  };
+
+  // Si la actividad ya estaba (el alumno regresó a ella), se suma el tiempo
+  // y se conserva el MEJOR intento en lugar de ignorar el nuevo.
+  const previo = window.registroActividades.find(r => r.actividad === nombre);
+  if (previo) {
+    const tTotal = (previo.tiempo || 0) + t;
+    const mejor = (registro.correcta === 'Sí' && previo.correcta !== 'Sí') ||
+                  (registro.correcta === previo.correcta && registro.puntuacion > previo.puntuacion) ||
+                  (previo.acciones === 0 && registro.acciones > 0);
+    if (mejor) Object.assign(previo, registro);
+    previo.tiempo    = tTotal;
+    previo.tiempoFmt = String(Math.floor(tTotal / 60)).padStart(2, '0') + ':' + String(tTotal % 60).padStart(2, '0');
+  } else {
+    window.registroActividades.push(registro);
+  }
+
   console.log('📋 Registrada:', nombre);
 }
 
@@ -1132,9 +1194,8 @@ function finalizarJuego() {
   // ✅ REGISTRAR ESTADÍSTICA
   try {
     const nombreJuego = document.getElementById('gameTitle')?.textContent || 'Juego';
-    const totalActs = window.registroActividades.length;
-    const correctas = window.registroActividades.filter(r => r.correcta === 'Sí').length;
-    const totalAcciones = window.registroActividades.reduce((s, r) => s + r.acciones, 0);
+    const totalAciertos = window.registroActividades.reduce((s, r) => s + (r.aciertos || 0), 0);
+    const totalErrores  = window.registroActividades.reduce((s, r) => s + (r.errores  || 0), 0);
     // Si hay varios reportes por juego, solo se suma el tiempo NUEVO desde
     // el reporte anterior (evita contar la sesión completa dos veces).
     const totalTiempo = Math.max(0, (window.tiempoSegundos || 0) - (window.__tiempoYaReportado || 0));
@@ -1143,8 +1204,8 @@ function finalizarJuego() {
     if (window.PerfilesManager?.obtenerPerfilActivo()) {
       window.registrarEstadistica(
         nombreJuego,
-        correctas,
-        totalAcciones - correctas,
+        totalAciertos,
+        totalErrores,
         totalTiempo
       );
       console.log('📊 Estadística final registrada');
@@ -1298,6 +1359,18 @@ function iniciarSync() {
 
       const cambioPantalla = (currentIdx !== window.prevIdx) || (currentName !== window.prevName);
 
+      // Mientras sigue en la misma actividad, guardar los máximos también
+      // aquí (200 ms) para no perder la última jugada antes de avanzar.
+      if (!cambioPantalla && window.datosActividadActual) {
+        if (score   > (window.datosActividadActual.maxScore   || 0)) window.datosActividadActual.maxScore   = score;
+        if (actions > (window.datosActividadActual.maxActions || 0)) window.datosActividadActual.maxActions = actions;
+        if (p?.actPanel?.solved || p?.actPanel?.act?.solved) window.datosActividadActual.solved = true;
+        try {
+          var minAs = parseInt(p?.actPanel?.act?.getMinNumActions?.() ?? 0) || 0;
+          if (minAs > (window.datosActividadActual.minActions || 0)) window.datosActividadActual.minActions = minAs;
+        } catch (e3) {}
+      }
+
       if (cambioPantalla && window.yaIniciado && window.prevName) {
         if (window.sistemaSonido) window.sistemaSonido.playNotificacion();
       }
@@ -1357,7 +1430,7 @@ function iniciarSync() {
               if (!volvioAMenu && !salioDeReporta) marcarReportado(window.prevName);
               // Actualizar el seguimiento ANTES de finalizar para no
               // redisparar el reporte al cerrarlo y seguir en el menú.
-              window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, solved:false };
+              window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, minActions:0, solved:false };
               window.ultimaActividadDetectada = currentName;
               window.prevIdx                  = currentIdx;
               window.prevName                 = currentName;
@@ -1375,7 +1448,7 @@ function iniciarSync() {
           }
         }
 
-        window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, solved:false };
+        window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, minActions:0, solved:false };
         window.ultimaActividadDetectada = currentName;
         window.prevIdx                  = currentIdx;
         window.prevName                 = currentName;
@@ -1527,6 +1600,9 @@ function cerrarReporte() {
   window.__reporteParaImprimir = null;
   window.juegoTerminado = false;
   window.reporteMostrado = false;
+  // Lo ya reportado ya se guardó en el perfil: la siguiente ronda empieza
+  // vacía para no volver a sumar las mismas actividades.
+  window.registroActividades = [];
 }
 
 function imprimirReporte() {
@@ -1573,7 +1649,7 @@ function arrancarEstadisticas() {
   window.juegoTerminado           = false;
   window.yaIniciado               = false;
   window.totalActividades         = 0;
-  window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, solved:false };
+  window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, minActions:0, solved:false };
   window.tiempoSegundos           = 0;
   window.ultimoScore              = -1;
   window.ultimoActions            = -1;
@@ -1652,7 +1728,7 @@ function arrancarEstadisticasSinReloj() {
   window.juegoTerminado           = false;
   window.yaIniciado               = false;
   window.totalActividades         = 0;
-  window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, solved:false };
+  window.datosActividadActual     = { score:0, actions:0, maxScore:0, maxActions:0, minActions:0, solved:false };
   window.tiempoSegundos           = 0;
   window.ultimoScore              = -1;
   window.ultimoActions            = -1;
@@ -1675,6 +1751,9 @@ function arrancarEstadisticasSinReloj() {
   } catch (e) {}
 
   // El reloj NO arranca aquí. Vista.js llama a window.iniciarRelojJuego() cuando el loader termina.
+  // Si el juego cargó rápido y vista.js YA pidió el reloj antes de este
+  // reinicio, se vuelve a arrancar (antes se quedaba en 00:00 toda la partida).
+  if (window.__relojPedido) iniciarReloj();
   iniciarSync();
   iniciarAcumulador();
 }
@@ -1682,5 +1761,6 @@ function arrancarEstadisticasSinReloj() {
 // Función que vista.js llama cuando el loader termina
 window.iniciarRelojJuego = function() {
   console.log('⏱️ Cronómetro arrancando tras carga completa');
+  window.__relojPedido = true;
   iniciarReloj();
 };

@@ -35,6 +35,17 @@ window.Notificaciones = {
     return d;
   },
 
+  // Iconos propios para los toasts de victoria (SVG en img_logos/notificaciones).
+  // Reemplazan los emojis anteriores en todas las notificaciones de juego ganado.
+  iconos: {
+    primerJuego: 'img_logos/notificaciones/01_primer_juego.svg',
+    milestone: 'img_logos/notificaciones/02_milestone.svg',
+    perfecta: 'img_logos/notificaciones/03_perfecta.svg',
+    recordPuntos: 'img_logos/notificaciones/04_record_puntos.svg',
+    recordTiempo: 'img_logos/notificaciones/05_record_tiempo.svg',
+    racha: 'img_logos/notificaciones/06_racha.svg'
+  },
+
   // Textos de toasts ES/EN (sin hardcodear solo español)
   textos: {
     es: {
@@ -138,12 +149,12 @@ window.Notificaciones = {
     // 1. Juegos completados
     d.juegosCompletados++;
     var logrosJuegos = [
-      { cant: 1,  id: 'primer_juego',  icon: '🎮', clave: 'primerJuego' },
-      { cant: 5,  id: '5_juegos',      icon: '🥉', clave: 'juegosN' },
-      { cant: 10, id: '10_juegos',     icon: '🥈', clave: 'juegosN' },
-      { cant: 25, id: '25_juegos',     icon: '🥇', clave: 'juegosN' },
-      { cant: 50, id: '50_juegos',     icon: '🏆', clave: 'juegosN' },
-      { cant: 100,id: '100_juegos',    icon: '👑', clave: 'juegos100' }
+      { cant: 1,  id: 'primer_juego',  icon: self.iconos.primerJuego,  clave: 'primerJuego' },
+      { cant: 5,  id: '5_juegos',      icon: self.iconos.milestone,    clave: 'juegosN' },
+      { cant: 10, id: '10_juegos',     icon: self.iconos.milestone,    clave: 'juegosN' },
+      { cant: 25, id: '25_juegos',     icon: self.iconos.milestone,    clave: 'juegosN' },
+      { cant: 50, id: '50_juegos',     icon: self.iconos.milestone,    clave: 'juegosN' },
+      { cant: 100,id: '100_juegos',    icon: self.iconos.milestone,    clave: 'juegos100' }
     ];
     logrosJuegos.forEach(function(logro) {
       if (d.juegosCompletados >= logro.cant && d.logrosDesbloqueados.indexOf(logro.id) === -1) {
@@ -158,12 +169,12 @@ window.Notificaciones = {
       if (d.puntuacionesPerfectas === 1) {
         if (d.logrosDesbloqueados.indexOf('primera_perfecta') === -1) {
           d.logrosDesbloqueados.push('primera_perfecta');
-          notificaciones.push({ icon: '⭐', texto: self.tNoti('primeraPerfecta'), tipo: 'logro' });
+          notificaciones.push({ icon: self.iconos.perfecta, texto: self.tNoti('primeraPerfecta'), tipo: 'logro' });
         }
       }
       if (d.puntuacionesPerfectas >= 10 && d.logrosDesbloqueados.indexOf('10_perfectas') === -1) {
         d.logrosDesbloqueados.push('10_perfectas');
-        notificaciones.push({ icon: '💎', texto: self.tNoti('perfectas10'), tipo: 'logro' });
+          notificaciones.push({ icon: self.iconos.perfecta, texto: self.tNoti('perfectas10'), tipo: 'logro' });
       }
     }
 
@@ -171,7 +182,7 @@ window.Notificaciones = {
     if (puntuacion > d.mejorPuntuacion) {
       d.mejorPuntuacion = puntuacion;
       if (d.juegosCompletados > 1) {
-        notificaciones.push({ icon: '📈', texto: self.tNoti('recordPuntos', { n: Number(puntuacion) || 0 }), tipo: 'record' });
+          notificaciones.push({ icon: self.iconos.recordPuntos, texto: self.tNoti('recordPuntos', { n: Number(puntuacion) || 0 }), tipo: 'record' });
       }
     }
 
@@ -186,12 +197,12 @@ window.Notificaciones = {
         jg.veces++;
         if (tiempo < jg.mejorTiempo) {
           jg.mejorTiempo = tiempo;
-          notificaciones.push({ icon: '⏱️', texto: self.tNoti('recordTiempo', { juego: nombreSeguro }), tipo: 'record' });
+            notificaciones.push({ icon: self.iconos.recordTiempo, texto: self.tNoti('recordTiempo', { juego: nombreSeguro }), tipo: 'record' });
         }
         if (puntuacion > jg.mejorPuntuacion) {
           jg.mejorPuntuacion = puntuacion;
           if (jg.veces > 1) {
-            notificaciones.push({ icon: '📊', texto: self.tNoti('mejorPuntosJuego', { juego: nombreSeguro, n: Number(puntuacion) || 0 }), tipo: 'record' });
+              notificaciones.push({ icon: self.iconos.recordPuntos, texto: self.tNoti('mejorPuntosJuego', { juego: nombreSeguro, n: Number(puntuacion) || 0 }), tipo: 'record' });
           }
         }
       }
@@ -204,9 +215,9 @@ window.Notificaciones = {
         d.mejorRacha = d.rachaAciertos;
       }
       var logrosRacha = [
-        { cant: 3,  id: 'racha_3',  icon: '🔥', clave: 'rachaN' },
-        { cant: 5,  id: 'racha_5',  icon: '🔥', clave: 'rachaN' },
-        { cant: 10, id: 'racha_10', icon: '💥', clave: 'racha10' }
+        { cant: 3,  id: 'racha_3',  icon: self.iconos.racha,  clave: 'rachaN' },
+        { cant: 5,  id: 'racha_5',  icon: self.iconos.racha,  clave: 'rachaN' },
+        { cant: 10, id: 'racha_10', icon: self.iconos.racha,  clave: 'racha10' }
       ];
       logrosRacha.forEach(function(logro) {
         if (d.rachaAciertos >= logro.cant && d.logrosDesbloqueados.indexOf(logro.id) === -1) {
@@ -310,10 +321,26 @@ window.Notificaciones = {
       'transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);' +
       'cursor: pointer;';
 
-    // Construir con textContent (evita XSS si el nombre del juego trae HTML)
-    var sIcon = document.createElement('span');
-    sIcon.style.fontSize = '28px';
-    sIcon.textContent = String(icon || '');
+    // Construir con textContent (evita XSS si el nombre del juego trae HTML).
+    // Si el icono es una ruta de imagen (SVG propios), pintar <img>; si no,
+    // pintar texto (compatibilidad con iconos emoji viejos).
+    var iconStr = String(icon || '');
+    var esImagen = (iconStr.indexOf('/') !== -1) || (/\.(svg|png|jpe?g|gif|webp)(\?.*)?$/i.test(iconStr));
+    var sIcon;
+    if (esImagen) {
+      sIcon = document.createElement('img');
+      sIcon.src = iconStr;
+      sIcon.alt = '';
+      sIcon.style.width = '32px';
+      sIcon.style.height = '32px';
+      sIcon.style.objectFit = 'contain';
+      sIcon.style.flexShrink = '0';
+      sIcon.onerror = function() { try { this.style.display = 'none'; } catch (e) {} };
+    } else {
+      sIcon = document.createElement('span');
+      sIcon.style.fontSize = '28px';
+      sIcon.textContent = iconStr;
+    }
     var sTxt = document.createElement('span');
     sTxt.textContent = String(texto || '');
     toast.appendChild(sIcon);

@@ -134,7 +134,7 @@
       return '<span class="sin-logros">' + t('sinLogros') + '</span>';
     }
     return '<div class="logros-lista">' + 
-      logros.map(function(l) { return '<span class="logro-badge">🏆 ' + escapeHtml(l) + '</span>'; }).join('') +
+      logros.map(function(l) { return '<span class="logro-badge"><img src="img_logos/notificaciones/02_milestone.svg" alt="" style="width:18px;height:18px;vertical-align:-3px;" onerror="this.style.display=\'none\'"> ' + escapeHtml(l) + '</span>'; }).join('') +
       '</div>';
   }
 
