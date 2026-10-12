@@ -29,7 +29,7 @@
     
     "security": {
       
-      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' blob: data:; connect-src 'self' https://*.ingest.sentry.io https://*.ingest.us.sentry.io https://identitytoolkit.googleapis.com https://firestore.googleapis.com https://securetoken.googleapis.com; object-src 'none'; frame-src 'self'; base-uri 'self'"
+      "csp": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' blob: data:; connect-src 'self' https://*.ingest.sentry.io https://*.ingest.us.sentry.io; object-src 'none'; frame-src 'self'; base-uri 'self'"
     }
   },
   
