@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CEARTEE - De lo humano a lo comunitario</title>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="Humano.css">
+   <link rel="stylesheet" href="../transiciones.css">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<script src="../transiciones.js"></script>
+
+
+</head>
+<body>
+
+   <!-- Overlay de fade -->
+   <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+   <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+
+
+   </div>
+
+<!--Contenedor Principal-->
+   <div class="main-container">
+
+
+    <!---Header-->
+   <header class="header">
+   <button class="btn-back" onclick="goback()">
+  <span class="btn-icon">←</span>
+  <span class="btn-text">Volver</span>
+
+    </button>
+
+
+    <div class="header-title">
+      <span class="header-emoji"></span>
+      <h1>De lo humano a lo comunitario</h1>
+      
+    </div>
+    <div class="header-count"> 
+     <span class="count-number" id="gameCount">2</span>
+     <span class="count-text">juegos</span>
+</div>
+
+   </header>
+
+   <!--Barra de busqueda-->
+   <div class="search-bar" id="search-bar">
+    <img src="../img_logos/logo_lupa.png" class="search-icon-img" alt="Buscar">
+    <input class="search-input" id="searchInput" placeholder="Buscar juego" type="text" onkeyup="filterGames()">
+    
+
+   </div>
+
+
+   <div class="game-list" id="gamesList">
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Juego 1 (reutilizado de Preescolar: único .jclic.zip disponible de
+         esta categoría; los proyectos de Primaria_Humano_pendientes son
+         .pcc sueltos sin empaquetar y aún no se pueden cargar) -->
+      <div class="game-card" data-name="Cuento para la tolerancia" onclick="abrirJuego('assets/De_lo_humano_a_comunitario_juegos/Cuentoparalatolerancia.jclic.zip', 'Cuento para la tolerancia')">
+        <div class="game-icon"><img alt="" src="../assets/img_humano/cuento_para_la_tolerancia_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Cuento para la tolerancia</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 2 -->
+      <div class="game-card" data-name="Los rincones de la clase" onclick="abrirJuego('assets/De_lo_humano_a_comunitario_juegos/Losrinconesdelaclase.jclic.zip', 'Los rincones de la clase')">
+        <div class="game-icon"><img alt="" src="../assets/img_humano/los_rincones_de_la_clase_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Los rincones de la clase</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+<!-- Mensaje sin resultados -->
+      <div class="no-results" id="noResults" style="display:none;">
+        <span class="no-results-icon">🔍</span>
+        <p>No se encontraron juegos</p>
+      </div>
+
+      </div>
+
+   </div>
+
+
+
+<script src="Humano.js"></script>
+<script src="../aplicar-config.js"></script>
+
+
+
+
+
+</body>
+
+
+
+
+
+
+</html>

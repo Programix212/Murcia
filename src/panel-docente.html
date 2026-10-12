@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEARTEE - Panel Docente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="panel-docente.css">
+  <link rel="stylesheet" href="transiciones.css">
+  <script src="transiciones.js"></script>
+</head>
+<body>
+
+  <!-- Overlay de fade -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+  <!-- Fondo animado -->
+  <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- 🎓 PANEL DOCENTE (abierto, sin contraseña) -->
+  <div class="panel-container" id="panelContainer" >
+
+    <!-- Header -->
+    <header class="panel-header">
+      <button class="btn-back" aria-label="Volver" onclick="cearteeNavigate('index.html')">
+      </button>
+
+      <h1 data-i18n="panelTitulo"> Panel de Control Docente</h1>
+      <div class="panel-stats">
+        <span id="totalAlumnos">0 alumnos</span>
+      </div>
+    </header>
+
+    <!-- Filtros -->
+    <div class="panel-filtros">
+      <div class="buscador-wrapper">
+        <img src="./img_logos/logo_lupa.png" class="buscador-lupa" alt="Buscar">
+        <input type="text" id="buscadorAlumnos" data-i18n-placeholder="buscarAlumno" placeholder="Buscar alumno por nombre..." oninput="filtrarAlumnos()">
+      </div>
+      <select id="ordenarPor" onchange="renderizarPanel()">
+        <option value="nombre" data-i18n="ordenNombre">Ordenar por nombre</option>
+        <option value="juegos" data-i18n="ordenJuegos">Más juegos completados</option>
+        <option value="puntuacion" data-i18n="ordenPuntuacion">Mejor puntuación</option>
+        <option value="reciente" data-i18n="ordenReciente">Más reciente</option>
+      </select>
+    </div>
+
+    <!-- Tabla de alumnos -->
+    <div class="panel-tabla-container">
+      <table class="panel-tabla" id="tablaAlumnos">
+        <thead>
+          <tr>
+            <th data-i18n="thAlumno">Alumno</th>
+            <th data-i18n="thJuegos">Juegos</th>
+            <th data-i18n="thPuntuacion">Mejor Punt.</th>
+            <th data-i18n="thRacha">Racha</th>
+            <th data-i18n="thLogros">Logros</th>
+            <th data-i18n="thUltima">Última vez</th>
+          </tr>
+        </thead>
+        <tbody id="tbodyAlumnos">
+          <!-- Se llena con JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Vista vacía -->
+    <div class="panel-vacio" id="panelVacio" style="display:none;">
+      <div class="vacio-icon">📭</div>
+      <p data-i18n="noAlumnos">No hay alumnos registrados todavía.</p>
+      <button onclick="cearteeNavigate('index.html')" data-i18n="crearPerfil">Crear primer perfil</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="panel-footer">
+      <p data-i18n="footerDocente">CEARTEE - Panel Docente • Los datos se guardan localmente en esta computadora</p>
+    </footer>
+
+  </div>
+
+  <script src="perfiles.js"></script>
+  <script src="panel-docente.js"></script>
+  <script src="aplicar-config.js"></script>
+  <script src="burbujas.js"></script>
+</body>
+</html>

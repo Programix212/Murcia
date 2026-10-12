@@ -1,0 +1,303 @@
+/* ==========================================
+   CEARTEE - FADE SUAVE ENTRE PÁGINAS
+   ========================================== */
+
+.ceartee-fade-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, rgba(10, 10, 26, 0.985), rgba(16, 16, 36, 0.985));
+  z-index: 99999;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.3s ease;
+}
+
+.ceartee-fade-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Al salir, fuerza visible */
+body.ceartee-exiting .ceartee-fade-overlay {
+  opacity: 1 !important;
+  pointer-events: all !important;
+
+  
+}
+
+/* RENDIMIENTO: el desenfoque (blur) es muy pesado en PCs con gráficos
+   integrados. Lo desactivamos solo en los selectores que lo usan
+   (antes era `*`, que forzaba recálculo en cada nodo que crea JClic). */
+.search-input,
+.search-bar input,
+.card-btn,
+.play-btn,
+.setting-select,
+.volume-slider,
+.game-card,
+.category-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* RENDIMIENTO BURBUJAS: 8 burbujas animadas en cada página = 8 capas
+   con box-shadow + opacity moviéndose siempre. En gráficas integradas
+   eso tira los FPS. Bajamos a 4 burbujas, con transform GPU y
+   contención. El diseño se mantiene, solo hay menos burbujas. */
+.bg-animation {
+  contain: strict;
+  opacity: 0.18;
+}
+
+.bg-animation span {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Oculta la mitad de las burbujas (8 -> 4). Ahorra ~50% de composición. */
+.bg-animation span:nth-child(n+5) {
+  display: none !important;
+}
+
+/* Si el usuario desactiva animaciones o el SO pide movimiento reducido,
+   quita las burbujas del todo (también lo hace body.sin-animaciones). */
+@media (prefers-reduced-motion: reduce) {
+  .bg-animation {
+    display: none !important;
+  }
+
+  .ceartee-fade-overlay {
+    transition: none !important;
+  }
+
+  * {
+    animation-duration: 0.001s !important;
+    transition-duration: 0.001s !important;
+  }
+}
+
+/* ACCESIBILIDAD: foco visible con teclado en todo el programa.
+   (Varios CSS quitan el outline; esto lo devuelve solo al navegar con Tab.) */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #ffd200 !important;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   FIX RESOLUCIÓN 1366x768 Y PANTALLAS BAJAS (16:9)
+   La app usaba header fijo de 180px (23% de 768px) + ventana
+   inicial 1024x768 (4:3). En laptops 1366x768 con barra de
+   Windows (~40px) quedan ~728px útiles y todo se veía
+   aplastado. Este bloque compacta de forma global sin tocar
+   el diseño en pantallas grandes.
+   Se pone aquí porque transiciones.css se carga en TODAS
+   las páginas (preescolar + primaria + vista + config).
+   ========================================================= */
+
+/* Laptop estándar 1366px: columnas y tarjetas más flexibles */
+@media (max-width: 1366px) {
+  .categories-grid,
+  .games-list {
+    max-width: 1100px;
+  }
+
+  .header-title h1 {
+    max-width: 70vw;
+  }
+}
+
+/* Pantallas de poca altura (1366x768 y similares): header compacto */
+@media (max-height: 800px) {
+  .header,
+  .panel-header {
+    height: 110px !important;
+    min-height: 110px !important;
+    padding: 10px 24px !important;
+  }
+
+  .header-title h1,
+  .panel-header h1 {
+    font-size: clamp(16px, 2.6vw, 34px) !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .btn-img-icon {
+    width: 64px !important;
+  }
+
+  .header-count {
+    padding: 12px 18px !important;
+  }
+
+  .count-number {
+    font-size: 1.1rem !important;
+  }
+
+  .main-container {
+    padding-bottom: 110px !important;
+  }
+
+  .categories-grid {
+    margin-top: 24px !important;
+    gap: 14px !important;
+  }
+
+  .category-card {
+    padding: 18px 14px 16px !important;
+  }
+
+  .card-icon {
+    height: 64px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .card-icon img,
+  .img_logos {
+    max-width: 96px !important;
+    max-height: 76px !important;
+  }
+
+  .categoria-estrellas {
+    min-height: 40px !important;
+    margin: 4px 0 8px 0 !important;
+  }
+
+  .page-subtitle {
+    transform: none !important;
+    margin: 14px 16px 16px !important;
+  }
+
+  .search-bar {
+    margin: 14px auto !important;
+  }
+
+  .games-list {
+    transform: none !important;
+    gap: 12px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .game-card {
+    padding: 12px 14px !important;
+  }
+
+  .game-icon,
+  .game-icon img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .footer-stats {
+    bottom: 12px !important;
+    padding: 10px 20px !important;
+  }
+
+  .stat-item {
+    padding: 0 16px !important;
+    min-width: 72px !important;
+  }
+
+  /* Vista de juego: que el marco 16:9 quepa sin aplastar */
+  .game-wrapper {
+    gap: 10px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .stats-panel {
+    padding: 8px 16px !important;
+  }
+
+  .stat-item:not(:last-child) {
+    padding: 0 16px !important;
+  }
+
+  #jclic-container {
+    height: min(56vh, calc(100vw * 0.625)) !important;
+    min-height: 380px !important;
+  }
+
+  .barra-instrucciones {
+    padding: 8px 16px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .btn-nav1,
+  .btn-nav2,
+  .btn-nav3 {
+    padding: 9px 20px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Etapas: botones gigantes no caben en 728px útiles */
+  .container-buttons {
+    margin-top: -40px !important;
+    height: calc(100vh - 110px) !important;
+    gap: 16px !important;
+    padding: 12px !important;
+  }
+
+  .container-buttons button,
+  .container-buttons a,
+  .Btn-button,
+  .Btn-button2 {
+    padding: 18px 48px !important;
+    min-width: 180px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Pantallas muy bajas (taskbar grande, escalado 125%, WebView sin maximizar) */
+@media (max-height: 700px) {
+  .header,
+  .panel-header {
+    height: 92px !important;
+    min-height: 92px !important;
+    padding: 8px 16px !important;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    max-width: 1200px !important;
+    margin-top: 16px !important;
+    gap: 10px !important;
+  }
+
+  .category-card {
+    padding: 12px 8px !important;
+  }
+
+  .card-icon {
+    height: 48px !important;
+  }
+
+  .card-icon img,
+  .img_logos {
+    max-width: 72px !important;
+    max-height: 56px !important;
+  }
+
+  .card-title {
+    font-size: 0.75rem !important;
+  }
+
+  .games-list {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1200px !important;
+  }
+
+  #jclic-container {
+    height: min(52vh, calc(100vw * 0.625)) !important;
+    min-height: 340px !important;
+  }
+
+  .footer-stats {
+    display: none !important;
+  }
+}

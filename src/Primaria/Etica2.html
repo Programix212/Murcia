@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CEARTEE - Ética, naturaleza y sociedades</title>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="Etica2.css">
+   <link rel="stylesheet" href="../transiciones.css">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<script src="../transiciones.js"></script>
+
+
+</head>
+<body>
+
+   <!-- Overlay de fade -->
+   <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+   <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+
+
+   </div>
+
+<!--Contenedor Principal-->
+   <div class="main-container">
+
+
+    <!---Header-->
+   <header class="header">
+   <button class="btn-back" onclick="goback()">
+  <span class="btn-icon">←</span>
+  <span class="btn-text">Volver</span>
+
+    </button>
+
+
+    <div class="header-title">
+      <span class="header-emoji"></span>
+      <h1>Ética, naturaleza y sociedades</h1>
+      
+    </div>
+    <div class="header-count"> 
+     <span class="count-number" id="gameCount">6</span>
+     <span class="count-text">juegos</span>
+</div>
+
+   </header>
+
+   <!--Barra de busqueda-->
+   <div class="search-bar" id="search-bar">
+    <img src="../img_logos/logo_lupa.png" class="search-icon-img" alt="Buscar">
+    <input class="search-input" id="searchInput" placeholder="Buscar juego" type="text" onkeyup="filterGames()">
+    
+
+   </div>
+
+
+   <div class="games-list" id="gamesList">
+
+
+      
+     <!-- Juego 1 -->
+      <div class="game-card" data-name="Alimentos, nacemos, y los animales" onclick="abrirJuego('assets/Primaria_Etica/alimentos_nacemos_y_los_animales.jclic.zip', 'Alimentos, nacemos, y los animales')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_etica/alimentos_nacemos_animales_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Alimentos, nacemos, y los animales</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 2 -->
+     <div class="game-card" data-name="El planeta herido" onclick="abrirJuego('assets/Primaria_Etica/el_planeta_herido.jclic.zip', 'El planeta herido')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_etica/el_planeta_herido_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">El planeta herido</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 3 -->
+     <div class="game-card" data-name="La tierra, el agua, la materia" onclick="abrirJuego('assets/Primaria_Etica/la_tierra_el_agua_la_materia.jclic.zip', 'La tierra, el agua, la materia')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_etica/la_tierra_el_agua_la_materia_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">La tierra, el agua, la materia</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 4 -->
+     <div class="game-card" data-name="Los oficios" onclick="abrirJuego('assets/Primaria_Etica/los_oficios.jclic.zip', 'Los oficios')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_etica/los_oficios_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Los oficios</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 5 -->
+     <div class="game-card" data-name="Profesiones, casas y maquinas" onclick="abrirJuego('assets/Primaria_Etica/profesiones_casas_y_maquinas.jclic.zip', 'Profesiones, casas y maquinas')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_etica/profesiones_casas_y_maquinas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Profesiones, casas y maquinas</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 6 -->
+     <div class="game-card" data-name="Seres vivos, naturaleza y plantas" onclick="abrirJuego('assets/Primaria_Etica/seres_vivos_naturaleza_y_plantas.jclic.zip', 'Seres vivos, naturaleza y plantas')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_etica/seres_vivos_naturaleza_y_plantas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Seres vivos, naturaleza y plantas</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+<!-- Mensaje sin resultados -->
+      <div class="no-results" id="noResults" style="display:none;">
+        <span class="no-results-icon">🔍</span>
+        <p>No se encontraron juegos</p>
+      </div>
+
+   </div>
+
+
+
+   </div>
+
+
+
+<script src="Etica2.js"></script>
+
+<script src="../aplicar-config.js"></script>
+
+
+</body>
+
+
+
+
+
+
+</html>

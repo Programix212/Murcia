@@ -1,0 +1,6 @@
+...debe lanzar la pelota de modo estratégico para dificultar el golpe del bateador.
+...debe intentar que la pelota llegue lo más lejos posible para poder realizar una carrera.
+...el corredor debe pasar por las tres bases y, finalmente por la meta.
+...consiga mayor número de carreras.
+...cuando un receptor llega con la bola a la base antes que el corredor.
+...se cambian los papeles: los que lanzaban, batean y viceversa.

@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+
+
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>CEARTEE - Ética, naturaleza y sociedades</title>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="Etica.css">
+<link rel="stylesheet" href="transiciones.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<script src="transiciones.js"></script>
+   
+
+</head>
+<body>
+
+
+  <!-- 1. Overlay PRIMERO -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+   <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+
+
+   </div>
+
+<!--Contenedor Principal-->
+   <div class="main-container">
+
+
+    <!---Header-->
+   <header class="header">
+   <button class="btn-back" onclick="cearteeNavigate('Categorias.html')">
+  <span class="btn-icon">←</span>
+  <span class="btn-text">Volver</span>
+</button>
+
+
+    <div class="header-title">
+      <span class="header-emoji"></span>
+      <h1>Ética, naturaleza y sociedades</h1>
+      
+    </div>
+    <div class="header-count"> 
+     <span class="count-number" id="gameCount">10</span>
+     <span class="count-text">juegos</span>
+</div>
+
+   </header>
+
+   <!--Barra de busqueda-->
+   <div class="search-bar" id="search-bar">
+    <img src="./img_logos/logo_lupa.png" class="search-icon-img" alt="Buscar" onerror="this.style.visibility='hidden'">
+    <input class="search-input" id="searchInput" placeholder="Buscar juego" type="text" onkeyup="filterGames()">
+    
+
+   </div>
+
+
+   <div class="games-list" id="gamesList">
+
+<!-- Juego 1 -->
+<div class="game-card" 
+     data-name="Aprendiendo a reciclar"
+     data-file="assets/Etica_naturaleza_y_sociedades/Aprendiendoareciclar.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Aprendiendoareciclar.jclic.zip&nombre=Aprendiendo a reciclar&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/aprendiendo_a_reciclar.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">Aprendiendo a reciclar</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+<!--Juego2-->
+
+<div class="game-card" 
+     data-name="Elefante y otros grandes"
+     data-file="assets/Etica_naturaleza_y_sociedades/Elelefanteyotrosgrandes.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Elelefanteyotrosgrandes.jclic.zip&nombre=Elefante y otros grandes&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/el_elefante_y_otros_grandes.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">El elefante y otros grandes</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+
+
+
+
+<!--Juego3-->
+
+
+<div class="game-card" 
+     data-name="La ratita presumida"
+     data-file="assets/Etica_naturaleza_y_sociedades/Laratitapresumida.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Laratitapresumida.jclic.zip&nombre=Laratitapresumida&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/la_ratita_presumida_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">La ratita presumida</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+<!--Juego4-->
+
+
+<div class="game-card" 
+     data-name="Los musicos de bremen"
+     data-file="assets/Etica_naturaleza_y_sociedades/LosmusicosdeBremen.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/LosmusicosdeBremen.jclic.zip&nombre=Los musicos de bremen&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/los_musicos_de_bremen_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">Los musicos de bremen</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+<!---Juego5-->
+
+<div class="game-card" 
+     data-name="Los medios de transporte 2 "
+     data-file="assets/Etica_naturaleza_y_sociedades/Losmediosdetransporte2.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Losmediosdetransporte2.jclic.zip&nombre=Losmediosdetransporte2&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/los_medios_de_transporte_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">Los medios de transporte</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+<!--Juego 6-->
+
+
+<div class="game-card" 
+     data-name="Observa y relaciona"
+     data-file="assets/Etica_naturaleza_y_sociedades/Observayrelaciona.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Observayrelaciona.jclic.zip&nombre=Observa y relaciona&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/observa_y_relaciona.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">Observa y relaciona</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+<!--Juego 7 -->
+
+
+<div class="game-card" 
+     data-name="Once upon a time "
+     data-file="assets/Etica_naturaleza_y_sociedades/Onceuponatime.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Onceuponatime.jclic.zip&nombre=Once upon a time&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/once_upon_a_time_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">Once upon a time</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+<!--Juego 8 -->
+
+
+<div class="game-card" 
+     data-name="Otros niños del mundo"
+     data-file="assets/Etica_naturaleza_y_sociedades/Otrosninosdelmundo.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Otrosninosdelmundo.jclic.zip&nombre=Otros niños del mundo&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/otros_ninos_del_mundo_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">Otros niños del mundo</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+<!--Juego 9-->
+
+
+<div class="game-card" 
+     data-name="Puzzles de animales"
+     data-file="assets/Etica_naturaleza_y_sociedades/Puzzlesdeanimales.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Puzzlesdeanimales.jclic.zip&nombre=Puzzle de animales&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/puzzles_de_animales_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">Puzzles de animales</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+
+
+
+
+<!--Juego 10-->
+
+<div class="game-card" 
+     data-name="Reconocimiento de sonidos"
+     data-file="assets/Etica_naturaleza_y_sociedades/Reconocimientodesonidos.jclic.zip"
+     onclick="cearteeNavigate('vista.html?actividad=assets/Etica_naturaleza_y_sociedades/Reconocimientodesonidos.jclic.zip&nombre=Reconocimientodesonidos&origen=Etica.html')">
+     <div class="game-icon"><img alt="" src="./assets/img_etica/reconocimiento_de_sonidos.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+  <div class="game-info">
+    <h3 class="game-title">Reconocimientos de sonidos</h3>
+    <p class="game-description"></p>
+    <div class="game-meta">
+      <span class="meta-item">
+        <span class="meta-icon"><img class="meta-icon-img" alt="" onerror="this.style.visibility='hidden'" src="./img_logos/logo_cabeza_nino_preescolar.png"></span>
+        <span>4-6 años</span>
+      </span>
+    </div>
+  </div>
+  <div class="game-action">
+    <div class="play-btn">
+      <span>▶</span>
+    </div>
+    <span class="play-text">JUGAR</span>
+  </div>
+</div>
+
+
+
+
+
+
+      <!-- Mensaje sin resultados -->
+      <div class="no-results" id="noResults" style="display:none;">
+        <span class="no-results-icon">🔍</span>
+        <p>No se encontraron juegos</p>
+      </div>
+
+   </div>
+
+
+
+    </div>
+
+
+
+<script src="Etica.js"></script>
+
+<script src="aplicar-config.js"></script>
+<script src="burbujas.js"></script>
+
+</body>
+
+
+
+
+
+
+</html>

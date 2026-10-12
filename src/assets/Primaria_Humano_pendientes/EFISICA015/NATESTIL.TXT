@@ -1,0 +1,6 @@
+{natacrol.bmp}
+{natabraz.bmp}
+{natacost.bmp}
+{nataespa.bmp}
+{natamari.bmp}
+{natsal.bmp}

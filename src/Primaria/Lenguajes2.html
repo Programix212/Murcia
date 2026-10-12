@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CEARTEE - Lenguajes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Lenguajes2.css">
+  <link rel="stylesheet" href="../transiciones.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<script src="../transiciones.js"></script>
+
+
+  
+
+
+
+</head>
+<body>
+
+  <!-- Overlay de fade -->
+  <div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+  <!-- ========== FONDO ANIMADO ========== -->
+  <div class="bg-animation">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- ========== CONTENEDOR PRINCIPAL ========== -->
+  <div class="main-container">
+    
+    <!-- Header -->
+    <header class="header">
+      <button class="btn-back" onclick="goBack()">
+        <span class="btn-icon">←</span>
+        <span class="btn-text">Volver</span>
+      </button>
+      <div class="header-title">
+        <span class="header-emoji"></span>
+        <h1>Lenguajes</h1>
+      </div>
+      <div class="header-count">
+        <span class="count-number" id="gameCount">84</span>
+        <span class="count-text">juegos</span>
+      </div>
+    </header>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-bar" id="search-bar">
+      <img src="../img_logos/logo_lupa.png" class="search-icon-img" alt="Buscar">
+      <input type="text" class="search-input" placeholder="Buscar juego..." id="searchInput" onkeyup="filterGames()">
+    </div>
+
+    <!-- Lista de juegos -->
+    <div class="games-list" id="gamesList">
+
+
+
+      <!-- Juego 2 -->
+      <div class="game-card" data-name="Abecedario" onclick="abrirJuego('assets/Primaria_Lenguajes/abecedario.jclic.zip', 'Abecedario')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/Abecedario.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Abecedario</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 3 -->
+      <div class="game-card" data-name="Acentuar 1" onclick="abrirJuego('assets/Primaria_Lenguajes/acentuar_1.jclic.zip', 'Acentuar 1')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/acentuar_1.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Acentuar 1</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 4 -->
+      <div class="game-card" data-name="Acentuar 2" onclick="abrirJuego('assets/Primaria_Lenguajes/acentuar_2.jclic.zip', 'Acentuar 2')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/acentuar_2.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Acentuar 2</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 5 -->
+      <div class="game-card" data-name="Act. con letras v, b, mp y mb" onclick="abrirJuego('assets/Primaria_Lenguajes/act_con_letras_v_b_mp_y_mb.jclic.zip', 'Act. con letras v, b, mp y mb')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/actividad_letras_v_b_mp_mb_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Act. con letras v, b, mp y mb</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 6 -->
+      <div class="game-card" data-name="Actividades de comprensión lectora" onclick="abrirJuego('assets/Primaria_Lenguajes/actividades_de_comprension_lectora.jclic.zip', 'Actividades de comprensión lectora')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/actividades_comprension_lectora_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Actividades de comprensión lectora</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 7 -->
+      <div class="game-card" data-name="Actividades de lengua castellana" onclick="abrirJuego('assets/Primaria_Lenguajes/actividades_de_lengua_castellana.jclic.zip', 'Actividades de lengua castellana')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/actividades_lengua_castellana_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Actividades de lengua castellana</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 9 -->
+      <div class="game-card" data-name="Actividades en ingles 1" onclick="abrirJuego('assets/Primaria_Lenguajes/actividades_en_ingles_1.jclic.zip', 'Actividades en ingles 1')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/actividades_en_ingles_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Actividades en ingles 1</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 10 -->
+      <div class="game-card" data-name="Actividades para 6°" onclick="abrirJuego('assets/Primaria_Lenguajes/actividades_para_6.jclic.zip', 'Actividades para 6°')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/actividades_para_6_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Actividades para 6°</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 11 -->
+      <div class="game-card" data-name="Adivina adivinanza 1" onclick="abrirJuego('assets/Primaria_Lenguajes/adivina_adivinanza_1.jclic.zip', 'Adivina adivinanza 1')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/adivina_adivinanza_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Adivina adivinanza 1</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 12 -->
+      <div class="game-card" data-name="Adivina adivinanza 2" onclick="abrirJuego('assets/Primaria_Lenguajes/adivina_adivinanza_2.jclic.zip', 'Adivina adivinanza 2')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/adivina_adivinanza_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Adivina adivinanza 2</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 13 -->
+      <div class="game-card" data-name="Aniclic" onclick="abrirJuego('assets/Primaria_Lenguajes/aniclic.jclic.zip', 'Aniclic')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/aniclic_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Aniclic</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 15 -->
+      <div class="game-card" data-name="Aprendiendo inglés" onclick="abrirJuego('assets/Primaria_Lenguajes/aprendiendo_ingles.jclic.zip', 'Aprendiendo inglés')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/aprendiendo_ingles_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Aprendiendo inglés</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 16 -->
+      <div class="game-card" data-name="Caperucita Roja 2" onclick="abrirJuego('assets/Primaria_Lenguajes/caperucita_roja_2.jclic.zip', 'Caperucita Roja 2')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/caperucita_roja_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Caperucita Roja 2</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+      <!-- Juego 18 -->
+      <div class="game-card" data-name="Compujuega con verbos" onclick="abrirJuego('assets/Primaria_Lenguajes/compujuega_con_verbos.jclic.zip', 'Compujuega con verbos')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/compujuega_con_verbos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Compujuega con verbos</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 19 -->
+      <div class="game-card" data-name="Conjuga" onclick="abrirJuego('assets/Primaria_Lenguajes/conjuga.jclic.zip', 'Conjuga')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/conjuga.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Conjuga</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+      <!-- Juego 21 -->
+      <div class="game-card" data-name="Dichos" onclick="abrirJuego('assets/Primaria_Lenguajes/dichos.jclic.zip', 'Dichos')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/dichos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Dichos</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 22 -->
+      <div class="game-card" data-name="Dos poetas chilenos" onclick="abrirJuego('assets/Primaria_Lenguajes/dos_poetas_chilenos.jclic.zip', 'Dos poetas chilenos')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/dos_poetas_chilenos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Dos poetas chilenos</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 23 -->
+      <div class="game-card" data-name="El caballo del rey (cuento y lectoescritura)" onclick="abrirJuego('assets/Primaria_Lenguajes/el_caballo_del_rey_cuento_y_lectoescritura.jclic.zip', 'El caballo del rey (cuento y lectoescritura)')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/el_caballo_del_rey_lectoescritura.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">El caballo del rey (cuento y lectoescritura)</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 24 -->
+      <div class="game-card" data-name="El cuento de los duendes" onclick="abrirJuego('assets/Primaria_Lenguajes/el_cuento_de_los_duendes.jclic.zip', 'El cuento de los duendes')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/el_cuento_de_los_duendes_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">El cuento de los duendes</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 25 -->
+      <div class="game-card" data-name="El gallo y el carámbano" onclick="abrirJuego('assets/Primaria_Lenguajes/el_gallo_y_el_carambano.jclic.zip', 'El gallo y el carámbano')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/el_gallo_y_el_carambano_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">El gallo y el carámbano</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 26 -->
+      <div class="game-card" data-name="El otoño" onclick="abrirJuego('assets/Primaria_Lenguajes/el_otono.jclic.zip', 'El otoño')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/el_otono_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">El otoño</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 27 -->
+      <div class="game-card" data-name="El viento y el sol" onclick="abrirJuego('assets/Primaria_Lenguajes/el_viento_y_el_sol.jclic.zip', 'El viento y el sol')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/el_viento_y_el_sol_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">El viento y el sol</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+
+      <!-- Juego 30 -->
+      <div class="game-card" data-name="Erase una vez 1" onclick="abrirJuego('assets/Primaria_Lenguajes/erase_una_vez_1.jclic.zip', 'Erase una vez 1')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/erase_una_vez_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Erase una vez 1</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 31 -->
+      <div class="game-card" data-name="Estimulación del lenguaje" onclick="abrirJuego('assets/Primaria_Lenguajes/estimulacion_del_lenguaje.jclic.zip', 'Estimulación del lenguaje')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/estimulacion_del_lenguaje_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Estimulación del lenguaje</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Juego 47 -->
+      <div class="game-card" data-name="Ga-go-gu" onclick="abrirJuego('assets/Primaria_Lenguajes/ga_go_gu.jclic.zip', 'Ga-go-gu')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ga_go_gu_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ga-go-gu</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 48 -->
+      <div class="game-card" data-name="Gentilicios" onclick="abrirJuego('assets/Primaria_Lenguajes/gentilicios.jclic.zip', 'Gentilicios')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/gentilicios_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Gentilicios</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 49 -->
+      <div class="game-card" data-name="Grupo consonántico palabras trabadas 1" onclick="abrirJuego('assets/Primaria_Lenguajes/grupo_consonantico_palabras_trabadas_1.jclic.zip', 'Grupo consonántico palabras trabadas 1')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/grupo_consonantico_palabras_trabadas_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Grupo consonántico palabras trabadas 1</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 50 -->
+      <div class="game-card" data-name="Grupo consonántico palabras trabadas 2" onclick="abrirJuego('assets/Primaria_Lenguajes/grupo_consonantico_palabras_trabadas_2.jclic.zip', 'Grupo consonántico palabras trabadas 2')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/grupo_consonantico_palabras_trabadas_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Grupo consonántico palabras trabadas 2</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 51 -->
+      <div class="game-card" data-name="Grupo de palabas con cl" onclick="abrirJuego('assets/Primaria_Lenguajes/grupo_de_palabas_con_cl.jclic.zip', 'Grupo de palabas con cl')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/grupo_de_palabras_con_el_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Grupo de palabas con cl</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 52 -->
+      <div class="game-card" data-name="Gusiletras" onclick="abrirJuego('assets/Primaria_Lenguajes/gusiletras.jclic.zip', 'Gusiletras')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/gusiletras_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Gusiletras</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Juego 77 -->
+      <div class="game-card" data-name="Inversas" onclick="abrirJuego('assets/Primaria_Lenguajes/inversas.jclic.zip', 'Inversas')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/inversas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Inversas</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 78 -->
+      <div class="game-card" data-name="La calesita del bosque" onclick="abrirJuego('assets/Primaria_Lenguajes/la_calesita_del_bosque.jclic.zip', 'La calesita del bosque')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/la_calesita_del_bosque_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">La calesita del bosque</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 79 -->
+      <div class="game-card" data-name="La casa que pedro va hacer" onclick="abrirJuego('assets/Primaria_Lenguajes/la_casa_que_pedro_va_hacer.jclic.zip', 'La casa que pedro va hacer')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/la_casa_que_pedro_va_a_hacer_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">La casa que pedro va hacer</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 80 -->
+      <div class="game-card" data-name="La tortuga presumida" onclick="abrirJuego('assets/Primaria_Lenguajes/la_tortuga_presumida.jclic.zip', 'La tortuga presumida')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/la_tortuga_presumida_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">La tortuga presumida</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 81 -->
+      <div class="game-card" data-name="La tortuga taruga" onclick="abrirJuego('assets/Primaria_Lenguajes/la_tortuga_taruga.jclic.zip', 'La tortuga taruga')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/la_tortuga_taruga_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">La tortuga taruga</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 82 -->
+      <div class="game-card" data-name="Las herramientas" onclick="abrirJuego('assets/Primaria_Lenguajes/las_herramientas.jclic.zip', 'Las herramientas')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/las_herramientas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Las herramientas</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 83 -->
+      <div class="game-card" data-name="Las sílabas inversa" onclick="abrirJuego('assets/Primaria_Lenguajes/las_silabas_inversa.jclic.zip', 'Las sílabas inversa')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/las_silabas_inversas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Las sílabas inversa</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+      <!-- Juego 85 -->
+      <div class="game-card" data-name="Lee y diviertete letras g,j, rr y r" onclick="abrirJuego('assets/Primaria_Lenguajes/lee_y_diviertete_letras_g_j_rr_y_r.jclic.zip', 'Lee y diviertete letras g,j, rr y r')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lee_y_diviertete_g_j_rr_r_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lee y diviertete letras g,j, rr y r</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 86 -->
+      <div class="game-card" data-name="Lengua 1" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_1.jclic.zip', 'Lengua 1')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua 1</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 87 -->
+      <div class="game-card" data-name="Lengua 2" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_2.jclic.zip', 'Lengua 2')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua 2</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 88 -->
+      <div class="game-card" data-name="Lengua 5° tema 1-5" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_5_tema_1_5.jclic.zip', 'Lengua 5° tema 1-5')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_5_tema_1_5_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua 5° tema 1-5</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 89 -->
+      <div class="game-card" data-name="Lengua 5° tema 10-15" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_5_tema_10_15.jclic.zip', 'Lengua 5° tema 10-15')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_5_tema_10_15_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua 5° tema 10-15</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 90 -->
+      <div class="game-card" data-name="Lengua 5° tema 6-10" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_5_tema_6_10.jclic.zip', 'Lengua 5° tema 6-10')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_5_tema_6_10_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua 5° tema 6-10</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 91 -->
+      <div class="game-card" data-name="Lengua 6° tema 1-5" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_6_tema_1_5.jclic.zip', 'Lengua 6° tema 1-5')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_6_tema_1_5_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua 6° tema 1-5</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 92 -->
+      <div class="game-card" data-name="Lengua 6° tema 11-15" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_6_tema_11_15.jclic.zip', 'Lengua 6° tema 11-15')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_6_tema_11_15_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua 6° tema 11-15</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 93 -->
+      <div class="game-card" data-name="Lengua 6° tema 6-10" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_6_tema_6_10.jclic.zip', 'Lengua 6° tema 6-10')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_6_tema_6_10_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua 6° tema 6-10</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 94 -->
+      <div class="game-card" data-name="Lengua bl y fr" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_bl_y_fr.jclic.zip', 'Lengua bl y fr')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_bl_y_fr_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua bl y fr</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 95 -->
+      <div class="game-card" data-name="Lengua castellana 1-1" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_castellana_1_1.jclic.zip', 'Lengua castellana 1-1')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_castellana_1_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua castellana 1-1</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 96 -->
+      <div class="game-card" data-name="Lengua castellana 1-2" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_castellana_1_2.jclic.zip', 'Lengua castellana 1-2')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_castellana_1_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua castellana 1-2</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 97 -->
+      <div class="game-card" data-name="Lengua castellana 2do. ciclo I" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_castellana_2do_ciclo_i.jclic.zip', 'Lengua castellana 2do. ciclo I')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_castellana_2do_ciclo_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua castellana 2do. ciclo I</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 98 -->
+      <div class="game-card" data-name="Lengua castellana 2do. ciclo II" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_castellana_2do_ciclo_ii.jclic.zip', 'Lengua castellana 2do. ciclo II')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_castellana_2do_ciclo_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua castellana 2do. ciclo II</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 99 -->
+      <div class="game-card" data-name="Lengua castellana 5-II" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_castellana_5_ii.jclic.zip', 'Lengua castellana 5-II')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_castellana_5_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua castellana 5-II</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 100 -->
+      <div class="game-card" data-name="Lengua castellana 5°" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_castellana_5.jclic.zip', 'Lengua castellana 5°')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_castellana_5_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua castellana 5°</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 101 -->
+      <div class="game-card" data-name="Lengua castellana 6°" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_castellana_6.jclic.zip', 'Lengua castellana 6°')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_castellana_6_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua castellana 6°</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 102 -->
+      <div class="game-card" data-name="Lengua para 3er. ciclo" onclick="abrirJuego('assets/Primaria_Lenguajes/lengua_para_3er_ciclo.jclic.zip', 'Lengua para 3er. ciclo')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/lengua_para_3er_ciclo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Lengua para 3er. ciclo</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+      <!-- Juego 104 -->
+      <div class="game-card" data-name="Letras y sílabas" onclick="abrirJuego('assets/Primaria_Lenguajes/letras_y_silabas.jclic.zip', 'Letras y sílabas')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/letras_y_silabas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Letras y sílabas</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 105 -->
+      <div class="game-card" data-name="Los oficios" onclick="abrirJuego('assets/Primaria_Lenguajes/los_oficios.jclic.zip', 'Los oficios')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/los_oficios_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Los oficios</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 106 -->
+      <div class="game-card" data-name="Navidad" onclick="abrirJuego('assets/Primaria_Lenguajes/navidad.jclic.zip', 'Navidad')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/navidad_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Navidad</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 107 -->
+      <div class="game-card" data-name="Nombre de los números" onclick="abrirJuego('assets/Primaria_Lenguajes/nombre_de_los_numeros.jclic.zip', 'Nombre de los números')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/nombres_de_los_numeros_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Nombre de los números</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+      <!-- Juego 109 -->
+      <div class="game-card" data-name="Orden alfabético" onclick="abrirJuego('assets/Primaria_Lenguajes/orden_alfabetico.jclic.zip', 'Orden alfabético')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/orden_alfabetico_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Orden alfabético</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 110 -->
+      <div class="game-card" data-name="Ortografia 3er ciclo" onclick="abrirJuego('assets/Primaria_Lenguajes/ortografia_3er_ciclo.jclic.zip', 'Ortografia 3er ciclo')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ortografia_3er_ciclo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ortografia 3er ciclo</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 111 -->
+      <div class="game-card" data-name="Ortografía II" onclick="abrirJuego('assets/Primaria_Lenguajes/ortografia_ii.jclic.zip', 'Ortografía II')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ortografia_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ortografía II</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 112 -->
+      <div class="game-card" data-name="Palabras 4°" onclick="abrirJuego('assets/Primaria_Lenguajes/palabras_4.jclic.zip', 'Palabras 4°')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/palabras_4_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Palabras 4°</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 113 -->
+      <div class="game-card" data-name="Palabras con d,l,m,n,p,s y t" onclick="abrirJuego('assets/Primaria_Lenguajes/palabras_con_d_l_m_n_p_s_y_t.jclic.zip', 'Palabras con d,l,m,n,p,s y t')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/palabras_con_d_l_m_n_p_s_t_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Palabras con d,l,m,n,p,s y t</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 114 -->
+      <div class="game-card" data-name="Papá perritos Motas" onclick="abrirJuego('assets/Primaria_Lenguajes/papa_perritos_motas.jclic.zip', 'Papá perritos Motas')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/palabras_papa_perritos_motas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Papá perritos Motas</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+      <!-- Juego 116 -->
+      <div class="game-card" data-name="Partes inversas de la oración" onclick="abrirJuego('assets/Primaria_Lenguajes/partes_inversas_de_la_oracion.jclic.zip', 'Partes inversas de la oración')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/partes_inversas_de_la_oracion_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Partes inversas de la oración</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 117 -->
+      <div class="game-card" data-name="Pedro y el lobo" onclick="abrirJuego('assets/Primaria_Lenguajes/pedro_y_el_lobo.jclic.zip', 'Pedro y el lobo')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/pedro_y_el_lobo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Pedro y el lobo</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+
+      <!-- Juego 119 -->
+      <div class="game-card" data-name="Pulgarcito" onclick="abrirJuego('assets/Primaria_Lenguajes/pulgarcito.jclic.zip', 'Pulgarcito')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/pulgarcito_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Pulgarcito</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 120 -->
+      <div class="game-card" data-name="Ricitos de oro" onclick="abrirJuego('assets/Primaria_Lenguajes/ricitos_de_oro.jclic.zip', 'Ricitos de oro')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ricitos_de_oro_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ricitos de oro</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 121 -->
+      <div class="game-card" data-name="Sílabas" onclick="abrirJuego('assets/Primaria_Lenguajes/silabas.jclic.zip', 'Sílabas')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/silabas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Sílabas</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 122 -->
+      <div class="game-card" data-name="Silabita" onclick="abrirJuego('assets/Primaria_Lenguajes/silabita.jclic.zip', 'Silabita')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/silabita_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Silabita</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 123 -->
+      <div class="game-card" data-name="Sinónimos y antónimos" onclick="abrirJuego('assets/Primaria_Lenguajes/sinonimos_y_antonimos.jclic.zip', 'Sinónimos y antónimos')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/sinonimos_y_antonimos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Sinónimos y antónimos</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 124 -->
+      <div class="game-card" data-name="Sustantivos y adjetivos" onclick="abrirJuego('assets/Primaria_Lenguajes/sustantivos_y_adjetivos.jclic.zip', 'Sustantivos y adjetivos')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/sustantivos_y_adjetivos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Sustantivos y adjetivos</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 125 -->
+      <div class="game-card" data-name="Textos argentinos" onclick="abrirJuego('assets/Primaria_Lenguajes/textos_argentinos.jclic.zip', 'Textos argentinos')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/textos_argentinos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Textos argentinos</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 126 -->
+      <div class="game-card" data-name="Tildes agudas,graves y esdrújulas" onclick="abrirJuego('assets/Primaria_Lenguajes/tildes_agudas_graves_y_esdrujulas.jclic.zip', 'Tildes agudas,graves y esdrújulas')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/tildes_agudas_graves_esdrujulas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Tildes agudas,graves y esdrújulas</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 127 -->
+      <div class="game-card" data-name="Transportes" onclick="abrirJuego('assets/Primaria_Lenguajes/transportes.jclic.zip', 'Transportes')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/transportes_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Transportes</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 128 -->
+      <div class="game-card" data-name="Vamos a leer I" onclick="abrirJuego('assets/Primaria_Lenguajes/vamos_a_leer_i.jclic.zip', 'Vamos a leer I')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/vamos_a_leer_l_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Vamos a leer I</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 129 -->
+      <div class="game-card" data-name="Ven a leer 1-letras l,m,s y p" onclick="abrirJuego('assets/Primaria_Lenguajes/ven_a_leer_1_letras_l_m_s_y_p.jclic.zip', 'Ven a leer 1-letras l,m,s y p')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ven_a_leer_1_letras_l_m_s_p.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ven a leer 1-letras l,m,s y p</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 130 -->
+      <div class="game-card" data-name="Ven a leer 2-letras b,d,h,ll,n,ñ,t y v" onclick="abrirJuego('assets/Primaria_Lenguajes/ven_a_leer_2_letras_b_d_h_ll_n_n_t_y_v.jclic.zip', 'Ven a leer 2-letras b,d,h,ll,n,ñ,t y v')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ven_a_leer_2_letras_b_d_h_ll_n_enye_t_v_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ven a leer 2-letras b,d,h,ll,n,ñ,t y v</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 131 -->
+      <div class="game-card" data-name="Ven a leer 2-letras t, n, d y l" onclick="abrirJuego('assets/Primaria_Lenguajes/ven_a_leer_2_letras_t_n_d_y_l.jclic.zip', 'Ven a leer 2-letras t, n, d y l')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ven_a_leer_2_letras_t_n_d_l_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ven a leer 2-letras t, n, d y l</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 132 -->
+      <div class="game-card" data-name="Ven a leer 3-letras ch,f,g,j,k,c,q,r,rr,x,y,z" onclick="abrirJuego('assets/Primaria_Lenguajes/ven_a_leer_3_letras_ch_f_g_j_k_c_q_r_rr_x_y_z.jclic.zip', 'Ven a leer 3-letras ch,f,g,j,k,c,q,r,rr,x,y,z')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ven_a_leer_3_letras_ch_f_g_j_k_c_q_r_rr_x_y_z.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ven a leer 3-letras ch,f,g,j,k,c,q,r,rr,x,y,z</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 133 -->
+      <div class="game-card" data-name="Ven a leer 3-letras h, b, v y ñ" onclick="abrirJuego('assets/Primaria_Lenguajes/ven_a_leer_3_letras_h_b_v_y_n.jclic.zip', 'Ven a leer 3-letras h, b, v y ñ')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ven_a_leer_3_letras_h_b_v_enye_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ven a leer 3-letras h, b, v y ñ</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 134 -->
+      <div class="game-card" data-name="Ven a leer 4-letras ca,co,cu,que,qui,ga,go,gu" onclick="abrirJuego('assets/Primaria_Lenguajes/ven_a_leer_4_letras_ca_co_cu_que_qui_ga_go_gu.jclic.zip', 'Ven a leer 4-letras ca,co,cu,que,qui,ga,go,gu')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/ven_a_leer_4_silabas_ca_co_cu_que_qui_ga_go_gu.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Ven a leer 4-letras ca,co,cu,que,qui,ga,go,gu</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Juego 135 -->
+      <div class="game-card" data-name="Verbos" onclick="abrirJuego('assets/Primaria_Lenguajes/verbos.jclic.zip', 'Verbos')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_lenguajes/verbos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+        <div class="game-info">
+          <h3 class="game-title">Verbos</h3>
+          <p class="game-description"></p>
+          <div class="game-meta">
+            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+          </div>
+        </div>
+        <div class="game-action">
+          <div class="play-btn"><span>▶</span></div>
+          <span class="play-text">JUGAR</span>
+        </div>
+      </div>
+
+      <!-- Frases y Poesía ELIMINADOS: sus .zip congelaban el programa -->
+
+         <!-- Mensaje sin resultados -->
+    <div class="no-results" id="noResults" style="display:none;">
+      <span class="no-results-icon">🔍</span>
+      <p>No se encontraron juegos</p>
+    </div>
+
+  </div>
+
+  </div>
+
+
+
+  <script src="Lenguajes2.js"></script>
+   <script src="../aplicar-config.js"></script>
+</body>
+</html>

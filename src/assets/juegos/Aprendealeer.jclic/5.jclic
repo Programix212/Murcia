@@ -1,0 +1,3210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JClicProject name="5" version="0.1.3">
+ <settings>
+  <title>Aprender a leer</title>
+  <revision description="created" date="2/18/25" />
+  <language>es</language>
+  <descriptors area-codes="lleng" level-codes="PRI" />
+  <skin file="@orange.xml" />
+  <meta_langs>es</meta_langs>
+  <descriptions>
+   <description language="es" />
+  </descriptions>
+  <license type="by-nc-sa" url="https://creativecommons.org/licenses/by-nc-sa/4.0" />
+ </settings>
+ <sequence>
+  <item id="menu.pac" name="menu.ass">
+   <jump action="STOP" id="forward" />
+   <jump action="STOP" id="back" />
+  </item>
+  <item id="l.pac" name="l_0.ass">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="l_1.ass" />
+  <item name="l_2.ass" />
+  <item name="l_3.puz" />
+  <item name="l_4.ass" />
+  <item name="l_5.ass" />
+  <item name="l_6.ass" />
+  <item name="l_7.ass" />
+  <item name="l_8.puz" />
+  <item name="l_8.txa">
+   <jump tag="menu.pac" id="forward" />
+  </item>
+  <item id="m.pac" name="m_0.ass">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="m_1.ass" />
+  <item name="m_2.ass" />
+  <item name="m_3.puz" />
+  <item name="m_4.ass" />
+  <item name="m_5.ass" />
+  <item name="m_6.ass" />
+  <item name="m_7.ass" />
+  <item name="m_8.puz">
+   <jump tag="menu.pac" id="forward" />
+  </item>
+  <item id="s.pac" name="s_0.ass">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="s_1.ass" />
+  <item name="s_2.ass" />
+  <item name="s_3.puz" />
+  <item name="s_4.sop" />
+  <item name="s_5.ass" />
+  <item name="s_6.ass">
+   <jump tag="menu.pac" id="forward" />
+  </item>
+  <item id="p.pac" name="p_1.ass">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="p_2.ass" />
+  <item name="p_3.ass" />
+  <item name="p_4.ass" />
+  <item name="p_41.sop" />
+  <item name="p_5.ass" />
+  <item name="p_6.txa">
+   <jump tag="menu.pac" id="forward" />
+  </item>
+  <item id="t.pac" name="t_0.ass">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="t_1.ass" />
+  <item name="t_2.ass" />
+  <item name="t_3.ass" />
+  <item name="t_4.ass" />
+  <item name="t_5.sop">
+   <jump tag="menu.pac" id="forward" />
+  </item>
+  <item id="n.pac" name="n_0.ass">
+   <jump action="STOP" id="back" />
+  </item>
+  <item name="n_1.ass" />
+  <item name="n_2.ass" />
+  <item name="n_3.puz" />
+  <item name="menu.ass">
+   <jump action="STOP" id="forward" />
+  </item>
+ </sequence>
+ <activities>
+  <activity class="@panels.Explore" name="l_0.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0x80FFFF" alternative="0x80FFFF" />
+     </style>
+     <p>Haz Clic en cada vocal !! </p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFFFF00" background="0x8000FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="false" score="false" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+    <eventSounds>
+     <sound id="start" file="Haz Clic en cada vocal.wav" />
+    </eventSounds>
+   </settings>
+   <cells rows="5" cols="1" border="false" image="laeiou.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFFFF00" background="0x8000FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell id="0" />
+    <cell id="1">
+     <media type="PLAY_AUDIO" level="1" file="le.wav" />
+    </cell>
+    <cell id="2">
+     <media type="PLAY_AUDIO" level="1" file="li.wav" />
+    </cell>
+    <cell id="3" />
+    <cell id="4" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFFFF00" background="0x8000FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="la.wav" />
+     <p>La </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="0" file="le.wav" />
+     <p>Le </p>
+    </cell>
+    <cell>
+     <p>Li </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lo.wav" />
+     <p>Lo </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lu.wav" />
+     <p>Lu </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="l_1.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Relaciona.wav" />
+     <p>Relaciona !!</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Muy bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="false" />
+   </settings>
+   <cells rows="5" cols="1" border="false" image="laeiou.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFF80" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="5" cols="1" border="true" image="laleli~1.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFF80" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="la.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="le.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="li.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lo.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lu.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="l_2.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="5.0">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Relaciona el texto con su imagen.mp3" />
+     <p>Relaciona el texto con la imagen.</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x0000FF" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x0000FF" background="0x80FF80" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell id="0">
+     <media type="PLAY_AUDIO" level="1" file="lechera.wav" />
+     <p>LECHERA   </p>
+    </cell>
+    <cell id="1">
+     <media type="PLAY_AUDIO" level="1" file="locomotora.wav" />
+     <p>LOCOMOTORA </p>
+    </cell>
+    <cell id="2">
+     <media type="PLAY_AUDIO" level="1" file="lupa.wav" />
+     <p>LUPA </p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x0000FF" background="0x80FF80" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="lechera.gif" />
+    <cell image="1locomo.gif" />
+    <cell image="lupa.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@memory.MemoryGame" name="l_3.puz" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Encuentra las parejas.wav" />
+     <p>Encuentra las parejas!!</p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" border="true" image="l.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color background="0xFFFFD0" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+   </cells>
+   <scramble times="31" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="l_4.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Relaciona.wav" />
+     <p>Relaciona !!</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x004080" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" border="true" image="l.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x004080" background="0xFFFFCA" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <ids>0 1 2</ids>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="163.0" cellHeight="123.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x004080" background="0xFFFFCA" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lechera.wav" />
+     <p>LECHERA   </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="locomotora.wav" />
+     <p>LOCOMOTORA </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lupa.wav" />
+     <p>LUPA </p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lechera.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="locomotora.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lupa.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="l_5.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Asocia.wav" />
+     <p>Asocia !!</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Muy bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="163.0" cellHeight="123.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFBDBD" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>LECHERA</p>
+    </cell>
+    <cell>
+     <p>LOCOMOTORA</p>
+    </cell>
+    <cell>
+     <p>LUPA</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" border="true" image="l.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFBDBD" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+   </cells>
+   <cells rows="3" cols="1" cellWidth="163.0" cellHeight="123.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lechera.wav" />
+     <p>LECHERA   </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="locomotora.wav" />
+     <p>LOCOMOTORA </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lupa.wav" />
+     <p>LUPA </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="l_6.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Asocia.wav" />
+     <p>Asocia !!</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFFC4" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>LECHERA</p>
+    </cell>
+    <cell>
+     <p>LOCOMOTORA</p>
+    </cell>
+    <cell>
+     <p>LUPA</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFFC4" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>LECHERA</p>
+    </cell>
+    <cell>
+     <p>LOCOMOTORA</p>
+    </cell>
+    <cell>
+     <p>LUPA</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="lechera.gif" />
+    <cell image="1locomo.gif" />
+    <cell image="lupa.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="l_7.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Escuchemos.wav" />
+     <p>Escuchemos !!</p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x800040" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x800040" background="0xFFFFB7" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lechera.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="locomotora.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="lupa.wav" />
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x800040" background="0xFFFFB7" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>LECHERA</p>
+    </cell>
+    <cell>
+     <p>LOCOMOTORA</p>
+    </cell>
+    <cell>
+     <p>LUPA</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="lechera.gif" />
+    <cell image="1locomo.gif" />
+    <cell image="lupa.gif" />
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@memory.MemoryGame" name="l_8.puz" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Memoriza.wav" />
+     <p>Memoriza !!</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFFFF80" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" border="true" image="l_consig.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFFFF80" background="0x004080" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+   </cells>
+   <scramble times="31" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@text.FillInBlanks" name="l_8.txa" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Completa con las vocales.wav" />
+     <p>Completa con las vocales...</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Dialog" size="33" />
+      <color foreground="0x804040" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Muy bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true">
+     <size width="540" height="330" />
+    </window>
+   </settings>
+   <document>
+    <style name="targetError" base="target" foreground="0xFFFFFF" background="0xFF0000" />
+    <style name="target" base="default" foreground="0x0000FF" target="true" background="0xC0C0C0" />
+    <style name="default" family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040" tabWidth="16" />
+    <section>
+     <p family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">
+      <text family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">                                                          </text>
+      <cell width="93" height="65" border="true">
+       <style>
+        <font family="Dialog" size="33" />
+        <color foreground="0x804040" background="0xFFFFBF" />
+       </style>
+       <p>LULU...</p>
+      </cell>
+     </p>
+     <p family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">
+      <text family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">L</text>
+      <target>
+       <answer>u</answer>
+       <optionList>
+        <option>a</option>
+        <option>e</option>
+        <option>i</option>
+        <option>o</option>
+        <option>u</option>
+       </optionList>
+       <text>u</text>
+      </target>
+      <text family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">lu     l</text>
+      <target>
+       <answer>e</answer>
+       <optionList>
+        <option>a</option>
+        <option>e</option>
+        <option>i</option>
+        <option>o</option>
+        <option>u</option>
+       </optionList>
+       <text>e</text>
+      </target>
+      <text family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">e    a     lalo.</text>
+     </p>
+     <p family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040" />
+     <p family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">
+      <text family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">Yo    L</text>
+      <target>
+       <answer>e</answer>
+       <optionList>
+        <option>a</option>
+        <option>e</option>
+        <option>i</option>
+        <option>o</option>
+        <option>u</option>
+       </optionList>
+       <text>e</text>
+      </target>
+      <text family="Dialog" background="0xFFFFBF" size="33" bold="true" italic="false" foreground="0x804040">o     a      lulu</text>
+     </p>
+    </section>
+   </document>
+   <evaluator class="@ComplexEvaluator" />
+  </activity>
+  <activity class="@panels.Explore" name="m_0.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Haz Clic en cada vocal.wav" />
+     <p>Haz clic en cada vocal !!!</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x004080" background="0xFFFFB3" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="false" score="false" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" border="false" image="maeiou.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x0000FF" background="0xFFFFB3" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x004080" background="0xFFFFB3" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ma.wav" />
+     <p>Ma </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="me.wav" />
+     <p>Me </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mi.wav" />
+     <p>Mi </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mo.wav" />
+     <p>Mo </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mu.wav" />
+     <p>Mu </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="m_1.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Relaciona.wav" />
+     <p>Relaciona !!</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="false" />
+   </settings>
+   <cells rows="5" cols="1" border="false" image="maeiou.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFF80" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <cells rows="5" cols="1" border="true" image="mamemi~1.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFF80" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ma.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="me.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mi.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mo.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mu.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="m_2.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Relaciona el texto con su imagen.mp3" />
+     <p>Relaciona el texto con su imagen !! </p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x0000FF" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x0000FF" background="0x80FF80" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell id="0">
+     <p>Mariposa</p>
+    </cell>
+    <cell id="1">
+     <p>Minero</p>
+    </cell>
+    <cell id="2">
+     <p>Molino</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x0000FF" background="0x80FF80" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="mariposa.gif">
+     <media type="PLAY_AUDIO" level="1" file="mariposa.wav" />
+     <p>  </p>
+    </cell>
+    <cell image="minero.gif">
+     <media type="PLAY_AUDIO" level="1" file="minero.wav" />
+     <p> </p>
+    </cell>
+    <cell image="molino.gif">
+     <media type="PLAY_AUDIO" level="1" file="molino.wav" />
+     <p> </p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mariposa.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="minero.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="molino.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@memory.MemoryGame" name="m_3.puz" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.9" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Encuentra las parejas.wav" />
+     <p>Encuentra las parejas !!</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" border="true" image="m.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="23" />
+     <color background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+   </cells>
+   <scramble times="31" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="m_4.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="m_4.wav" autoStart="true" />
+     <p>Relaciona la imagen con su texto.</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" border="true" image="m.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFBDBD" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <ids>0 1 2</ids>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="163.0" cellHeight="123.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFBDBD" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mariposa.wav" />
+     <p>MARIPOSA</p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="minero.wav" />
+     <p>MINERO</p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="molino.wav" />
+     <p>MOLINO</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="163.0" cellHeight="123.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mariposa.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="minero.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="molino.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="m_5.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="m_5.wav" autoStart="true" />
+     <p>Asocia la palabra con su imagen.</p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x00FF00" background="0xFFFF99" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="180.0" cellHeight="120.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFF80" background="0x0080FF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>MARIPOSA</p>
+    </cell>
+    <cell>
+     <p>MINERO</p>
+    </cell>
+    <cell>
+     <p>MOLINO</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" border="true" image="m.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFF80" background="0x0080FF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+   </cells>
+   <cells rows="3" cols="1" border="true" image="m.gif" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mariposa.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="minero.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="molino.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="m_6.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="m_6.wav" autoStart="true" />
+     <p>Asocia la palabra mayúscula con la minúscula que le corresponde.</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFFC4" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>MARIPOSA</p>
+    </cell>
+    <cell>
+     <p>MINERO</p>
+    </cell>
+    <cell>
+     <p>MOLINO</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFFC4" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>Mariposa</p>
+    </cell>
+    <cell>
+     <p>Minero</p>
+    </cell>
+    <cell>
+     <p>Molino</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="mariposa.gif">
+     <media type="PLAY_AUDIO" level="1" file="mariposa.wav" />
+     <p>  </p>
+    </cell>
+    <cell image="minero.gif">
+     <media type="PLAY_AUDIO" level="1" file="minero.wav" />
+     <p> </p>
+    </cell>
+    <cell image="molino.gif">
+     <media type="PLAY_AUDIO" level="1" file="molino.wav" />
+     <p> </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="m_7.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Escuchemos.wav" autoStart="true" />
+     <p>Escuchemos !!</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x800040" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Muy bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x800040" background="0xFFFFB7" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="mariposa.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="minero.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="molino.wav" />
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x800040" background="0xFFFFB7" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell>
+     <p>MARIPOSA</p>
+    </cell>
+    <cell>
+     <p>MINERO</p>
+    </cell>
+    <cell>
+     <p>MOLINO</p>
+    </cell>
+   </cells>
+   <cells rows="3" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="3" />
+    <cell image="mariposa.gif">
+     <media type="PLAY_AUDIO" level="1" file="mariposa.wav" />
+     <p>  </p>
+    </cell>
+    <cell image="minero.gif">
+     <media type="PLAY_AUDIO" level="1" file="minero.wav" />
+     <p> </p>
+    </cell>
+    <cell image="molino.gif">
+     <media type="PLAY_AUDIO" level="1" file="molino.wav" />
+     <p> </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@memory.MemoryGame" name="m_8.puz" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Memoriza.wav" autoStart="true" />
+     <p>Memoriza !!</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFFFF80" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="3" cols="1" border="true" image="m_sign.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFFFF80" background="0x004080" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="3" />
+   </cells>
+   <scramble times="31" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@panels.Explore" name="menu.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <p>Elige !!</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFFAD5B" background="0x8080FF" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0x66FFFF">
+     <counters time="false" actions="false" score="false" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+    <eventSounds>
+     <sound id="start" file="Elige.wav" />
+    </eventSounds>
+   </settings>
+   <cells rows="2" cols="3" border="true" image="letras.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFAD5B" background="0x8080FF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="2" />
+    <ids>0 1 2 3 4 5</ids>
+   </cells>
+   <cells rows="2" cols="3" cellWidth="140.0" cellHeight="100.0" border="false" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFFAD5B" background="0x8080FF" />
+    </style>
+    <shaper class="@Rectangular" cols="3" rows="2" />
+    <cell>
+     <media type="RUN_CLIC_PACKAGE" level="1" file="l.pac" />
+     <p>L </p>
+    </cell>
+    <cell>
+     <media type="RUN_CLIC_PACKAGE" level="1" file="m.pac" />
+     <p>M </p>
+    </cell>
+    <cell>
+     <media type="RUN_CLIC_PACKAGE" level="1" file="s.pac" />
+     <p>S </p>
+    </cell>
+    <cell>
+     <media type="RUN_CLIC_PACKAGE" level="1" file="p.pac" />
+     <p>p </p>
+    </cell>
+    <cell>
+     <media type="RUN_CLIC_PACKAGE" level="1" file="t.pac" />
+     <p>t </p>
+    </cell>
+    <cell>
+     <media type="RUN_CLIC_PACKAGE" level="1" file="n.pac" />
+     <p>n </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@panels.Explore" name="n_0.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Haz Clic en cada vocal.wav" autoStart="true" />
+     <p>Haz clic en cada vocal !!!</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF8040" background="0xFFFFC4" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="false" score="false" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="1" cols="5" border="false" image="naranja.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF8040" background="0xFFFFC4" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="1" cols="5" cellWidth="140.0" cellHeight="100.0" border="false" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF8040" background="0xFFFFC4" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="na.wav" />
+     <p>na </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ne.wav" />
+     <p>ne </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ni.wav" />
+     <p>ni </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="no.wav" />
+     <p>no </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="nu.wav" />
+     <p>nu </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="n_1.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0xFF8040" alternative="0xFF8040" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Relaciona.wav" autoStart="true" />
+     <p>Relaciona !</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" inactive="0xFF8040" alternative="0xFF8040" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Muy bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="1" cols="5" border="false" image="naranja.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFF80" inactive="0xFF8040" alternative="0xFF8040" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="1" cols="5" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFF80" inactive="0xFF8040" alternative="0xFF8040" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell>
+     <p>na</p>
+    </cell>
+    <cell>
+     <p>ne</p>
+    </cell>
+    <cell>
+     <p>ni</p>
+    </cell>
+    <cell>
+     <p>no</p>
+    </cell>
+    <cell>
+     <p>nu</p>
+    </cell>
+   </cells>
+   <cells rows="1" cols="5" cellWidth="140.0" cellHeight="100.0" border="false" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="na.wav" />
+     <p>na </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ne.wav" />
+     <p>ne </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ni.wav" />
+     <p>ni </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="no.wav" />
+     <p>no </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="nu.wav" />
+     <p>nu </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="n_2.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Relaciona.wav" autoStart="true" />
+     <p>Relaciona ...</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="46" />
+      <color foreground="0x0000FF" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" border="true" image="cosas_n.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="46" />
+     <color foreground="0x0000FF" background="0xFFFF00" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="46" />
+     <color foreground="0x0000FF" background="0xFFFF00" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="nadar.wav" />
+     <p>Nadar </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="nene.wav" />
+     <p>Nene  </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="nido.wav" />
+     <p>Nido </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="notas.wav" />
+     <p>Notas </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="nube.wav" />
+     <p>Nube  </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@memory.MemoryGame" name="n_3.puz" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Encuentra las parejas.wav" autoStart="true" />
+     <p>Encuentra las parejas !!</p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x004080" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" border="true" image="cosas_n.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x004080" background="0xFFFFCA" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <scramble times="31" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@panels.Explore" name="p_1.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Haz Clic en cada vocal.wav" autoStart="true" />
+     <p>Haz clic en las vocales!!</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x0000FF" background="0xFFFFFF" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="false" score="false" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="4" cols="4" border="false" image="p1.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x0000FF" background="0xFFFFFF" />
+    </style>
+    <shaper class="@Holes" cols="4" rows="4" scaleX="4.0" scaleY="4.0">
+     <enclosing>
+      <shape>rectangle:0,0,4,4</shape>
+     </enclosing>
+     <shape>rectangle:0,0,1,1</shape>
+     <shape>rectangle:2,0,1,1</shape>
+     <shape>rectangle:3,0,1,1</shape>
+     <shape>rectangle:0,1,1,1</shape>
+     <shape>rectangle:2,1,1,1</shape>
+     <shape>rectangle:0,2,1,1</shape>
+     <shape>rectangle:2,2,1,1</shape>
+     <shape>rectangle:0,3,1,1</shape>
+     <shape>rectangle:1,3,1,1</shape>
+     <shape>rectangle:2,3,2,1</shape>
+    </shaper>
+    <ids>4 0 1 0 1 4 2 0 3 0</ids>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x0000FF" background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pa.wav" />
+     <p>pa </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pe.wav" />
+     <p>pe</p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pi.wav" />
+     <p>pi</p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="po.wav" />
+     <p>po</p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pu.wav" />
+     <p>pu</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p_2.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Asocia.wav" />
+     <p>Asocia !!</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x800000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" border="false" image="paeiou.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x800000" background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="5" cols="1" border="false" image="papepi~1.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x800000" background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pa.wav" />
+     <p>pa </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pe.wav" />
+     <p>pe</p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pi.wav" />
+     <p>pi</p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="po.wav" />
+     <p>po</p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pu.wav" />
+     <p>pu</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="p_3.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Asocia.wav" autoStart="true" />
+     <p>Asocia !!</p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell image="paloma.gif" />
+    <cell image="perro.gif" />
+    <cell image="piramide.gif" />
+    <cell image="poste.gif" />
+    <cell image="puerta.gif" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="paloma.wav" />
+     <p>paloma </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="perro.wav" />
+     <p>perro </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="piramide.wav" />
+     <p>piramide </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="poste.wav" />
+     <p>poste </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="puerta.wav" />
+     <p>puerta </p>
+    </cell>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="paloma.wav" />
+     <p>paloma </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="perro.wav" />
+     <p>perro </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="piramide.wav" />
+     <p>piramide </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="poste.wav" />
+     <p>poste </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="puerta.wav" />
+     <p>puerta </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="p_4.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="asocia con el inicio de la palabra.wav" autoStart="true" />
+     <p>Asocia con el inicio de las palabras.</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x8000FF" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="2" cols="5" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x8000FF" background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="2" />
+    <cell id="0">
+     <p>paloma</p>
+    </cell>
+    <cell id="0">
+     <p>paso</p>
+    </cell>
+    <cell id="1">
+     <p>perro</p>
+    </cell>
+    <cell id="1">
+     <p>pecoso</p>
+    </cell>
+    <cell id="2">
+     <p>pino</p>
+    </cell>
+    <cell id="2">
+     <p>piña</p>
+    </cell>
+    <cell id="3">
+     <p>poco</p>
+    </cell>
+    <cell id="3">
+     <p>polo</p>
+    </cell>
+    <cell id="4">
+     <p>puerta</p>
+    </cell>
+    <cell id="4">
+     <p>puma</p>
+    </cell>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x8000FF" background="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <p>pa</p>
+    </cell>
+    <cell>
+     <p>pe</p>
+    </cell>
+    <cell>
+     <p>pi</p>
+    </cell>
+    <cell>
+     <p>po</p>
+    </cell>
+    <cell>
+     <p>pu</p>
+    </cell>
+   </cells>
+   <cells rows="2" cols="5" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="5" rows="2" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pa.wav" />
+     <p>pa </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pa.wav" />
+     <p>pa </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pe.wav" />
+     <p>pe </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pe.wav" />
+     <p>pe </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pi.wav" />
+     <p>pi </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pi.wav" />
+     <p>pi </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="po.wav" />
+     <p>po </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="po.wav" />
+     <p>po </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pu.wav" />
+     <p>pu </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="pu.wav" />
+     <p>pu </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@textGrid.WordSearch" name="p_41.sop" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="resuelve el sopa de letras. haz clic en ayuda.wav" autoStart="true" />
+     <p>Resuelve el sopa de letras. ¡Haz clic en ayuda!</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFFFFFF" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Muy bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <textGrid rows="10" columns="6" cellWidth="60.0" cellHeight="60.0" border="true">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFFFFFF" background="0xFF0000" />
+    </style>
+    <text>
+     <row>*PALA*****</row>
+     <row>*E****P*P*</row>
+     <row>*C*PINO*U*</row>
+     <row>*O****S*M*</row>
+     <row>*S****T*A*</row>
+     <row>POLO**E***</row>
+    </text>
+   </textGrid>
+   <clues>
+    <clue id="0">PALA</clue>
+    <clue id="1">PECOSO</clue>
+    <clue id="2">PINO</clue>
+    <clue id="3">POLO</clue>
+    <clue id="4">PUMA</clue>
+    <clue id="5">POSTE</clue>
+   </clues>
+  </activity>
+  <activity class="@text.WrittenAnswer" name="p_5.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="escribe la silaba con la que comienza cada palabra.wav" autoStart="true" />
+     <p>Escribe las sílabas con las que comienza cada palabra.</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="46" />
+      <color foreground="0xFFFF00" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="1" cols="5" cellWidth="140.0" cellHeight="100.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="46" />
+     <color foreground="0xFFFF00" background="0x0000FF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell id="0" image="paloma.gif" />
+    <cell id="1" image="perro.gif" />
+    <cell id="2" image="piramide.gif" />
+    <cell id="3" image="poste.gif" />
+    <cell id="4" image="puerta.gif" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="140.0" cellHeight="100.0" border="true" id="answers">
+    <style>
+     <font family="Comic Sans MS" size="46" />
+     <color foreground="0xFFFF00" background="0x0000FF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell>
+     <p>pa|PA</p>
+    </cell>
+    <cell>
+     <p>pe</p>
+    </cell>
+    <cell>
+     <p>pi</p>
+    </cell>
+    <cell>
+     <p>po</p>
+    </cell>
+    <cell>
+     <p>pu</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@text.FillInBlanks" name="p_6.txa" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="actividad 1.13.wav" autoStart="true" />
+     <p>Completa la sílaba que falta. Haz clic en evaluacion para avanzar.</p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="46" />
+      <color foreground="0x8000FF" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true">
+     <size width="620" height="450" />
+    </window>
+   </settings>
+   <checkButton>Evaluación</checkButton>
+   <document>
+    <style name="targetError" base="target" foreground="0xFFFFFF" background="0xFF0000" />
+    <style name="target" base="default" foreground="0x0000FF" target="true" background="0xC0C0C0" />
+    <style name="default" family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF" tabWidth="16" />
+    <section>
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">            </text>
+      <cell width="310" height="90" border="true">
+       <style shadow="true">
+        <font family="Comic Sans MS" size="46" bold="true" italic="true" />
+        <color foreground="0x800000" background="0xFFFFFF" />
+       </style>
+       <p>Completa la sílaba que falta ...</p>
+      </cell>
+     </p>
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF" />
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">
+      <cell width="140" height="100" border="true" image="paloma.gif">
+       <style shadow="true">
+        <font family="Comic Sans MS" size="46" bold="true" italic="true" />
+        <color foreground="0x800000" background="0xFFFFFF" />
+       </style>
+      </cell>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">    </text>
+      <cell width="140" height="100" border="true" image="piramide.gif">
+       <style shadow="true">
+        <font family="Comic Sans MS" size="46" bold="true" italic="true" />
+        <color foreground="0x800000" background="0xFFFFFF" />
+       </style>
+      </cell>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">    </text>
+      <cell width="140" height="100" border="true" image="pelota.gif">
+       <style shadow="true">
+        <font family="Comic Sans MS" size="46" bold="true" italic="true" />
+        <color foreground="0x800000" background="0xFFFFFF" />
+       </style>
+      </cell>
+     </p>
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">
+      <target>
+       <answer>PA</answer>
+       <answer>Pa</answer>
+       <answer>pA</answer>
+       <answer>pa</answer>
+       <response fill="_" length="2" maxLength="2" />
+       <text>pa</text>
+      </target>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">loma         </text>
+      <target>
+       <answer>PI</answer>
+       <answer>Pi</answer>
+       <answer>pI</answer>
+       <answer>pi</answer>
+       <response fill="_" length="2" maxLength="2" />
+       <text>pi</text>
+      </target>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">ramide       </text>
+      <target>
+       <answer>PE</answer>
+       <answer>Pe</answer>
+       <answer>pE</answer>
+       <answer>pe</answer>
+       <response fill="_" length="2" maxLength="2" />
+       <text>pe</text>
+      </target>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">lota</text>
+     </p>
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF" />
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF"> </text>
+      <cell width="140" height="100" border="true" image="perro.gif">
+       <style shadow="true">
+        <font family="Comic Sans MS" size="46" bold="true" italic="true" />
+        <color foreground="0x800000" background="0xFFFFFF" />
+       </style>
+      </cell>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">    </text>
+      <cell width="140" height="100" border="true" image="puerta.gif">
+       <style shadow="true">
+        <font family="Comic Sans MS" size="46" bold="true" italic="true" />
+        <color foreground="0x800000" background="0xFFFFFF" />
+       </style>
+      </cell>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">    </text>
+      <cell width="140" height="100" border="true" image="policia.gif">
+       <style shadow="true">
+        <font family="Comic Sans MS" size="46" bold="true" italic="true" />
+        <color foreground="0x800000" background="0xFFFFFF" />
+       </style>
+      </cell>
+     </p>
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF"> </text>
+      <target>
+       <answer>PE</answer>
+       <answer>Pe</answer>
+       <answer>pE</answer>
+       <answer>pe</answer>
+       <response fill="_" length="2" maxLength="2" />
+       <text>pe</text>
+      </target>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">rro           </text>
+      <target>
+       <answer>PU</answer>
+       <answer>Pu</answer>
+       <answer>pU</answer>
+       <answer>pu</answer>
+       <response fill="_" length="2" maxLength="2" />
+       <text>pu</text>
+      </target>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">erta          </text>
+      <target>
+       <answer>PO</answer>
+       <answer>Po</answer>
+       <answer>pO</answer>
+       <answer>po</answer>
+       <response fill="_" length="2" maxLength="2" />
+       <text>po</text>
+      </target>
+      <text family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF">licia</text>
+     </p>
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF" />
+     <p family="Comic Sans MS" background="0xFFFFFF" size="22" bold="false" italic="false" foreground="0x8000FF" />
+    </section>
+   </document>
+   <evaluator class="@ComplexEvaluator" />
+  </activity>
+  <activity class="@panels.Explore" name="s_0.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="actividad 1.10.wav" autoStart="true" />
+     <p>Haz clic en las vocales !</p>
+    </cell>
+    <cell border="true" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFFFFFF" background="0xFFFF99" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="false" score="false" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" border="false" image="sol.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFFFFFF" background="0xD70000" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFFFFFF" background="0xD70000" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="sa.wav" />
+     <p>sa </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="se.wav" />
+     <p>se </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="si.wav" />
+     <p>si </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="so.wav" />
+     <p>so </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="su.wav" />
+     <p>su </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="s_1.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="actividad 1.11.wav" autoStart="true" />
+     <p>Relaciona !!</p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFFFFFF" background="0xFFFF99" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="false" />
+   </settings>
+   <cells rows="5" cols="1" border="false" image="sol.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFFFF" background="0xFF8040" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="1" cols="5" border="true" image="sasesi~1.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFFFF" background="0xFF8040" inactive="0xFFFFFF" alternative="0xFFFFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="sa.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="se.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="si.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="so.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="su.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="s_2.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="actividad 1.11.wav" autoStart="true" />
+     <p>Relaciona !!</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF6820" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" cellWidth="165.0" cellHeight="125.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFF6820" background="0xFFFFB7" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell id="0">
+     <p>salero</p>
+    </cell>
+    <cell id="1">
+     <p>semaforo</p>
+    </cell>
+    <cell id="2">
+     <p>silla</p>
+    </cell>
+    <cell id="3">
+     <p>sombrero</p>
+    </cell>
+    <cell id="4">
+     <p>suma</p>
+    </cell>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="165.0" cellHeight="125.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF6820" background="0xFFFFB7" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell image="salero.gif" />
+    <cell image="semaforo.gif" />
+    <cell image="silla.gif" />
+    <cell image="sombrero.gif" />
+    <cell image="suma.gif" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="165.0" cellHeight="125.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="salero.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="semaforo.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="silla.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="sombrero.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="suma.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@memory.MemoryGame" name="s_3.puz" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Encuentra las parejas.wav" autoStart="true" />
+     <p>Encuentra las parejas !!</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF0000" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Muy bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" border="true" image="s_cosas.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF0000" background="0xFFBDBD" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <scramble times="31" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@textGrid.WordSearch" name="s_4.sop" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="resuelve el sopa de letras.wav" autoStart="true" />
+     <p>Resuelve el sopa de letras y descubre las imagenes.</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xE37200" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <textGrid rows="10" columns="8" cellWidth="35.0" cellHeight="35.0" border="true">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xE37200" background="0xFFFFA8" />
+    </style>
+    <text>
+     <row>**SILLA***</row>
+     <row>**E*******</row>
+     <row>**M***S***</row>
+     <row>*SALERO***</row>
+     <row>**F***L***</row>
+     <row>**O*******</row>
+     <row>**R*******</row>
+     <row>*SOMBRERO*</row>
+    </text>
+   </textGrid>
+   <clues>
+    <clue id="0">SALERO</clue>
+    <clue id="1">SEMAFORO</clue>
+    <clue id="2">SILLA</clue>
+    <clue id="3">SOMBRERO</clue>
+    <clue id="4">SOL</clue>
+   </clues>
+   <cells rows="5" cols="1" border="false" image="sol_cosa.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xE37200" background="0xFFFFA8" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.SimpleAssociation" name="s_5.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="actividad 1.11.wav" autoStart="true" />
+     <p>Relaciona !!</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x004080" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="1" cols="5" cellWidth="163.0" cellHeight="123.0" border="true" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0xFF8000" background="0xFFFFCA" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell>
+     <p>salero</p>
+    </cell>
+    <cell>
+     <p>semaforo</p>
+    </cell>
+    <cell>
+     <p>silla</p>
+    </cell>
+    <cell>
+     <p>sombrero</p>
+    </cell>
+    <cell>
+     <p>suma</p>
+    </cell>
+   </cells>
+   <cells rows="1" cols="5" cellWidth="163.0" cellHeight="123.0" border="true" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" />
+     <color foreground="0x004080" background="0xFFFFCA" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell image="salero.gif" />
+    <cell image="semaforo.gif" />
+    <cell image="silla.gif" />
+    <cell image="sombrero.gif" />
+    <cell image="suma.gif" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="163.0" cellHeight="123.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="salero.wav" />
+     <p> </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="semaforo.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="silla.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="sombrero.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="suma.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@text.WrittenAnswer" name="s_6.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="actividad 1.12.wav" autoStart="true" />
+     <p>Observa el nombre de la imagen y escríbelo en el cuadro de la derecha.</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0xFF8040" background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Muy bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="primary">
+    <style borderStroke="0.7" markerStroke="2.7">
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFFFF" background="0x9999FF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell id="0" avoidOverlapping="true" image="salero con letra-resized.jpg" />
+    <cell id="1" image="semaforo con letra-resized.jpg" />
+    <cell id="2" image="silla con letra-resized.jpg" />
+    <cell id="3" image="sombrero con letra1-resized.jpg" />
+    <cell id="4" image="suma con letra-resized.jpg" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="answers">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFFFF" background="0xFF8040" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <p>salero</p>
+    </cell>
+    <cell>
+     <p>semaforo</p>
+    </cell>
+    <cell>
+     <p>silla</p>
+    </cell>
+    <cell>
+     <p>sombrero</p>
+    </cell>
+    <cell>
+     <p>suma</p>
+    </cell>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="false" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <p>salero</p>
+    </cell>
+    <cell>
+     <p>semaforo</p>
+    </cell>
+    <cell>
+     <p>silla</p>
+    </cell>
+    <cell>
+     <p>sombrero</p>
+    </cell>
+    <cell>
+     <p>suma</p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@panels.Explore" name="t_0.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Haz Clic en cada vocal.wav" autoStart="true" />
+     <p>Haz clic en cada vocal !!!</p>
+    </cell>
+    <cell type="final">
+     <style>
+      <font family="Comic Sans MS" size="36" bold="true" />
+      <color foreground="0xFFFF80" background="0x008000" />
+     </style>
+    </cell>
+   </messages>
+   <settings margin="8" report="false">
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="false" score="false" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="1" cols="5" border="false" image="big_tort.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFF80" background="0x008000" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="1" cols="5" cellWidth="140.0" cellHeight="100.0" border="false" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFF80" background="0x008000" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ta.wav" />
+     <p>ta </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="te.wav" />
+     <p>te </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ti.wav" />
+     <p>ti </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="to.wav" />
+     <p>to </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tu.wav" />
+     <p>tu </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="t_1.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0xFF0000" alternative="0xFF0000" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Relaciona.wav" autoStart="true" />
+     <p>Relaciona !!</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="36" />
+      <color foreground="0x008000" background="0xFFFF99" inactive="0xFF0000" alternative="0xFF0000" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="1" cols="5" border="false" image="big_tort.gif" id="primary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0x008000" background="0xD5FFAA" inactive="0xFF0000" alternative="0xFF0000" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="1" cols="5" border="true" image="taeiou.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0x008000" background="0xD5FFAA" inactive="0xFF0000" alternative="0xFF0000" />
+    </style>
+    <shaper class="@Rectangular" cols="5" rows="1" />
+   </cells>
+   <cells rows="1" cols="5" cellWidth="140.0" cellHeight="100.0" border="false" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="5" rows="1" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ta.wav" />
+     <p>ta </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="te.wav" />
+     <p>te </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="ti.wav" />
+     <p>ti </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="to.wav" />
+     <p>to </p>
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tu.wav" />
+     <p>tu </p>
+    </cell>
+   </cells>
+   <scramble times="31" primary="false" secondary="true" />
+   <layout position="AUB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="t_2.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0xFF48A4" alternative="0xFF48A4" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Relaciona.wav" autoStart="true" />
+     <p>Relaciona !!</p>
+    </cell>
+    <cell border="true" image="Muy bien.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Dialog" size="33" />
+      <color foreground="0x6000BF" background="0xFFFF99" inactive="0xFF48A4" alternative="0xFF48A4" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="muy_bien.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" border="true" image="t_sign.gif" id="primary">
+    <style>
+     <font family="Dialog" size="33" />
+     <color foreground="0x6000BF" background="0xFF8080" inactive="0xFF48A4" alternative="0xFF48A4" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="5" cols="1" border="true" image="t_sign.gif" id="secondary">
+    <style>
+     <font family="Dialog" size="33" />
+     <color foreground="0x6000BF" background="0xFF8080" inactive="0xFF48A4" alternative="0xFF48A4" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="taza.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="telefono.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tiburon.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tortuga.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tuerca.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@associations.ComplexAssociation" name="t_3.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0x80FFFF" alternative="0x80FFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Relaciona.wav" autoStart="true" />
+     <p>Relaciona !!!</p>
+    </cell>
+    <cell border="true" image="Estupendo.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Dialog" size="33" />
+      <color foreground="0xFFFF80" background="0xFFFF99" inactive="0x80FFFF" alternative="0x80FFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="Estupendo.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" cellWidth="200.0" cellHeight="180.0" border="true" id="primary">
+    <style>
+     <font family="Dialog" size="33" />
+     <color foreground="0xFFFF80" background="0x0000FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell id="0">
+     <p>ta </p>
+    </cell>
+    <cell id="1">
+     <p>te </p>
+    </cell>
+    <cell id="2">
+     <p>ti </p>
+    </cell>
+    <cell id="3">
+     <p>to </p>
+    </cell>
+    <cell id="4">
+     <p>tu </p>
+    </cell>
+   </cells>
+   <cells rows="5" cols="1" border="true" image="t.gif" id="secondary">
+    <style>
+     <font family="Dialog" size="33" />
+     <color foreground="0xFFFF80" background="0x0000FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <cells rows="5" cols="1" cellWidth="200.0" cellHeight="180.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="taza.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="telefono.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tiburon.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tortuga.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tuerca.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" secondary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@text.WrittenAnswer" name="t_4.ass" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0x80FFFF" alternative="0x80FFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="actividad 1.14.wav" autoStart="true" />
+     <p>Escribe la sílaba con que comienza el nombre del objeto seleccionado.</p>
+    </cell>
+    <cell border="true" image="Excelente.gif" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Dialog" size="33" />
+      <color foreground="0xFFFF80" background="0xFFFF99" inactive="0x80FFFF" alternative="0x80FFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="2" file="Excelente.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <cells rows="5" cols="1" border="true" image="t.gif" id="primary">
+    <style>
+     <font family="Dialog" size="33" />
+     <color foreground="0xFFFF80" background="0x0000FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <ids>0 1 2 3 4</ids>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="answers">
+    <style>
+     <font family="Dialog" size="33" />
+     <color foreground="0xFFFF80" background="0x0000FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <p>ta </p>
+    </cell>
+    <cell>
+     <p>te </p>
+    </cell>
+    <cell>
+     <p>ti </p>
+    </cell>
+    <cell>
+     <p>to </p>
+    </cell>
+    <cell>
+     <p>tu </p>
+    </cell>
+   </cells>
+   <cells rows="5" cols="1" cellWidth="140.0" cellHeight="100.0" border="true" id="solvedPrimary">
+    <shaper class="@Rectangular" cols="1" rows="5" />
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="taza.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="telefono.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tiburon.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tortuga.wav" />
+    </cell>
+    <cell>
+     <media type="PLAY_AUDIO" level="1" file="tuerca.wav" />
+    </cell>
+   </cells>
+   <scramble times="31" primary="true" />
+   <layout position="AB" />
+  </activity>
+  <activity class="@textGrid.WordSearch" name="t_5.sop" code="">
+   <description />
+   <messages>
+    <cell border="true" type="initial">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Comic Sans MS" size="20" />
+      <color background="0xFFFF99" inactive="0x80FFFF" alternative="0x80FFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="resuelve el sopa de letras. haz clic en ayuda.wav" autoStart="true" />
+     <p>Resuelve el sopa de letras. ¡Haz clic en ayuda!</p>
+    </cell>
+    <cell border="true" image="Genial aprendes rapido-resized.jpg" type="final">
+     <style borderStroke="2.7" markerStroke="2.7">
+      <font family="Dialog" size="33" />
+      <color foreground="0xFFFF8A" background="0xFFFF99" inactive="0x80FFFF" alternative="0x80FFFF" />
+     </style>
+     <media type="PLAY_AUDIO" level="1" file="genial aprendes rapido.wav" />
+    </cell>
+   </messages>
+   <settings margin="8" report="true" reportActions="false">
+    <helpWindow showSolution="true" />
+    <container bgColor="0x66FFFF">
+     <counters time="true" actions="true" score="true" />
+    </container>
+    <window bgColor="0x9999FF" border="true" />
+   </settings>
+   <textGrid rows="8" columns="7" cellWidth="140.0" cellHeight="100.0" border="true">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFF8A" background="0x0080FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+    </style>
+    <text>
+     <row>TORTUGA*</row>
+     <row>AI******</row>
+     <row>Z*B*****</row>
+     <row>A*TUERCA</row>
+     <row>****R***</row>
+     <row>TELEFONO</row>
+     <row>******N*</row>
+    </text>
+   </textGrid>
+   <clues>
+    <clue id="0">TAZA</clue>
+    <clue id="1">TELEFONO</clue>
+    <clue id="2">TIBURON</clue>
+    <clue id="3">TORTUGA</clue>
+    <clue id="4">TUERCA</clue>
+   </clues>
+   <cells rows="5" cols="1" border="false" image="t_sign.gif" id="secondary">
+    <style>
+     <font family="Comic Sans MS" size="36" bold="true" />
+     <color foreground="0xFFFF8A" background="0x0080FF" inactive="0x80FFFF" alternative="0x80FFFF" />
+    </style>
+    <shaper class="@Rectangular" cols="1" rows="5" />
+   </cells>
+   <layout position="AB" />
+  </activity>
+ </activities>
+ <mediaBag>
+  <media name="1locomo.gif" file="1locomo.gif" animated="false" />
+  <media name="big_tort.gif" file="big_tort.gif" animated="false" />
+  <media name="C:/Users/leone/Downloads/Sonidos motivantes/Bien.gif" file="C:/Users/leone/Downloads/Sonidos motivantes/Bien.gif" animated="false" />
+  <media name="cosas_n.gif" file="cosas_n.gif" animated="false" />
+  <media name="Estupendo.gif" file="Estupendo.gif" animated="false" />
+  <media name="Excelente.gif" file="Excelente.gif" animated="false" />
+  <media name="l.gif" file="l.gif" animated="false" />
+  <media name="l_consig.gif" file="l_consig.gif" animated="false" />
+  <media name="laeiou.gif" file="laeiou.gif" animated="false" />
+  <media name="laleli~1.gif" file="laleli~1.gif" animated="false" />
+  <media name="lechera.gif" file="lechera.gif" animated="false" />
+  <media name="letras.gif" file="letras.gif" animated="false" />
+  <media name="lupa.gif" file="lupa.gif" animated="false" />
+  <media name="m.gif" file="m.gif" animated="false" />
+  <media name="m_sign.gif" file="m_sign.gif" animated="false" />
+  <media name="maeiou.gif" file="maeiou.gif" animated="false" />
+  <media name="mamemi~1.gif" file="mamemi~1.gif" animated="false" />
+  <media name="mariposa.gif" file="mariposa.gif" animated="false" />
+  <media name="minero.gif" file="minero.gif" animated="false" />
+  <media name="molino.gif" file="molino.gif" animated="false" />
+  <media name="Muy bien.gif" file="Muy bien.gif" animated="false" />
+  <media name="naranja.gif" file="naranja.gif" animated="false" />
+  <media name="p1.gif" file="p1.gif" animated="false" />
+  <media name="paeiou.gif" file="paeiou.gif" animated="false" />
+  <media name="paloma.gif" file="paloma.gif" animated="false" />
+  <media name="papepi~1.gif" file="papepi~1.gif" animated="false" />
+  <media name="pelota.gif" file="pelota.gif" animated="false" />
+  <media name="perro.gif" file="perro.gif" animated="false" />
+  <media name="piramide.gif" file="piramide.gif" animated="false" />
+  <media name="policia.gif" file="policia.gif" animated="false" />
+  <media name="poste.gif" file="poste.gif" animated="false" />
+  <media name="puerta.gif" file="puerta.gif" animated="false" />
+  <media name="s_cosas.gif" file="s_cosas.gif" animated="false" />
+  <media name="salero.gif" file="salero.gif" animated="false" />
+  <media name="sasesi~1.gif" file="sasesi~1.gif" animated="false" />
+  <media name="semaforo.gif" file="semaforo.gif" animated="false" />
+  <media name="silla.gif" file="silla.gif" animated="false" />
+  <media name="sol.gif" file="sol.gif" animated="false" />
+  <media name="sol_cosa.gif" file="sol_cosa.gif" animated="false" />
+  <media name="sombrero.gif" file="sombrero.gif" animated="false" />
+  <media name="suma.gif" file="suma.gif" animated="false" />
+  <media name="t.gif" file="t.gif" animated="false" />
+  <media name="t_sign.gif" file="t_sign.gif" animated="false" />
+  <media name="taeiou.gif" file="taeiou.gif" animated="false" />
+  <media name="Genial aprendes rapido-resized.jpg" file="Genial aprendes rapido-resized.jpg" />
+  <media name="Muy bien-resized.jpg" file="Muy bien-resized.jpg" />
+  <media name="salero con letra-resized.jpg" file="salero con letra-resized.jpg" />
+  <media name="semaforo con letra-resized.jpg" file="semaforo con letra-resized.jpg" />
+  <media name="silla con letra-resized.jpg" file="silla con letra-resized.jpg" />
+  <media name="sombrero con letra1-resized.jpg" file="sombrero con letra1-resized.jpg" />
+  <media name="suma con letra-resized.jpg" file="suma con letra-resized.jpg" />
+  <media name="Relaciona el texto con su imagen.mp3" file="Relaciona el texto con su imagen.mp3" />
+  <media name="actividad 1.10.wav" file="actividad 1.10.wav" />
+  <media name="actividad 1.11.wav" file="actividad 1.11.wav" />
+  <media name="actividad 1.12.wav" file="actividad 1.12.wav" />
+  <media name="actividad 1.13.wav" file="actividad 1.13.wav" />
+  <media name="actividad 1.14.wav" file="actividad 1.14.wav" />
+  <media name="asocia con el inicio de la palabra.wav" file="asocia con el inicio de la palabra.wav" />
+  <media name="Asocia.wav" file="Asocia.wav" />
+  <media name="Bien.wav" file="Bien.wav" />
+  <media name="Completa con las vocales.wav" file="Completa con las vocales.wav" />
+  <media name="Elige.wav" file="Elige.wav" />
+  <media name="Encuentra las parejas.wav" file="Encuentra las parejas.wav" />
+  <media name="escribe la silaba con la que comienza cada palabra.wav" file="escribe la silaba con la que comienza cada palabra.wav" />
+  <media name="Escuchemos.wav" file="Escuchemos.wav" />
+  <media name="Estupendo.wav" file="Estupendo.wav" />
+  <media name="Excelente.wav" file="Excelente.wav" />
+  <media name="genial aprendes rapido.wav" file="genial aprendes rapido.wav" />
+  <media name="genial.wav" file="genial.wav" />
+  <media name="Haz Clic en cada vocal.wav" file="Haz Clic en cada vocal.wav" />
+  <media name="juguemos.wav" file="juguemos.wav" />
+  <media name="la.wav" file="la.wav" />
+  <media name="le.wav" file="le.wav" />
+  <media name="lechera.wav" file="lechera.wav" />
+  <media name="li.wav" file="li.wav" />
+  <media name="lo.wav" file="lo.wav" />
+  <media name="locomotora.wav" file="locomotora.wav" />
+  <media name="lu.wav" file="lu.wav" />
+  <media name="lupa.wav" file="lupa.wav" />
+  <media name="m_4.wav" file="m_4.wav" />
+  <media name="m_5.wav" file="m_5.wav" />
+  <media name="m_6.wav" file="m_6.wav" />
+  <media name="ma.wav" file="ma.wav" />
+  <media name="mariposa.wav" file="mariposa.wav" />
+  <media name="me.wav" file="me.wav" />
+  <media name="Memoriza.wav" file="Memoriza.wav" />
+  <media name="mi.wav" file="mi.wav" />
+  <media name="minero.wav" file="minero.wav" />
+  <media name="mo.wav" file="mo.wav" />
+  <media name="molino.wav" file="molino.wav" />
+  <media name="mu.wav" file="mu.wav" />
+  <media name="Muy bien.wav" file="Muy bien.wav" />
+  <media name="muy_bien.wav" file="muy_bien.wav" />
+  <media name="na.wav" file="na.wav" />
+  <media name="nadar.wav" file="nadar.wav" />
+  <media name="ne.wav" file="ne.wav" />
+  <media name="nene.wav" file="nene.wav" />
+  <media name="ni.wav" file="ni.wav" />
+  <media name="nido.wav" file="nido.wav" />
+  <media name="no.wav" file="no.wav" />
+  <media name="notas.wav" file="notas.wav" />
+  <media name="nu.wav" file="nu.wav" />
+  <media name="nube.wav" file="nube.wav" />
+  <media name="ovacion.wav" file="ovacion.wav" />
+  <media name="pa.wav" file="pa.wav" />
+  <media name="paloma.wav" file="paloma.wav" />
+  <media name="pe.wav" file="pe.wav" />
+  <media name="perro.wav" file="perro.wav" />
+  <media name="pi.wav" file="pi.wav" />
+  <media name="piramide.wav" file="piramide.wav" />
+  <media name="po.wav" file="po.wav" />
+  <media name="poste.wav" file="poste.wav" />
+  <media name="pu.wav" file="pu.wav" />
+  <media name="puerta.wav" file="puerta.wav" />
+  <media name="Relaciona.wav" file="Relaciona.wav" />
+  <media name="resuelve el sopa de letras. haz clic en ayuda.wav" file="resuelve el sopa de letras. haz clic en ayuda.wav" />
+  <media name="resuelve el sopa de letras.wav" file="resuelve el sopa de letras.wav" />
+  <media name="sa.wav" file="sa.wav" />
+  <media name="salero.wav" file="salero.wav" />
+  <media name="se.wav" file="se.wav" />
+  <media name="semaforo.wav" file="semaforo.wav" />
+  <media name="si.wav" file="si.wav" />
+  <media name="silla.wav" file="silla.wav" />
+  <media name="so.wav" file="so.wav" />
+  <media name="sombrero.wav" file="sombrero.wav" />
+  <media name="su.wav" file="su.wav" />
+  <media name="suma.wav" file="suma.wav" />
+  <media name="ta.wav" file="ta.wav" />
+  <media name="tambor.wav" file="tambor.wav" />
+  <media name="taza.wav" file="taza.wav" />
+  <media name="te.wav" file="te.wav" />
+  <media name="telefono.wav" file="telefono.wav" />
+  <media name="ti.wav" file="ti.wav" />
+  <media name="tiburon.wav" file="tiburon.wav" />
+  <media name="to.wav" file="to.wav" />
+  <media name="tortuga.wav" file="tortuga.wav" />
+  <media name="tu.wav" file="tu.wav" />
+  <media name="tuerca.wav" file="tuerca.wav" />
+ </mediaBag>
+</JClicProject>
+

@@ -1,0 +1,50 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Claves de firma (NUNCA subir)
+*.key
+*.pub
+tauri.key
+build_log.txt
+Claves*.txt
+*contraseñas*.txt
+
+# Compilación Rust/Tauri (pesa GBs, se regenera)
+src-tauri/target/
+
+# Instaladores generados
+*.exe
+*.msi
+*.sig
+!latest.json
+
+# Temporales de JClic
+src/assets/**/*.tmp
+
+# Respaldo temporal de imágenes (borrar tras verificar)
+_backup_imagenes/
+
+# Respaldo temporal de scripts (borrar tras verificar)
+_backup_js/

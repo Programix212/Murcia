@@ -1,0 +1,12 @@
+Velocidad
+Vallas
+Fondo
+Relevos
+Altura
+Longitud
+Triple salto
+Pértiga
+Peso
+Disco
+Javalina
+Martillo

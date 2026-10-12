@@ -1,0 +1,5 @@
+futbol|fútbol
+voleibol|voleyball
+baloncesto|basket|basketball
+beisbol|baseball
+balonmano

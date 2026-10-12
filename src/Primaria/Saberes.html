@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEARTEE - Saberes y pensamiento científico</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Saberes.css">
+<link rel="stylesheet" href="../transiciones.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<script src="../transiciones.js"></script>
+
+</head>
+<body>
+
+<!-- Overlay de fade -->
+<div class="ceartee-fade-overlay" id="ceartee-fade"></div>
+
+<div class="bg-animation">
+<span></span><span></span><span></span><span></span>
+<span></span><span></span><span></span><span></span>
+</div>
+
+<div class="main-container">
+
+<header class="header">
+    <button class="btn-back" onclick="goBack()">
+        <span class="btn-icon">←</span>
+        <span class="btn-text">Volver</span>
+    </button>
+    <div class="header-title">
+         <span class="header-emoji"></span>
+         <h1>Saberes y pensamiento cientifico</h1>
+    </div> 
+    <div class="header-count">
+     <span class="count-number" id="gameCount">62</span>
+     <span class="count-text">juegos</span>
+    </div>
+</header>
+
+<div class="search-bar" id="search-bar">
+    <img src="../img_logos/logo_lupa.png" class="search-icon-img" alt="Buscar">
+    <input type="text" class="search-input" placeholder="Buscar juego" 
+    id="searchInput" onkeyup="filterGames()">
+</div>
+
+<div class="games-list" id="gamesList">
+
+
+     <!-- Juego 1 -->
+     <div class="game-card" data-name="0opera" onclick="abrirJuego('assets/Primaria_Saberes/0opera.jclic.zip', '0opera')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/opera_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">0opera</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 2 -->
+     <div class="game-card" data-name="Actividades numeración 1er. ciclo" onclick="abrirJuego('assets/Primaria_Saberes/actividades_numeracion_1er_ciclo.jclic.zip', 'Actividades numeración 1er. ciclo')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/actividades_numeracion_1er_ciclo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Actividades numeración 1er. ciclo</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 3 -->
+     <div class="game-card" data-name="Bingo matemático" onclick="abrirJuego('assets/Primaria_Saberes/bingo_matematico.jclic.zip', 'Bingo matemático')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/bingo_matematico_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Bingo matemático</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 4 -->
+     <div class="game-card" data-name="Cálculo mental" onclick="abrirJuego('assets/Primaria_Saberes/calculo_mental.jclic.zip', 'Cálculo mental')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/calculo_mental_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Cálculo mental</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 5 -->
+     <div class="game-card" data-name="Cálculo mental 2°" onclick="abrirJuego('assets/Primaria_Saberes/calculo_mental_2.jclic.zip', 'Cálculo mental 2°')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/calculo_mental_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Cálculo mental 2°</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 6 -->
+     <div class="game-card" data-name="Cálculo mental para primaria" onclick="abrirJuego('assets/Primaria_Saberes/calculo_mental_para_primaria.jclic.zip', 'Cálculo mental para primaria')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/calculo_mental_para_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Cálculo mental para primaria</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 7 -->
+     <div class="game-card" data-name="Circunferencia y cuerpos geométricos" onclick="abrirJuego('assets/Primaria_Saberes/circunferencia_y_cuerpos_geometricos.jclic.zip', 'Circunferencia y cuerpos geométricos')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/circunferencia_y_cuerpos_geometricos.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Circunferencia y cuerpos geométricos</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 8 -->
+     <div class="game-card" data-name="Comprando chucherías" onclick="abrirJuego('assets/Primaria_Saberes/comprando_chucherias.jclic.zip', 'Comprando chucherías')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/comprando_chucherias_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Comprando chucherías</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 9 -->
+     <div class="game-card" data-name="Crucigramas de cálculo" onclick="abrirJuego('assets/Primaria_Saberes/crucigramas_de_calculo.jclic.zip', 'Crucigramas de cálculo')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/crucigramas_de_calculo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Crucigramas de cálculo</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 10 -->
+     <div class="game-card" data-name="Cuadrados mágicos" onclick="abrirJuego('assets/Primaria_Saberes/cuadrados_magicos.jclic.zip', 'Cuadrados mágicos')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/cuadrados_magicos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Cuadrados mágicos</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 11 -->
+     <div class="game-card" data-name="Cuadrados y triángulos de 10 y 15" onclick="abrirJuego('assets/Primaria_Saberes/cuadrados_y_triangulos_de_10_y_15.jclic.zip', 'Cuadrados y triángulos de 10 y 15')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/cuadrados_y_triangulos_de_10_y_15_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Cuadrados y triángulos de 10 y 15</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 12 -->
+     <div class="game-card" data-name="Dividir 3ro" onclick="abrirJuego('assets/Primaria_Saberes/dividir_3ro.jclic.zip', 'Dividir 3ro')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/dividir_3ro_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Dividir 3ro</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 13 -->
+     <div class="game-card" data-name="Divisibilidad, divisiones" onclick="abrirJuego('assets/Primaria_Saberes/divisibilidad_divisiones.jclic.zip', 'Divisibilidad, divisiones')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/divisibilidad_y_divisiones_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Divisibilidad, divisiones</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 14 -->
+     <div class="game-card" data-name="El algoritmo de la división" onclick="abrirJuego('assets/Primaria_Saberes/el_algoritmo_de_la_division.jclic.zip', 'El algoritmo de la división')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/algoritmo_de_la_division_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">El algoritmo de la división</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 15 -->
+     <div class="game-card" data-name="El reloj" onclick="abrirJuego('assets/Primaria_Saberes/el_reloj.jclic.zip', 'El reloj')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/el_reloj_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">El reloj</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+
+     <!-- Juego 17 -->
+     <div class="game-card" data-name="Fichas escondidas" onclick="abrirJuego('assets/Primaria_Saberes/fichas_escondidas.jclic.zip', 'Fichas escondidas')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/fichas_escondidas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Fichas escondidas</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 18 -->
+     <div class="game-card" data-name="Fracciones" onclick="abrirJuego('assets/Primaria_Saberes/fracciones.jclic.zip', 'Fracciones')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/fracciones_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Fracciones</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+
+     <!-- Juego 20 -->
+     <div class="game-card" data-name="Fracciones I" onclick="abrirJuego('assets/Primaria_Saberes/fracciones_i.jclic.zip', 'Fracciones I')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/fracciones_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Fracciones I</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 21 -->
+     <div class="game-card" data-name="Fracciones II" onclick="abrirJuego('assets/Primaria_Saberes/fracciones_ii.jclic.zip', 'Fracciones II')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/fracciones_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Fracciones II</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 22 -->
+     <div class="game-card" data-name="Geometría" onclick="abrirJuego('assets/Primaria_Saberes/geometria.jclic.zip', 'Geometría')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/geometria_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Geometría</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 23 -->
+     <div class="game-card" data-name="Geometría elemental" onclick="abrirJuego('assets/Primaria_Saberes/geometria_elemental.jclic.zip', 'Geometría elemental')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/geometria_elemental_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Geometría elemental</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+
+     <!-- Juego 25 -->
+     <div class="game-card" data-name="Las operaciones" onclick="abrirJuego('assets/Primaria_Saberes/las_operaciones.jclic.zip', 'Las operaciones')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/las_operaciones_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Las operaciones</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+
+     <!-- Juego 27 -->
+     <div class="game-card" data-name="Las operaciones II 4°" onclick="abrirJuego('assets/Primaria_Saberes/las_operaciones_ii_4.jclic.zip', 'Las operaciones II 4°')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/las_operaciones_II_4_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Las operaciones II 4°</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 28 -->
+     <div class="game-card" data-name="Las tablas de multiplicar I" onclick="abrirJuego('assets/Primaria_Saberes/las_tablas_de_multiplicar_i.jclic.zip', 'Las tablas de multiplicar I')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/tablas_de_multiplicar_1_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Las tablas de multiplicar I</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 29 -->
+     <div class="game-card" data-name="Las tablas de multiplicar II" onclick="abrirJuego('assets/Primaria_Saberes/las_tablas_de_multiplicar_ii.jclic.zip', 'Las tablas de multiplicar II')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/tablas_de_multiplicar_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Las tablas de multiplicar II</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 30 -->
+     <div class="game-card" data-name="Los dinosaurios" onclick="abrirJuego('assets/Primaria_Saberes/los_dinosaurios.jclic.zip', 'Los dinosaurios')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/los_dinosaurios_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Los dinosaurios</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 31 -->
+     <div class="game-card" data-name="Los numeros racionales" onclick="abrirJuego('assets/Primaria_Saberes/los_numeros_racionales.jclic.zip', 'Los numeros racionales')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/los_numeros_racionales_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Los numeros racionales</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 32 -->
+     <div class="game-card" data-name="Matemáticas 1 ciclo" onclick="abrirJuego('assets/Primaria_Saberes/matematicas_1_ciclo.jclic.zip', 'Matemáticas 1 ciclo')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/matematicas_1er_ciclo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Matemáticas 1 ciclo</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 33 -->
+     <div class="game-card" data-name="Matemáticas 6°" onclick="abrirJuego('assets/Primaria_Saberes/matematicas_6.jclic.zip', 'Matemáticas 6°')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/matematicas_6_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Matemáticas 6°</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 34 -->
+     <div class="game-card" data-name="Matemáticas de 4to" onclick="abrirJuego('assets/Primaria_Saberes/matematicas_de_4to.jclic.zip', 'Matemáticas de 4to')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/matematicas_de_4to_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Matemáticas de 4to</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 35 -->
+     <div class="game-card" data-name="Matemáticas de 5to" onclick="abrirJuego('assets/Primaria_Saberes/matematicas_de_5to.jclic.zip', 'Matemáticas de 5to')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/matematicas_de_5to_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Matemáticas de 5to</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 36 -->
+     <div class="game-card" data-name="Matemáticas de 6to" onclick="abrirJuego('assets/Primaria_Saberes/matematicas_de_6to.jclic.zip', 'Matemáticas de 6to')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/matematicas_de_6to_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Matemáticas de 6to</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 37 -->
+     <div class="game-card" data-name="Matemáticas Interface" onclick="abrirJuego('assets/Primaria_Saberes/matematicas_interface.jclic.zip', 'Matemáticas Interface')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/matematicas_interface_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Matemáticas Interface</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 38 -->
+      <div class="game-card" data-name="Matemáticas para 5to" onclick="abrirJuego('assets/Primaria_Saberes/matematicas_para_5to.jclic.zip', 'Matemáticas para 5to')">
+        <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/matematicas_de_5to_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Matemáticas para 5to</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 39 -->
+     <div class="game-card" data-name="Midiendo el tiempo días, semanas y meses" onclick="abrirJuego('assets/Primaria_Saberes/midiendo_el_tiempo_dias_semanas_y_meses.jclic.zip', 'Midiendo el tiempo días, semanas y meses')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/midiendo_el_tiempo_dias_semanas_meses_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Midiendo el tiempo días, semanas y meses</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 40 -->
+     <div class="game-card" data-name="Múltiplos, divisores y fracciones" onclick="abrirJuego('assets/Primaria_Saberes/multiplos_divisores_y_fracciones.jclic.zip', 'Múltiplos, divisores y fracciones')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/multiplos_divisores_y_fracciones_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Múltiplos, divisores y fracciones</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 41 -->
+     <div class="game-card" data-name="Numeración" onclick="abrirJuego('assets/Primaria_Saberes/numeracion.jclic.zip', 'Numeración')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/numeracion_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Numeración</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 42 -->
+     <div class="game-card" data-name="Numeración 2do. ciclo" onclick="abrirJuego('assets/Primaria_Saberes/numeracion_2do_ciclo.jclic.zip', 'Numeración 2do. ciclo')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/numeracion_2do_ciclo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Numeración 2do. ciclo</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 43 -->
+     <div class="game-card" data-name="Numeración del 1 al 100" onclick="abrirJuego('assets/Primaria_Saberes/numeracion_del_1_al_100.jclic.zip', 'Numeración del 1 al 100')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/numeracion_del_1_al_100_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Numeración del 1 al 100</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 44 -->
+     <div class="game-card" data-name="Numeración romana" onclick="abrirJuego('assets/Primaria_Saberes/numeracion_romana.jclic.zip', 'Numeración romana')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/numeracion_romana_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Numeración romana</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 45 -->
+     <div class="game-card" data-name="Numeritos 2" onclick="abrirJuego('assets/Primaria_Saberes/numeritos_2.jclic.zip', 'Numeritos 2')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/numeritos_2_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Numeritos 2</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 46 -->
+     <div class="game-card" data-name="Números romanos" onclick="abrirJuego('assets/Primaria_Saberes/numeros_romanos.jclic.zip', 'Números romanos')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/numeros_romanos_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Números romanos</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 47 -->
+     <div class="game-card" data-name="Números y operaciones 5°" onclick="abrirJuego('assets/Primaria_Saberes/numeros_y_operaciones_5.jclic.zip', 'Números y operaciones 5°')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/numeros_y_operaciones_5_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Números y operaciones 5°</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 48 -->
+     <div class="game-card" data-name="Oca Matemática" onclick="abrirJuego('assets/Primaria_Saberes/oca_matematica.jclic.zip', 'Oca Matemática')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/oca_matematica_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Oca Matemática</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 49 -->
+     <div class="game-card" data-name="Operaciones con decimales" onclick="abrirJuego('assets/Primaria_Saberes/operaciones_con_decimales.jclic.zip', 'Operaciones con decimales')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/operaciones_con_decimales_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Operaciones con decimales</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 50 -->
+     <div class="game-card" data-name="Pasatiempos matemáticos 1er. ciclo" onclick="abrirJuego('assets/Primaria_Saberes/pasatiempos_matematicos_1er_ciclo.jclic.zip', 'Pasatiempos matemáticos 1er. ciclo')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/pasatiempos_matematicos_1er_ciclo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Pasatiempos matemáticos 1er. ciclo</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 51 -->
+     <div class="game-card" data-name="Pasatiempos matemáticos 2 y 3 ciclo" onclick="abrirJuego('assets/Primaria_Saberes/pasatiempos_matematicos_2_y_3_ciclo.jclic.zip', 'Pasatiempos matemáticos 2 y 3 ciclo')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/pasatiempos_matematicos_2_y_3_ciclo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Pasatiempos matemáticos 2 y 3 ciclo</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 52 -->
+     <div class="game-card" data-name="Potencia" onclick="abrirJuego('assets/Primaria_Saberes/potencia.jclic.zip', 'Potencia')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/potencia_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Potencia</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 53 -->
+     <div class="game-card" data-name="Problemas 2do. ciclo" onclick="abrirJuego('assets/Primaria_Saberes/problemas_2do_ciclo.jclic.zip', 'Problemas 2do. ciclo')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/problemas_2do_ciclo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Problemas 2do. ciclo</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 54 -->
+     <div class="game-card" data-name="Problemas para 3er. ciclo" onclick="abrirJuego('assets/Primaria_Saberes/problemas_para_3er_ciclo.jclic.zip', 'Problemas para 3er. ciclo')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/problemas_para_3er_ciclo_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Problemas para 3er. ciclo</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 55 -->
+     <div class="game-card" data-name="Producto cartesiano" onclick="abrirJuego('assets/Primaria_Saberes/producto_cartesiano.jclic.zip', 'Producto cartesiano')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/producto_cartesiano_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Producto cartesiano</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+
+
+     <!-- Juego 58 -->
+     <div class="game-card" data-name="Regletas Cuisenaire" onclick="abrirJuego('assets/Primaria_Saberes/regletas_cuisenaire.jclic.zip', 'Regletas Cuisenaire')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/regletas_cuisenaire_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Regletas Cuisenaire</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 59 -->
+     <div class="game-card" data-name="Rejilla matemática" onclick="abrirJuego('assets/Primaria_Saberes/rejilla_matematica.jclic.zip', 'Rejilla matemática')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/rejilla_matematica_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Rejilla matemática</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 60 -->
+     <div class="game-card" data-name="Series numéricas" onclick="abrirJuego('assets/Primaria_Saberes/series_numericas.jclic.zip', 'Series numéricas')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/series_numericas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Series numéricas</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 61 -->
+     <div class="game-card" data-name="Simetrías" onclick="abrirJuego('assets/Primaria_Saberes/simetrias.jclic.zip', 'Simetrías')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/simetrias_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Simetrías</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 62 -->
+     <div class="game-card" data-name="Sistema métrico decimal" onclick="abrirJuego('assets/Primaria_Saberes/sistema_metrico_decimal.jclic.zip', 'Sistema métrico decimal')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/sistema_metrico_decimal_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Sistema métrico decimal</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 63 -->
+     <div class="game-card" data-name="Sumas y restas" onclick="abrirJuego('assets/Primaria_Saberes/sumas_y_restas.jclic.zip', 'Sumas y restas')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/sumas_y_restas_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Sumas y restas</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 64 -->
+     <div class="game-card" data-name="Superdominó" onclick="abrirJuego('assets/Primaria_Saberes/superdomino.jclic.zip', 'Superdominó')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/superdomino_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Superdominó</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 65 -->
+     <div class="game-card" data-name="Tablas de multiplicar 3°" onclick="abrirJuego('assets/Primaria_Saberes/tablas_de_multiplicar_3.jclic.zip', 'Tablas de multiplicar 3°')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/tablas_de_multiplicar_3_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Tablas de multiplicar 3°</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+
+     <!-- Juego 67 -->
+     <div class="game-card" data-name="Tablas de multiplicar JT" onclick="abrirJuego('assets/Primaria_Saberes/tablas_de_multiplicar_jt.jclic.zip', 'Tablas de multiplicar JT')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/tablas_de_multiplicar_jt_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Tablas de multiplicar JT</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 68 -->
+     <div class="game-card" data-name="Tetravex (Tetrav.)" onclick="abrirJuego('assets/Primaria_Saberes/tetravex_tetrav.jclic.zip', 'Tetravex (Tetrav.)')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/tetravex_tetrav_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Tetravex (Tetrav.)</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+     <!-- Juego 69 -->
+     <div class="game-card" data-name="Vocabulario aritmético básico" onclick="abrirJuego('assets/Primaria_Saberes/vocabulario_aritmetico_basico.jclic.zip', 'Vocabulario aritmético básico')">
+       <div class="game-icon"><img alt="" src="../assets/img_primaria_saberes/vocabulario_aritmetico_basico_primaria.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
+       <div class="game-info">
+         <h3 class="game-title">Vocabulario aritmético básico</h3>
+         <p class="game-description"></p>
+         <div class="game-meta">
+           <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
+         </div>
+       </div>
+       <div class="game-action">
+         <div class="play-btn"><span>▶</span></div>
+         <span class="play-text">JUGAR</span>
+       </div>
+     </div>
+
+    <!-- Mensaje sin resultados -->
+    <div class="no-results" id="noResults" style="display:none;">
+      <span class="no-results-icon">🔍</span>
+      <p>No se encontraron juegos</p>
+    </div>
+
+</div>
+
+</div>
+
+<script src="Saberes.js"></script>
+<script src="../aplicar-config.js"></script>
+</body>
+</html>

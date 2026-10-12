@@ -1,0 +1,10 @@
+bateador y receptor
+campo interno
+lanzador y base 3
+base 2
+zona mala
+base 1
+exteriores
+extracampo
+
+
