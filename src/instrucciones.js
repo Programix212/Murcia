@@ -1626,6 +1626,32 @@ function traducirEspaciado(textoOriginal) {
 }
 
 // ==========================================
+// TRADUCCIÓN POR FRASE COMPLETA (traducciones-en.js)
+// Busca el texto entero normalizado (espacios, mayúsculas). Si viene con
+// un prefijo tipo '🎉 ' o espacios, lo separa, traduce el núcleo y lo
+// vuelve a poner. Devuelve null si la frase no está en la tabla.
+// ==========================================
+var __frasesEnLower = null;
+function normalizarFrase(s) {
+  return String(s).normalize('NFC').replace(/\s+/g, ' ').trim();
+}
+function traducirFraseCompleta(textoOriginal, idioma) {
+  if (idioma !== 'en') return null;
+  var tabla = (typeof window !== 'undefined' && window.traduccionesFrasesEN) || null;
+  if (!tabla) return null;
+  if (!__frasesEnLower) {
+    __frasesEnLower = {};
+    Object.keys(tabla).forEach(function(k) { __frasesEnLower[k.toLowerCase()] = tabla[k]; });
+  }
+  var m = String(textoOriginal).match(/^([\s\p{Extended_Pictographic}\uFE0F\u200D]*)([\s\S]*?)(\s*)$/u);
+  var pref = m ? m[1] : '';
+  var nucleo = normalizarFrase(m ? m[2] : textoOriginal);
+  if (!nucleo) return null;
+  var t = tabla[nucleo] || __frasesEnLower[nucleo.toLowerCase()];
+  return t ? pref + t : null;
+}
+
+// ==========================================
 // TRADUCIR INSTRUCCIÓN AUTOMÁTICAMENTE
 // ==========================================
 function traducirInstruccion(textoOriginal) {
@@ -1635,6 +1661,13 @@ function traducirInstruccion(textoOriginal) {
   if (idioma === 'es' || !textoOriginal) {
     return textoOriginal;
   }
+
+  // 1) Traducción de FRASE COMPLETA (traducciones-en.js). Es la fuente
+  //    principal: evita frases mezcladas español/inglés del diccionario.
+  try {
+    var tFrase = traducirFraseCompleta(textoOriginal, idioma);
+    if (tFrase) return tFrase;
+  } catch (e) {}
 
   // Textos con letras espaciadas: traducir por palabra completa o
   // dejar el original intacto (nunca corromperlo palabra por palabra).
