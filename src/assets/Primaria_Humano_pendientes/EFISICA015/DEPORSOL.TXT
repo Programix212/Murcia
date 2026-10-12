@@ -1,4 +1,0 @@
-basket|baloncesto
-futbol|furbol
-baseball|beisbol|beísbol|beisball
-hockey

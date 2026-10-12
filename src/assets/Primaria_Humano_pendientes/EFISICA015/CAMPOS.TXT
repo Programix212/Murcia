@@ -1,6 +1,0 @@
-{campatle.bmp}
-{campbask.bmp}
-{campbman.bmp}
-{campbeis.bmp}
-{campfutb.bmp}
-{campteni.bmp}

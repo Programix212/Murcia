@@ -1,3 +1,0 @@
-{tendcha.bmp}
-{tenreves.bmp}
-{tenservi.bmp}

@@ -1,5 +1,0 @@
-{futbola.bmp}
-{voleimat.bmp}
-{basket1.bmp}
-{beisbol.bmp}
-{balonm1.bmp}

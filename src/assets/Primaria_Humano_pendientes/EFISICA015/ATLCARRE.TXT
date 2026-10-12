@@ -1,3 +1,0 @@
-{atlveloc.bmp}
-{atlvalla.bmp}
-{atlfondo.bmp}
