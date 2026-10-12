@@ -989,32 +989,37 @@
       .avatar-selector {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: 8px;
+        gap: 6px;
         max-height: 200px;
         overflow-y: auto;
+        overflow-x: hidden;
         margin: 15px 0;
         padding: 10px;
         background: rgba(0,0,0,0.2);
         border-radius: 10px;
+        box-sizing: border-box;
       }
       .avatar-option {
         font-size: 2em;
-        padding: 8px;
+        padding: 4px;
         border-radius: 10px;
         cursor: pointer;
         transition: all 0.2s;
         background: rgba(255,255,255,0.1);
         text-align: center;
         user-select: none;
+        min-width: 0;
+        box-sizing: border-box;
+        border: 2px solid transparent;
       }
       .avatar-option:hover {
         background: rgba(255,255,255,0.2);
-        transform: scale(1.1);
+        transform: scale(1.08);
       }
       .avatar-option.selected {
         background: rgba(100,200,255,0.4);
         border: 2px solid #64c8ff;
-        transform: scale(1.15);
+        transform: scale(1.08);
       }
       .modal-buttons {
         display: flex;
