@@ -2,7 +2,7 @@
 
 Documento de seguimiento: qué ya está resuelto y qué falta por hacer.
 Actualizado tras fixes de resolución 1366×768, rendimiento, idioma/dificultad,
-Primaria, reproductor JClic y optimización del instalador (versión 1.0.1).
+Primaria, reproductor JClic y optimización del instalador (versión 1.0.3).
 
 ---
 

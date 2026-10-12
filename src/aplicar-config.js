@@ -13,7 +13,7 @@
   // Sin DSN la app sigue guardando errores en local (cola local) sin enviar nada.
   // ==========================================
   var SENTRY_DSN = ''; // <-- Vacío = errores solo en local. Pega tu DSN solo en builds privados, nunca en el repo.
-  var APP_VERSION = '1.0.1'; // <-- SÚBELO IGUAL QUE package.json / tauri.conf.json / Cargo.toml
+  var APP_VERSION = '1.0.3'; // <-- SÚBELO IGUAL QUE package.json / tauri.conf.json / Cargo.toml
   var COLA_ERRORES_KEY = 'ceartee_error_queue';
   var COLA_ERRORES_MAX = 30;
 

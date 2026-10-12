@@ -7,9 +7,12 @@ y el proyecto usa versionado [SemVer](https://semver.org/lang/es/).
 
 ---
 
-## [Sin publicar]
+## [1.0.3] - 2026-10-12
 
-### Añadido
+### Añadido (1.0.3)
+- Primaria completa: 154 juegos (Lenguajes 84, Saberes 62, Ética 6, Humano 2).
+- Tabla de frases EN para la introducción de juegos (`traducciones-en.js`).
+- Tests antibug de idioma/dificultad (25/25 verdes en total).
 - Exportar e importar respaldo de perfiles y estadísticas a un archivo JSON (Configuración → Avanzado).
 - Migración automática del esquema de datos al abrir la app (`ceartee_schema_version`).
 - Documentación: README real, guía para añadir juegos y este CHANGELOG.
@@ -25,14 +28,16 @@ y el proyecto usa versionado [SemVer](https://semver.org/lang/es/).
 - Registrado el plugin `process` y sus permisos para que el reinicio tras actualizar funcione.
 - Clave pública del updater (`pubkey`) actualizada para que coincida con la clave privada de firma.
 
-### Corregido
+### Corregido (1.0.3)
+- Resolución 1366×768, rendimiento (burbujas, carga de juegos), idioma/dificultad en otras PCs y reproductor JClic (juegos encogidos).
+- Instalador optimizado: `src/assets` de 854 MB a 502 MB.
 - El botón "Exportar" mostraba el texto "Limpiar" por error de traducción.
 - Eliminado `main.js` (código de plantilla que invocaba un comando inexistente).
 - Versión unificada en `1.0.1` (`package.json`, `tauri.conf.json`, `Cargo.toml`, `Cargo.lock`, `package-lock.json` y `aplicar-config.js`).
 - Activado el actualizador (`updater.active: true`) y corregido `latest.json` (versión + URL del repo `Programix212/Murcia`).
 
-### Pendiente
-- Decidir destino final de versión para publicar la próxima actualización (`latest.json` debe apuntar a una versión mayor que la instalada, con su firma `.sig` real).
+### Publicación (1.0.3)
+- Versión 1.0.3 unificada (`package.json`, `tauri.conf.json`, `Cargo.toml`, `Cargo.lock`, `package-lock.json`, `aplicar-config.js` y `latest.json`).
 
 ---
 
