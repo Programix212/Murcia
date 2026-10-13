@@ -13,6 +13,7 @@ Primaria, reproductor JClic y optimización del instalador (versión 1.0.3).
 - Updater activado (`active: true`) y `latest.json` corregido, todo apuntando al repo `Programix212/Murcia`.
 - CSP flexible recuperada en `tauri.conf.json` (permite `onclick` locales, bloquea remotos). Dominios de Firebase (`identitytoolkit`, `firestore`, `securetoken`) eliminados del `connect-src`: ya no se usan.
 - Secretos fuera del repo: eliminado el `.txt` de contraseñas, Sentry DSN vaciado, Firebase API key a placeholder. `.gitignore` blindado (claves, `target/`, `.exe`).
+- Historial purgado con BFG: el `.txt` de contraseñas y la API key de Firebase ya no existen en ningún commit ni tag (`v1.0.1`/`v1.0.2` re-emitidos limpios). API key eliminada también en la consola de Firebase.
 - Barra roja de debug silenciada (solo visible con `localStorage.ceartee_debug = '1'`).
 
 **Código muerto eliminado**
