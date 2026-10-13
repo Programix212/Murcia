@@ -1742,9 +1742,6 @@ function traducirInstruccion(textoOriginal) {
 // DICCIONARIO SOLO DE IMÁGENES
 // ==========================================
 const mensajesFinalPorActividad = {
-  'portasa.ass' : { tipo: 'img', src: 'assets/Imagenes/bienvenida.gif' },
-  'g1.puz'      : { tipo: 'img', src: 'assets/Imagenes/estupendo.gif' },
-  'g2.puz'      : { tipo: 'img', src: 'assets/Imagenes/muyBien.gif' },
   'g11.ass'      : { tipo: 'img', src: 'assets/Mensaje_final_imagenes/Excelente.gif' }
 };
 
