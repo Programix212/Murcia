@@ -1,11 +1,11 @@
 {
-  "version": "9.9.9",
-  "notes": "PRUEBA del actualizador: si ves este modal, funciona. Pulsa Más tarde.",
+  "version": "1.0.3",
+  "notes": "Versión 1.0.3: Primaria completa (154 juegos), fixes de resolución 1366x768 y rendimiento, instalador optimizado",
   "pub_date": "2026-10-12T00:00:00Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "PRUEBA-SIN-FIRMA-REAL",
-      "url": "https://github.com/Programix212/Murcia/releases/download/v9.9.9/Murcia_9.9.9_x64-setup.exe"
+      "signature": "PEGA_AQUI_EL_CONTENIDO_DEL_ARCHIVO_Murcia_1.0.3_x64-setup.exe.sig",
+      "url": "https://github.com/Programix212/Murcia/releases/download/v1.0.3/Murcia_1.0.3_x64-setup.exe"
     }
   }
 }
