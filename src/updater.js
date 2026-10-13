@@ -90,7 +90,7 @@ function mostrarModalActualizacion(update) {
   modal.setAttribute('aria-modal', 'true');
   modal.innerHTML = `
     <div style="position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:100000;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',system-ui,sans-serif;">
-      <div style="background:linear-gradient(135deg,#1e3c72,#2a5298);color:#fff;padding:2.5rem;border-radius:20px;max-width:500px;width:90%;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,0.6);">
+      <div style="background:linear-gradient(135deg,#c1272d,#8b1a1f);color:#fff;padding:2.5rem;border-radius:20px;max-width:500px;width:90%;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,0.6);">
         <img src="img_logos/notificaciones/actualizacion.svg" alt="" aria-hidden="true" style="display:block;width:64px;height:64px;margin:0 auto 12px;">
         <h2 style="margin:0 0 8px;">${escapeUpd(tUpd('nuevaVersion'))}</h2>
         <p style="opacity:0.9;margin-bottom:4px;">${escapeUpd(tUpd('listaPara', { v: update.version }))}</p>
@@ -98,14 +98,14 @@ function mostrarModalActualizacion(update) {
 
         <div id="upd-progress" style="display:none;margin:1.5rem 0;">
           <div style="width:100%;height:12px;background:rgba(255,255,255,0.15);border-radius:6px;overflow:hidden;">
-            <div id="upd-bar" style="width:0%;height:100%;background:#00d26a;transition:width 0.25s ease;"></div>
+            <div id="upd-bar" style="width:0%;height:100%;background:#ffffff;transition:width 0.25s ease;"></div>
           </div>
           <p id="upd-pct" style="font-size:0.9rem;margin-top:8px;opacity:0.9;">${escapeUpd(tUpd('preparando'))}</p>
         </div>
 
         <div id="upd-buttons" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-          <button id="btn-upd-now" style="background:#00d26a;color:#002;border:none;padding:14px 32px;border-radius:10px;font-weight:bold;font-size:1rem;cursor:pointer;">${escapeUpd(tUpd('actualizarAhora'))}</button>
-          <button id="btn-upd-later" style="background:rgba(255,255,255,0.15);color:#fff;border:none;padding:14px 24px;border-radius:10px;cursor:pointer;font-size:1rem;">${escapeUpd(tUpd('masTarde'))}</button>
+          <button id="btn-upd-now" style="background:#ffffff;color:#c1272d;border:none;padding:14px 32px;border-radius:10px;font-weight:bold;font-size:1rem;cursor:pointer;">${escapeUpd(tUpd('actualizarAhora'))}</button>
+          <button id="btn-upd-later" style="background:rgba(0,0,0,0.25);color:#fff;border:none;padding:14px 24px;border-radius:10px;cursor:pointer;font-size:1rem;font-weight:600;">${escapeUpd(tUpd('masTarde'))}</button>
         </div>
         <p id="upd-status" style="margin-top:1rem;font-size:0.85rem;min-height:1.2rem;color:#ffd166;word-break:break-word;"></p>
       </div>
