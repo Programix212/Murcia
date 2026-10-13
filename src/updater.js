@@ -91,7 +91,7 @@ function mostrarModalActualizacion(update) {
   modal.innerHTML = `
     <div style="position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:100000;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',system-ui,sans-serif;">
       <div style="background:linear-gradient(135deg,#1e3c72,#2a5298);color:#fff;padding:2.5rem;border-radius:20px;max-width:500px;width:90%;text-align:center;box-shadow:0 25px 80px rgba(0,0,0,0.6);">
-        <div style="font-size:48px;margin-bottom:12px;">🎓</div>
+        <img src="img_logos/notificaciones/actualizacion.svg" alt="" aria-hidden="true" style="display:block;width:64px;height:64px;margin:0 auto 12px;">
         <h2 style="margin:0 0 8px;">${escapeUpd(tUpd('nuevaVersion'))}</h2>
         <p style="opacity:0.9;margin-bottom:4px;">${escapeUpd(tUpd('listaPara', { v: update.version }))}</p>
         <p style="opacity:0.75;font-size:0.95rem;margin-bottom:1.5rem;">${escapeUpd(update.body || tUpd('mejorasDefault'))}</p>

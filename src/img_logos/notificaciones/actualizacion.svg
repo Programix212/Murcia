@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" fill="none" role="img" aria-label="Actualización de CEARTEE">
+  <path d="M25 30A29 29 0 0 1 73 25" stroke="#82E7C2" stroke-width="7" stroke-linecap="round"/>
+  <path d="m69 14 7 12-14 1" fill="#82E7C2" stroke="#17324D" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M71 66A29 29 0 0 1 23 71" stroke="#F6C85F" stroke-width="7" stroke-linecap="round"/>
+  <path d="m27 82-7-12 14-1" fill="#F6C85F" stroke="#17324D" stroke-width="3.5" stroke-linejoin="round"/>
+  <rect x="31" y="31" width="34" height="34" rx="10" fill="#FFFFFF" stroke="#17324D" stroke-width="4"/>
+  <path d="M40 45h16M40 52h10" stroke="#2D5B91" stroke-width="4" stroke-linecap="round"/>
+  <path d="m51 56 4 4 8-9" stroke="#E87552" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m17 44 2-5 2 5 5 2-5 2-2 5-2-5-5-2 5-2ZM77 47l2-4 2 4 4 2-4 2-2 4-2-4-4-2 4-2Z" fill="#F6C85F"/>
+</svg>
