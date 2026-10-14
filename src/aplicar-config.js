@@ -515,7 +515,7 @@
       thUltima         : 'Última vez',
       noAlumnos        : 'No hay alumnos registrados todavía.',
       crearPerfil      : 'Crear primer perfil',
-      footerDocente    : 'CEARTEE - Panel Docente • Los datos se guardan localmente en esta computadora',
+      footerDocente    : 'Murcia - Panel Docente • Los datos se guardan localmente en esta computadora',
       
       completados      : 'completados',
       mejorTxt         : 'mejor',
@@ -859,7 +859,7 @@
       thUltima         : 'Last time',
       noAlumnos        : 'No students registered yet.',
       crearPerfil      : 'Create first profile',
-      footerDocente    : 'CEARTEE - Teacher Panel • Data is saved locally on this computer',
+      footerDocente    : 'Murcia - Teacher Panel • Data is saved locally on this computer',
       
       completados      : 'completed',
       mejorTxt         : 'best',
