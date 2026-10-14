@@ -568,3 +568,9 @@ body {
     margin-top: 12px;
   }
 }
+
+/* Inicio limpio: sin burbujas en esta página (fondo claro y paneles
+   blancos; aquí solo estorban). El resto de páginas sí las tiene. */
+.bg-animation {
+  display: none !important;
+}

@@ -176,7 +176,7 @@
       <button class="btn-backer" onclick="exitGame()" data-tooltip-pos="bottom" data-i18n-tooltip="volverMenu">
       </button>
       <h1 id="gameTitle" data-i18n="cargando">Cargando...</h1>
-      <button id="btn-fullscreen" onclick="toggleFullscreen()" data-tooltip-pos="bottom" data-i18n-tooltip="pantallaCompleta">⛶</button>
+      <span style="width:44px;flex-shrink:0;" aria-hidden="true"></span>
     </header>
 
     <!-- Stats -->
@@ -220,7 +220,9 @@
   <script src="Estadistica.js?v=103"></script>
   <script src="traducciones-en.js"></script>
   <script src="instrucciones.js"></script>
+  <script src="sentry-dsn.local.js" onerror="this.remove()"></script>
   <script src="aplicar-config.js"></script>
+  <script src="burbujas.js"></script>
   <script src="perfiles.js"></script>
   <script src="notificaciones.js"></script>
 

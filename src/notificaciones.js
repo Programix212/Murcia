@@ -19,7 +19,8 @@ window.Notificaciones = {
       rachaAciertos: 0,
       mejorRacha: 0,
       logrosDesbloqueados: [],
-      juegosPorNombre: {}
+      juegosPorNombre: {},
+      juegosTerminados: {}
     };
   },
 
@@ -78,7 +79,9 @@ window.Notificaciones = {
     try {
       var config = JSON.parse(localStorage.getItem('appConfig') || '{}');
       var idioma = config.idioma === 'en' ? 'en' : 'es';
-      var txt = (this.textos[idioma] && this.textos[idioma][clave]) || this.textos.es[clave] || clave;
+      var dic = this.textos[idioma] || {};
+      var txt = Object.prototype.hasOwnProperty.call(dic, clave) ? dic[clave]
+        : (Object.prototype.hasOwnProperty.call(this.textos.es, clave) ? this.textos.es[clave] : clave);
       if (params) {
         Object.keys(params).forEach(function(k) {
           txt = txt.split('{' + k + '}').join(String(params[k]));
@@ -137,7 +140,7 @@ window.Notificaciones = {
   // ==========================================
   // REGISTRAR JUEGO TERMINADO
   // ==========================================
-  registrarJuego: function(nombreJuego, puntuacion, tiempo, correctas, total) {
+  registrarJuego: function(nombreJuego, puntuacion, tiempo, correctas, total, todasBien) {
     try {
     if (!this.datos) this.init();
     this.datos = this.normalizar(this.datos);
@@ -146,8 +149,23 @@ window.Notificaciones = {
     var notificaciones = [];
     var self = this;
 
-    // 1. Juegos completados
-    d.juegosCompletados++;
+    // REGLA: solo hay notificaciones (logros y récords) cuando TODAS las
+    // actividades del reporte tienen palomita. Con alguna X, o todas en X,
+    // no sale ningún aviso ni se guardan récords; solo se corta la racha.
+    if (todasBien !== true) {
+      d.rachaAciertos = 0;
+      this.guardar();
+      return [];
+    }
+
+    // 1. Juegos completados: SOLO cuenta un juego cuando se termina con
+    //    TODAS las actividades bien, y cada juego cuenta una sola vez.
+    if (!d.juegosTerminados || typeof d.juegosTerminados !== 'object') d.juegosTerminados = {};
+    if (todasBien === true && nombreJuego) {
+      var claveTerm = String(nombreJuego).trim().toLowerCase();
+      if (!d.juegosTerminados[claveTerm]) d.juegosTerminados[claveTerm] = new Date().toISOString();
+    }
+    d.juegosCompletados = Object.keys(d.juegosTerminados).length;
     var logrosJuegos = [
       { cant: 1,  id: 'primer_juego',  icon: self.iconos.primerJuego,  clave: 'primerJuego' },
       { cant: 5,  id: '5_juegos',      icon: self.iconos.milestone,    clave: 'juegosN' },

@@ -49,7 +49,7 @@ function actualizarContadorCompletados() {
   if (!calculado) {
     try {
       const stats = window.PerfilesManager.obtenerDatos(perfil.id, 'stats', { juegos: {} });
-      total = Object.keys(stats.juegos || {}).length;
+      total = Object.keys(stats.juegosTerminados || {}).length;
     } catch (e) {}
   }
 

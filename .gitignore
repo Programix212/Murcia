@@ -31,6 +31,9 @@ build_log.txt
 Claves*.txt
 *contraseñas*.txt
 
+# DSN local de Sentry (solo existe en la PC que compila, NUNCA al repo)
+src/sentry-dsn.local.js
+
 # Compilación Rust/Tauri (pesa GBs, se regenera)
 src-tauri/target/
 

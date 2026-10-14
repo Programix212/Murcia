@@ -48,7 +48,7 @@
       
     </div>
     <div class="header-count"> 
-     <span class="count-number" id="gameCount">2</span>
+     <span class="count-number" id="gameCount">0</span>
      <span class="count-text">juegos</span>
 </div>
 
@@ -83,40 +83,8 @@
 
 
 
-<!-- Juego 1 (reutilizado de Preescolar: único .jclic.zip disponible de
-         esta categoría; los proyectos de Primaria_Humano_pendientes son
-         .pcc sueltos sin empaquetar y aún no se pueden cargar) -->
-      <div class="game-card" data-name="Cuento para la tolerancia" onclick="abrirJuego('assets/De_lo_humano_a_comunitario_juegos/Cuentoparalatolerancia.jclic.zip', 'Cuento para la tolerancia')">
-        <div class="game-icon"><img alt="" src="../assets/img_humano/cuento_para_la_tolerancia_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
-        <div class="game-info">
-          <h3 class="game-title">Cuento para la tolerancia</h3>
-          <p class="game-description"></p>
-          <div class="game-meta">
-            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
-          </div>
-        </div>
-        <div class="game-action">
-          <div class="play-btn"><span>▶</span></div>
-          <span class="play-text">JUGAR</span>
-        </div>
-      </div>
-
-      <!-- Juego 2 -->
-      <div class="game-card" data-name="Los rincones de la clase" onclick="abrirJuego('assets/De_lo_humano_a_comunitario_juegos/Losrinconesdelaclase.jclic.zip', 'Los rincones de la clase')">
-        <div class="game-icon"><img alt="" src="../assets/img_humano/los_rincones_de_la_clase_nuevo.png" style="width: 70px;" onerror="this.style.visibility='hidden'"></div>
-        <div class="game-info">
-          <h3 class="game-title">Los rincones de la clase</h3>
-          <p class="game-description"></p>
-          <div class="game-meta">
-            <span class="meta-item"><span class="meta-icon"><img alt="" class="meta-icon-img" src="../img_logos/logo_cabeza_nino_preescolar.png"></span><span>6-12 años</span></span>
-          </div>
-        </div>
-        <div class="game-action">
-          <div class="play-btn"><span>▶</span></div>
-          <span class="play-text">JUGAR</span>
-        </div>
-      </div>
-
+<!-- Sin juegos propios de Primaria en esta categoría (los 2 de Preescolar
+         no van aquí). Al empaquetar juegos propios, agregar tarjetas aquí. -->
 <!-- Mensaje sin resultados -->
       <div class="no-results" id="noResults" style="display:none;">
         <span class="no-results-icon">🔍</span>
@@ -130,7 +98,9 @@
 
 
 <script src="Humano.js"></script>
+<script src="../sentry-dsn.local.js" onerror="this.remove()"></script>
 <script src="../aplicar-config.js"></script>
+<script src="../burbujas.js"></script>
 
 
 

@@ -48,17 +48,59 @@ body.ceartee-exiting .ceartee-fade-overlay {
    contención. El diseño se mantiene, solo hay menos burbujas. */
 .bg-animation {
   contain: strict;
-  opacity: 0.18;
+  opacity: 0.34;
 }
 
 .bg-animation span {
   will-change: transform;
   transform: translate3d(0, 0, 0);
+  /* Más visibles sin perder rendimiento (siguen siendo 4 burbujas) */
+  background: rgba(255, 255, 255, 0.16) !important;
+  opacity: 0.6 !important;
 }
 
-/* Oculta la mitad de las burbujas (8 -> 4). Ahorra ~50% de composición. */
-.bg-animation span:nth-child(n+5) {
-  display: none !important;
+/* burbujas.js completa hasta 12 en cada página (el HTML trae 8).
+   Se muestran todas: van detrás de la interfaz y con GPU. */
+
+/* Las burbujas SIEMPRE detrás de la interfaz: no tapan botones, campos,
+   tarjetas ni barras, y nunca interceptan clics (solo decoran el fondo). */
+.bg-animation {
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+.bg-animation span {
+  pointer-events: none !important;
+}
+
+.main-container,
+.game-wrapper,
+.page-layout,
+.panel-container,
+.header,
+.panel-header,
+.search-bar,
+.games-list,
+.game-list,
+.categories-grid,
+.stats-panel,
+.nav-buttons,
+.barra-instrucciones,
+.settings-container {
+  position: relative;
+  z-index: 1;
+}
+/* NOTA: .footer-stats NO va aquí: es position:fixed y sus coordenadas
+   bottom/left lo subirían sobre las tarjetas si se vuelve relative. Su
+   z-index:10 propio ya lo mantiene sobre las burbujas. */
+
+button,
+input,
+select,
+textarea,
+a {
+  position: relative;
+  z-index: 1;
 }
 
 /* Si el usuario desactiva animaciones o el SO pide movimiento reducido,
@@ -300,4 +342,32 @@ select:focus-visible,
   .footer-stats {
     display: none !important;
   }
+}
+
+/* =========================================================
+   SIN RESULTADOS: centrado y más grande en todas las listas.
+   El JS lo muestra con display:flex en línea; sin dirección de
+   columna quedaba pegado a la izquierda y chico.
+   (No se toca display: lo alterna el JS entre flex y none.)
+   ========================================================= */
+.no-results {
+  grid-column: 1 / -1;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 48px 20px !important;
+  min-height: 38vh;
+  width: 100%;
+}
+
+.no-results-icon {
+  font-size: 4rem !important;
+  line-height: 1 !important;
+  margin-bottom: 14px !important;
+}
+
+.no-results p {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
 }

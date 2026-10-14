@@ -5,12 +5,15 @@
 (function() {
 
   // ✅ Función helper para obtener texto traducido
+  // NOTA: se verifica EXISTENCIA de la clave, no su valor, porque hay
+  // traducciones válidas que son string vacío (ej. haceMinutos en EN).
   function t(clave) {
     try {
       var config = JSON.parse(localStorage.getItem('appConfig') || '{}');
       var idioma = config.idioma || 'es';
-      if (window.textosI18n && window.textosI18n[idioma] && window.textosI18n[idioma][clave]) {
-        return window.textosI18n[idioma][clave];
+      var dic = window.textosI18n && window.textosI18n[idioma];
+      if (dic && Object.prototype.hasOwnProperty.call(dic, clave)) {
+        return dic[clave];
       }
     } catch(e) {}
     return clave;
@@ -87,7 +90,7 @@
       var statsB = window.PerfilesManager.obtenerDatos(b.id, 'stats', {});
 
       if (criterio === 'juegos') {
-        return (statsB.juegosCompletados || 0) - (statsA.juegosCompletados || 0);
+        return Object.keys(statsB.juegosTerminados || {}).length - Object.keys(statsA.juegosTerminados || {}).length;
       }
       if (criterio === 'puntuacion') {
         return (statsB.mejorPuntuacion || 0) - (statsA.mejorPuntuacion || 0);
@@ -116,7 +119,7 @@
             '</div>' +
           '</div>' +
         '</td>' +
-        '<td><span class="stat-num">' + (stats.juegosCompletados || 0) + '</span> <span class="stat-txt">' + t('completados') + '</span></td>' +
+        '<td><span class="stat-num">' + Object.keys(stats.juegosTerminados || {}).length + '</span> <span class="stat-txt">' + t('completados') + '</span></td>' +
         '<td><span class="stat-num">' + (stats.mejorPuntuacion || 0) + '%</span> <span class="stat-txt">' + t('mejorTxt') + '</span></td>' +
         '<td><span class="stat-num">' + (stats.mejorRacha || 0) + '</span> <span class="stat-txt">' + t('rachaTxt') + '</span></td>' +
         '<td>' + formatearLogros(stats.logros || []) + '</td>' +
@@ -152,9 +155,19 @@
     var dias = Math.floor(diff / 86400000);
 
     if (minutos < 1) return t('soloHaceMomento');
-    if (minutos < 60) return t('haceMinutos') + ' ' + minutos + ' ' + t('minutosTxt');
-    if (horas < 24) return t('haceHoras') + ' ' + horas + ' ' + t('horasTxt');
-    return t('haceDias') + ' ' + dias + ' ' + t('diasTxt');
+    // Une solo partes no vacías (en EN el prefijo es '' y no debe dejar
+    // espacio colgado: "2 minutes ago", no " 2 minutes ago").
+    function unir() {
+      var partes = [];
+      for (var i = 0; i < arguments.length; i++) {
+        var s = String(arguments[i] == null ? '' : arguments[i]).trim();
+        if (s !== '') partes.push(s);
+      }
+      return partes.join(' ');
+    }
+    if (minutos < 60) return unir(t('haceMinutos'), minutos, t('minutosTxt'));
+    if (horas < 24) return unir(t('haceHoras'), horas, t('horasTxt'));
+    return unir(t('haceDias'), dias, t('diasTxt'));
   }
 
   // ==========================================

@@ -25,7 +25,7 @@ function filterGames() {
   const input = document.getElementById('searchInput');
   if (!input) return;
 
-  const searchTerm = input.value.toLowerCase();
+  const searchTerm = input.value.toLowerCase().trim();
   const cards = document.querySelectorAll('.game-card');
   let visibleCount = 0;
 
@@ -33,7 +33,7 @@ function filterGames() {
     const name = (card.dataset.name || '').toLowerCase();
     const titleEl = card.querySelector('.game-title');
     const title = (titleEl ? titleEl.textContent : '').toLowerCase();
-    if (name.includes(searchTerm) || title.includes(searchTerm)) {
+    if (name.startsWith(searchTerm) || title.startsWith(searchTerm)) {
       card.style.display = 'flex';
       visibleCount++;
     } else {

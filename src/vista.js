@@ -259,7 +259,7 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
         font-size:1rem; font-weight:600;
         color:#374151; letter-spacing:0.05em;
         margin:0;
-      " id="loader-subtitle">Cargando<span id="loader-dots"></span></p>
+      " id="loader-subtitle">${String(tVista('cargando')).replace(/\s*\.+\s*$/, '')}<span id="loader-dots"></span></p>
       <div style="
         width:220px; height:14px;
         background:#f3f4f6;
@@ -320,7 +320,7 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
       if (barraFill) barraFill.style.width = '100%';
       cargaMinimaCompleta = true;
       clearInterval(intervaloBarra);
-      if (subtitleEl) subtitleEl.textContent = 'Cargando juego...';
+      if (subtitleEl) subtitleEl.textContent = tVista('cargandoJuego');
       // La descarga real ya arrancó en paralelo abajo; aquí solo
       // marcamos la parte visual como completa.
       verificarFinalizacion();
@@ -355,7 +355,7 @@ function cargarJuegoJClic(rutaZip, nombreJuego) {
     if (cargaMinimaCompleta && jclicListo) {
       finalizarCargaVisual();
     } else if (cargaMinimaCompleta && !jclicListo) {
-      if (subtitleEl) subtitleEl.textContent = 'Cargando...';
+      if (subtitleEl) subtitleEl.textContent = tVista('cargando');
 
     }
   }
@@ -575,27 +575,8 @@ function mostrarMensaje(texto) {
   setTimeout(() => { msg.style.opacity = '0'; }, 2000);
 }
 
-// ==========================================
-// FULLSCREEN
-// ==========================================
-function toggleFullscreen() {
-  const gameContainer = document.getElementById('jclic-container');
-  if (!document.fullscreenElement) {
-    (gameContainer.requestFullscreen || gameContainer.webkitRequestFullscreen).call(gameContainer);
-    var btn = document.getElementById('btn-fullscreen');
-    if (btn) btn.textContent = '✕';
-  } else {
-    (document.exitFullscreen || document.webkitExitFullscreen).call(document);
-    var btn = document.getElementById('btn-fullscreen');
-    if (btn) btn.textContent = '⛶';
-  }
-}
-document.addEventListener('fullscreenchange', () => {
-  if (!document.fullscreenElement) {
-    var btn = document.getElementById('btn-fullscreen');
-    if (btn) btn.textContent = '⛶';
-  }
-});
+// (Botón de pantalla completa eliminado por diseño: se entra/sale con F11
+// del sistema. Se conserva el listener de re-escala de más abajo.)
 
 // ==========================================
 // REPRODUCIR SONIDO INICIO

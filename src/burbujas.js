@@ -26,8 +26,34 @@
   } catch (e) {}
 
   // Duración de cada burbuja (debe coincidir con animation-duration en CSS)
-  // Solo importan las 4 primeras: el CSS oculta de la 5ª en adelante.
-  var duraciones = [9, 7, 11, 6]; // segundos por burbuja
+  var duraciones = [9, 7, 11, 6, 10, 8, 12, 7, 9, 8, 11, 6]; // segundos por burbuja
+  var TOTAL_BURBUJAS = 12;
+
+  // Completar hasta 12 burbujas (el HTML trae 8). Las extra usan posiciones
+  // fijas repartidas para un layout estable entre recargas.
+  function completarBurbujas() {
+    try {
+      var cont = document.querySelector('.bg-animation');
+      if (!cont) return;
+      var actuales = cont.querySelectorAll('span').length;
+      if (actuales >= TOTAL_BURBUJAS) return;
+      var extras = [
+        { w: 70,  left: '30%', top: '60%' },
+        { w: 45,  left: '65%', top: '25%' },
+        { w: 100, left: '45%', top: '85%' },
+        { w: 35,  left: '92%', top: '50%' }
+      ];
+      for (var i = actuales; i < TOTAL_BURBUJAS; i++) {
+        var cfg = extras[(i - 8) % extras.length] || { w: 50, left: '50%', top: '50%' };
+        var s = document.createElement('span');
+        s.style.width = cfg.w + 'px';
+        s.style.height = cfg.w + 'px';
+        s.style.left = cfg.left;
+        s.style.top = cfg.top;
+        cont.appendChild(s);
+      }
+    } catch (e) {}
+  }
 
   // Guardar el timestamp de inicio solo una vez
   try {
@@ -59,8 +85,12 @@
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', aplicarDelays);
+    document.addEventListener('DOMContentLoaded', function() {
+      completarBurbujas();
+      aplicarDelays();
+    });
   } else {
+    completarBurbujas();
     aplicarDelays();
   }
 })();

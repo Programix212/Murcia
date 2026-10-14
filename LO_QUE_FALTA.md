@@ -31,7 +31,7 @@ Primaria, reproductor JClic y optimización del instalador (versión 1.0.3).
 - Detalles: `gameList` → `gamesList`, título `CEARTEE - Juego`.
 
 **Pruebas y docs**
-- Tests: 25/25 verdes (13 anteriores + 12 nuevas antibug de idioma/dificultad en `tests/config.test.js`).
+- Tests: 45/45 verdes (13 base + 12 antibug idioma/dificultad + 9 panel docente + 8 buscador + 3 exclusiones).
 - Docs coherentes: README, CHANGELOG, guía (repo Murcia) y este archivo.
 - Repo conectado solo a `Programix212/Murcia` (rama `main`, historial unido); repo viejo `Yolito935/Ceartee2026` eliminado.
 - `LICENSE.txt` reescrita: el código es de CEARTEE, los 216 juegos son de sus autores bajo CC BY-NC-SA 4.0 (verificado dentro de los `.jclic`).
@@ -51,11 +51,19 @@ Primaria, reproductor JClic y optimización del instalador (versión 1.0.3).
 - Normalizadores en `aplicar-config.js` (`window.CearteeConfig`): `ca` → `es`, `medio/fácil/difícil` → canónico, corruptos → `es`/`todas`. `settings.js` valida selects (nunca muestra `"undefined"`). Cubierto por 12 tests nuevos.
 
 **Primaria completada**
-- `Lenguajes2.html`: 84 juegos · `Saberes.html`: 62 · `Etica2.html`: 6 (todo lo que hay en assets) · `Humano.html`: 2 (reutilizados de Preescolar; los `.pcc` pendientes no están empaquetados). Total **154** (antes 0). `Frases`/`Poesía` excluidos: congelaban la app.
+- `Lenguajes2.html`: 84 juegos · `Saberes.html`: 62 · `Etica2.html`: 6 (todo lo que hay en assets) · `Humano.html`: 0 (los 2 de Preescolar no van aquí; faltan juegos propios). Total **152**. `Frases`/`Poesía` excluidos: congelaban la app.
+- `Categorias2.html` (84/62/6/0, footer 152) y `Estrellas.js` actualizados.
 - `Categorias2.html` (84/62/6/2, footer 154) y `Estrellas.js` actualizados.
 
 **Reproductor JClic**
 - Juegos encogidos/descolocados (ej. "Conceptos básicos", "Cálculo mental 2"): marco con altura explícita centrada, sin forzar layout interno de JClic, auto-escala con `transform` (`vista.css`, `vista.js`). Ya no requiere re-exportar.
+
+**Interfaz (ronda 2)**
+- Buscador por prefijo en las 8 listas (`startsWith` + `trim`); sin historial del navegador (`autocomplete off` + `readonly` hasta el foco).
+- Aviso "No se encontraron juegos" centrado/grande y automático en categorías vacías.
+- Panel docente en EN sin claves filtradas (`2 minutes ago`); loader de vista traducido; sin botón fullscreen; títulos con espacios.
+- Burbujas: 12 por página (JS las completa), detrás de la interfaz, apagadas en inicio.
+- Mecanismo DSN local de Sentry (`sentry-dsn.local.js` gitignorado + tags en 15 HTML + CSP): el `.exe` reporta, el repo no lleva la clave.
 
 ---
 
@@ -114,7 +122,7 @@ Primaria, reproductor JClic y optimización del instalador (versión 1.0.3).
   falta la UI). Los controles están comentados en `Configuracion.html`.
 
 ### 🟢 Contenido
-- **Descripciones de juegos** vacías en Preescolar (59/59) y Primaria (154/154); solo hay 15 en inglés para Lenguajes (`aplicar-config.js`).
+- **Descripciones de juegos** vacías en Preescolar (59/59) y Primaria (152/152); solo hay 15 en inglés para Lenguajes (`aplicar-config.js`).
 - **Ética de Primaria** con 6 juegos: es todo lo que hay en `assets/Primaria_Etica/`.
 - **Humano de Primaria** usa 2 juegos reutilizados de Preescolar; los proyectos de `Primaria_Humano_pendientes/` eran `.pcc` sin empaquetar (carpeta eliminada al optimizar; hay que empaquetarlos a `.jclic.zip` con JClic Author para contenido propio).
 - **Pantalla de "Créditos"**: `LICENSE.txt` ya la menciona, pero no existe. Crearla listando cada juego con autor y licencia CC BY-NC-SA 4.0.

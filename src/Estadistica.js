@@ -68,7 +68,7 @@ function tEst(clave) {
 // ==========================================
 // ✅ REGISTRAR ESTADÍSTICA (DEFINIDA AL INICIO - FIX)
 // ==========================================
-function registrarEstadistica(juego, acierto, error, tiempoSegundos) {
+function registrarEstadistica(juego, acierto, error, tiempoSegundos, todasBien) {
   console.log('🎯 registrarEstadistica LLAMADA:', { juego, acierto, error, tiempoSegundos });
   
   try {
@@ -133,6 +133,18 @@ function registrarEstadistica(juego, acierto, error, tiempoSegundos) {
     
     if (!juegoStats.mejorTiempo || tiempoSegundos < juegoStats.mejorTiempo) {
       juegoStats.mejorTiempo = tiempoSegundos;
+    }
+
+    // Juego TERMINADO: todas las actividades del reporte con palomita.
+    // Es lo que cuentan las estrellas, el panel "Completados" y los logros.
+    if (!stats.juegosTerminados || typeof stats.juegosTerminados !== 'object') {
+      stats.juegosTerminados = {};
+    }
+    if (todasBien === true) {
+      var ahora = new Date().toISOString();
+      var jt = stats.juegosTerminados[juego];
+      if (!jt) stats.juegosTerminados[juego] = { primeraVez: ahora, ultimaVez: ahora, veces: 1 };
+      else { jt.veces = (jt.veces || 0) + 1; jt.ultimaVez = ahora; }
     }
 
     // Guardar stats
@@ -359,6 +371,7 @@ window.EXCLUIR_FIN_POR_JUEGO = {
   'Cuadrados y triángulos de 10 y 15': ['tri1510.ass'],
   'Matemáticas de 6to': ['frac69b.ass', 'inf6.ass'],
   'Matemáticas para 5to': ['menu.ass'],
+  'Números y letras': ['explorac.ass'],
 };
 
 // Actividades donde NO se finaliza al resolverlas (el reporte saldría
@@ -834,6 +847,14 @@ function registrarActividad(nombre, datos, tiempoActividad) {
   try {
     if (typeof ignoradaEnReporte === 'function' && ignoradaEnReporte(nombre)) return;
   } catch (e) {}
+  // Recordar que el alumno PASÓ por esta actividad en esta ronda (aunque se
+  // la salte sin jugar). Va pegado al arreglo para reiniciarse con él.
+  try {
+    if (window.registroActividades) {
+      if (!window.registroActividades.__visitadas) window.registroActividades.__visitadas = {};
+      window.registroActividades.__visitadas[nombre] = true;
+    }
+  } catch (e) {}
   // Se registran TODAS las demás actividades para que la estadística
   // cuente el juego completo. El filtro solo aplica al disparo del
   // reporte final, no al registro.
@@ -1165,6 +1186,44 @@ function juegoSinStats() {
 // ==========================================
 // FINALIZAR JUEGO
 // ==========================================
+// ¿La actividad se califica en JClic? (report="true" y no es portada/explorar)
+function actividadCalificable(nombre) {
+  try {
+    var pr = getJClic()?.currentPlayers?.[0]?.project;
+    var x = pr && pr._activities && pr._activities[nombre];
+    x = x && (x[0] || x);
+    if (!x || !x.getAttribute) return false;
+    var cls = String(x.getAttribute('class') || '');
+    if (/InformationScreen|Explore/i.test(cls)) return false;
+    var s = x.querySelector && x.querySelector('settings');
+    return !!s && String(s.getAttribute('report')) === 'true';
+  } catch (e) { return false; }
+}
+
+// Juego TERMINADO BIEN (logros, récords, estrellas, "Completados"):
+//  1) todas las filas del reporte tienen palomita (ninguna X), y
+//  2) ninguna actividad calificable por la que pasó el alumno quedó fuera
+//     del reporte (saltarla rápido con "Siguiente" = juego incompleto).
+function todasBienReporte() {
+  try {
+    var r = window.registroActividades || [];
+    if (r.length === 0) return false;
+    if (!r.every(function(x) { return x.correcta === 'Sí'; })) return false;
+    var bien = {};
+    r.forEach(function(x) { bien[x.actividad] = true; });
+    var vis = r.__visitadas || {};
+    for (var nombre in vis) {
+      if (bien[nombre]) continue;
+      try { if (typeof excluidaDelFin === 'function' && excluidaDelFin(nombre)) continue; } catch (e) {}
+      if (actividadCalificable(nombre)) {
+        console.log('⛔ Juego incompleto: falta resolver', nombre);
+        return false;
+      }
+    }
+    return true;
+  } catch (e) { return false; }
+}
+
 function finalizarJuego() {
   if (window.juegoTerminado) return;
 
@@ -1206,7 +1265,8 @@ function finalizarJuego() {
         nombreJuego,
         totalAciertos,
         totalErrores,
-        totalTiempo
+        totalTiempo,
+        todasBienReporte()
       );
       console.log('📊 Estadística final registrada');
     }
@@ -1222,7 +1282,7 @@ function finalizarJuego() {
     var nombreJuego = document.getElementById('gameTitle')?.textContent || '';
     
     if (window.Notificaciones) {
-      window.Notificaciones.registrarJuego(nombreJuego, puntMedia, window.tiempoSegundos, correctas, totalActs);
+      window.Notificaciones.registrarJuego(nombreJuego, puntMedia, window.tiempoSegundos, correctas, totalActs, todasBienReporte());
     }
   } catch(e) {
     console.warn('Error notificaciones:', e);

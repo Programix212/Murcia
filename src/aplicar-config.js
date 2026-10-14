@@ -353,7 +353,7 @@
       catSub           : '¡Elige una categoría y comienza a aprender jugando!',
       lenguaje         : 'Lenguajes',
       saberes          : 'Saberes y pensamiento cientifico',
-      etica            : 'Ética,naturaleza y sociedades',
+      etica            : 'Ética, naturaleza y sociedades',
       humano           : 'De lo humano a comunitario',
       explorar         : '▶ EXPLORAR',
       juegosStat       : 'Juegos',
@@ -363,7 +363,7 @@
       // ── Vista.js / vista.html ──
       lenguajesH1      : 'Lenguajes',
       saberesH1        : 'Saberes y pensamiento cientifico',
-      eticaH1          : 'Ética,naturaleza y sociedades',
+      eticaH1          : 'Ética, naturaleza y sociedades',
       humanoH1         : 'De lo humano a comunitario',
       jugarBtn         : 'JUGAR',
       noResultados     : 'No se encontraron juegos',
@@ -1815,6 +1815,66 @@
       aplicarAnimaciones(e.target.checked);
     }
   });
+
+  // ==========================================
+  // QUITAR AUTOCOMPLETADO DEL BUSCADOR
+  // El navegador guarda lo tecleado y muestra el dropdown blanco
+  // ("Información guardada"). Se desactiva por JS global para no
+  // editar los 8 HTML con buscador. readonly hasta el foco impide
+  // que el navegador ancle el dropdown; al salir se vuelve a poner.
+  // ==========================================
+  function desactivarAutocompletadoBuscador() {
+    try {
+      var cands = document.querySelectorAll('input.search-input, #searchInput');
+      cands.forEach(function(el) {
+        try { el.setAttribute('autocomplete', 'off'); } catch (e) {}
+        try { el.setAttribute('autocapitalize', 'off'); } catch (e) {}
+        try { el.setAttribute('autocorrect', 'off'); } catch (e) {}
+        try { el.setAttribute('spellcheck', 'false'); } catch (e) {}
+        try {
+          if (!el.hasAttribute('data-nohist')) {
+            el.setAttribute('data-nohist', '1');
+            el.setAttribute('readonly', 'readonly');
+            el.addEventListener('focus', function() {
+              try { el.removeAttribute('readonly'); } catch (e2) {}
+            });
+            el.addEventListener('blur', function() {
+              try { el.setAttribute('readonly', 'readonly'); } catch (e2) {}
+            });
+          }
+        } catch (e) {}
+      });
+    } catch (e) {}
+  }
+  window.desactivarAutocompletadoBuscador = desactivarAutocompletadoBuscador;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', desactivarAutocompletadoBuscador);
+  } else {
+    desactivarAutocompletadoBuscador();
+  }
+
+  // ==========================================
+  // AVISO AUTOMÁTICO EN CATEGORÍAS VACÍAS
+  // El "No se encontraron juegos" solo salía al buscar. Si la lista
+  // abre con 0 tarjetas (ej. Humano de Primaria), se muestra solo.
+  // Con tarjetas no toca nada; filterGames sigue mandando al buscar.
+  // ==========================================
+  function mostrarVacioSiNoHayJuegos() {
+    try {
+      var lista = document.getElementById('gamesList');
+      if (!lista) return;
+      if (lista.querySelectorAll('.game-card').length > 0) return;
+      var aviso = document.getElementById('noResults');
+      if (!aviso) return;
+      aviso.style.display = 'flex';
+    } catch (e) {}
+  }
+  window.mostrarVacioSiNoHayJuegos = mostrarVacioSiNoHayJuegos;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mostrarVacioSiNoHayJuegos);
+  } else {
+    mostrarVacioSiNoHayJuegos();
+  }
 
   // ==========================================
   // SISTEMA DE SONIDOS

@@ -8,13 +8,14 @@
   // ==========================================
   // CALCULAR ESTRELLAS
   // ==========================================
-  function calcularEstrellas(juegosCompletados) {
-    if (juegosCompletados >= 15) return 5;
-    if (juegosCompletados >= 10) return 4;
-    if (juegosCompletados >= 6)  return 3;
-    if (juegosCompletados >= 3)  return 2;
-    if (juegosCompletados >= 1)  return 1;
-    return 0;
+  // Estrellas según la PARTE de la categoría completada (5 = todos los
+  // juegos de la categoría con todas las actividades bien).
+  function calcularEstrellas(juegosCompletados, totalCategoria) {
+    var c = Number(juegosCompletados) || 0;
+    var t = Number(totalCategoria) || 0;
+    if (c <= 0) return 0;
+    if (t <= 0) return Math.min(5, c);
+    return Math.max(1, Math.min(5, Math.ceil((c / t) * 5)));
   }
 
   // ==========================================
@@ -51,71 +52,71 @@
   // ==========================================
   const juegosPorCategoria = {
     'lenguajes': [
-      '4 Cuentos',
-      'Actividad 5 años infantil',
-      'Aprende a leer con l,m,s,p,t,n',
-      'Aprendo jugando',
-      'Caperucita Roja',
-      'Diferentes objetos',
-      'El pollito Chiqui',
-      'El Soldadito de plomo',
-      'Iniciación a la lectura',
-      'Jack y las habichuelas mágicas',
-      'La gaviota de la Coviña',
-      'Los cuentos del lobo',
-      'Nombre de los animales',
-      'Números y letras',
-      'Las Vocales'
+      "4 Cuentos",
+      "Actividad 5 años infantil",
+      "Aprende a leer con l,m,s,p,t,n",
+      "Aprendo jugando",
+      "Caperucita Roja",
+      "Diferentes objetos",
+      "El pollito Chiqui",
+      "El Soldadito de plomo",
+      "Iniciacion a la lectura",
+      "Jack y las habichuelas mágicas",
+      "La gaviota de la Coviña",
+      "Los cuentos del lobo",
+      "Nombre de los animales",
+      "Números y letras",
+      "Las Vocales"
     ],
     'saberes': [
-      'Actinfantil 3 años',
-      'Act infantil 4 años',
-      'Actividades de orientacion especial',
-      'Actividades de lógica 1',
-      'Actividades de lógica 2',
-      'Actividades de lógica 3',
-      'Animales salvajes',
-      'Bloques lógicos',
-      'Cálculo y Números del 1 al 9',
-      'Clic de las medidas',
-      'Clic de las posiciones',
-      'Conceptos básicos',
-      'Contar del 1 al 9',
-      'Descomposición de números 0-10',
-      'Direccionalidad, colores y formas',
-      'El cuento de los números 0-9',
-      'El verano',
-      'Formas y más formas',
-      'Iguales',
-      'Jugando con números',
-      'Jugando con números 2',
-      'Las regletas',
-      'Lógica, numeración y lateralidad',
-      'Los 3 osos',
-      'Nina la gallina',
-      'Ordenar tamaños',
-      'Producto cartesiano',
-      'Secuencias',
-      'Series',
-      'Sombras',
-      'Tiempo, espacio y Cantidad',
-      'Uno, dos, tres o ninguno'
+      "Actinfantil 3 años",
+      "Actinfantil 4 años",
+      "Actividades de orientacion especial",
+      "Actividades de lógica 1",
+      "Actividades de lógica 2",
+      "Actividades de lógica 3",
+      "Animales salvajes",
+      "Bloques lógicos",
+      "Cálculo y Números del 1 al 9",
+      "Clic de las medidas",
+      "Clic de las posiciones",
+      "Conceptos básicos",
+      "Contar del 1 al 9",
+      "Descomposición de números 0-10",
+      "Direccionalidad colores y formas",
+      "El cuento de los números 0-9",
+      "El verano",
+      "Formas y más formas",
+      "Iguales",
+      "Jugando con números",
+      "Jugando con números 2",
+      "Las regletas",
+      "Lógica numeración y lateralidad",
+      "Los 3 osos",
+      "Nina la gallina",
+      "Ordenar tamaños",
+      "Producto cartesiano",
+      "Secuencias",
+      "Series",
+      "Sombras",
+      "Tiempo espacio y Cantidad",
+      "Uno dos tres o ninguno"
     ],
     'etica': [
-      'Aprendiendo a reciclar',
-      'El elefante y otros grandes',
-      'La ratita presumida',
-      'Los musicos de bremen',
-      'Los medios de transporte',
-      'Observa y relaciona',
-      'Once upon a time',
-      'Otros niños del mundo',
-      'Puzzles de animales',
-      'Reconocimientos de sonidos'
+      "Aprendiendo a reciclar",
+      "Elefante y otros grandes",
+      "Laratitapresumida",
+      "Los musicos de bremen",
+      "Losmediosdetransporte2",
+      "Observa y relaciona",
+      "Once upon a time",
+      "Otros niños del mundo",
+      "Puzzle de animales",
+      "Reconocimientodesonidos"
     ],
     'humano': [
-      'Cuento para la tolerancia',
-      'Los rincones de la clase'
+      "Cuento para la tolerancia",
+      "Los rincones de la clase"
     ]
   };
 
@@ -283,8 +284,7 @@
       "Seres vivos, naturaleza y plantas"
     ],
     'humano': [
-      'Cuento para la tolerancia',
-      'Los rincones de la clase'
+      // Sin juegos propios de Primaria (los 2 de Preescolar no van aquí)
     ]
   };
 
@@ -312,30 +312,29 @@
   // ==========================================
   // CONTAR JUEGOS POR CATEGORÍA
   // ==========================================
+  // Normaliza nombres: sin acentos, mayúsculas, espacios ni signos
+  // ("Lógica, numeración" = "logicanumeracion").
+  function normNombre(s) {
+    try {
+      return String(s || '').toLowerCase().normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]/g, '');
+    } catch (e) { return String(s || '').toLowerCase(); }
+  }
+
+  // Un juego cuenta SOLO si se terminó con TODAS las actividades bien
+  // (todas las palomitas del reporte). Se guarda en stats.juegosTerminados.
   function contarJuegosPorCategoria(perfilId, categoria) {
     try {
-      if (!window.PerfilesManager) {
-        console.warn('⚠️ PerfilesManager no disponible');
-        return 0;
-      }
-
-      const stats = window.PerfilesManager.obtenerDatos(perfilId, 'stats', {
-        juegos: {}
-      });
-
-      const mapeo = obtenerMapeoCategorias();
-      const juegosCategoria = mapeo[categoria] || [];
+      if (!window.PerfilesManager) return 0;
+      const stats = window.PerfilesManager.obtenerDatos(perfilId, 'stats', {}) || {};
+      const terminados = stats.juegosTerminados || {};
+      const claves = {};
+      Object.keys(terminados).forEach(function(k) { claves[normNombre(k)] = true; });
+      const juegosCategoria = obtenerMapeoCategorias()[categoria] || [];
       let completados = 0;
-
-      if (stats.juegos) {
-        juegosCategoria.forEach(nombreJuego => {
-          if (stats.juegos[nombreJuego]) {
-            completados++;
-          }
-        });
-      }
-
-      console.log(`📊 ${categoria}: ${completados}/${juegosCategoria.length} juegos`);
+      juegosCategoria.forEach(function(nombreJuego) {
+        if (claves[normNombre(nombreJuego)]) completados++;
+      });
       return completados;
     } catch(e) {
       console.error('❌ Error contando juegos:', e);
@@ -348,9 +347,11 @@
   // ==========================================
   function obtenerEstrellasCategoria(perfilId, categoria) {
     const completados = contarJuegosPorCategoria(perfilId, categoria);
+    const total = (obtenerMapeoCategorias()[categoria] || []).length;
     return {
       completados: completados,
-      estrellas: calcularEstrellas(completados)
+      total: total,
+      estrellas: calcularEstrellas(completados, total)
     };
   }
 
