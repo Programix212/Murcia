@@ -272,7 +272,7 @@
   const textos = {
     es: {
       // ── index.html ──
-      bienvenida       : 'Bienvenido a Ceartee',
+      bienvenida       : 'Bienvenido a Murcia',
       subtitulo        : 'Tu experiencia comienza aquí',
       iniciar          : 'Pulsa para Entrar',
       visitanosLabel   : 'Visítanos para conocer más',
@@ -625,7 +625,7 @@
     },
 
     en: {
-      bienvenida       : 'Welcome to Ceartee',
+      bienvenida       : 'Welcome to Murcia',
       subtitulo        : 'Your experience starts here',
       iniciar          : 'Click to Enter',
       visitanosLabel   : 'Visit us to learn more',
@@ -1959,16 +1959,18 @@
       // ¿Estamos en una página de Primaria? (la carpeta está en /Primaria/)
       var esPrimaria = window.location.pathname.indexOf('Primaria') !== -1;
 
+      // Completados = juegos de ESTA etapa terminados con todas las palomitas
+      // (mismo cálculo que las estrellas).
       var completados = 0;
-      if (esPrimaria) {
-        // Primaria aún no tiene juegos propios: no contar los de Preescolar
-        completados = 0;
-      } else if (window.PerfilesManager) {
+      if (window.PerfilesManager && window.EstrellasManager && window.EstrellasManager.obtenerEstrellas) {
         var perfil = window.PerfilesManager.obtenerPerfilActivo();
         if (perfil) {
-          var stats = window.PerfilesManager.obtenerDatos(perfil.id, 'stats', {});
-          completados = stats.juegosCompletados || 0;
+          ['lenguajes', 'saberes', 'etica', 'humano'].forEach(function(cat) {
+            try { completados += (window.EstrellasManager.obtenerEstrellas(perfil.id, cat) || {}).completados || 0; } catch (e2) {}
+          });
         }
+      } else {
+        return; // sin estrellas en esta página: no tocar el contador
       }
 
       var footerItems = document.querySelectorAll('.footer-stats .stat-item');
